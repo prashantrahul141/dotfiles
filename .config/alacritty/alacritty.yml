@@ -1,0 +1,43 @@
+window:
+  padding:
+    x: 6
+    y: 1
+  class:
+    instance: Alacritty
+    general: Alacritty
+  opacity: 1.0
+  startup_mode: Maximized
+
+scrolling:
+  history: 10000
+  multiplier: 3
+
+font:
+  normal:
+    family: CaskaydiaCove Nerd Font
+    style: Regular
+  bold:
+    family: CaskaydiaCove Nerd Font
+    style: Bold
+  italic:
+    family: CaskaydiaCove Nerd Font
+    style: Italic
+  bold_italic:
+    family: CaskaydiaCove Nerd Font
+    style: Bold Italic
+  size: 8.5
+draw_bold_text_with_bright_colors: true
+
+selection:
+  save_to_clipboard: false
+
+shell:
+  program: /home/linuxbrew/.linuxbrew/bin/nu
+
+key_bindings:
+  - { key: F11, action: ToggleFullscreen }
+  - { key: Space, mods: Control, action: ToggleViMode }
+
+# importing colorscheme : https://github.com/alacritty/alacritty-theme
+import:
+  - ~/.config/alacritty/themes/themes/gruvbox_dark.yaml

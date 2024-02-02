@@ -1,0 +1,43 @@
+
+# ui
+progressbar_look = "─╼·"
+
+# misc
+cyclic_scrolling = "yes"
+statusbar_visibility = "no"
+browser_display_mode = "columns"
+header_visibility = "no"
+titles_visibility = "no"
+
+## Screens available for use: help, playlist, browser, search_engine,
+## media_library, playlist_editor, tag_editor, outputs, visualizer, clock,
+## lyrics, last_fm.
+startup_screen = "visualizer"
+connected_message_on_startup = "no"
+
+# visualizer
+visualizer_look = "●▮"
+
+# Available values: spectrum, wave, wave_filled, ellipse.
+visualizer_type = "spectrum"
+
+# colors 
+colors_enabled = "yes"
+empty_tag_color = "blue"
+#header_window_color = "red"
+volume_color = "black"
+state_line_color = "black"
+color1 = "blue"
+color2 = "blue"
+current_item_prefix = "$(green)$r"
+current_item_suffix = "$/r$(end)"
+current_item_inactive_column_prefix = "$(white)$r"
+current_item_inactive_column_suffix = "$/r$(end)"
+main_window_color = "blue"
+progressbar_color = "magenta" 
+progressbar_elapsed_color = "cyan"
+statusbar_color = "green"
+alternative_ui_separator_color = "red"
+window_border_color = "green"
+active_window_border = "cyan"
+discard_colors_if_item_is_selected = "no"

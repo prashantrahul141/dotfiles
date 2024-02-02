@@ -1,0 +1,37 @@
+[[language]]
+name = "typescript"
+scope = "source.ts"
+roots = ["package.json"]
+file-types = ["ts" ]
+formatter = { command = "prettier", args = ["--parser", "typescript"] }
+
+
+[[language]]
+name = "javascript"
+scope = "source.js"
+roots = ["package.json"]
+file-types = ["js"]
+formatter = { command = "prettier", args = ["--parser", "javascript"] }
+
+
+[[language]]
+name = "tsx"
+auto-format = true
+roots = ["package.json"]
+file-types = ["tsx" ]
+formatter = { command = "prettier", args = ["--parser", "typescript"] }
+
+[[language]]
+name = "jsx"
+scope = "source.jsx"
+roots = ["package.json"]
+file-types = ["jsx" ]
+formatter = { command = "prettier", args = ["--parser", "javascript"] }
+
+
+[[language]]
+name = "c"
+auto-format = true
+roots = ["Makefile"]
+file-types = ["c" ]
+formatter = { command = "clang-format", args = ["--parser", "typescript"] }
