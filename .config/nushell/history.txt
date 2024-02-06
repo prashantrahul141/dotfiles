@@ -21102,3 +21102,23 @@ git commit -m "initial commit"
 rm .git
 git add -
 lg
+lg
+nv .gitignore
+z ./.config/nushell/
+l
+z ..
+pwd
+lg
+l
+z ..
+lg
+z ..
+l
+z mpv
+l
+rm watch_later
+l
+git rm --cached history.txt
+lg
+z ..
+git rm --cached ./.config/nushell/history.txt

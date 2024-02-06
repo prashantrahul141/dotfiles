@@ -127,3 +127,6 @@ $env.STARSHIP_CONFIG = ~/.config/starship.toml
 mkdir ~/.cache/starship
 starship init nu | save -f ~/.cache/starship/init.nu
 
+# disables some annoying stuff by npm.
+$env.DISABLE_OPENCOLLECTIVE = 1
+$env.ADBLOCK = 1
