@@ -765,7 +765,7 @@ use ~/.cache/starship/init.nu
 
 # alias 
 alias nv = nvim
-alias l = ls
+alias l = ls -a
 alias quit = exit
 alias q = exit
 alias e = xdg-open
