@@ -786,6 +786,7 @@ alias rm = trash -v # https://github.com/andreafrancia/trash-cli
 alias music = ncmpcpp
 alias f = ranger
 alias c = code .
+alias copy = xclip -selection clipboard
 
 # zoxide
 source ~/.config/.zoxide.nu
