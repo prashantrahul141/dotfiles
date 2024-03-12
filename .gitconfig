@@ -1,0 +1,25 @@
+[core]
+	editor = nvim
+
+[color "diff"]
+	whitespace = red reverse
+
+[init]
+  defaultBranch = main
+
+[user]
+	email = prashantrahul141@protonmail.com
+  name = Prashant
+  signingkey = prashantrahul141@protonmail.com
+
+[credential "https://github.com"]
+  helper = !/usr/bin/gh auth git-credential
+
+[credential "https://gist.github.com"]
+  helper = !/usr/bin/gh auth git-credential
+
+[commit]
+  gpgsign = true
+
+[tag]
+  gpgSign = true
