@@ -787,6 +787,7 @@ alias music = ncmpcpp
 alias f = ranger
 alias c = code .
 alias copy = xclip -selection clipboard
+alias dn = dotnet
 
 # zoxide
 source ~/.config/.zoxide.nu

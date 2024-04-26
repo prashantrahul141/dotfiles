@@ -97,9 +97,13 @@ $env.NU_PLUGIN_DIRS = [
     ($nu.default-config-dir | path join 'plugins') # add <nushell-config-dir>/plugins
 ]
 
+
+$env.NVM_DIR = "/home/prashant/.nvm"
+
 # env
 $env.PATH = ($env.PATH | split row (char esep) | append "/home/prashant/.bun/bin")
-$env.PATH = ($env.PATH | split row (char esep) | append "~/.nodejs/node-v18.18.2-linux-x64/bin")
+$env.PATH = ($env.PATH | split row (char esep) | append "/home/prashant/.local/bin")
+$env.PATH = ($env.PATH | split row (char esep) | append "/home/linuxbrew/.linuxbrew/bin")
 # $env.PATH = ($env.PATH | split row (char esep) | append "~/.nvim/nvim-linux64/bin")
 $env.PATH = ($env.PATH | split row (char esep) | append "/opt/Clion/bin/")
 $env.PATH = ($env.PATH | split row (char esep) | append "~/Projects/tools/bat-extras")
@@ -109,9 +113,10 @@ $env.PATH = ($env.PATH | split row (char esep) | append "~/Android/Sdk/emulator"
 $env.PATH = ($env.PATH | split row (char esep) | append "~/Android/Sdk/platform-tools")
 $env.PATH = ($env.PATH | split row (char esep) | append "~/External-apps/")
 $env.PATH = ($env.PATH | split row (char esep) | append "~/Projects/tools")
-
-
-$env.ANDROID_HOME = "/home/prashant/Android/Sdk/"
+$env.PATH = ($env.PATH | split row (char esep) | append "/home/prashant/.nvm/versions/node/v22.0.0/bin/")
+$env.PATH = ($env.PATH | split row (char esep) | append "/home/prashant/.nvm/")
+$env.PATH = ($env.PATH | split row (char esep) | append "/home/prashant/.local/share/pnpm")
+$env.PNPM_HOME = "/home/prashant/.local/share/pnpm"
 
 # default editor
 $env.EDITOR = "nvim"
@@ -120,7 +125,7 @@ $env.EDITOR = "nvim"
 # oh-my-posh init nu --config ~/.config/.ohmyposh.omp.json --print | save ~/.config/.ohmyposh.nu --force
 
 # zoxide
-# zoxide init nushell | save -f ~/.config/.zoxide.nu
+zoxide init nushell | save -f ~/.config/.zoxide.nu
 
 # starship
 $env.STARSHIP_CONFIG = ~/.config/starship.toml
