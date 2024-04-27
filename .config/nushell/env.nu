@@ -116,6 +116,7 @@ $env.PATH = ($env.PATH | split row (char esep) | append "~/Projects/tools")
 $env.PATH = ($env.PATH | split row (char esep) | append "/home/prashant/.nvm/versions/node/v22.0.0/bin/")
 $env.PATH = ($env.PATH | split row (char esep) | append "/home/prashant/.nvm/")
 $env.PATH = ($env.PATH | split row (char esep) | append "/home/prashant/.local/share/pnpm")
+$env.PATH = ($env.PATH | split row (char esep) | append "/home/prashant/.cargo/bin")
 $env.PNPM_HOME = "/home/prashant/.local/share/pnpm"
 
 # default editor

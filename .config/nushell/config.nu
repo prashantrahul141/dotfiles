@@ -765,7 +765,8 @@ use ~/.cache/starship/init.nu
 
 # alias 
 alias nv = nvim
-alias l = ls -a
+# alias l = ls -a
+alias l = eza -l -a # https://github.com/eza-community/eza
 alias quit = exit
 alias q = exit
 alias e = xdg-open
@@ -773,20 +774,20 @@ alias python = python3.12
 alias zp = cd ~/Projects/
 alias zs = cd ~/Documents/Studies/
 alias zd = cd ~/Desktop/
-alias speedtest = speedtest-rs
+alias speedtest = speedtest-rs # https://github.com/nelsonjchen/speedtest-rs
 alias zl = zellij --config ~/.config/zellij/config.kdl
-alias lg = lazygit
-alias bottom = btm
-alias pipes = pipes.sh -t 3 -r 0 -p 4
+alias lg = lazygit # https://github.com/jesseduffield/lazygit
+alias bottom = btm # https://github.com/ClementTsang/bottom
+alias pipes = pipes.sh -t 3 -r 0 -p 4 # https://github.com/pipeseroni/pipes.sh
 alias cl = clear
 alias rain = /home/prashant/Projects/tools/rain.sh
-alias bandwhich = sudo /home/prashant/.cargo/bin/bandwhich
-alias tm = tmux
+alias bandwhich = sudo /home/prashant/.cargo/bin/bandwhich # https://github.com/imsnif/bandwhich
+alias tm = tmux # https://github.com/tmux/tmux/wiki
 alias rm = trash -v # https://github.com/andreafrancia/trash-cli
 alias music = ncmpcpp
-alias f = ranger
+alias f = ranger # https://github.com/ranger/ranger
 alias c = code .
-alias copy = xclip -selection clipboard
+alias copy = xclip -selection clipboard # sudo apt install xclip
 alias dn = dotnet
 
 # zoxide

@@ -23,7 +23,6 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
-. "$HOME/.cargo/env"
 
 __GL_SHADER_DISK_CACHE_SKIP_CLEANUP=1
 
@@ -34,3 +33,9 @@ export PATH="$PATH:/home/prashant/.local/share/JetBrains/Toolbox/scripts"
 
 # opam configuration
 test -r /home/prashant/.opam/opam-init/init.sh && . /home/prashant/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+. "$HOME/.cargo/env"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
