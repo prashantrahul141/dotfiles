@@ -1,14 +1,14 @@
 [core]
-	editor = nvim
+  editor = nvim
 
 [color "diff"]
-	whitespace = red reverse
+  whitespace = red reverse
 
 [init]
   defaultBranch = main
 
 [user]
-	email = prashantrahul141@protonmail.com
+  email = prashantrahul141@protonmail.com
   name = Prashant
   signingkey = prashantrahul141@protonmail.com
 
@@ -23,3 +23,13 @@
 
 [tag]
   gpgSign = true
+
+[rerer]
+  enabled = true
+
+[maintenance]
+  auto = false
+  strategy = incremental
+
+[merge]
+  conflictStyle = diff3
