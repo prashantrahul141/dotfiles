@@ -113,13 +113,16 @@ $env.PATH = ($env.PATH | split row (char esep) | append "~/Android/Sdk/emulator"
 $env.PATH = ($env.PATH | split row (char esep) | append "~/Android/Sdk/platform-tools")
 $env.PATH = ($env.PATH | split row (char esep) | append "~/External-apps/")
 $env.PATH = ($env.PATH | split row (char esep) | append "~/Projects/tools")
-$env.PATH = ($env.PATH | split row (char esep) | append "/home/prashant/.nvm/versions/node/v22.0.0/bin/")
+# $env.PATH = ($env.PATH | split row (char esep) | append "/home/prashant/.nvm/versions/node/v22.0.0/bin/")
+$env.PATH = ($env.PATH | split row (char esep) | append "/home/prashant/.nvm/versions/node/v20.12.2/bin/")
 $env.PATH = ($env.PATH | split row (char esep) | append "/home/prashant/.nvm/")
 $env.PATH = ($env.PATH | split row (char esep) | append "/home/prashant/.local/share/pnpm")
 $env.PATH = ($env.PATH | split row (char esep) | append "/home/prashant/.cargo/bin")
 $env.PATH = ($env.PATH | split row (char esep) | append "/usr/local/go/bin")
 $env.PATH = ($env.PATH | split row (char esep) | append "/home/prashant/go/bin")
 $env.PATH = ($env.PATH | split row (char esep) | append "/home/prashant/.local/kitty.app/bin")
+$env.PATH = ($env.PATH | split row (char esep) | append "/home/prashant/.dotnet/tools")
+
 $env.PNPM_HOME = "/home/prashant/.local/share/pnpm"
 
 # default editor
