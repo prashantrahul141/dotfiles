@@ -117,6 +117,9 @@ $env.PATH = ($env.PATH | split row (char esep) | append "/home/prashant/.nvm/ver
 $env.PATH = ($env.PATH | split row (char esep) | append "/home/prashant/.nvm/")
 $env.PATH = ($env.PATH | split row (char esep) | append "/home/prashant/.local/share/pnpm")
 $env.PATH = ($env.PATH | split row (char esep) | append "/home/prashant/.cargo/bin")
+$env.PATH = ($env.PATH | split row (char esep) | append "/usr/local/go/bin")
+$env.PATH = ($env.PATH | split row (char esep) | append "/home/prashant/go/bin")
+$env.PATH = ($env.PATH | split row (char esep) | append "/home/prashant/.local/kitty.app/bin")
 $env.PNPM_HOME = "/home/prashant/.local/share/pnpm"
 
 # default editor
