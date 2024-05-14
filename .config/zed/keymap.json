@@ -1,0 +1,17 @@
+[
+  {
+    "context": "Editor && (showing_code_actions || showing_completions)",
+    "bindings": {
+      "up": "editor::ContextMenuPrev",
+      "ctrl-p": "editor::ContextMenuPrev",
+      "ctrl-Tab": "editor::ContextMenuPrev",
+
+      "down": "editor::ContextMenuNext",
+      "ctrl-n": "editor::ContextMenuNext",
+      "tab": "editor::ContextMenuNext",
+
+      "pageup": "editor::ContextMenuFirst",
+      "pagedown": "editor::ContextMenuLast"
+    }
+  }
+]
