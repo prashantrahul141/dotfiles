@@ -99,6 +99,7 @@ $env.NU_PLUGIN_DIRS = [
 
 
 $env.NVM_DIR = "/home/prashant/.nvm"
+$env.FLYCTL_INSTALL = "/home/prashant/.fly/"
 
 # env
 $env.PATH = ($env.PATH | split row (char esep) | append "/home/prashant/.bun/bin")
@@ -122,8 +123,11 @@ $env.PATH = ($env.PATH | split row (char esep) | append "/usr/local/go/bin")
 $env.PATH = ($env.PATH | split row (char esep) | append "/home/prashant/go/bin")
 $env.PATH = ($env.PATH | split row (char esep) | append "/home/prashant/.local/kitty.app/bin")
 $env.PATH = ($env.PATH | split row (char esep) | append "/home/prashant/.dotnet/tools")
+$env.PATH = ($env.PATH | split row (char esep) | append "/home/prashant/.fly/bin/")
 
 $env.PNPM_HOME = "/home/prashant/.local/share/pnpm"
+
+$env.CHROME_PATH = "/usr/bin/brave-browser"
 
 # default editor
 $env.EDITOR = "nvim"
