@@ -124,7 +124,7 @@ $env.PATH = ($env.PATH | split row (char esep) | append "/home/prashant/go/bin")
 $env.PATH = ($env.PATH | split row (char esep) | append "/home/prashant/.local/kitty.app/bin")
 $env.PATH = ($env.PATH | split row (char esep) | append "/home/prashant/.dotnet/tools")
 $env.PATH = ($env.PATH | split row (char esep) | append "/home/prashant/.fly/bin/")
-
+$env.PATH = ($env.PATH | split row (char esep) | append "/home/prashant/externals/")
 $env.PNPM_HOME = "/home/prashant/.local/share/pnpm"
 
 $env.CHROME_PATH = "/usr/bin/brave-browser"
@@ -146,3 +146,7 @@ starship init nu | save -f ~/.cache/starship/init.nu
 # disables some annoying stuff by npm.
 $env.DISABLE_OPENCOLLECTIVE = 1
 $env.ADBLOCK = 1
+
+$env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
+mkdir ~/.cache/carapace
+carapace _carapace nushell | save --force ~/.cache/carapace/init.nu

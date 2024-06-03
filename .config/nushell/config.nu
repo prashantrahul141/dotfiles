@@ -796,3 +796,4 @@ source ~/.config/.zoxide.nu
 # neofetch stuff;
 alias neofetch = echo "Use fastfetch or pfetch instead."
 
+source ~/.cache/carapace/init.nu
