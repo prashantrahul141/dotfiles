@@ -7,13 +7,21 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "assistant": {
+    "dock": "bottom"
+  },
+  "outline_panel": {
+    "dock": "right"
+  },
   "features": {
     "copilot": false
   },
   "buffer_font_family": "Monaspace Neon",
-  "scrollbar": { "show": "system" },
+  "scrollbar": {
+    "show": "always"
+  },
   "relative_line_numbers": true,
-  "theme": "Andromeda",
+  "theme": "Gruvbox Dark Hard",
   "autosave": "on_focus_change",
   "auto_update": false,
   "vim_mode": true,
@@ -36,14 +44,14 @@
     "metrics": false
   },
   "metrics": false,
-
   "project_panel": {
     "button": true,
     "dock": "right",
-    "git_status": true
+    "git_status": true,
+    "default_width": 120
   },
   "gutter": {
-    "folds": false,
+    "folds": true,
     "code_actions": false,
     "line_numbers": true
   },
@@ -65,5 +73,14 @@
     "**/.settings",
     "node_modules"
   ],
-  "terminal": { "shell": { "program": "bash" } }
+  "toolbar": {
+    "breadcrumbs": false,
+    "quick_actions": false
+  },
+  "ensure_final_newline_on_save": true,
+  "terminal": {
+    "shell": {
+      "program": "bash"
+    }
+  }
 }

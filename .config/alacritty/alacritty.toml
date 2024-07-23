@@ -43,7 +43,7 @@ args = ["/home/prashant/.config/myscripts/tmux_with_alacritty.sh"]
 program = "/bin/bash"
 
 [window]
-opacity = 0.97
+opacity = 0.95
 startup_mode = "Maximized"
 
 [window.class]

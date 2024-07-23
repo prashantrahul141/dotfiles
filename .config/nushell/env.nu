@@ -127,6 +127,10 @@ $env.PATH = ($env.PATH | split row (char esep) | append "/home/prashant/.fly/bin
 $env.PATH = ($env.PATH | split row (char esep) | append "/home/prashant/externals/")
 $env.PNPM_HOME = "/home/prashant/.local/share/pnpm"
 
+$env.ANDROID_HOME = "/home/prashant/others/Android"
+$env.PATH = ($env.PATH | split row (char esep) | append "/home/prashant/others/Android/emulator")
+$env.PATH = ($env.PATH | split row (char esep) | append "/home/prashant/others/Android/platform-tools")
+
 $env.CHROME_PATH = "/usr/bin/brave-browser"
 
 # default editor
@@ -150,3 +154,10 @@ $env.ADBLOCK = 1
 $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
 mkdir ~/.cache/carapace
 carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
+
+# creates and cd's into a new directory.
+def --env mkcd [d: path]: nothing -> nothing {
+    mkdir $d
+    cd $d
+}
+
