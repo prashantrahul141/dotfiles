@@ -766,7 +766,7 @@ use ~/.cache/starship/init.nu
 # alias 
 alias nv = nvim
 # alias l = ls -a
-alias l = eza -l -a --icons --no-user # https://github.com/eza-community/eza
+alias l = eza -l -a --icons --no-user --git # https://github.com/eza-community/eza
 alias quit = exit
 alias q = exit
 alias e = xdg-open
