@@ -774,6 +774,7 @@ alias python = python3.12
 alias zp = cd ~/Projects/
 alias zs = cd ~/Documents/Studies/
 alias zd = cd ~/Desktop/
+alias zw = cd ~/work/
 alias speedtest = speedtest-rs # https://github.com/nelsonjchen/speedtest-rs
 alias zl = zellij --config ~/.config/zellij/config.kdl
 alias lg = lazygit # https://github.com/jesseduffield/lazygit
@@ -790,6 +791,7 @@ alias c = code .
 alias copy = xclip -selection clipboard # sudo apt install xclip
 alias dn = dotnet
 alias dh = gh dash # https://github.com/dlvhdr/gh-dash
+alias PKG_CONFIG_PATH = /usr/bin/pkg-config
 
 
 # zoxide

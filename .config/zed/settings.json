@@ -8,6 +8,11 @@
 // from the command palette or from `Zed` application menu.
 {
   "assistant": {
+    "default_model": {
+      "provider": "openai",
+      "model": "gpt-4o"
+    },
+    "version": "2",
     "dock": "bottom"
   },
   "outline_panel": {
@@ -21,7 +26,7 @@
     "show": "always"
   },
   "relative_line_numbers": true,
-  "theme": "Gruvbox Dark Hard",
+  "theme": "Andromeda",
   "autosave": "on_focus_change",
   "auto_update": false,
   "vim_mode": true,
@@ -33,7 +38,9 @@
   },
   "format_on_save": "on",
   "copilot": {
-    "disabled_globs": ["*.*"]
+    "disabled_globs": [
+      "*.*"
+    ]
   },
   "hour_format": "hour24",
   "enable_preview_from_file_finder": true,
@@ -57,10 +64,22 @@
   },
   "context": "Dock",
   "bindings": {
-    "ctrl-w h": ["workspace::ActivatePaneInDirection", "Left"],
-    "ctrl-w l": ["workspace::ActivatePaneInDirection", "Right"],
-    "ctrl-w k": ["workspace::ActivatePaneInDirection", "Up"],
-    "ctrl-w j": ["workspace::ActivatePaneInDirection", "Down"]
+    "ctrl-w h": [
+      "workspace::ActivatePaneInDirection",
+      "Left"
+    ],
+    "ctrl-w l": [
+      "workspace::ActivatePaneInDirection",
+      "Right"
+    ],
+    "ctrl-w k": [
+      "workspace::ActivatePaneInDirection",
+      "Up"
+    ],
+    "ctrl-w j": [
+      "workspace::ActivatePaneInDirection",
+      "Down"
+    ]
   },
   "file_scan_exclusions": [
     "**/.git",
@@ -82,5 +101,14 @@
     "shell": {
       "program": "bash"
     }
+  },
+  "formatter": {
+    "language_server": {
+      "name": "biome"
+    }
+  },
+  "code_actions_on_format": {
+    "source.fixAll.biome": true,
+    "source.organizeImports.biome": true
   }
 }
