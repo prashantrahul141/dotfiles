@@ -770,7 +770,6 @@ alias l = eza -l -a --icons --no-user --git # https://github.com/eza-community/e
 alias quit = exit
 alias q = exit
 alias e = xdg-open
-alias python = python3.12
 alias zp = cd ~/Projects/
 alias zs = cd ~/Documents/Studies/
 alias zd = cd ~/Desktop/
