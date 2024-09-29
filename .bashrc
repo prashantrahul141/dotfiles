@@ -135,7 +135,8 @@ esac
 
 alias q=exit
 alias nv=nvim
-alias copy=xclip -selection clipboard # sudo apt install xclip
+alias "copy=xclip -selection clipboard" # sudo apt install xclip
+alias "h=history | fzf | awk '{for(i=2; i<=NF; i++) printf $i\" \"; print ""}' | copy"
 
 export PATH=/home/prashant/.local/bin/:$PATH
 eval "$(zoxide init bash)"
@@ -153,3 +154,5 @@ export PATH="$FLYCTL_INSTALL/bin:$PATH"
 # go
 export GO_PATH="/usr/local/go/bin"
 export PATH="$GO_PATH:$PATH"
+
+export PATH="$PATH:/usr/lib/postgresql/10/bin"

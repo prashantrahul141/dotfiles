@@ -791,6 +791,7 @@ alias copy = xclip -selection clipboard # sudo apt install xclip
 alias dn = dotnet
 alias dh = gh dash # https://github.com/dlvhdr/gh-dash
 alias PKG_CONFIG_PATH = /usr/bin/pkg-config
+alias find = fd # https://github.com/sharkdp/fd
 
 
 # zoxide
