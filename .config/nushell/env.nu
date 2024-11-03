@@ -130,6 +130,7 @@ $env.PNPM_HOME = "/home/prashant/.local/share/pnpm"
 $env.ANDROID_HOME = "/home/prashant/others/Android"
 $env.PATH = ($env.PATH | split row (char esep) | append "/home/prashant/others/Android/emulator")
 $env.PATH = ($env.PATH | split row (char esep) | append "/home/prashant/others/Android/platform-tools")
+#env.DOTNET_CLI_TELEMETRY_OPTOUT = 1
 
 $env.CHROME_PATH = "/usr/bin/brave-browser"
 
