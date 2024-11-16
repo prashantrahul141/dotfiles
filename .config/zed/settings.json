@@ -7,119 +7,162 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-	"assistant": {
-		"default_model": {
-			"provider": "openai",
-			"model": "gpt-4o"
-		},
-		"version": "2",
-		"dock": "bottom"
-	},
-	"outline_panel": {
-		"dock": "right"
-	},
-	"features": {
-		"copilot": false
-	},
-	"buffer_font_family": "CaskaydiaCove Nerd Font Mono",
-	"ui_font_family": "Fira Sans",
-	"scrollbar": {
-		"show": "always"
-	},
-	"relative_line_numbers": true,
-	"theme": "Gruvbox Dark",
-	"autosave": "on_focus_change",
-	"auto_update": false,
-	"vim_mode": true,
-	"ui_font_size": 15,
-	"buffer_font_size": 15,
-	"centered_layout": {
-		"left_padding": 0.2,
-		"right_padding": 0.2
-	},
-	"format_on_save": "on",
-	"copilot": {
-		"disabled_globs": ["*.*"]
-	},
-	"tabs": {
-		"file_icons": true
-	},
-	"hour_format": "hour24",
-	"enable_preview_from_file_finder": true,
-	"completion_documentation_secondary_query_debounce": 150,
-	"show_copilot_suggestion": false,
-	"telemetry": {
-		"diagnostics": false,
-		"metrics": false
-	},
-	"metrics": false,
-	"project_panel": {
-		"button": true,
-		"dock": "right",
-		"git_status": true,
-		"default_width": 100
-	},
-	"gutter": {
-		"folds": true,
-		"code_actions": true,
-		"line_numbers": true
-	},
-	"context": "Dock",
-	"bindings": {
-		"ctrl-w h": ["workspace::ActivatePaneInDirection", "Left"],
-		"ctrl-w l": ["workspace::ActivatePaneInDirection", "Right"],
-		"ctrl-w k": ["workspace::ActivatePaneInDirection", "Up"],
-		"ctrl-w j": ["workspace::ActivatePaneInDirection", "Down"]
-	},
-	"file_scan_exclusions": [
-		"**/.git",
-		"**/.svn",
-		"**/.hg",
-		"**/CVS",
-		"**/.DS_Store",
-		"**/Thumbs.db",
-		"**/.classpath",
-		"**/.settings",
-		"node_modules"
-	],
-	"toolbar": {
-		"breadcrumbs": false,
-		"quick_actions": false
-	},
-	"ensure_final_newline_on_save": true,
-	"formatter": {
-		"language_server": {
-			"name": "biome"
-		}
-	},
-	"buffer_line_height": "standard",
-	"terminal": {
-		"alternate_scroll": "off",
-		"blinking": "terminal_controlled",
-		"copy_on_select": false,
-		"dock": "bottom",
-		"detect_venv": {
-			"on": {
-				"directories": [".env", "env", ".venv", "venv"],
-				"activate_script": "default"
-			}
-		},
-		"line_height": "standard",
-		"option_as_meta": false,
-		"button": false,
-		"shell": {
-			"with_arguments": {
-				"program": "nu",
-				"args": ["/home/prashant/.config/myscripts/tmux_with_alacritty.nu"]
-			}
-		},
-		"toolbar": {
-			"title": true
-		},
-		"working_directory": "current_project_directory"
-	},
-	"code_actions_on_format": {
-		"source.fixAll.biome": true,
-		"source.organizeImports.biome": true
-	}
+  "notification_panel": {
+    "dock": "left"
+  },
+  "chat_panel": {
+    "dock": "left"
+  },
+  "assistant": {
+    "default_model": {
+      "provider": "openai",
+      "model": "gpt-4o"
+    },
+    "version": "2",
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "features": {
+    "copilot": false
+  },
+  "buffer_font_family": "CaskaydiaCove Nerd Font Mono",
+  "ui_font_family": "Fira Sans",
+  "scrollbar": {
+    "show": "always"
+  },
+  "relative_line_numbers": true,
+  "theme": "Gruvbox Dark",
+  "autosave": "on_focus_change",
+  "auto_update": false,
+  "vim_mode": true,
+  "ui_font_size": 15,
+  "buffer_font_size": 15,
+  "centered_layout": {
+    "left_padding": 0.2,
+    "right_padding": 0.2
+  },
+  "format_on_save": "on",
+  "copilot": {
+    "disabled_globs": [
+      "*.*"
+    ]
+  },
+  "tabs": {
+    "file_icons": true
+  },
+  "hour_format": "hour24",
+  "enable_preview_from_file_finder": true,
+  "completion_documentation_secondary_query_debounce": 150,
+  "show_copilot_suggestion": false,
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "metrics": false,
+  "project_panel": {
+    "button": true,
+    "dock": "right",
+    "git_status": true,
+    "default_width": 100
+  },
+  "gutter": {
+    "folds": true,
+    "code_actions": true,
+    "line_numbers": true
+  },
+  "context": "Dock",
+  "bindings": {
+    "ctrl-w h": [
+      "workspace::ActivatePaneInDirection",
+      "Left"
+    ],
+    "ctrl-w l": [
+      "workspace::ActivatePaneInDirection",
+      "Right"
+    ],
+    "ctrl-w k": [
+      "workspace::ActivatePaneInDirection",
+      "Up"
+    ],
+    "ctrl-w j": [
+      "workspace::ActivatePaneInDirection",
+      "Down"
+    ]
+  },
+  "file_scan_exclusions": [
+    "**/.git",
+    "**/.svn",
+    "**/.hg",
+    "**/CVS",
+    "**/.DS_Store",
+    "**/Thumbs.db",
+    "**/.classpath",
+    "**/.settings",
+    "node_modules"
+  ],
+  "toolbar": {
+    "breadcrumbs": false,
+    "quick_actions": false
+  },
+  "ensure_final_newline_on_save": true,
+  "formatter": "language_server",
+  // {
+  // 	"language_server": {
+  // 		"name": "biome"
+  // 	}
+  // },
+  "buffer_line_height": "standard",
+  "terminal": {
+    "alternate_scroll": "off",
+    "blinking": "terminal_controlled",
+    "copy_on_select": false,
+    "dock": "bottom",
+    "detect_venv": {
+      "on": {
+        "directories": [
+          ".env",
+          "env",
+          ".venv",
+          "venv"
+        ],
+        "activate_script": "default"
+      }
+    },
+    "line_height": "standard",
+    "option_as_meta": false,
+    "button": false,
+    "shell": {
+      "with_arguments": {
+        "program": "nu",
+        "args": [
+          "/home/prashant/.config/myscripts/tmux_with_alacritty.nu"
+        ]
+      }
+    },
+    "toolbar": {
+      "title": true
+    },
+    "working_directory": "current_project_directory"
+  },
+  "languages": {
+    // INSTALL RUFF: curl -LsSf https://astral.sh/ruff/install.sh | sh
+    "Python": {
+      "format_on_save": "on",
+      "formatter": {
+        "external": {
+          "command": "bash",
+          "arguments": [
+            "-c",
+            "ruff check --select=I --fix --stdin-filename {buffer_path} | ruff format --stdin-filename {buffer_path}"
+          ]
+        }
+      }
+    }
+  },
+  "code_actions_on_format": {
+    "source.fixAll.biome": true,
+    "source.organizeImports.biome": true
+  }
 }
