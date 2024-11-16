@@ -27,11 +27,11 @@
 		"show": "always"
 	},
 	"relative_line_numbers": true,
-	"theme": "Gruvbox ish Dark Hard",
+	"theme": "Gruvbox Dark",
 	"autosave": "on_focus_change",
 	"auto_update": false,
 	"vim_mode": true,
-	"ui_font_size": 14,
+	"ui_font_size": 15,
 	"buffer_font_size": 15,
 	"centered_layout": {
 		"left_padding": 0.2,
@@ -109,8 +109,8 @@
 		"button": false,
 		"shell": {
 			"with_arguments": {
-				"program": "bash",
-				"args": ["/home/prashant/.config/myscripts/tmux_with_alacritty.sh"]
+				"program": "nu",
+				"args": ["/home/prashant/.config/myscripts/tmux_with_alacritty.nu"]
 			}
 		},
 		"toolbar": {
