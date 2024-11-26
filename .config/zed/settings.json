@@ -33,7 +33,7 @@
     "show": "always"
   },
   "relative_line_numbers": true,
-  "theme": "Gruvbox Dark",
+  "theme": "Colorizer",
   "autosave": "on_focus_change",
   "auto_update": false,
   "vim_mode": true,
@@ -164,5 +164,18 @@
   "code_actions_on_format": {
     "source.fixAll.biome": true,
     "source.organizeImports.biome": true
+  },
+  "lsp": {
+    "pyright": {
+      "settings": {
+        "python.analysis": {
+          "diagnosticMode": "workspace",
+          "typeCheckingMode": "strict"
+        },
+        "python": {
+          "pythonPath": "python3"
+        }
+      }
+    }
   }
 }
