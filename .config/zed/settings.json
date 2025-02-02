@@ -45,9 +45,7 @@
   },
   "format_on_save": "on",
   "copilot": {
-    "disabled_globs": [
-      "*.*"
-    ]
+    "disabled_globs": ["*.*"]
   },
   "tabs": {
     "file_icons": true
@@ -74,22 +72,10 @@
   },
   "context": "Dock",
   "bindings": {
-    "ctrl-w h": [
-      "workspace::ActivatePaneInDirection",
-      "Left"
-    ],
-    "ctrl-w l": [
-      "workspace::ActivatePaneInDirection",
-      "Right"
-    ],
-    "ctrl-w k": [
-      "workspace::ActivatePaneInDirection",
-      "Up"
-    ],
-    "ctrl-w j": [
-      "workspace::ActivatePaneInDirection",
-      "Down"
-    ]
+    "ctrl-w h": ["workspace::ActivatePaneInDirection", "Left"],
+    "ctrl-w l": ["workspace::ActivatePaneInDirection", "Right"],
+    "ctrl-w k": ["workspace::ActivatePaneInDirection", "Up"],
+    "ctrl-w j": ["workspace::ActivatePaneInDirection", "Down"]
   },
   "file_scan_exclusions": [
     "**/.git",
@@ -100,19 +86,15 @@
     "**/Thumbs.db",
     "**/.classpath",
     "**/.settings",
-    "node_modules"
+    "node_modules",
+    "*.class"
   ],
   "toolbar": {
     "breadcrumbs": false,
     "quick_actions": false
   },
   "ensure_final_newline_on_save": true,
-  "formatter": "language_server",
-  // {
-  // 	"language_server": {
-  // 		"name": "biome"
-  // 	}
-  // },
+  "formatter": "auto",
   "buffer_line_height": "standard",
   "terminal": {
     "alternate_scroll": "off",
@@ -121,12 +103,7 @@
     "dock": "bottom",
     "detect_venv": {
       "on": {
-        "directories": [
-          ".env",
-          "env",
-          ".venv",
-          "venv"
-        ],
+        "directories": [".env", "env", ".venv", "venv"],
         "activate_script": "default"
       }
     },
@@ -136,9 +113,7 @@
     "shell": {
       "with_arguments": {
         "program": "nu",
-        "args": [
-          "/home/prashant/.config/myscripts/tmux_with_alacritty.nu"
-        ]
+        "args": ["/home/prashant/.config/myscripts/tmux_with_alacritty.nu"]
       }
     },
     "toolbar": {
@@ -147,6 +122,10 @@
     "working_directory": "current_project_directory"
   },
   "languages": {
+    "TypeScript": {
+      "format_on_save": "on",
+      "formatter": "language_server"
+    },
     // INSTALL RUFF: curl -LsSf https://astral.sh/ruff/install.sh | sh
     "Python": {
       "format_on_save": "on",
@@ -166,6 +145,12 @@
     "source.organizeImports.biome": true
   },
   "lsp": {
+    "clangd": {
+      "binary": {
+        "path": "/usr/bin/clangd",
+        "arguments": []
+      }
+    },
     "pyright": {
       "settings": {
         "python.analysis": {
