@@ -125,6 +125,8 @@ $env.PATH = ($env.PATH | split row (char esep) | append "/home/prashant/.local/k
 $env.PATH = ($env.PATH | split row (char esep) | append "/home/prashant/.dotnet/tools")
 $env.PATH = ($env.PATH | split row (char esep) | append "/home/prashant/.fly/bin/")
 $env.PATH = ($env.PATH | split row (char esep) | append "/home/prashant/externals/")
+$env.PATH = ($env.PATH | split row (char esep) | append "/home/prashant/.local/bin/.juliaup/bin")
+
 $env.PNPM_HOME = "/home/prashant/.local/share/pnpm"
 
 $env.ANDROID_HOME = "/home/prashant/others/Android"
@@ -151,6 +153,9 @@ starship init nu | save -f ~/.cache/starship/init.nu
 # disables some annoying stuff by npm.
 $env.DISABLE_OPENCOLLECTIVE = 1
 $env.ADBLOCK = 1
+$env.QT_INSTALL_BINS = /usr/lib/qt6/bin/
+
+$env.TERM = "tmux"
 
 $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
 mkdir ~/.cache/carapace
