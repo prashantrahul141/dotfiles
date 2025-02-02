@@ -156,3 +156,5 @@ export GO_PATH="/usr/local/go/bin"
 export PATH="$GO_PATH:$PATH"
 
 export PATH="$PATH:/usr/lib/postgresql/10/bin"
+
+export PATH="$PATH:/home/prashant/.local/bin/.juliaup/bin"
