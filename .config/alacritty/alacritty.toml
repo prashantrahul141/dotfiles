@@ -45,6 +45,7 @@ program = "/bin/bash"
 [window]
 opacity = 0.95
 startup_mode = "Maximized"
+decorations = "None"
 
 [window.class]
 general = "Alacritty"
