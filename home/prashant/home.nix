@@ -100,6 +100,8 @@
     unzip
     p7zip
     bat
+    yt-dlp
+    ffmpeg
 
     vscode
     # zed-editor

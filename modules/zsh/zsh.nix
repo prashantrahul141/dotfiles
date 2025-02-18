@@ -31,6 +31,7 @@
     oh-my-zsh = {
       enable = true;
       plugins = [
+        "vi-mode"
         "git"
         "bun"
         "copybuffer"
@@ -49,13 +50,9 @@
         "zoxide"
         "starship"
         "ssh"
-	"colored-man-pages"
+        "colored-man-pages"
       ];
-      theme = "robbyrussell";
     };
-   initExtra = ''
-      eval "$(zoxide init zsh)"
-      eval "$(starship init zsh)"
-      '';   
+   initExtra = (builtins.readFile ./.zshrc);
   };
 }
