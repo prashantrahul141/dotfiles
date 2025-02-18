@@ -1,5 +1,4 @@
-{ config, ... }:
-{
+{ config, ... }: {
   programs.hyprlock.enable = true;
   programs.hyprlock.settings = {
     general = {
@@ -9,22 +8,16 @@
       no_fade_in = false;
     };
 
-    auth = {
-      pam.enabled = true;
-    };
+    auth = { pam.enabled = true; };
 
     background =
-      let
-        wallpaperPath = builtins.path { path = ../hyprpaper/active.png; };
-      in
-      [
-        {
-          path = "${wallpaperPath}";
-          blur_passes = 2;
-          blur_size = 10;
-          noise = 0.075;
-        }
-      ];
+      let wallpaperPath = builtins.path { path = ../hyprpaper/active.png; };
+      in [{
+        path = "${wallpaperPath}";
+        blur_passes = 2;
+        blur_size = 10;
+        noise = 7.5e-2;
+      }];
 
     input-field = {
       size = "100px, 20px";
@@ -47,7 +40,7 @@
       # Day
       {
         #  monitor =
-        text = "cmd[update:1000] echo -e \"$(date +\"%A\")\"";
+        text = ''cmd[update:1000] echo -e "$(date +"%A")"'';
         color = "rgb(${config.colorScheme.palette.base07})";
         text_align = "center";
         font_family = "FiraCode Nerd Font";
@@ -60,7 +53,7 @@
 
       {
         #  monitor =
-        text = "cmd[update:1000] echo -e \"$(date +\"%d %B\")\"";
+        text = ''cmd[update:1000] echo -e "$(date +"%d %B")"'';
         color = "rgb(${config.colorScheme.palette.base07})";
         text_align = "center";
         font_family = "FiraCode Nerd Font";

@@ -6,7 +6,7 @@
     italic_font = "auto";
     bold_italic_font = "auto";
     font_size = 12.0;
-    disable_ligatures  = "never";
+    disable_ligatures = "never";
     window_padding_width = "4.0 6.0 3.0 11.0"; # top right bottom left
     cursor_shape = "block";
     cursor_trail = 0;
@@ -14,10 +14,10 @@
     scrollback_lines = 2000;
     detect_urls = "yes";
     underline_hyperlinks = "hover";
-    enable_audio_bell  = "no";
+    enable_audio_bell = "no";
     confirm_os_window_close = 0;
     dynamic_background_opacity = "yes";
-    shell  = "zsh";
+    shell = "zsh";
     editor = "nvim";
     close_on_child_death = "yes";
     # clipboard_control write-clipboard write-primary read-clipboard-ask read-primary-ask
@@ -61,9 +61,9 @@
     macos_titlebar_color = "#${config.colorScheme.palette.base00}";
   };
 
-    # mappings
+  # mappings
   programs.kitty.keybindings = {
-  "ctrl+c" = "copy_or_interrupt";
-  "ctrl+shift+v" = "paste_from_clipboard";
-};
+    "ctrl+c" = "copy_or_interrupt";
+    "ctrl+shift+v" = "paste_from_clipboard";
+  };
 }

@@ -1,10 +1,4 @@
-{
-  config,
-  pkgs,
-  inputs,
-  lib,
-  ...
-}: {
+{ config, pkgs, inputs, lib, ... }: {
 
   home.username = "prashant";
   home.homeDirectory = "/home/prashant";
@@ -48,7 +42,7 @@
     obs-studio
     pavucontrol
     pamixer
-    
+
     # file management
     nemo
     trash-cli
@@ -75,7 +69,7 @@
     gruvbox-gtk-theme
 
     python313
-    
+
     go
 
     zulu23
@@ -84,7 +78,6 @@
     gdb
 
     dbeaver-bin
-
 
     # nodejs_20
 
@@ -107,35 +100,24 @@
     powerline-fonts
     powerline-symbols
     (nerdfonts.override {
-      fonts = [
-        "FiraCode"
-        "JetBrainsMono"
-        "NerdFontsSymbolsOnly"
-      ];
+      fonts = [ "FiraCode" "JetBrainsMono" "NerdFontsSymbolsOnly" ];
     })
 
   ];
 
   services.udiskie.enable = true;
 
-dconf.settings = {
-   "org/gnome/desktop/interface" = {
-     color-scheme = "prefer-dark";
-   };
-};
-
+  dconf.settings = {
+    "org/gnome/desktop/interface" = { color-scheme = "prefer-dark"; };
+  };
 
   gtk = {
     enable = true;
     theme = {
       name = "${config.colorScheme.slug}";
       package =
-        let
-          nix-colors-lib = inputs.nix-colors.lib.contrib { inherit pkgs; };
-        in
-        nix-colors-lib.gtkThemeFromScheme {
-          scheme = config.colorScheme;
-        };
+        let nix-colors-lib = inputs.nix-colors.lib.contrib { inherit pkgs; };
+        in nix-colors-lib.gtkThemeFromScheme { scheme = config.colorScheme; };
     };
     iconTheme = {
       name = "Gruvbox-Dark-BL-LB";
@@ -152,16 +134,27 @@ dconf.settings = {
     # # symlink to the Nix store copy.
     # ".screenrc".source = dotfiles/screenrc;
 
-    ".icons/theme_McMojave" = { source = ./static/theme_McMojave; recursive = true;};
-    ".icons/McMojave-cursors" = { source = ./static/McMojave-cursors; recursive = true;};
+    ".icons/theme_McMojave" = {
+      source = ./static/theme_McMojave;
+      recursive = true;
+    };
+    ".icons/McMojave-cursors" = {
+      source = ./static/McMojave-cursors;
+      recursive = true;
+    };
 
-    ".config/nvim" = { source = ../../modules/neovim; recursive = true;};
+    ".config/nvim" = {
+      source = ../../modules/neovim;
+      recursive = true;
+    };
 
-    ".config/mpv/scripts/mpv-cheatsheet.js".source = ../../modules/mpv/mpv-cheatsheet.js;
+    ".config/mpv/scripts/mpv-cheatsheet.js".source =
+      ../../modules/mpv/mpv-cheatsheet.js;
 
-    ".npmrc".text = ''audit=false
-fund=false
-progress=false'';
+    ".npmrc".text = ''
+      audit=false
+      fund=false
+      progress=false'';
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
@@ -177,7 +170,7 @@ progress=false'';
     "video/png" = [ "mpv.desktop" ];
     "video/jpg" = [ "mpv.desktop" ];
     "video/*" = [ "mpv.desktop" ];
-    "inode/directory" = ["nemo.desktop" ];
+    "inode/directory" = [ "nemo.desktop" ];
   };
 
   # Home Manager can also manage your environment variables through
@@ -206,9 +199,8 @@ progress=false'';
     QT_QPA_PLATFORMTHEME = "qt5ct";
     QT_STYLE_OVERRIDE = "kvantum";
     TERMINAL = "kitty";
-    GOPATH= "~/.go";
+    GOPATH = "~/.go";
   };
-
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

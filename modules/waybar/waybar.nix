@@ -1,5 +1,4 @@
-{ config, ... }:
-{
+{ config, ... }: {
 
   programs.waybar = {
     enable = true;
@@ -158,183 +157,181 @@
       }
     '';
 
-    settings = [
-      {
-        mode = "dock";
-        layer = "top";
-        position = "top";
-        passtrough = false;
-        exclusive = true;
-        spacing = 0;
-        margin-top = 3;
-        margin-right = 3;
-        margin-left = 3;
-        margin-bottom = 0;
+    settings = [{
+      mode = "dock";
+      layer = "top";
+      position = "top";
+      passtrough = false;
+      exclusive = true;
+      spacing = 0;
+      margin-top = 3;
+      margin-right = 3;
+      margin-left = 3;
+      margin-bottom = 0;
 
-        modules-left = [
-          "hyprland/workspaces"
-          "custom/paddc"
-          "cpu"
-          "custom/paddc"
-          "memory"
-          "custom/paddc"
-          "battery"
-        ];
-        modules-center = [ "hyprland/window" ];
-        modules-right = [
-          "tray"
-          "custom/paddc"
-          "custom/notifications"
-          "custom/paddc"
-          "network"
-          "custom/paddc"
-          "backlight"
-          "custom/paddc"
-          "pulseaudio"
-          "pulseaudio#microphone"
-          "custom/paddc"
-          "clock#date"
-          "clock#time"
-        ];
-        "hyprland/window" = {
-          format = "{class}";
-          max-length = 20;
-          rewrite = {
-            "" = "<span foreground= '#${config.colorScheme.palette.base05}'></span> hyprland";
+      modules-left = [
+        "hyprland/workspaces"
+        "custom/paddc"
+        "cpu"
+        "custom/paddc"
+        "memory"
+        "custom/paddc"
+        "battery"
+      ];
+      modules-center = [ "hyprland/window" ];
+      modules-right = [
+        "tray"
+        "custom/paddc"
+        "custom/notifications"
+        "custom/paddc"
+        "network"
+        "custom/paddc"
+        "backlight"
+        "custom/paddc"
+        "pulseaudio"
+        "pulseaudio#microphone"
+        "custom/paddc"
+        "clock#date"
+        "clock#time"
+      ];
+      "hyprland/window" = {
+        format = "{class}";
+        max-length = 20;
+        rewrite = {
+          "" =
+            "<span foreground= '#${config.colorScheme.palette.base05}'></span> hyprland";
+        };
+      };
+      battery = { format = "󰁹 {}%"; };
+      cpu = {
+        interval = 10;
+        format = "󰻠 {}%";
+        max-length = 10;
+        on-click = "";
+      };
+      memory = {
+        interval = 30;
+        format = "  {}%";
+        format-alt = " {used:0.1f}G";
+        max-length = 10;
+      };
+      backlight = {
+        format = "󰖨 {}";
+        device = "acpi_video0";
+        on-scroll-up = "brightnessctl s 1+";
+        on-scroll-down = "brightnessctl s 1-";
+        scroll-step = 1;
+      };
+      tray = {
+        icon-size = 15;
+        tooltip = true;
+        spacing = 8;
+      };
+      network = {
+        format = "󰖩 {essid}";
+        format-disconnected = "󰖪 disconnected";
+      };
+      "clock#date" = {
+        format =
+          "<span color='#${config.colorScheme.palette.base05}'>󰃭 </span>{:%a, %d %b}";
+        tooltip-format = "<tt>{calendar}</tt>";
+
+        calendar = {
+          mode = "month";
+          mode-mon-col = 6;
+          on-click-right = "mode";
+
+          format = {
+            months =
+              "<span color='#${config.colorScheme.palette.base05}'><b>{}</b></span>";
+            weekdays =
+              "<span color='#${config.colorScheme.palette.base03}'>{}</span>";
+            today =
+              "<span color='#${config.colorScheme.palette.base0B}'><b>{}</b></span>";
           };
         };
-        battery = {
-          format = "󰁹 {}%";
-        };
-        cpu = {
-          interval = 10;
-          format = "󰻠 {}%";
-          max-length = 10;
-          on-click = "";
-        };
-        memory = {
-          interval = 30;
-          format = "  {}%";
-          format-alt = " {used:0.1f}G";
-          max-length = 10;
-        };
-        backlight = {
-          format = "󰖨 {}";
-          device = "acpi_video0";
-          on-scroll-up = "brightnessctl s 1+";
-          on-scroll-down = "brightnessctl s 1-";
-          scroll-step = 1;
-        };
-        tray = {
-          icon-size = 15;
-          tooltip = true;
-          spacing = 8;
-        };
-        network = {
-          format = "󰖩 {essid}";
-          format-disconnected = "󰖪 disconnected";
-        };
-        "clock#date" = {
-          format = "<span color='#${config.colorScheme.palette.base05}'>󰃭 </span>{:%a, %d %b}";
-          tooltip-format = "<tt>{calendar}</tt>";
 
-          calendar = {
-            mode = "month";
-            mode-mon-col = 6;
-            on-click-right = "mode";
-
-            format = {
-              months = "<span color='#${config.colorScheme.palette.base05}'><b>{}</b></span>";
-              weekdays = "<span color='#${config.colorScheme.palette.base03}'>{}</span>";
-              today = "<span color='#${config.colorScheme.palette.base0B}'><b>{}</b></span>";
-            };
-          };
-
-          actions = {
-            on-click = "mode";
-            on-click-right = "mode";
-          };
-
-          min-length = 8;
-          max-length = 20;
+        actions = {
+          on-click = "mode";
+          on-click-right = "mode";
         };
 
-        "clock#time" = {
-          format = "<span color='#${config.colorScheme.palette.base07}'>󱑂 </span>{:%R}";
-          tooltip = false;
-          # tooltip-format = "Standard Time: {:%I:%M %p}";
-          min-length = 8;
-          max-length = 12;
-        };
-        pulseaudio = {
-          format = "{icon} {volume}%";
-          tooltip = false;
-          format-muted = " Muted";
-          on-click = "pamixer -t";
-          on-click-right = "pavucontrol";
-          on-scroll-up = "pamixer -i 1";
-          on-scroll-down = "pamixer -d 1";
-          scroll-step = 1;
-          format-icons = {
-            headphone = "";
-            hands-free = "";
-            headset = "";
-            phone = "";
-            portable = "";
-            car = "";
-            default = [
-              ""
-              ""
-              ""
-            ];
-          };
-        };
-        "pulseaudio#microphone" = {
-          format = "{format_source}";
-          tooltip = false;
-          format-source = "󰍬 {volume}%";
-          format-source-muted = "  Muted";
-          on-click = "pamixer --default-source -t";
-          on-scroll-up = "pamixer --default-source -i 1";
-          on-scroll-down = "pamixer --default-source -d 1";
-          scroll-step = 1;
-        };
-        "custom/paddc" = {
-          format = " ";
-          tooltip = false;
-        };
+        min-length = 8;
+        max-length = 20;
+      };
 
-        "custom/notifications" = {
-          format = "{icon}{}";
-          rotate = 0;
-          format-icons = {
-            email-notification = "󱅫 ";
-            chat-notification = "󱅫 ";
-            warning-notification = "󱅫 ";
-            error-notification = "󱅫 ";
-            network-notification = "󱅫 ";
-            battery-notification = "󱅫 ";
-            update-notification = "󱅫 ";
-            music-notification = "󱅫 ";
-            volume-notification = "󱅫 ";
-            notification = "󱅫 ";
-            dnd = "󰂛 ";
-            none = " ";
-          };
-          return-type = "json";
-          exec-if = "which dunstctl";
-          exec = "${builtins.path { path = ./notifications.py; }}";
-          on-scroll-down = "sleep 0.1 && dunstctl history-pop";
-          on-click = "dunstctl set-paused toggle";
-          on-click-middle = "dunstctl history-clear";
-          on-click-right = "dunstctl close-all";
-          interval = 1;
-          tooltip = true;
-          escape = true;
+      "clock#time" = {
+        format =
+          "<span color='#${config.colorScheme.palette.base07}'>󱑂 </span>{:%R}";
+        tooltip = false;
+        # tooltip-format = "Standard Time: {:%I:%M %p}";
+        min-length = 8;
+        max-length = 12;
+      };
+      pulseaudio = {
+        format = "{icon} {volume}%";
+        tooltip = false;
+        format-muted = " Muted";
+        on-click = "pamixer -t";
+        on-click-right = "pavucontrol";
+        on-scroll-up = "pamixer -i 1";
+        on-scroll-down = "pamixer -d 1";
+        scroll-step = 1;
+        format-icons = {
+          headphone = "";
+          hands-free = "";
+          headset = "";
+          phone = "";
+          portable = "";
+          car = "";
+          default = [ "" "" "" ];
         };
+      };
+      "pulseaudio#microphone" = {
+        format = "{format_source}";
+        tooltip = false;
+        format-source = "󰍬 {volume}%";
+        format-source-muted = "  Muted";
+        on-click = "pamixer --default-source -t";
+        on-scroll-up = "pamixer --default-source -i 1";
+        on-scroll-down = "pamixer --default-source -d 1";
+        scroll-step = 1;
+      };
+      "custom/paddc" = {
+        format = " ";
+        tooltip = false;
+      };
 
-      }
-    ];
+      "custom/notifications" = {
+        format = "{icon}{}";
+        rotate = 0;
+        format-icons = {
+          email-notification = "󱅫 ";
+          chat-notification = "󱅫 ";
+          warning-notification = "󱅫 ";
+          error-notification = "󱅫 ";
+          network-notification = "󱅫 ";
+          battery-notification = "󱅫 ";
+          update-notification = "󱅫 ";
+          music-notification = "󱅫 ";
+          volume-notification = "󱅫 ";
+          notification = "󱅫 ";
+          dnd = "󰂛 ";
+          none = " ";
+        };
+        return-type = "json";
+        exec-if = "which dunstctl";
+        exec = "${builtins.path { path = ./notifications.py; }}";
+        on-scroll-down = "sleep 0.1 && dunstctl history-pop";
+        on-click = "dunstctl set-paused toggle";
+        on-click-middle = "dunstctl history-clear";
+        on-click-right = "dunstctl close-all";
+        interval = 1;
+        tooltip = true;
+        escape = true;
+      };
+
+    }];
   };
 
 }

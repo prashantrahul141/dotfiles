@@ -1,5 +1,4 @@
-{ pkgs, lib, config, ... }:
-{ 
+{ pkgs, lib, config, ... }: {
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
@@ -39,7 +38,8 @@
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --asterisks --remember --time --cmd Hyprland";
+        command =
+          "${pkgs.greetd.tuigreet}/bin/tuigreet --asterisks --remember --time --cmd Hyprland";
         user = "greeter";
       };
     };

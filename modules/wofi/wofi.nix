@@ -1,5 +1,4 @@
-{ config, ... }:
-{
+{ config, ... }: {
   programs.wofi.enable = true;
   programs.wofi.settings = {
     width = 790;

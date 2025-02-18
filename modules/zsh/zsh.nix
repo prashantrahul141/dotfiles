@@ -1,5 +1,4 @@
-{ ... }:
-{
+{ ... }: {
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -53,6 +52,6 @@
         "colored-man-pages"
       ];
     };
-   initExtra = (builtins.readFile ./.zshrc);
+    initExtra = (builtins.readFile ./.zshrc);
   };
 }

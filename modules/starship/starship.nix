@@ -1,5 +1,4 @@
-{ lib, ... }:
-{
+{ lib, ... }: {
   programs.starship.enable = true;
   programs.starship.enableZshIntegration = true;
   programs.starship.settings = {
@@ -13,7 +12,8 @@
     };
 
     git_status = {
-      format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)";
+      format =
+        "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)";
       style = "cyan";
       conflicted = "​";
       untracked = "​";
@@ -25,7 +25,7 @@
     };
 
     git_state = {
-      format = "\([$state( $progress_current/$progress_total)]($style)\) ";
+      format = "([$state( $progress_current/$progress_total)]($style)) ";
       style = "bright-black";
     };
 
@@ -39,49 +39,27 @@
       format = "via [$symbol]($style)";
     };
 
-    cmake = {
-      format = "via [$symbol]($style)";
-    };
+    cmake = { format = "via [$symbol]($style)"; };
 
-    dotnet = {
-      format = "[$symbol(🎯 $tfm )]($style)";
-    };
+    dotnet = { format = "[$symbol(🎯 $tfm )]($style)"; };
 
-    golang = {
-      format = "via [$symbol]($style)";
-    };
+    golang = { format = "via [$symbol]($style)"; };
 
-    java = {
-      format = "via [$symbol]($style)";
-    };
+    java = { format = "via [$symbol]($style)"; };
 
-    julia = {
-      format = "via [$symbol]($style)";
-    };
+    julia = { format = "via [$symbol]($style)"; };
 
-    kotlin = {
-      format = "via [$symbol]($style)";
-    };
+    kotlin = { format = "via [$symbol]($style)"; };
 
-    lua = {
-      format = "via [$symbol]($style)";
-    };
+    lua = { format = "via [$symbol]($style)"; };
 
-    meson = {
-      format = "via [$symbol]($style)";
-    };
+    meson = { format = "via [$symbol]($style)"; };
 
-    nodejs = {
-      format = "via [$symbol]($style)";
-    };
+    nodejs = { format = "via [$symbol]($style)"; };
 
-    python = {
-      format = "via [$symbol]($style)";
-    };
+    python = { format = "via [$symbol]($style)"; };
 
-    rust = {
-      format = "via [$symbol]($style)";
-    };
+    rust = { format = "via [$symbol]($style)"; };
 
   };
 }

@@ -1,10 +1,6 @@
-{...}: {
-  nix.gc = {
-    automatic = true;
-  };
+{ ... }: {
+  nix.gc = { automatic = true; };
 
-  environment.systemPackages = with pkgs; [
-    toybox
-  ];
+  environment.systemPackages = with pkgs; [ toybox ];
 
 }
