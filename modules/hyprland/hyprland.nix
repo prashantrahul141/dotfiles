@@ -1,12 +1,20 @@
-{ config, pkgs, inputs, ... }: {
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
+{
   wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.settings = {
 
     # PLEASE MAKE SURE YOU GENERATE THESE FILES USING NWG-DISPLAYS
     # BEFORE SOURCING THEM, TILL THEN USE NORMAL MONITOR CONFIG
     # monitor = ", 1920x1080@144, auto, 1";
-    source =
-      [ "~/.config/hypr/monitors.conf" "~/.config/hypr/workspaces.conf" ];
+    source = [
+      "~/.config/hypr/monitors.conf"
+      "~/.config/hypr/workspaces.conf"
+    ];
 
     "$terminal" = "kitty";
     "$fileManager" = "kitty ranger";
@@ -62,8 +70,10 @@
     animations = {
       enabled = "yes";
 
-      bezier =
-        [ "overshot,0.01, 0.9, 0.1, 1.04" "easeoutexpo,0.16, 1, 0.3, 1" ];
+      bezier = [
+        "overshot,0.01, 0.9, 0.1, 1.04"
+        "easeoutexpo,0.16, 1, 0.3, 1"
+      ];
 
       animation = [
         "windows, 1, 7, overshot, popin 50%"
@@ -76,22 +86,21 @@
 
     # See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more
     dwindle = {
-      pseudotile =
-        true; # Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
+      pseudotile = true; # Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
       preserve_split = true; # You probably want this
     };
 
     # See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
-    master = { new_status = "master"; };
+    master = {
+      new_status = "master";
+    };
 
     # https://wiki.hyprland.org/Configuring/Variables/#misc
     misc = {
       "col.splash" = "0x${config.colorScheme.palette.base03}";
 
-      force_default_wallpaper =
-        0; # Set to 0 or 1 to disable the anime mascot wallpapers
-      disable_hyprland_logo =
-        true; # If true disables the random hyprland logo / anime girl background. :(
+      force_default_wallpaper = 0; # Set to 0 or 1 to disable the anime mascot wallpapers
+      disable_hyprland_logo = true; # If true disables the random hyprland logo / anime girl background. :(
     };
 
     input = {
@@ -105,11 +114,15 @@
 
       sensitivity = 0; # -1.0 - 1.0, 0 means no modification.
 
-      touchpad = { natural_scroll = true; };
+      touchpad = {
+        natural_scroll = true;
+      };
     };
 
     # https://wiki.hyprland.org/Configuring/Variables/#gestures
-    gestures = { workspace_swipe = true; };
+    gestures = {
+      workspace_swipe = true;
+    };
 
     # Example per-device config
     # See https://wiki.hyprland.org/Configuring/Keywords/#per-device-input-configs for more
@@ -184,8 +197,10 @@
     ];
 
     # Move/resize windows with mainMod + LMB/RMB and dragging
-    "bindm" =
-      [ "$mainMod, mouse:272, movewindow" "$mainMod, mouse:273, resizewindow" ];
+    "bindm" = [
+      "$mainMod, mouse:272, movewindow"
+      "$mainMod, mouse:273, resizewindow"
+    ];
 
     # Laptop multimedia keys for volume and LCD brightness
     "bindel" = [
@@ -248,6 +263,10 @@
     # #
 
     "windowrule" = "float, ^.*(iwgtk)$";
+
+    debug = {
+      disable_scale_checks = true;
+    };
 
   };
 

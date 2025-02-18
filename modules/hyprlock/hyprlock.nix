@@ -1,4 +1,5 @@
-{ config, ... }: {
+{ config, ... }:
+{
   programs.hyprlock.enable = true;
   programs.hyprlock.settings = {
     general = {
@@ -8,16 +9,22 @@
       no_fade_in = false;
     };
 
-    auth = { pam.enabled = true; };
+    auth = {
+      pam.enabled = true;
+    };
 
     background =
-      let wallpaperPath = builtins.path { path = ../hyprpaper/active.png; };
-      in [{
-        path = "${wallpaperPath}";
-        blur_passes = 2;
-        blur_size = 10;
-        noise = 7.5e-2;
-      }];
+      let
+        wallpaperPath = builtins.path { path = ../hyprpaper/active.png; };
+      in
+      [
+        {
+          path = "${wallpaperPath}";
+          blur_passes = 2;
+          blur_size = 10;
+          noise = 7.5e-2;
+        }
+      ];
 
     input-field = {
       size = "100px, 20px";

@@ -11,14 +11,24 @@
     };
   };
 
-  outputs = { self, nixpkgs, nix-colors, home-manager, ... }@inputs:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      nix-colors,
+      home-manager,
+      ...
+    }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
-        config = { allowUnfree = true; };
+        config = {
+          allowUnfree = true;
+        };
       };
-    in {
+    in
+    {
       nixosConfigurations = {
         thorfinn = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs system nix-colors; };

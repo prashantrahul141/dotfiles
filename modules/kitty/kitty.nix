@@ -1,4 +1,5 @@
-{ config, ... }: {
+{ config, ... }:
+{
   programs.kitty.enable = true;
   programs.kitty.settings = {
     font_family = "FiraCode Nerd Font";

@@ -1,4 +1,7 @@
-{ ... }: {
-  nix.gc = { automatic = true; };
+{ ... }:
+{
+  nix.gc = {
+    automatic = true;
+  };
 
 }

@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs.alacritty.enable = true;
   programs.alacritty.settings = {
     colors.draw_bold_text_with_bright_colors = true;
@@ -24,17 +25,21 @@
       style = "Regular";
     };
 
-    keyboard.bindings = [{
-      action = "ToggleFullscreen";
-      key = "F11";
-    }];
+    keyboard.bindings = [
+      {
+        action = "ToggleFullscreen";
+        key = "F11";
+      }
+    ];
 
     scrolling = {
       history = 10000;
       multiplier = 3;
     };
 
-    selection = { save_to_clipboard = false; };
+    selection = {
+      save_to_clipboard = false;
+    };
 
     #shell = {
     #  program = "${pkgs.bash}";

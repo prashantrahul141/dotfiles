@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   # programs.git-credential-oauth.enable = true;
   programs.git = {
     enable = true;
@@ -8,7 +9,9 @@
     extraConfig = {
       credential.helper = "!gh auth git-credential";
 
-      core = { excludesfile = builtins.path { path = ./.gitignore_global; }; };
+      core = {
+        excludesfile = builtins.path { path = ./.gitignore_global; };
+      };
 
       user = {
         # signingkey = "prashantrahul141@protonmail.com";
@@ -18,20 +21,26 @@
         # gpgsign = true;
       };
 
-      init = { defaultBranch = "main"; };
+      init = {
+        defaultBranch = "main";
+      };
 
       tag = {
         #  gpgSign = true;
       };
 
-      rerer = { enabled = true; };
+      rerer = {
+        enabled = true;
+      };
 
       maintenance = {
         auto = false;
         strategy = "incremental";
       };
 
-      merge = { conflictStyle = "diff3"; };
+      merge = {
+        conflictStyle = "diff3";
+      };
     };
 
   };

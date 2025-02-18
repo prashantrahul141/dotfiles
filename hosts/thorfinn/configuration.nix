@@ -1,4 +1,10 @@
-{ inputs, lib, config, ... }: {
+{
+  inputs,
+  lib,
+  config,
+  ...
+}:
+{
   imports = [
     ./boot.nix
     ../../modules/minimal.nix
@@ -18,15 +24,16 @@
 
   environment.sessionVariables = {
     EDITOR = "nvim";
-    BROWSER =
-      "brave"; # "firefox"; one day, surely theyll make the android app better.
+    BROWSER = "brave"; # "firefox"; one day, surely theyll make the android app better.
     TERMINAL = "kitty";
   };
 
   home-manager = {
     useGlobalPkgs = true;
     extraSpecialArgs = { inherit inputs; };
-    users = { "prashant" = import ../../home/prashant/home.nix; };
+    users = {
+      "prashant" = import ../../home/prashant/home.nix;
+    };
   };
 
   system.stateVersion = "24.11";

@@ -1,4 +1,11 @@
-{ pkgs, lib, config, inputs, ... }: {
+{
+  pkgs,
+  lib,
+  config,
+  inputs,
+  ...
+}:
+{
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
 
@@ -20,7 +27,10 @@
   users.users.prashant = {
     isNormalUser = true;
     description = "prashant";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
   };
 
   system.stateVersion = "24.11";

@@ -1,4 +1,11 @@
-{ config, pkgs, inputs, lib, ... }: {
+{
+  config,
+  pkgs,
+  inputs,
+  lib,
+  ...
+}:
+{
 
   home.username = "prashant";
   home.homeDirectory = "/home/prashant";
@@ -100,7 +107,11 @@
     powerline-fonts
     powerline-symbols
     (nerdfonts.override {
-      fonts = [ "FiraCode" "JetBrainsMono" "NerdFontsSymbolsOnly" ];
+      fonts = [
+        "FiraCode"
+        "JetBrainsMono"
+        "NerdFontsSymbolsOnly"
+      ];
     })
 
   ];
@@ -108,7 +119,9 @@
   services.udiskie.enable = true;
 
   dconf.settings = {
-    "org/gnome/desktop/interface" = { color-scheme = "prefer-dark"; };
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
   };
 
   gtk = {
@@ -116,8 +129,10 @@
     theme = {
       name = "${config.colorScheme.slug}";
       package =
-        let nix-colors-lib = inputs.nix-colors.lib.contrib { inherit pkgs; };
-        in nix-colors-lib.gtkThemeFromScheme { scheme = config.colorScheme; };
+        let
+          nix-colors-lib = inputs.nix-colors.lib.contrib { inherit pkgs; };
+        in
+        nix-colors-lib.gtkThemeFromScheme { scheme = config.colorScheme; };
     };
     iconTheme = {
       name = "Gruvbox-Dark-BL-LB";
@@ -148,8 +163,7 @@
       recursive = true;
     };
 
-    ".config/mpv/scripts/mpv-cheatsheet.js".source =
-      ../../modules/mpv/mpv-cheatsheet.js;
+    ".config/mpv/scripts/mpv-cheatsheet.js".source = ../../modules/mpv/mpv-cheatsheet.js;
 
     ".npmrc".text = ''
       audit=false

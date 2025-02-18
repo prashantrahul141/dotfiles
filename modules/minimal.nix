@@ -16,18 +16,34 @@
     LC_TIME = "en_IN";
   };
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
-  environment.systemPackages = with pkgs;
+  environment.systemPackages =
+    with pkgs;
     let
-      trim-generations = writeShellScriptBin "trim-generations"
-        (builtins.readFile ./trim-generations.sh);
-    in [ trim-generations firefox neovim wget git brightnessctl ];
+      trim-generations = writeShellScriptBin "trim-generations" (builtins.readFile ./trim-generations.sh);
+    in
+    [
+      trim-generations
+      firefox
+      neovim
+      wget
+      git
+      brightnessctl
+    ];
 
   # for mounting usb and other drives
   services.udisks2.enable = true;
 
-  programs = { gnupg = { agent = { enable = true; }; }; };
+  programs = {
+    gnupg = {
+      agent = {
+        enable = true;
+      };
+    };
+  };
 
 }
-
