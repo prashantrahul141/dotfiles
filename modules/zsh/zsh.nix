@@ -19,7 +19,7 @@
       lg = "lazygit";
       tm = "tmux";
       rm = "trash -v";
-      f = "nnn";
+      f = "ranger";
       c = "code .";
       copy = "wl-copy";
       dn = "dotnet";

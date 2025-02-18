@@ -12,7 +12,7 @@
     ];
 
     "$terminal" = "kitty";
-    "$fileManager" = "dolphin";
+    "$fileManager" = "ranger";
     "$menu" = "wofi --show drun";
 
     "env" = [

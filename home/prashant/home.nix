@@ -4,9 +4,7 @@
   inputs,
   lib,
   ...
-}:
-
-{
+}: {
 
   home.username = "prashant";
   home.homeDirectory = "/home/prashant";
@@ -31,6 +29,7 @@
     ../../modules/eza/eza.nix
     ../../modules/mpv/mpv.nix
     ../../modules/git/git.nix
+    ../../modules/ranger/ranger.nix
   ];
 
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-material-dark-hard;
@@ -51,9 +50,7 @@
     pamixer
     
     # file management
-    ranger
     nemo
-    nnn
     trash-cli
 
     # document viewer
@@ -102,6 +99,7 @@
     fd
     unzip
     p7zip
+    bat
 
     vscode
     # zed-editor
@@ -120,15 +118,7 @@
       ];
     })
 
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
   ];
-
 
   services.udiskie.enable = true;
 
@@ -191,6 +181,7 @@ progress=false'';
     "video/png" = [ "mpv.desktop" ];
     "video/jpg" = [ "mpv.desktop" ];
     "video/*" = [ "mpv.desktop" ];
+    "inode/directory" = ["nemo.desktop" ];
   };
 
   # Home Manager can also manage your environment variables through
