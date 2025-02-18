@@ -4,5 +4,11 @@
   home.packages = with pkgs; [
     p7zip
     fzf
+    unzip
+    nixfmt
+    ripgrep
+    bottom
+    gping
+    fd
   ];
 }

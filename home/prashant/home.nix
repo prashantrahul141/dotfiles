@@ -89,16 +89,10 @@
     # nodejs_20
 
     # utils
-    ripgrep
-    bottom
     gh
     bandwhich
-    gping
     lazygit
     speedtest-rs
-    fd
-    unzip
-    p7zip
     bat
     yt-dlp
     ffmpeg
