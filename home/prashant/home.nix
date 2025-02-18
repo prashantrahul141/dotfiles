@@ -65,6 +65,7 @@
 
     # output display configuration app
     nwg-displays
+    nwg-look # gnome settings
 
     # kde qt stuff
     kdePackages.qt6ct
@@ -204,10 +205,6 @@
   #  /etc/profiles/per-user/prashant/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    HYPRCURSOR_THEME = "McMojave";
-    XCURSOR_THEME = "McMojave Cursors";
-    HYPRCURSOR_SIZE = "30";
-    XCURSOR_SIZE = "30";
     EDITOR = "nvim";
     QT_QPA_PLATFORM = "wayland";
     QT_QPA_PLATFORMTHEME = "qt5ct";

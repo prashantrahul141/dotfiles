@@ -29,8 +29,10 @@
       "XDG_SESSION_TYPE,wayland"
       "XDG_CURRENT_DESKTOP,Hyprland"
       "XDG_SESSION_DESKTOP,Hyprland"
+      "HYPRCURSOR_THEME,McMojave"
+      "XCURSOR_THEME,McMojave Cursors"
       "HYPRCURSOR_SIZE,30"
-      "XCURSOR_SIZE,30"
+      "XCURSOR_SIZE,50"
       "LIBVA_DRIVER_NAME,nvidia"
       "__GLX_VENDOR_LIBRARY_NAME,nvidia"
     ];
