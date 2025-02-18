@@ -21,6 +21,12 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  environment.sessionVariables = {
+    EDITOR = "nvim";
+    BROWSER = "brave"; # "firefox"; one day, surely theyll make the android app better.
+    TERMINAL = "kitty";
+   };
+
   home-manager = {
     useGlobalPkgs = true;
     extraSpecialArgs = { inherit inputs; };

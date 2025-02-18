@@ -7,7 +7,7 @@
     bold_italic_font = "auto";
     font_size = 12.0;
     disable_ligatures  = "never";
-    window_padding_width = "6.0 6.0 6.0 6.0";
+    window_padding_width = "4.0 6.0 3.0 11.0"; # top right bottom left
     cursor_shape = "block";
     cursor_trail = 0;
     cursor_trail_decay = "0.1 0.2";
