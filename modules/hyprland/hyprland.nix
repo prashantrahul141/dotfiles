@@ -12,8 +12,9 @@
     ];
 
     "$terminal" = "kitty";
-    "$fileManager" = "ranger";
+    "$fileManager" = "kitty ranger";
     "$menu" = "wofi --show drun";
+    "$browser" = "brave";
 
     "env" = [
       "HYPRSHOT_DIR,/home/prashant/Pictures/Screenshots"
@@ -130,10 +131,12 @@
     # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
     "bind" = [
       "$mainMod, RETURN, exec, $terminal"
-      "$mainMod, Q, killactive,"
       "$mainMod, E, exec, $fileManager"
-      "$mainMod, T, togglefloating,"
+      "$mainMod, B, exec, $browser"
       "$mainMod, SPACE, exec, $menu"
+
+      "$mainMod, Q, killactive,"
+      "$mainMod, T, togglefloating,"
       "$mainMod, F, fullscreen,"
 
       # Move focus with mainMod + arrow keys
