@@ -86,6 +86,9 @@
     gcc14
     gdb
 
+    dbeaver-bin
+
+
     # nodejs_20
 
     # utils
@@ -216,6 +219,7 @@ progress=false'';
     QT_QPA_PLATFORMTHEME = "qt5ct";
     QT_STYLE_OVERRIDE = "kvantum";
     TERMINAL = "kitty";
+    GOPATH= "~/.go";
   };
 
 

@@ -23,7 +23,10 @@
       "XDG_SESSION_TYPE,wayland"
       "XDG_CURRENT_DESKTOP,Hyprland"
       "XDG_SESSION_DESKTOP,Hyprland"
+      "HYPRCURSOR_SIZE,30"
+      "XCURSOR_SIZE,30"
       "LIBVA_DRIVER_NAME,nvidia"
+      "__GLX_VENDOR_LIBRARY_NAME,nvidia"
     ];
 
     general = {
@@ -240,14 +243,14 @@
     ];
 
     exec-once = [
-      "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-      "xwaylandvideobridge &"
-      "systemctl --user start hyprpolkitagent"
-      "dunst"
-      "waybar"
-      "wl-paste --watch cliphist store"
-      "nm-applet --indicator &"
-      "udiskie &"
+      "uwsm app -- dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+      "uwsm app -- xwaylandvideobridge &"
+      "systemctl --user enable --now hyprpolkitagent.service"
+      "uwsm app -- dunst"
+      "uwsm app -- waybar"
+      "uwsm app -- wl-paste --watch cliphist store"
+      "uwsm app -- nm-applet --indicator &"
+      "uwsm app -- udiskie &"
     ];
     # #
 
