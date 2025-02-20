@@ -100,6 +100,7 @@
     yt-dlp
     ffmpeg
     drawing
+    lazydocker
 
     vscode
     # zed-editor
