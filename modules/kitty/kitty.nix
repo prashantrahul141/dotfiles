@@ -10,8 +10,8 @@
     disable_ligatures = "never";
     window_padding_width = "4.0 6.0 3.0 11.0"; # top right bottom left
     cursor_shape = "block";
-    cursor_trail = 0;
-    cursor_trail_decay = "0.1 0.2";
+    # cursor_trail = 0;
+    # cursor_trail_decay = "0.1 0.2";
     scrollback_lines = 2000;
     detect_urls = "yes";
     underline_hyperlinks = "hover";

@@ -11,7 +11,7 @@
     filter_rate = 100;
     allow_markup = true;
     dmenu-parse_actions = true;
-    no_actions = false;
+    no_actions = true;
     halign = "fill";
     valign = "start";
     content_halign = "fill";
