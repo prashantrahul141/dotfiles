@@ -2,7 +2,14 @@
 {
   services.gvfs.enable = true;
 
-  hardware.bluetooth.enable = true; # enables support for Bluetooth
+  hardware.bluetooth = {
+    enable = true; # enables support for Bluetooth
+    settings = {
+      General = {
+        Experimental = true;
+      };
+    };
+  };
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
   services.blueman.enable = true; # for bluetooth applet
 

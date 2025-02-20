@@ -18,6 +18,10 @@
         border-radius: 1px;
       }
 
+      tooltip label {
+        color: #${config.colorScheme.palette.base04};
+      }
+
       window#waybar {
       	color: #${config.colorScheme.palette.base06};
       	background-color: #${config.colorScheme.palette.base00};
@@ -28,7 +32,7 @@
       }
 
       #workspaces button {
-      	padding: 5px 8px;
+        padding: 5px 12px;
       	box-shadow: inset 0 -3px transparent;
       	border: none;
       	color: #${config.colorScheme.palette.base03};
@@ -65,10 +69,8 @@
       #backlight,
       #network,
       #pulseaudio,
-      #custom-media,
-      #tray,
-      #mpd {
-      	padding: 0 10px;
+      #tray {
+      	padding: 0 8px;
       	color: #${config.colorScheme.palette.base06};
       	border-radius: 2px;
       }
@@ -80,12 +82,12 @@
 
       /* If workspaces is the leftmost module, omit left margin */
       .modules-left>widget:first-child>#workspaces {
-      	margin-left: 0;
+      	margin-left: 0px;
       }
 
       /* If workspaces is the rightmost module, omit right margin */
       .modules-right>widget:last-child>#workspaces {
-      	margin-right: 0;
+      	margin-right: 0px;
       }
 
       #battery {
@@ -122,8 +124,13 @@
       	color: #${config.colorScheme.palette.base0D};
       }
 
-      #memory {
+      #memory
+      {
       	color: #${config.colorScheme.palette.base0B};
+      }
+
+      #cpu {
+      	color: #${config.colorScheme.palette.base09};
       }
 
       #network {
@@ -173,12 +180,10 @@
 
         modules-left = [
           "hyprland/workspaces"
-          "custom/paddc"
           "cpu"
-          "custom/paddc"
           "memory"
-          "custom/paddc"
           "battery"
+          "backlight"
         ];
         modules-center = [ "hyprland/window" ];
         modules-right = [
@@ -187,8 +192,6 @@
           "custom/notifications"
           "custom/paddc"
           "network"
-          "custom/paddc"
-          "backlight"
           "custom/paddc"
           "pulseaudio"
           "pulseaudio#microphone"
@@ -200,7 +203,7 @@
           format = "{class}";
           max-length = 20;
           rewrite = {
-            "" = "<span foreground= '#${config.colorScheme.palette.base05}'></span> hyprland";
+            "" = "<span foreground='#${config.colorScheme.palette.base05}'></span> hyprland";
           };
         };
         battery = {
@@ -246,7 +249,7 @@
             format = {
               months = "<span color='#${config.colorScheme.palette.base05}'><b>{}</b></span>";
               weekdays = "<span color='#${config.colorScheme.palette.base03}'>{}</span>";
-              today = "<span color='#${config.colorScheme.palette.base0B}'><b>{}</b></span>";
+              today = "<span color='#${config.colorScheme.palette.base08}'><b><u>{}</u></b></span>";
             };
           };
 
@@ -262,7 +265,6 @@
         "clock#time" = {
           format = "<span color='#${config.colorScheme.palette.base07}'>󱑂 </span>{:%R}";
           tooltip = false;
-          # tooltip-format = "Standard Time: {:%I:%M %p}";
           min-length = 8;
           max-length = 12;
         };
@@ -302,6 +304,7 @@
         "custom/paddc" = {
           format = " ";
           tooltip = false;
+
         };
 
         "custom/notifications" = {
