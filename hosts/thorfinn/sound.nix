@@ -1,7 +1,15 @@
 { lib, config, ... }:
 {
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  hardware.pulseaudio = {
+    enable = false;
+
+    # automatically switch audio to the connected bluetooth device when it connects
+    extraConfig = ''
+      load-module module-switch-on-connect
+    '';
+
+  };
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
