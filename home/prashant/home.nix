@@ -67,6 +67,8 @@
     nwg-displays
     nwg-look # gnome settings
 
+    anytype
+
     # kde qt stuff
     kdePackages.qt6ct
     libsForQt5.qt5ct
@@ -97,6 +99,7 @@
     bat
     yt-dlp
     ffmpeg
+    drawing
 
     vscode
     # zed-editor
