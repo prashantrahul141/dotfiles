@@ -31,6 +31,7 @@
     ../../modules/mpv/mpv.nix
     ../../modules/git/git.nix
     ../../modules/ranger/ranger.nix
+    ../../modules/lazygit/lazygit.nix
   ];
 
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-material-dark-hard;
@@ -94,9 +95,9 @@
     # utils
     gh
     bandwhich
-    lazygit
     speedtest-rs
     bat
+    bat-extras.batdiff
     yt-dlp
     ffmpeg
     drawing
@@ -140,10 +141,18 @@
         nix-colors-lib.gtkThemeFromScheme { scheme = config.colorScheme; };
     };
     iconTheme = {
-      name = "Gruvbox-Dark-BL-LB";
-      package = pkgs.gruvbox-gtk-theme;
+     name = "Gruvbox-Plus-Dark";
+      package = pkgs.gruvbox-plus-icons;
     };
-    cursorTheme.name = "McMojave Cursors";
+    cursorTheme.name = "McMojave-cursors";
+
+    gtk3.extraConfig = {
+      gtk-application-prefer-dark-theme=1;
+    };
+
+    gtk4.extraConfig = {
+      gtk-application-prefer-dark-theme=1;
+    };
   };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

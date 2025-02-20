@@ -271,6 +271,7 @@
       "uwsm app -- waybar"
       "uwsm app -- wl-paste --watch cliphist store"
       "uwsm app -- nm-applet --indicator &"
+      "uwsm app -- blueman-applet"
       "uwsm app -- udiskie &"
     ];
     # #
@@ -360,7 +361,7 @@
 
             # controls how soon a shake is detected
             # lower values mean sooner
-            threshold = 3.0
+            threshold = 4.0
 
             # magnification level immediately after shake start
             base = 4.0
