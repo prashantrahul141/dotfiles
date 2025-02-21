@@ -223,6 +223,7 @@
     QT_QPA_PLATFORMTHEME = "qt5ct";
     QT_STYLE_OVERRIDE = "kvantum";
     TERMINAL = "kitty";
+    TERM = "kitty";
     GOPATH = "~/.go";
   };
 

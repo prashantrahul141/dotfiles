@@ -26,6 +26,7 @@
     EDITOR = "nvim";
     BROWSER = "brave"; # "firefox"; one day, surely theyll make the android app better.
     TERMINAL = "kitty";
+    TERM = "kitty";
   };
 
   home-manager = {
