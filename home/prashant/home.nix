@@ -2,7 +2,6 @@
   config,
   pkgs,
   inputs,
-  lib,
   ...
 }:
 {
@@ -12,6 +11,7 @@
 
   home.stateVersion = "24.11"; # DO NOT CHANGE.
   imports = [
+    inputs.nixvim.homeManagerModules.nixvim
     inputs.nix-colors.homeManagerModules.default
     ../common.nix
     ../../modules/dunst/dunst.nix
@@ -32,6 +32,7 @@
     ../../modules/git/git.nix
     ../../modules/ranger/ranger.nix
     ../../modules/lazygit/lazygit.nix
+    ../../modules/neovim/neovim.nix
   ];
 
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-material-dark-hard;
@@ -86,7 +87,11 @@
     zulu23
 
     gcc14
+    gnumake
+    cmake
     gdb
+    clang-tools
+    rustup
 
     dbeaver-bin
 
@@ -141,17 +146,17 @@
         nix-colors-lib.gtkThemeFromScheme { scheme = config.colorScheme; };
     };
     iconTheme = {
-     name = "Gruvbox-Plus-Dark";
+      name = "Gruvbox-Plus-Dark";
       package = pkgs.gruvbox-plus-icons;
     };
     cursorTheme.name = "McMojave-cursors";
 
     gtk3.extraConfig = {
-      gtk-application-prefer-dark-theme=1;
+      gtk-application-prefer-dark-theme = 1;
     };
 
     gtk4.extraConfig = {
-      gtk-application-prefer-dark-theme=1;
+      gtk-application-prefer-dark-theme = 1;
     };
   };
 
@@ -169,11 +174,6 @@
     };
     ".icons/McMojave-cursors" = {
       source = ./static/McMojave-cursors;
-      recursive = true;
-    };
-
-    ".config/nvim" = {
-      source = ../../modules/neovim;
       recursive = true;
     };
 

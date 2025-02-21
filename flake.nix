@@ -4,6 +4,10 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nixvim = {
+      url = "github:nix-community/nixvim/nixos-24.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nix-colors.url = "github:misterio77/nix-colors";
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
@@ -17,6 +21,7 @@
       nixpkgs,
       nix-colors,
       home-manager,
+      nixvim,
       ...
     }@inputs:
     let
