@@ -81,6 +81,7 @@
     gruvbox-gtk-theme
 
     python313
+    pylint
 
     go
 

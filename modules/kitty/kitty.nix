@@ -24,7 +24,6 @@
     # clipboard_control write-clipboard write-primary read-clipboard-ask read-primary-ask
 
     shell_integration = "enabled";
-    term = "xterm-kitty";
 
     # colors
     color0 = "#${config.colorScheme.palette.base00}";
