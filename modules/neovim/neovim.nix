@@ -21,6 +21,8 @@
     extraConfigLuaPre = ''
       vim.go.laststatus=3
       vim.o.laststatus=3
+      vim.opt.title = true
+      -- vim.opt.titlelen = 1 -- shorten title, set 0 to shorten.
     '';
 
     globalOpts = {

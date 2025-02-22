@@ -7,7 +7,7 @@
       * {
       	/* `otf-font-awesome` is required to be installed for icons */
       	font-family: FiraCode Nerd Font;
-      	font-size: 14px;
+        font-size: 13px;
       	font-weight: 600;
       }
 
@@ -22,21 +22,18 @@
         color: #${config.colorScheme.palette.base04};
       }
 
-      window#waybar {
-      	color: #${config.colorScheme.palette.base06};
-      	background-color: #${config.colorScheme.palette.base00};
-      }
-
-      window#waybar.hidden {
-      	opacity: 0.2;
-      }
 
       #workspaces button {
         padding: 5px 12px;
       	box-shadow: inset 0 -3px transparent;
       	border: none;
-      	color: #${config.colorScheme.palette.base03};
-      	border-radius: 2px;
+      	color: #${config.colorScheme.palette.base05};
+        background-color: #${config.colorScheme.palette.base00};
+        border-radius: 0px 0px 0px 0px;
+      }
+
+      #workspaces button:first-child {
+         border-radius: 6px 0 0 6px;
       }
 
       #workspaces button:hover {
@@ -48,9 +45,9 @@
       }
 
       #workspaces button.active {
-      	color: #${config.colorScheme.palette.base07};
+      	color: #${config.colorScheme.palette.base00};
       	background: #${config.colorScheme.palette.base02};
-      	background-color: #${config.colorScheme.palette.base02};
+      	background-color: #${config.colorScheme.palette.base0B};
       }
 
       #workspaces button.urgent {
@@ -61,7 +58,6 @@
         animation-direction: alternate;
       }
 
-
       #clock,
       #battery,
       #cpu,
@@ -69,25 +65,36 @@
       #backlight,
       #network,
       #pulseaudio,
+      #tray,
+      #custom-notifications {
+      	padding: 8px 13px;
+        color: #${config.colorScheme.palette.base06};
+        background-color: #${config.colorScheme.palette.base00};
+      }
+
+      #clock.time {
+        border-radius: 0 6px 6px 0;
+      }
+
       #tray {
-      	padding: 0 8px;
-      	color: #${config.colorScheme.palette.base06};
-      	border-radius: 2px;
+         border-radius: 6px 0 0 6px;
       }
 
-      #window,
-      #workspaces {
-      	margin: 0 2px;
+      #window{
+      	padding: 4px 14px;
+        color: #${config.colorScheme.palette.base06};
+        background-color: #${config.colorScheme.palette.base00};
+      	border-radius: 6px;
       }
 
-      /* If workspaces is the leftmost module, omit left margin */
-      .modules-left>widget:first-child>#workspaces {
-      	margin-left: 0px;
+      window#waybar {
+        color: #${config.colorScheme.palette.base06};
+        border-radius: 2px;
+        background-color: rgba(0,0,0,0);
       }
 
-      /* If workspaces is the rightmost module, omit right margin */
-      .modules-right>widget:last-child>#workspaces {
-      	margin-right: 0px;
+      window#waybar.hidden {
+      	opacity: 0.2;
       }
 
       #battery {
@@ -121,11 +128,11 @@
       }
 
       #backlight {
-      	color: #${config.colorScheme.palette.base0D};
+        color: #${config.colorScheme.palette.base0D};
+        border-radius: 0 6px 6px 0;
       }
 
-      #memory
-      {
+      #memory {
       	color: #${config.colorScheme.palette.base0B};
       }
 
@@ -151,18 +158,17 @@
       	background-color: #${config.colorScheme.palette.base01};
       }
 
-      #tray {}
+      #tray {
+      }
 
       #tray>.needs-attention {
       	background-color: #${config.colorScheme.palette.base07};
       	color: #${config.colorScheme.palette.base01};
       }
 
-      #custom-media {
-      	background-color: #66cc99;
-      	color: #2a5c45;
-      	min-width: 100px;
+      #custom-notifications {
       }
+
     '';
 
     settings = [
@@ -173,9 +179,9 @@
         passtrough = false;
         exclusive = true;
         spacing = 0;
-        margin-top = 3;
-        margin-right = 3;
-        margin-left = 3;
+        margin-top = 8;
+        margin-right = 12;
+        margin-left = 12;
         margin-bottom = 0;
 
         modules-left = [
@@ -188,22 +194,18 @@
         modules-center = [ "hyprland/window" ];
         modules-right = [
           "tray"
-          "custom/paddc"
           "custom/notifications"
-          "custom/paddc"
           "network"
-          "custom/paddc"
           "pulseaudio"
           "pulseaudio#microphone"
-          "custom/paddc"
           "clock#date"
           "clock#time"
         ];
         "hyprland/window" = {
-          format = "{class}";
-          max-length = 20;
+          format = "{title}";
+          max-length = 35;
           rewrite = {
-            "" = "<span foreground='#${config.colorScheme.palette.base05}'></span> hyprland";
+            "" = " hyprland";
           };
         };
         battery = {
@@ -226,7 +228,7 @@
           device = "acpi_video0";
           on-scroll-up = "brightnessctl s 1+";
           on-scroll-down = "brightnessctl s 1-";
-          scroll-step = 1;
+          scroll-step = 2;
         };
         tray = {
           icon-size = 15;

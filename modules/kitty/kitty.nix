@@ -3,6 +3,7 @@
   programs.kitty.enable = true;
   programs.kitty.settings = {
     font_family = "FiraCode Nerd Font";
+    update_check_interval = 0; # automatic updates enabled by default so retarded.
     bold_font = "auto";
     italic_font = "auto";
     bold_italic_font = "auto";
