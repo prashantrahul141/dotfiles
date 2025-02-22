@@ -24,6 +24,7 @@
       copy = "wl-copy";
       dn = "dotnet";
       find = "fd";
+      nd = "nix develop -c zsh";
       update = "sudo nixos-rebuild switch --flake ~/nixos/hosts#thorfinn";
     };
     history.size = 10000;
