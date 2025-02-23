@@ -1,4 +1,4 @@
-{ config, ... }:
+{ colorScheme, ... }:
 {
   programs.hyprlock.enable = true;
   programs.hyprlock.settings = {
@@ -33,9 +33,9 @@
       fade_on_empty = true;
       outline_thickness = 2;
       inner_color = "rgba(0, 0, 0, 0.0)"; # no fill
-      outer_color = "rgb(${config.colorScheme.palette.base04})";
-      check_color = "rgb(${config.colorScheme.palette.base07})";
-      fail_color = "rgb(${config.colorScheme.palette.base08})";
+      outer_color = "rgb(${colorScheme.palette.base04})";
+      check_color = "rgb(${colorScheme.palette.base07})";
+      fail_color = "rgb(${colorScheme.palette.base08})";
       font_color = "rgb(255, 255, 255)";
       rounding = 2;
       position = "0, -20";
@@ -48,7 +48,7 @@
       {
         #  monitor =
         text = ''cmd[update:1000] echo -e "$(date +"%A")"'';
-        color = "rgb(${config.colorScheme.palette.base07})";
+        color = "rgb(${colorScheme.palette.base07})";
         text_align = "center";
         font_family = "FiraCode Nerd Font";
         font_size = 50;
@@ -61,7 +61,7 @@
       {
         #  monitor =
         text = ''cmd[update:1000] echo -e "$(date +"%d %B")"'';
-        color = "rgb(${config.colorScheme.palette.base07})";
+        color = "rgb(${colorScheme.palette.base07})";
         text_align = "center";
         font_family = "FiraCode Nerd Font";
         font_size = 18;

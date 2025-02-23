@@ -1,5 +1,4 @@
 { ... }:
-
 let
   wallpaperPath = builtins.path { path = ./active.png; };
 in

@@ -2,6 +2,7 @@
   config,
   pkgs,
   inputs,
+  colorScheme,
   ...
 }:
 {
@@ -34,8 +35,6 @@
     ../../modules/lazygit/lazygit.nix
     ../../modules/neovim/neovim.nix
   ];
-
-  colorScheme = inputs.nix-colors.colorSchemes.gruvbox-material-dark-hard;
 
   fonts.fontconfig.enable = true;
 
@@ -139,12 +138,12 @@
   gtk = {
     enable = true;
     theme = {
-      name = "${config.colorScheme.slug}";
+      name = "${colorScheme.slug}";
       package =
         let
           nix-colors-lib = inputs.nix-colors.lib.contrib { inherit pkgs; };
         in
-        nix-colors-lib.gtkThemeFromScheme { scheme = config.colorScheme; };
+        nix-colors-lib.gtkThemeFromScheme { scheme = colorScheme; };
     };
     iconTheme = {
       name = "Gruvbox-Plus-Dark";

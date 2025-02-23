@@ -1,4 +1,4 @@
-{ config, ... }:
+{ colorScheme, ... }:
 {
   programs.wofi.enable = true;
   programs.wofi.settings = {
@@ -41,9 +41,9 @@
   programs.wofi.style = ''
       window {
       margin: 0px;
-      border: 2px none #${config.colorScheme.palette.base01};
+      border: 2px none #${colorScheme.palette.base01};
       border-width: 2px;
-      background-color: #${config.colorScheme.palette.base00};
+      background-color: #${colorScheme.palette.base00};
       border-radius: 4px;
     }
 
@@ -54,20 +54,20 @@
       border: none;
       box-shadow: none;
       border-width: 1px;
-      color: #${config.colorScheme.palette.base07};
+      color: #${colorScheme.palette.base07};
       font-family: FiraCode Nerd Font;
       font-size: 16px;
       font-weight: 800;
-      background-color: #${config.colorScheme.palette.base00};
+      background-color: #${colorScheme.palette.base00};
       outline: none;
-      border: 1px solid #${config.colorScheme.palette.base01};
+      border: 1px solid #${colorScheme.palette.base01};
       border-radius: 2px;
       margin: 10px 13px;
       margin-bottom: 2px;
     }
 
     #input:focus {
-      border: 1px solid #${config.colorScheme.palette.base02};
+      border: 1px solid #${colorScheme.palette.base02};
       box-shadow: none;
       outline: none;
       margin-bottom: 0px;
@@ -76,7 +76,7 @@
     #inner-box {
       margin: 0px;
       border: 0px solid transparent;
-      color: #${config.colorScheme.palette.base04};
+      color: #${colorScheme.palette.base04};
       font-weight: normal;
       background-color: transparent;
       border-radius: 2px;
@@ -84,9 +84,9 @@
 
     #outer-box {
       margin: 0px;
-      border: 0px solid #${config.colorScheme.palette.base02};
+      border: 0px solid #${colorScheme.palette.base02};
       border-radius: 2px;
-      background-color: #${config.colorScheme.palette.base00};
+      background-color: #${colorScheme.palette.base00};
     }
 
     #scroll {
@@ -113,20 +113,20 @@
     }
 
     #text:selected {
-      color: #${config.colorScheme.palette.base07};
+      color: #${colorScheme.palette.base07};
       margin: 0px 0px;
       border: none;
-      border-color: #${config.colorScheme.palette.base07};
+      border-color: #${colorScheme.palette.base07};
       border-width: 2px;
       border-radius: 2px;
       background-color: transparent;
     }
 
     #text:unselected {
-      color: #${config.colorScheme.palette.base03};
+      color: #${colorScheme.palette.base03};
       margin: 0px 0px;
       border: none;
-      border-color: #${config.colorScheme.palette.base00};
+      border-color: #${colorScheme.palette.base00};
       border-width: 2px;
       border-radius: 2px;
       background-color: transparent;
@@ -144,6 +144,6 @@
       border: none;
       outline: none;
       border-radius: 1px;
-      background-color: #${config.colorScheme.palette.base02};
+      background-color: #${colorScheme.palette.base02};
     }'';
 }

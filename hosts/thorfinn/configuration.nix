@@ -1,10 +1,13 @@
 {
   inputs,
   lib,
-  config,
   ...
 }:
+let
+  colorScheme = inputs.nix-colors.colorSchemes.gruvbox-material-dark-hard;
+in
 {
+
   imports = [
     ./boot.nix
     ../../modules/minimal.nix
@@ -17,8 +20,12 @@
     ./sound.nix
     ./packages.nix
     ./user.nix
+    # ./extra.nix
     inputs.home-manager.nixosModules.home-manager
   ];
+
+  # the linux console.
+  console.colors = lib.mapAttrsToList (base: value: value) colorScheme.palette;
 
   nixpkgs.config.allowUnfree = true;
 
@@ -31,7 +38,7 @@
 
   home-manager = {
     useGlobalPkgs = true;
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = { inherit inputs colorScheme; };
     users = {
       "prashant" = import ../../home/prashant/home.nix;
     };

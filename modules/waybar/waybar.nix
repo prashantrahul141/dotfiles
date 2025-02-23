@@ -1,4 +1,4 @@
-{ config, ... }:
+{ colorScheme, ... }:
 {
 
   programs.waybar = {
@@ -12,14 +12,14 @@
       }
 
       tooltip {
-        background: #${config.colorScheme.palette.base00};
-        color: #${config.colorScheme.palette.base07};
-        border: 2px solid #${config.colorScheme.palette.base02};
+        background: #${colorScheme.palette.base00};
+        color: #${colorScheme.palette.base07};
+        border: 2px solid #${colorScheme.palette.base02};
         border-radius: 1px;
       }
 
       tooltip label {
-        color: #${config.colorScheme.palette.base04};
+        color: #${colorScheme.palette.base04};
       }
 
 
@@ -27,8 +27,8 @@
         padding: 5px 12px;
       	box-shadow: inset 0 -3px transparent;
       	border: none;
-      	color: #${config.colorScheme.palette.base05};
-        background-color: #${config.colorScheme.palette.base00};
+      	color: #${colorScheme.palette.base05};
+        background-color: #${colorScheme.palette.base00};
         border-radius: 0px 0px 0px 0px;
       }
 
@@ -39,15 +39,15 @@
       #workspaces button:hover {
       	box-shadow: inherit;
       	text-shadow: inherit;
-      	color: #${config.colorScheme.palette.base07};
-      	background: #${config.colorScheme.palette.base02};
-      	background-color: #${config.colorScheme.palette.base02};
+      	color: #${colorScheme.palette.base07};
+      	background: #${colorScheme.palette.base02};
+      	background-color: #${colorScheme.palette.base02};
       }
 
       #workspaces button.active {
-      	color: #${config.colorScheme.palette.base00};
-      	background: #${config.colorScheme.palette.base02};
-      	background-color: #${config.colorScheme.palette.base0B};
+      	color: #${colorScheme.palette.base00};
+      	background: #${colorScheme.palette.base02};
+      	background-color: #${colorScheme.palette.base0B};
       }
 
       #workspaces button.urgent {
@@ -68,8 +68,8 @@
       #tray,
       #custom-notifications {
       	padding: 8px 13px;
-        color: #${config.colorScheme.palette.base06};
-        background-color: #${config.colorScheme.palette.base00};
+        color: #${colorScheme.palette.base06};
+        background-color: #${colorScheme.palette.base00};
       }
 
       #clock.time {
@@ -82,13 +82,13 @@
 
       #window{
       	padding: 4px 14px;
-        color: #${config.colorScheme.palette.base06};
-        background-color: #${config.colorScheme.palette.base00};
+        color: #${colorScheme.palette.base06};
+        background-color: #${colorScheme.palette.base00};
       	border-radius: 6px;
       }
 
       window#waybar {
-        color: #${config.colorScheme.palette.base06};
+        color: #${colorScheme.palette.base06};
         border-radius: 2px;
         background-color: rgba(0,0,0,0);
       }
@@ -98,24 +98,24 @@
       }
 
       #battery {
-      	color: #${config.colorScheme.palette.base06};
+      	color: #${colorScheme.palette.base06};
       }
 
       #battery.charging,
       #battery.plugged {
-      	color: #${config.colorScheme.palette.base0B};
+      	color: #${colorScheme.palette.base0B};
       }
 
       @keyframes blink {
       	to {
-      		color: #${config.colorScheme.palette.base01};
-      		background-color: #${config.colorScheme.palette.base08};
+      		color: #${colorScheme.palette.base01};
+      		background-color: #${colorScheme.palette.base08};
       	}
       }
 
       #battery.critical:not(.charging) {
-      	background-color: #${config.colorScheme.palette.base02};
-      	color: #${config.colorScheme.palette.base08};
+      	background-color: #${colorScheme.palette.base02};
+      	color: #${colorScheme.palette.base08};
       	animation-name: blink;
       	animation-duration: 0.5s;
       	animation-timing-function: linear;
@@ -128,42 +128,42 @@
       }
 
       #backlight {
-        color: #${config.colorScheme.palette.base0D};
+        color: #${colorScheme.palette.base0D};
         border-radius: 0 6px 6px 0;
       }
 
       #memory {
-      	color: #${config.colorScheme.palette.base0B};
+      	color: #${colorScheme.palette.base0B};
       }
 
       #cpu {
-      	color: #${config.colorScheme.palette.base09};
+      	color: #${colorScheme.palette.base09};
       }
 
       #network {
-      	color: #${config.colorScheme.palette.base08};
+      	color: #${colorScheme.palette.base08};
       }
 
       #network.disconnected {
-      	color: #${config.colorScheme.palette.base08};
-      	background-color: #${config.colorScheme.palette.base01};
+      	color: #${colorScheme.palette.base08};
+      	background-color: #${colorScheme.palette.base01};
       }
 
       #pulseaudio {
-      	color: #${config.colorScheme.palette.base09};
+      	color: #${colorScheme.palette.base09};
       }
 
       #pulseaudio.muted {
-      	color: #${config.colorScheme.palette.base08};
-      	background-color: #${config.colorScheme.palette.base01};
+      	color: #${colorScheme.palette.base08};
+      	background-color: #${colorScheme.palette.base01};
       }
 
       #tray {
       }
 
       #tray>.needs-attention {
-      	background-color: #${config.colorScheme.palette.base07};
-      	color: #${config.colorScheme.palette.base01};
+      	background-color: #${colorScheme.palette.base07};
+      	color: #${colorScheme.palette.base01};
       }
 
       #custom-notifications {
@@ -240,7 +240,7 @@
           format-disconnected = "󰖪 disconnected";
         };
         "clock#date" = {
-          format = "<span color='#${config.colorScheme.palette.base05}'>󰃭 </span>{:%a, %d %b}";
+          format = "<span color='#${colorScheme.palette.base05}'>󰃭 </span>{:%a, %d %b}";
           tooltip-format = "<tt>{calendar}</tt>";
 
           calendar = {
@@ -249,9 +249,9 @@
             on-click-right = "mode";
 
             format = {
-              months = "<span color='#${config.colorScheme.palette.base05}'><b>{}</b></span>";
-              weekdays = "<span color='#${config.colorScheme.palette.base03}'>{}</span>";
-              today = "<span color='#${config.colorScheme.palette.base08}'><b><u>{}</u></b></span>";
+              months = "<span color='#${colorScheme.palette.base05}'><b>{}</b></span>";
+              weekdays = "<span color='#${colorScheme.palette.base03}'>{}</span>";
+              today = "<span color='#${colorScheme.palette.base08}'><b><u>{}</u></b></span>";
             };
           };
 
@@ -265,7 +265,7 @@
         };
 
         "clock#time" = {
-          format = "<span color='#${config.colorScheme.palette.base07}'>󱑂 </span>{:%R}";
+          format = "<span color='#${colorScheme.palette.base07}'>󱑂 </span>{:%R}";
           tooltip = false;
           min-length = 8;
           max-length = 12;

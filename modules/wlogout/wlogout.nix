@@ -1,4 +1,4 @@
-{ config, ... }:
+{ colorScheme, ... }:
 {
   programs.wlogout.enable = true;
   programs.wlogout.layout = [
@@ -61,20 +61,20 @@
     in
     ''
             window {
+            button:focus {
               font-family: FiraCode Nerd Font;
               color: #fff ; /* text */
               font-size: 12pt;
-              background-color: #${config.colorScheme.palette.base00};
+              background-color: #${colorScheme.palette.base00};
             }
 
             button:hover {
-              background-color: #${config.colorScheme.palette.base07};
-              color: #${config.colorScheme.palette.base00};
+              background-color: #${colorScheme.palette.base07};
+              color: #${colorScheme.palette.base00};
             }
 
-            button:focus {
-              background-color: #${config.colorScheme.palette.base07};
-              color: #${config.colorScheme.palette.base00};
+              background-color: #${colorScheme.palette.base07};
+              color: #${colorScheme.palette.base00};
             }
 
             button {
@@ -84,11 +84,11 @@
               border-style: solid;
               border-radius: 4px;
               border-width: 2px;
-              border-color: #${config.colorScheme.palette.base07};
-              background-color: #${config.colorScheme.palette.base00};
+              border-color: #${colorScheme.palette.base07};
+              background-color: #${colorScheme.palette.base00};
               margin: 10px;
       	text-shadow: none;
-      	color: #${config.colorScheme.palette.base07};
+      	color: #${colorScheme.palette.base07};
               transition:
                 box-shadow 0.3s ease-in-out,
                 background-color 0.3s ease-in-out,

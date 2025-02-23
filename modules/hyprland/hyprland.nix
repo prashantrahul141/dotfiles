@@ -1,7 +1,6 @@
 {
-  config,
+  colorScheme,
   pkgs,
-  inputs,
   ...
 }:
 {
@@ -44,8 +43,8 @@
       gaps_in = 5;
       gaps_out = 10;
       border_size = 2;
-      "col.active_border" = "rgb(${config.colorScheme.palette.base04})";
-      # "col.inactive_border" = "rgb(${config.colorScheme.palette.base01})";
+      "col.active_border" = "rgb(${colorScheme.palette.base04})";
+      # "col.inactive_border" = "rgb(${colorScheme.palette.base01})";
       resize_on_border = true;
       hover_icon_on_border = true;
       extend_border_grab_area = true;
@@ -109,7 +108,7 @@
 
     # https://wiki.hyprland.org/Configuring/Variables/#misc
     misc = {
-      "col.splash" = "0x${config.colorScheme.palette.base03}";
+      "col.splash" = "0x${colorScheme.palette.base03}";
       focus_on_activate = true;
 
       force_default_wallpaper = 0; # Set to 0 or 1 to disable the anime mascot wallpapers
