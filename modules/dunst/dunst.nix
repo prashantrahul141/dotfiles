@@ -25,14 +25,14 @@
       msg_urgency = "low";
       background = "#${colorScheme.palette.base00}";
       foreground = "#${colorScheme.palette.base07}";
-      timeout = 3;
+      timeout = 5;
     };
 
     base16_normal = {
       msg_urgency = "normal";
       background = "#${colorScheme.palette.base00}";
       foreground = "#${colorScheme.palette.base07}";
-      timeout = 3;
+      timeout = 5;
     };
 
     base16_critical = {
