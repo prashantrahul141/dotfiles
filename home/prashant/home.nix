@@ -64,6 +64,9 @@
     # screen mirror
     wl-mirror
 
+    # amazing calculator
+    qalculate-gtk
+
     # output display configuration app
     nwg-displays
     nwg-look # gnome settings
