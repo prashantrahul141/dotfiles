@@ -60,101 +60,113 @@
       windows-hover = builtins.path { path = ./windows-hover.png; };
     in
     ''
-            window {
-            button:focus {
-              font-family: FiraCode Nerd Font;
-              color: #fff ; /* text */
-              font-size: 12pt;
-              background-color: #${colorScheme.palette.base00};
-            }
+      window {
+          font-family: FiraCode Nerd Font;
+          color: #fff;
+          font-size: 12pt;
+          background-color: #${colorScheme.palette.base00};
+      }
 
-            button:hover {
-              background-color: #${colorScheme.palette.base07};
-              color: #${colorScheme.palette.base00};
-            }
+      button:hover {
+          background-color: #${colorScheme.palette.base07};
+          color: #${colorScheme.palette.base00};
+      }
 
-              background-color: #${colorScheme.palette.base07};
-              color: #${colorScheme.palette.base00};
-            }
+      button:focus {
+          background-color: #${colorScheme.palette.base07};
+          color: #${colorScheme.palette.base00};
+      }
 
-            button {
-              background-repeat: no-repeat;
-              background-position: center;
-              background-size: 20%;
-              border-style: solid;
-              border-radius: 4px;
-              border-width: 2px;
-              border-color: #${colorScheme.palette.base07};
-              background-color: #${colorScheme.palette.base00};
-              margin: 10px;
-      	text-shadow: none;
-      	color: #${colorScheme.palette.base07};
-              transition:
-                box-shadow 0.3s ease-in-out,
-                background-color 0.3s ease-in-out,
-      	  color 0.3s ease-in-out;
-            }
+      button {
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 20%;
+          border-style: solid;
+          border-radius: 4px;
+          border-width: 2px;
+          border-color: #${colorScheme.palette.base07};
+          background-color: #${colorScheme.palette.base00};
+          margin: 10px;
+          text-shadow: none;
+          color: #${colorScheme.palette.base07};
+          transition:
+              box-shadow 0.3s ease-in-out,
+              background-color 0.3s ease-in-out,
+              color 0.3s ease-in-out;
+      }
 
 
-            #lock {
-              background-image: image(url("${lock}"));
-            }
-            #lock:focus {
-              background-image: image(url("${lock-hover}"));
-            }
-            #lock:hover {
-              background-image: image(url("${lock-hover}"));
-            }
+      #lock {
+          background-image: image(url("${lock}"));
+      }
 
-            #logout {
-              background-image: image(url("${logout}"));
-            }
-            #logout:focus {
-              background-image: image(url("${logout-hover}"));
-            }
-            #logout:hover {
-              background-image: image(url("${logout-hover}"));
-            }
+      #lock:focus {
+          background-image: image(url("${lock-hover}"));
+      }
 
-            #suspend {
-              background-image: image(url("${sleep}"));
-            }
-            #suspend:focus {
-              background-image: image(url("${sleep-hover}"));
-            }
-            #suspend:hover {
-              background-image: image(url("${sleep-hover}"));
-            }
+      #lock:hover {
+          background-image: image(url("${lock-hover}"));
+      }
 
-            #shutdown {
-              background-image: image(url("${power}"));
-            }
-            #shutdown:focus {
-              background-image: image(url("${power-hover}"));
-            }
-            #shutdown:hover {
-              background-image: image(url("${power-hover}"));
-            }
+      #logout {
+          background-image: image(url("${logout}"));
+      }
 
-            #reboot {
-              background-image: image(url("${restart}"));
-            }
-            #reboot:focus {
-              background-image: image(url("${restart-hover}"));
-            }
-            #reboot:hover {
-              background-image: image(url("${restart-hover}"));
-            }
+      #logout:focus {
+          background-image: image(url("${logout-hover}"));
+      }
 
-            #windows {
-              background-image: image(url("${windows}"));
-            }
-            #windows:focus {
-              background-image: image(url("${windows-hover}"));
-            }
-            #windows:hover {
-              background-image: image(url("${windows-hover}"));
-            }
+      #logout:hover {
+          background-image: image(url("${logout-hover}"));
+      }
+
+      #suspend {
+          background-image: image(url("${sleep}"));
+      }
+
+      #suspend:focus {
+          background-image: image(url("${sleep-hover}"));
+      }
+
+      #suspend:hover {
+          background-image: image(url("${sleep-hover}"));
+      }
+
+      #shutdown {
+          background-image: image(url("${power}"));
+      }
+
+      #shutdown:focus {
+          background-image: image(url("${power-hover}"));
+      }
+
+      #shutdown:hover {
+          background-image: image(url("${power-hover}"));
+      }
+
+      #reboot {
+          background-image: image(url("${restart}"));
+      }
+
+      #reboot:focus {
+          background-image: image(url("${restart-hover}"));
+      }
+
+      #reboot:hover {
+          background-image: image(url("${restart-hover}"));
+      }
+
+      #windows {
+          background-image: image(url("${windows}"));
+      }
+
+      #windows:focus {
+          background-image: image(url("${windows-hover}"));
+      }
+
+      #windows:hover {
+          background-image: image(url("${windows-hover}"));
+      }
     '';
 
 }
