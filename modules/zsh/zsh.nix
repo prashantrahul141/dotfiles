@@ -25,7 +25,9 @@
       dn = "dotnet";
       find = "fd";
       nd = "nix develop -c zsh";
-      update = "sudo nixos-rebuild switch --flake ~/nixos/hosts#thorfinn";
+      nr = "sudo nixos-rebuild switch --flake ~/nixos/hosts#thorfinn";
+      ncd = "sudo nix-collect-garbage -d";
+      ns = "nix-search";
     };
     history.size = 10000;
 

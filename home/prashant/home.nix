@@ -34,6 +34,7 @@
     ../../modules/ranger/ranger.nix
     ../../modules/lazygit/lazygit.nix
     ../../modules/neovim/neovim.nix
+    ../../modules/bat/bat.nix
   ];
 
   fonts.fontconfig.enable = true;
@@ -104,12 +105,11 @@
     gh
     bandwhich
     speedtest-rs
-    bat
-    bat-extras.batdiff
     yt-dlp
     ffmpeg
     drawing
     lazydocker
+    nix-search-cli
 
     vscode
     # zed-editor
