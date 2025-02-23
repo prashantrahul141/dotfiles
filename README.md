@@ -6,17 +6,17 @@ NixOS configration files using Flakes and Home Manager.
 
 For my own reference:
 ```sh
-# After installting nix on a new system enable flakes 
+# After installting nix on a new system enable flakes
 # by adding this to /etc/nixos/configration.nix
 nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
 # dont forget to then rebuild the system
-sudo nixos-rebuild switch 
+sudo nixos-rebuild switch
 
 # new nix shell environment with git
 nix-shell -p git
 
-# clone repo 
+# clone repo
 git clone --depth 1 https://github.com/prashantrahul141/dotfiles -o nixos
 
 # copy new hardware configuration and override the old on.
