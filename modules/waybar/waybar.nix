@@ -203,7 +203,7 @@
         ];
         "hyprland/window" = {
           format = "{title}";
-          max-length = 35;
+          max-length = 45;
           rewrite = {
             "" = " hyprland";
           };
