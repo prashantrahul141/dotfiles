@@ -203,6 +203,7 @@
     "video/jpg" = [ "mpv.desktop" ];
     "video/*" = [ "mpv.desktop" ];
     "inode/directory" = [ "nemo.desktop" ];
+    "application/x-shellscript" = [ "kitty.desktop" ];
   };
 
   # Home Manager can also manage your environment variables through

@@ -24,14 +24,19 @@
     LC_TIME = "en_IN";
   };
 
-  users.users.prashant = {
-    isNormalUser = true;
-    description = "prashant";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-      "docker"
-    ];
+  # need this even if it was enabled in home manager, allows settings defaultUserShell
+  programs.zsh.enable = true;
+  users = {
+    defaultUserShell = pkgs.zsh;
+    users.prashant = {
+      isNormalUser = true;
+      description = "prashant";
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+        "docker"
+      ];
+    };
   };
 
   system.stateVersion = "24.11";
