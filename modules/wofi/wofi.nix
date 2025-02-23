@@ -2,7 +2,7 @@
 {
   programs.wofi.enable = true;
   programs.wofi.settings = {
-    width = 790;
+    width = 740;
     height = 450;
     location = "center";
     columns = 1;
@@ -133,14 +133,14 @@
     }
 
     #entry {
-      padding: 14px 14px;
+      padding: 14px 26px;
       border: none;
       border-radius: 1px;
       background-color: transparent;
     }
 
     #entry:selected {
-      padding: 14px 14px;
+      padding: 14px 26px;
       border: none;
       outline: none;
       border-radius: 1px;

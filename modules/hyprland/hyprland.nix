@@ -40,7 +40,7 @@
     ];
 
     general = {
-      gaps_in = 5;
+      gaps_in = 4;
       gaps_out = 10;
       border_size = 2;
       "col.active_border" = "rgb(${colorScheme.palette.base04})";
@@ -58,13 +58,6 @@
       rounding = 7;
       active_opacity = 0.97;
       inactive_opacity = 0.93;
-
-      shadow = {
-        enabled = true;
-        range = 4;
-        render_power = 3;
-        # color = "rgba(1a1a1aee)";
-      };
 
       blur = {
         enabled = true;

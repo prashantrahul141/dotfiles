@@ -20,7 +20,7 @@ in
     ./sound.nix
     ./packages.nix
     ./user.nix
-    # ./extra.nix
+    ./extra.nix
     inputs.home-manager.nixosModules.home-manager
   ];
 
