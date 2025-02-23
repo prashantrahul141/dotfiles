@@ -14,8 +14,8 @@
       tooltip {
         background: #${colorScheme.palette.base00};
         color: #${colorScheme.palette.base07};
-        border: 6px solid #${colorScheme.palette.base00};
-        border-radius: 1px;
+        border: 15px solid #${colorScheme.palette.base00};
+        border-radius: 4px;
       }
 
       tooltip label {
