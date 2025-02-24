@@ -247,6 +247,10 @@
     "windowrulev2" = [
       "suppressevent maximize, class:.*"
 
+      # floating windows
+      "float, class:openrgb"
+      "float, class:brave-nngceckbapebfimnlniiiahkandclblb-Default"
+
       # Fix some dragging issues with XWayland
       "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
 

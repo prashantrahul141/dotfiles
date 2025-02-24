@@ -146,7 +146,9 @@
 
       lsp-format = {
         enable = true;
-        settings = { };
+        lspServersToEnable = "all";
+        settings = {
+        };
       };
 
       flash = {
@@ -164,7 +166,7 @@
             enable = true;
             settings.formatting.command = [ "nixfmt" ];
           };
-          pyright.enable = true;
+          ruff.enable = true;
           rust_analyzer = {
             enable = true;
             installCargo = false;
