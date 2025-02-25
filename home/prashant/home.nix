@@ -117,6 +117,7 @@
     drawing
     lazydocker
     nix-search-cli
+    neofetch # sure why not.
 
     # browser
     brave
