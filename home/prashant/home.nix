@@ -72,8 +72,6 @@
     nwg-displays
     nwg-look # gnome settings
 
-    anytype
-
     # kde qt stuff
     kdePackages.qt6ct
     libsForQt5.qt5ct
@@ -83,25 +81,34 @@
     # gtk
     gruvbox-gtk-theme
 
+    # global compilers, linters, package managers for different languages.
     python313
     pylint
 
+    # go
     go
 
+    # java
     zulu23
 
+    # c/c++
     gcc14
     gnumake
     cmake
     gdb
     clang-tools
+
+    # rust
     rustup
 
-    dbeaver-bin
+    # node
+    nodejs
+    pnpm
 
-    # nodejs_20
+    vscode
+    # zed-editor
 
-    # utils
+    # utils, mostly cli.
     gh
     bandwhich
     speedtest-rs
@@ -111,10 +118,12 @@
     lazydocker
     nix-search-cli
 
-    vscode
-    # zed-editor
-
+    # browser
     brave
+
+    # additional software i use
+    anytype
+    dbeaver-bin
 
     # fonts
     font-awesome
