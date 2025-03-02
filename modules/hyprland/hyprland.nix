@@ -198,10 +198,13 @@
       "$mainMod SHIFT, PRINT, exec, hyprshot -m region"
 
       # clipboard
-      "SUPER, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy"
+      "$mainMod, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy"
 
       # logout menu
-      "SUPER, ESCAPE, exec, wlogout"
+      "$mainMod, ESCAPE, exec, wlogout"
+
+      # wallpaper
+      "$mainMod, w, exec, bash ${builtins.path { path = ../hyprpaper/switch-wallpaper.sh; }}"
 
     ];
 

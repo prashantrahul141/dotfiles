@@ -252,6 +252,12 @@
             "^__pycache__/"
             "%.ipynb"
             "^node_modules/"
+            "*.o"
+            "*.class"
+            "*.cache"
+            "*.out"
+            "*.tar"
+            "*.gz"
           ];
           set_env.COLORTERM = "truecolor";
         };

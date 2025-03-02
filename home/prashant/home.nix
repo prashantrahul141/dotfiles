@@ -126,6 +126,10 @@
     anytype
     dbeaver-bin
 
+    # libreoffice stuff
+    libreoffice-qt6-fresh
+    hunspell # spellcheck
+
     # fonts
     font-awesome
     powerline-fonts
@@ -137,7 +141,6 @@
         "NerdFontsSymbolsOnly"
       ];
     })
-
   ];
 
   services.udiskie.enable = true;
