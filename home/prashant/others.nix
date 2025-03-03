@@ -2,7 +2,7 @@
 {
   xdg.mimeApps.defaultApplications = {
     "text/plain" = [ "nvim.desktop" ];
-    "application/pdf" = [ "brave-browser.desktop" ];
+    "application/pdf" = [ "evince.desktop" ];
     "image/*" = [ "loupe.desktop" ];
     "video/png" = [ "mpv.desktop" ];
     "video/jpg" = [ "mpv.desktop" ];
