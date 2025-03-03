@@ -1,172 +1,173 @@
 { colorScheme, ... }:
 {
-  programs.wlogout.enable = true;
-  programs.wlogout.layout = [
-    {
-      "label" = "lock";
-      "action" = "hyprlock --immediate";
-      "text" = "  Lock (L)  ";
-      "keybind" = "l";
-    }
-    {
-      "label" = "reboot";
-      "action" = "systemctl reboot";
-      "text" = " Reboot (R) ";
-      "keybind" = "r";
-    }
-    {
-      "label" = "shutdown";
-      "action" = "systemctl poweroff";
-      "text" = "Shutdown (S)";
-      "keybind" = "s";
-    }
-    {
-      "label" = "logout";
-      "action" = "hyprctl dispatch exit 0";
-      "text" = " Logout (E) ";
-      "keybind" = "e";
-    }
-    {
-      "label" = "suspend";
-      "action" = "hyprlock --no-fade-in; systemctl suspend -i";
-      "text" = " Suspend (Z)";
-      "keybind" = "z";
-    }
-  ];
-
-  programs.wlogout.style =
-    let
-      lock = builtins.path { path = ./lock.png; };
-      lock-hover = builtins.path { path = ./lock-hover.png; };
-
-      logout = builtins.path { path = ./logout.png; };
-
-      logout-hover = builtins.path { path = ./logout-hover.png; };
-
-      power = builtins.path { path = ./power.png; };
-
-      power-hover = builtins.path { path = ./power-hover.png; };
-
-      restart = builtins.path { path = ./restart.png; };
-
-      restart-hover = builtins.path { path = ./restart-hover.png; };
-
-      sleep = builtins.path { path = ./sleep.png; };
-
-      sleep-hover = builtins.path { path = ./sleep-hover.png; };
-
-      windows = builtins.path { path = ./windows.png; };
-
-      windows-hover = builtins.path { path = ./windows-hover.png; };
-    in
-    ''
-      window {
-          font-family: FiraCode Nerd Font;
-          color: #fff;
-          font-size: 12pt;
-          background-color: #${colorScheme.palette.base00};
+  programs.wlogout = {
+    enable = true;
+    layout = [
+      {
+        "label" = "lock";
+        "action" = "hyprlock --immediate";
+        "text" = "  Lock (L)  ";
+        "keybind" = "l";
       }
-
-      button:hover {
-          background-color: #${colorScheme.palette.base07};
-          color: #${colorScheme.palette.base00};
+      {
+        "label" = "reboot";
+        "action" = "systemctl reboot";
+        "text" = " Reboot (R) ";
+        "keybind" = "r";
       }
-
-      button:focus {
-          background-color: #${colorScheme.palette.base07};
-          color: #${colorScheme.palette.base00};
+      {
+        "label" = "shutdown";
+        "action" = "systemctl poweroff";
+        "text" = "Shutdown (S)";
+        "keybind" = "s";
       }
-
-      button {
-          background-repeat: no-repeat;
-          background-position: center;
-          background-size: 20%;
-          border-style: solid;
-          border-radius: 4px;
-          border-width: 2px;
-          border-color: #${colorScheme.palette.base07};
-          background-color: #${colorScheme.palette.base00};
-          margin: 10px;
-          text-shadow: none;
-          color: #${colorScheme.palette.base07};
-          transition:
-              box-shadow 0.3s ease-in-out,
-              background-color 0.3s ease-in-out,
-              color 0.3s ease-in-out;
+      {
+        "label" = "logout";
+        "action" = "uwsm stop";
+        "text" = " Logout (E) ";
+        "keybind" = "e";
       }
-
-
-      #lock {
-          background-image: image(url("${lock}"));
+      {
+        "label" = "suspend";
+        "action" = "systemctl suspend -i; hyprlock --immediate";
+        "text" = " Suspend (Z)";
+        "keybind" = "z";
       }
+    ];
 
-      #lock:focus {
-          background-image: image(url("${lock-hover}"));
-      }
+    style =
+      let
+        lock = builtins.path { path = ./lock.png; };
+        lock-hover = builtins.path { path = ./lock-hover.png; };
 
-      #lock:hover {
-          background-image: image(url("${lock-hover}"));
-      }
+        logout = builtins.path { path = ./logout.png; };
 
-      #logout {
-          background-image: image(url("${logout}"));
-      }
+        logout-hover = builtins.path { path = ./logout-hover.png; };
 
-      #logout:focus {
-          background-image: image(url("${logout-hover}"));
-      }
+        power = builtins.path { path = ./power.png; };
 
-      #logout:hover {
-          background-image: image(url("${logout-hover}"));
-      }
+        power-hover = builtins.path { path = ./power-hover.png; };
 
-      #suspend {
-          background-image: image(url("${sleep}"));
-      }
+        restart = builtins.path { path = ./restart.png; };
 
-      #suspend:focus {
-          background-image: image(url("${sleep-hover}"));
-      }
+        restart-hover = builtins.path { path = ./restart-hover.png; };
 
-      #suspend:hover {
-          background-image: image(url("${sleep-hover}"));
-      }
+        sleep = builtins.path { path = ./sleep.png; };
 
-      #shutdown {
-          background-image: image(url("${power}"));
-      }
+        sleep-hover = builtins.path { path = ./sleep-hover.png; };
 
-      #shutdown:focus {
-          background-image: image(url("${power-hover}"));
-      }
+        windows = builtins.path { path = ./windows.png; };
 
-      #shutdown:hover {
-          background-image: image(url("${power-hover}"));
-      }
+        windows-hover = builtins.path { path = ./windows-hover.png; };
+      in
+      ''
+        window {
+            font-family: FiraCode Nerd Font;
+            color: #fff;
+            font-size: 12pt;
+            background-color: #${colorScheme.palette.base00};
+        }
 
-      #reboot {
-          background-image: image(url("${restart}"));
-      }
+        button:hover {
+            background-color: #${colorScheme.palette.base07};
+            color: #${colorScheme.palette.base00};
+        }
 
-      #reboot:focus {
-          background-image: image(url("${restart-hover}"));
-      }
+        button:focus {
+            background-color: #${colorScheme.palette.base07};
+            color: #${colorScheme.palette.base00};
+        }
 
-      #reboot:hover {
-          background-image: image(url("${restart-hover}"));
-      }
+        button {
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 20%;
+            border-style: solid;
+            border-radius: 4px;
+            border-width: 2px;
+            border-color: #${colorScheme.palette.base07};
+            background-color: #${colorScheme.palette.base00};
+            margin: 10px;
+            text-shadow: none;
+            color: #${colorScheme.palette.base07};
+            transition:
+                box-shadow 0.3s ease-in-out,
+                background-color 0.3s ease-in-out,
+                color 0.3s ease-in-out;
+        }
 
-      #windows {
-          background-image: image(url("${windows}"));
-      }
 
-      #windows:focus {
-          background-image: image(url("${windows-hover}"));
-      }
+        #lock {
+            background-image: image(url("${lock}"));
+        }
 
-      #windows:hover {
-          background-image: image(url("${windows-hover}"));
-      }
-    '';
+        #lock:focus {
+            background-image: image(url("${lock-hover}"));
+        }
 
+        #lock:hover {
+            background-image: image(url("${lock-hover}"));
+        }
+
+        #logout {
+            background-image: image(url("${logout}"));
+        }
+
+        #logout:focus {
+            background-image: image(url("${logout-hover}"));
+        }
+
+        #logout:hover {
+            background-image: image(url("${logout-hover}"));
+        }
+
+        #suspend {
+            background-image: image(url("${sleep}"));
+        }
+
+        #suspend:focus {
+            background-image: image(url("${sleep-hover}"));
+        }
+
+        #suspend:hover {
+            background-image: image(url("${sleep-hover}"));
+        }
+
+        #shutdown {
+            background-image: image(url("${power}"));
+        }
+
+        #shutdown:focus {
+            background-image: image(url("${power-hover}"));
+        }
+
+        #shutdown:hover {
+            background-image: image(url("${power-hover}"));
+        }
+
+        #reboot {
+            background-image: image(url("${restart}"));
+        }
+
+        #reboot:focus {
+            background-image: image(url("${restart-hover}"));
+        }
+
+        #reboot:hover {
+            background-image: image(url("${restart-hover}"));
+        }
+
+        #windows {
+            background-image: image(url("${windows}"));
+        }
+
+        #windows:focus {
+            background-image: image(url("${windows-hover}"));
+        }
+
+        #windows:hover {
+            background-image: image(url("${windows-hover}"));
+        }
+      '';
+  };
 }
