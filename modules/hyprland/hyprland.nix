@@ -8,7 +8,7 @@
     pkgs.hyprlandPlugins.hypr-dynamic-cursors
   ];
   wayland.windowManager.hyprland.enable = true;
-  wayland.windowManager.hyprland.systemd.enable = false;
+  wayland.windowManager.hyprland.systemd.enable = false; # only required if uwsm is used.
   wayland.windowManager.hyprland.settings = {
 
     # PLEASE MAKE SURE YOU GENERATE THESE FILES USING NWG-DISPLAYS
@@ -185,8 +185,12 @@
       "$mainMod, PRINT, exec, uwsm app -- hyprshot -m window"
       # Screenshot a monitor
       ", PRINT, exec, uwsm app -- hyprshot -m output"
+
       # Screenshot a region
-      "$mainMod SHIFT, PRINT, exec, uwsm app -- hyprshot -m region"
+      "$mainMod SHIFT, S, exec, uwsm app -- hyprshot -m region"
+
+      # Screenshot a region and draw using flameshot
+      "$mainMod SHIFT, PRINT, exec, uwsm app -- flameshot gui -r --path ~/Pictures/Screenshots | wl-copy"
 
       # clipboard
       "$mainMod, V, exec, uwsm app -- cliphist list | wofi --dmenu | cliphist decode | wl-copy"

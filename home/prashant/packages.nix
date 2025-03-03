@@ -10,6 +10,7 @@
     wireplumber
     slurp
     hyprshot
+    flameshot
     grim
     obs-studio
     pavucontrol
@@ -77,7 +78,7 @@
     speedtest-rs
     yt-dlp
     ffmpeg
-    drawing
+    pinta
     lazydocker
     nix-search-cli
     neofetch # sure why not.
