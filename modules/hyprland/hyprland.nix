@@ -8,6 +8,7 @@
     pkgs.hyprlandPlugins.hypr-dynamic-cursors
   ];
   wayland.windowManager.hyprland.enable = true;
+  wayland.windowManager.hyprland.systemd.enable = false;
   wayland.windowManager.hyprland.settings = {
 
     # PLEASE MAKE SURE YOU GENERATE THESE FILES USING NWG-DISPLAYS
@@ -23,21 +24,11 @@
     "$menu" = "wofi --show drun";
     "$browser" = "brave";
 
-    "env" = [
-      "HYPRSHOT_DIR,/home/prashant/Pictures/Screenshots"
-      "QT_AUTO_SCREEN_SCALE_FACTOR,1"
-      "QT_QPA_PLATFORM,wayland;xcb"
-      "QT_QPA_PLATFORMTHEME,qt5ct"
-      "XDG_SESSION_TYPE,wayland"
-      "XDG_CURRENT_DESKTOP,Hyprland"
-      "XDG_SESSION_DESKTOP,Hyprland"
-      "HYPRCURSOR_THEME,McMojave"
-      "XCURSOR_THEME,McMojave Cursors"
-      "HYPRCURSOR_SIZE,35"
-      "XCURSOR_SIZE,47"
-      "LIBVA_DRIVER_NAME,nvidia"
-      "__GLX_VENDOR_LIBRARY_NAME,nvidia"
-    ];
+    # MANAGED USING UWSM NOW.
+    # MOVED TO home/$USER/files.nix
+    #    "env" = [
+    #    ];
+    #
 
     general = {
       gaps_in = 4;
@@ -140,10 +131,10 @@
 
     # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
     "bind" = [
-      "$mainMod, RETURN, exec, $terminal"
-      "$mainMod, E, exec, $fileManager"
-      "$mainMod, B, exec, $browser"
-      "$mainMod, SPACE, exec, $menu"
+      "$mainMod, RETURN, exec, uwsm app -- $terminal"
+      "$mainMod, E, exec, uwsm app -- $fileManager"
+      "$mainMod, B, exec, uwsm app -- $browser"
+      "$mainMod, SPACE, exec, uwsm app -- $menu"
 
       "$mainMod, Q, killactive,"
       "$mainMod, T, togglefloating,"
@@ -191,20 +182,20 @@
       "$mainMod, mouse_down, workspace, e+1"
       "$mainMod, mouse_up, workspace, e-1"
 
-      "$mainMod, PRINT, exec, hyprshot -m window"
+      "$mainMod, PRINT, exec, uwsm app -- hyprshot -m window"
       # Screenshot a monitor
-      ", PRINT, exec, hyprshot -m output"
+      ", PRINT, exec, uwsm app -- hyprshot -m output"
       # Screenshot a region
-      "$mainMod SHIFT, PRINT, exec, hyprshot -m region"
+      "$mainMod SHIFT, PRINT, exec, uwsm app -- hyprshot -m region"
 
       # clipboard
-      "$mainMod, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy"
+      "$mainMod, V, exec, uwsm app -- cliphist list | wofi --dmenu | cliphist decode | wl-copy"
 
       # logout menu
-      "$mainMod, ESCAPE, exec, wlogout"
+      "$mainMod, ESCAPE, exec, uwsm app -- wlogout"
 
       # wallpaper
-      "$mainMod, w, exec, bash ${builtins.path { path = ../hyprpaper/switch-wallpaper.sh; }}"
+      "$mainMod, w, exec, uwsm app -- bash ${builtins.path { path = ../hyprpaper/switch-wallpaper.sh; }}"
 
     ];
 
@@ -267,6 +258,7 @@
     ];
 
     exec-once = [
+      "systemctl --user enable --now hyprpaper.service"
       "uwsm app -- dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
       "uwsm app -- xwaylandvideobridge &"
       "systemctl --user enable --now hyprpolkitagent.service"
@@ -364,10 +356,10 @@
 
             # controls how soon a shake is detected
             # lower values mean sooner
-            threshold = 4.0
+            threshold = 4.4
 
             # magnification level immediately after shake start
-            base = 4.0
+            base = 3.4
             # magnification increase per second when continuing to shake
             speed = 4.0
             # how much the speed is influenced by the current shake intensitiy
