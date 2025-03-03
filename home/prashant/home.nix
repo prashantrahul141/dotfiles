@@ -39,8 +39,8 @@
     ../../modules/lazygit/lazygit.nix
     ../../modules/neovim/neovim.nix
     ../../modules/bat/bat.nix
+    ../../modules/btm/btm.nix
   ];
-
 
   home.sessionVariables = {
     EDITOR = "nvim";

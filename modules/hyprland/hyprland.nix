@@ -266,6 +266,7 @@
       "uwsm app -- dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
       "uwsm app -- xwaylandvideobridge &"
       "systemctl --user enable --now hyprpolkitagent.service"
+      "systemctl --user enable --now hypridle.service"
       "uwsm app -- dunst"
       "uwsm app -- waybar"
       "uwsm app -- wl-paste --watch cliphist store"

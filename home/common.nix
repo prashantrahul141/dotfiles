@@ -12,7 +12,6 @@
     unzip
     nixfmt-rfc-style
     ripgrep
-    bottom
     gping
     fd
   ];

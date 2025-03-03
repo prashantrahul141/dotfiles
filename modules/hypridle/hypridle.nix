@@ -36,7 +36,7 @@
       {
         timeout = 1800; # 30min
         on-timeout = "systemctl suspend"; # suspend pc
-        on-resume = "pidof hyprlock || hyprlock";
+        on-resume = "pidof hyprlock || hyprlock --immediate";
       }
     ];
   };
