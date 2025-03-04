@@ -248,6 +248,8 @@
       # floating windows
       "float, class:openrgb"
       "float, class:brave-nngceckbapebfimnlniiiahkandclblb-Default"
+      "float, title:Open Files"
+      "float, class:xdg-desktop-portal-gtk"
 
       # Fix some dragging issues with XWayland
       "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
@@ -263,6 +265,7 @@
 
     exec-once = [
       "systemctl --user enable --now hyprpaper.service"
+      "uwsm app -- openrgb --mode static --color ACB5FB"
       "uwsm app -- dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
       "uwsm app -- xwaylandvideobridge &"
       "systemctl --user enable --now hyprpolkitagent.service"
