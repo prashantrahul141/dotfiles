@@ -22,6 +22,7 @@
     shell = "zsh";
     editor = "nvim";
     close_on_child_death = "yes";
+    enabled_layouts = "tall:bias=50;full_size=1;mirrored=false";
     # clipboard_control write-clipboard write-primary read-clipboard-ask read-primary-ask
 
     shell_integration = "enabled";
