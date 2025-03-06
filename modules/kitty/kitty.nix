@@ -11,8 +11,8 @@
     disable_ligatures = "never";
     window_padding_width = "4.0 6.0 3.0 11.0"; # top right bottom left
     cursor_shape = "block";
-    # cursor_trail = 0;
-    # cursor_trail_decay = "0.1 0.2";
+    cursor_trail = 3;
+    cursor_trail_decay = "0.1 0.4";
     scrollback_lines = 2000;
     detect_urls = "yes";
     underline_hyperlinks = "hover";
@@ -64,7 +64,24 @@
 
   # mappings
   programs.kitty.keybindings = {
+    # clipboard.
     "ctrl+c" = "copy_or_interrupt";
     "ctrl+shift+v" = "paste_from_clipboard";
+
+    # increase font sizes.
+    "ctrl+shift+equal" = "change_font_size all +1.0";
+    "ctrl+shift+plus" = "change_font_size all +1.0";
+    "ctrl+shift+kp_add" = "change_font_size all +1.0";
+
+    # decrease font size.
+    "ctrl+shift+minus" = "change_font_size all -1.0";
+    "ctrl+shift+kp_subtract" = "change_font_size all -1.0";
+
+    # windows
+    "ctrl+shift+enter" = "launch --cwd=current";
+
+    # tabs
+    "ctrl+shift+t" = "new_tab";
+    "ctrl+shift+q" = "close_tab";
   };
 }
