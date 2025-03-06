@@ -265,7 +265,7 @@
 
     exec-once = [
       "systemctl --user enable --now hyprpaper.service"
-      "uwsm app -- openrgb --mode static --color ACB5FB"
+      "uwsm app -- openrgb --mode static --brightness 0 --color ACB5FB"
       "uwsm app -- dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
       "uwsm app -- xwaylandvideobridge &"
       "systemctl --user enable --now hyprpolkitagent.service"
