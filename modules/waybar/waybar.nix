@@ -129,7 +129,6 @@
 
       #backlight {
         color: #${colorScheme.palette.base0D};
-        border-radius: 0 6px 6px 0;
       }
 
       #memory {
@@ -142,6 +141,7 @@
 
       #network {
       	color: #${colorScheme.palette.base08};
+        border-radius: 0 6px 6px 0;
       }
 
       #network.disconnected {
@@ -189,13 +189,13 @@
           "cpu"
           "memory"
           "battery"
-          "backlight"
+          "network"
         ];
         modules-center = [ "hyprland/window" ];
         modules-right = [
           "tray"
+          "backlight"
           "custom/notifications"
-          "network"
           "pulseaudio"
           "pulseaudio#microphone"
           "clock#date"
@@ -206,6 +206,7 @@
           max-length = 45;
           rewrite = {
             "" = " hyprland";
+            "~" = " hyprland";
           };
         };
         battery = {

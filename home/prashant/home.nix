@@ -40,6 +40,7 @@
     ../../modules/neovim/neovim.nix
     ../../modules/bat/bat.nix
     ../../modules/btm/btm.nix
+    # ../../modules/zed/zed.nix
   ];
 
   home.sessionVariables = {

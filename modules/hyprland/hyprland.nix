@@ -250,6 +250,7 @@
       "float, class:brave-nngceckbapebfimnlniiiahkandclblb-Default"
       "float, title:Open Files"
       "float, class:xdg-desktop-portal-gtk"
+      "float, class:nwg-*"
 
       # Fix some dragging issues with XWayland
       "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
