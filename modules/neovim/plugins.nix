@@ -175,6 +175,12 @@
           clangd.enable = true;
           bashls.enable = true;
           jsonls.enable = true;
+
+          # julia --project=~/.julia/environments/nvim-lspconfig -e 'using Pkg; Pkg.add("LanguageServer")'
+          julials = {
+            enable = true;
+            package = null;
+          };
         };
 
         keymaps = {

@@ -61,6 +61,7 @@
     cmake
     gdb
     clang-tools
+    julia_19
 
     # rust
     rustup
@@ -89,6 +90,8 @@
     # additional software i use
     anytype
     dbeaver-bin
+
+    slack
 
     # libreoffice stuff
     libreoffice-qt6-fresh
