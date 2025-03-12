@@ -93,6 +93,8 @@
 
     slack
 
+    qbittorrent
+
     # libreoffice stuff
     libreoffice-qt6-fresh
     hunspell # spellcheck
