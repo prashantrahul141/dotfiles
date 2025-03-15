@@ -66,6 +66,7 @@
       #network,
       #pulseaudio,
       #tray,
+      #idle_inhibitor,
       #custom-notifications {
       	padding: 8px 13px;
         color: #${colorScheme.palette.base06};
@@ -186,6 +187,7 @@
 
         modules-left = [
           "hyprland/workspaces"
+          "idle_inhibitor"
           "cpu"
           "memory"
           "battery"
@@ -201,6 +203,13 @@
           "clock#date"
           "clock#time"
         ];
+        idle_inhibitor = {
+          format = "{icon}";
+          format-icons = {
+            activated = "";
+            deactivated = "";
+          };
+        };
         "hyprland/window" = {
           format = "{title}";
           max-length = 45;
