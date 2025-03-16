@@ -1,6 +1,19 @@
 { ... }:
 {
 
+  # image viewer : nsxiv desktop entry
+  xdg.desktopEntries.nsxiv = {
+    name = "nsxiv";
+    exec = "nsxiv";
+    icon = "loupe";
+    comment = "Lightweight image viewer";
+    genericName = "Image Viewer";
+    categories = [
+      "Graphics"
+      "Viewer"
+    ];
+  };
+
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {

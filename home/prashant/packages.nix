@@ -24,7 +24,8 @@
     evince
 
     # image viewer
-    loupe
+    nsxiv
+    # loupe # gnome
 
     # screen mirror
     wl-mirror
