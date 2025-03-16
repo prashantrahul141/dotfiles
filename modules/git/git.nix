@@ -14,11 +14,11 @@
       };
 
       user = {
-        # signingkey = "prashantrahul141@protonmail.com";
+        signingkey = "8770981A6FA28826";
       };
 
       commit = {
-        # gpgsign = true;
+        gpgsign = true;
       };
 
       init = {
