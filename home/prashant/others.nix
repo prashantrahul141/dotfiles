@@ -9,6 +9,7 @@
       "image/jpg" = [ "nsxiv.desktop" ];
       "image/png" = [ "nsxiv.desktop" ];
       "image/webp" = [ "nsxiv.desktop" ];
+      "image/gif" = [ "nsxiv.desktop" ];
       "video/png" = [ "mpv.desktop" ];
       "video/jpg" = [ "mpv.desktop" ];
       "video/*" = [ "mpv.desktop" ];
@@ -22,6 +23,7 @@
       "image/jpg" = [ "nsxiv.desktop" ];
       "image/png" = [ "nsxiv.desktop" ];
       "image/webp" = [ "nsxiv.desktop" ];
+      "image/gif" = [ "nsxiv.desktop" ];
       "video/png" = [ "mpv.desktop" ];
       "video/jpg" = [ "mpv.desktop" ];
       "video/*" = [ "mpv.desktop" ];
