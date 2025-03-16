@@ -336,6 +336,11 @@
         options = {
           showHidden = true;
         };
+        keymap = {
+          fileOperations = {
+            trash = [ "d" ];
+          };
+        };
       };
     };
   };

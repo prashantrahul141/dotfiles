@@ -83,6 +83,7 @@
     lazydocker
     nix-search-cli
     neofetch # sure why not.
+    hyperfine
 
     # browser
     brave

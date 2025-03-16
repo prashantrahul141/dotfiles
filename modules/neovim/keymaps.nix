@@ -302,6 +302,8 @@
                     "<C-Down>" = "Resize the current window downwards";
                     "<C-Left>" = "Resize the current window to the left";
                     "<C-Right>" = "Resize the current window to the right";
+                    "<leader>tr" = "Open ranger";
+                    "<leader>tl" = "Open lazygit";
                   };
                 in
                 descriptions.${key} or "No description";
@@ -325,6 +327,8 @@
             "k" = ''gk'';
             "<Up>" = ''gk'';
             "<Down>" = ''gj'';
+            "<leader>tr" = ":FloatermNew ranger<CR>";
+            "<leader>tl" = ":FloatermNew lazygit<CR>";
           }
       ++
         lib.mapAttrsToList
