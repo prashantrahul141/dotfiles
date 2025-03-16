@@ -110,7 +110,7 @@
       	--message-hover:  rgba(160, 130, 120, 0.1); /* messages when hovered */
 
       	/* amount of spacing and padding */
-      	--spacing: 11px;
+      	--spacing: 8px;
 
       	/* animations */
       	/* ALL ANIMATIONS CAN BE DISABLED WITH REDUCED MOTION IN DISCORD SETTINGS */
