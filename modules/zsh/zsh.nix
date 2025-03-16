@@ -12,7 +12,7 @@
       nv = "nvim";
       q = "exit";
       e = "xdg-open";
-      zp = "z ~/Projects/";
+      zp = "z ~/Proj/";
       zs = "z ~/Documents/Studies/";
       zd = "z ~/Desktop/";
       zw = "z ~/work/";

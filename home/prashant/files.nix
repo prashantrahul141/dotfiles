@@ -25,6 +25,12 @@
             fund=false
       progress=false'';
 
+    ".Xresources".text = ''
+      Nsxiv.window.background: #1D2021
+      Nsxiv.bar.background: #1D2021
+      Nsxiv.bar.foreground: #EBDBB2
+    '';
+
     ".config/uwsm/env".text = ''
       export QT_AUTO_SCREEN_SCALE_FACTOR=1
       export QT_QPA_PLATFORM=wayland;xcb
