@@ -2,7 +2,7 @@
 
 NixOS configuration files using Flakes and Home Manager.
 
-![ILOVEGRUVBOX](./ss.png)
+![ILOVEGRUVBOX](./ss.avif)
 
 For my own reference:
 ```sh
@@ -17,7 +17,7 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
 sudo nixos-rebuild switch
 
 # clone repo
-git clone --depth 1 https://github.com/prashantrahul141/dotfiles -o nixos && cd nixos
+git clone --depth 1 https://github.com/prashantrahul141/dotfiles nixos && cd nixos
 
 # copy new hardware configuration and override the old on.
 rm ./hosts/thorfinn/hardware.nix

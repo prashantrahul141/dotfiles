@@ -34,7 +34,7 @@
       };
 
       maintenance = {
-        auto = false;
+        auto = true;
         strategy = "incremental";
       };
 
