@@ -209,6 +209,8 @@
             activated = "";
             deactivated = "";
           };
+          tooltip-format-activated = "Screen will NOT go idle";
+          tooltip-format-deactivated = "Screen will go idle";
         };
         "hyprland/window" = {
           format = "{title}";

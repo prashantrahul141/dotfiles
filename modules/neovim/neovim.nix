@@ -17,7 +17,9 @@
     extraConfigLua = ''
       vim.g.floaterm_keymap_toggle = "<c-t>"
       vim.opt.fillchars:append({ eob = " " })
+      vim.opt.shell = "zsh"
     '';
+
     extraConfigLuaPre = ''
       vim.go.laststatus=3
       vim.o.laststatus=3
