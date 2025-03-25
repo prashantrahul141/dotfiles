@@ -53,8 +53,9 @@
     # go
     go
 
-    # java
-    zulu23
+    #java
+    jdk
+    mssql_jdbc
 
     # c/c++
     gcc14
@@ -62,8 +63,9 @@
     cmake
     gdb
     clang-tools
-    julia_19
 
+    # julia
+    julia-bin
     # rust
     rustup
 

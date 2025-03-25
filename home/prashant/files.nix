@@ -69,11 +69,11 @@
 
     ".config/vesktop/themes/customgruv.dark.css".text = ''
       @import url('https://refact0r.github.io/midnight-discord/midnight.css');
-      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..400;1,100..800&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
       /* customize things here */
       :root {
-      	/* font, change to 'gg sans' for default discord font*/
-      	--font: 'JetBrains Mono';
+        /* fonts */
+        --font: 'Fira Code';
 
       	/* top left corner text */
       	--corner-text: 'Vesktop';

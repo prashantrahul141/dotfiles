@@ -62,7 +62,7 @@
       enabled = "yes";
 
       bezier = [
-        "overshot,0.01, 0.9, 0.1, 1.04"
+        "overshot,0.007, 0.9, 0.05, 1.02"
         "easeoutexpo,0.16, 1, 0.3, 1"
       ];
 
