@@ -35,11 +35,12 @@
     ../../modules/eza/eza.nix
     ../../modules/mpv/mpv.nix
     ../../modules/git/git.nix
-    ../../modules/ranger/ranger.nix
     ../../modules/lazygit/lazygit.nix
     ../../modules/neovim/neovim.nix
     ../../modules/bat/bat.nix
     ../../modules/btm/btm.nix
+    ../../modules/yazi/yazi.nix
+    # ../../modules/ranger/ranger.nix
     # ../../modules/helix/helix.nix
     # ../../modules/zed/zed.nix
   ];

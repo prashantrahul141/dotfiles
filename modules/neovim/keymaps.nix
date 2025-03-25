@@ -302,7 +302,7 @@
                     "<C-Down>" = "Resize the current window downwards";
                     "<C-Left>" = "Resize the current window to the left";
                     "<C-Right>" = "Resize the current window to the right";
-                    "<leader>tr" = "Open ranger";
+                    "<leader>tr" = "Open file manager";
                     "<leader>tl" = "Open lazygit";
                   };
                 in
@@ -327,7 +327,7 @@
             "k" = ''gk'';
             "<Up>" = ''gk'';
             "<Down>" = ''gj'';
-            "<leader>tr" = ":FloatermNew ranger<CR>";
+            "<leader>tr" = ":FloatermNew yazi<CR>";
             "<leader>tl" = ":FloatermNew lazygit<CR>";
           }
       ++
