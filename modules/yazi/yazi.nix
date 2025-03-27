@@ -1,4 +1,4 @@
-{ starship, ... }:
+{ ... }:
 {
   programs.yazi = {
     enable = true;
@@ -7,7 +7,8 @@
 
     settings = {
       manager = {
-        show_hidden = true;
+        show_hidden = false;
+        show_symlink = true;
         ratio = [
           1
           2
@@ -20,18 +21,51 @@
       };
     };
 
-    theme = (import  ./theme.nix {} );
+    theme = (import ./theme.nix { });
 
     keymap = {
       manager.prepend_keymap = [
         {
-           on   = "<Esc>";
-           run  = "close";
-           desc = "Cancel input";
+          on = [
+            "g"
+            "d"
+          ];
+          run = "cd ~/Downloads";
+          desc = "Cd to ~/Downloads";
+
+        }
+        {
+          on = [
+            "g"
+            "s"
+          ];
+          run = "cd ~/Documents/Studies/";
+          desc = "Cd to ~/Documents/Studies/";
+        }
+        {
+          on = [
+            "g"
+            "p"
+          ];
+          run = "cd ~/Proj";
+          desc = "Cd to ~/Proj";
+        }
+        {
+          on = [
+            "g"
+            "p"
+          ];
+          run = "cd ~/Proj";
+          desc = "Cd to ~/Proj";
+        }
+        {
+          on = "<Esc>";
+          run = "close";
+          desc = "Cancel input";
         }
         {
           on = "!";
-          run = ''shell --interactive "$SHELL" --block'';
+          run = ''shell --confirm "$SHELL" --block'';
           desc = "Open shell here";
         }
         {

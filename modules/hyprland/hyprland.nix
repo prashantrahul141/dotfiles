@@ -20,7 +20,7 @@
     ];
 
     "$terminal" = "kitty";
-    "$fileManager" = "kitty ranger";
+    "$fileManager" = "kitty yazi";
     "$menu" = "wofi --show drun";
     "$browser" = "brave";
 

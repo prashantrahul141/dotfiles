@@ -3,4 +3,13 @@ if [[ "${widgets[zle-keymap-select]#user:}" == "starship_zle-keymap-select" || \
     zle -N zle-keymap-select "";
 fi
 
+function f() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
 eval "$(starship init zsh)"

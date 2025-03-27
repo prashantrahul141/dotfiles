@@ -19,7 +19,6 @@
       lg = "lazygit";
       tm = "tmux";
       rm = "trash -v";
-      f = "yazi";
       c = "code .";
       copy = "wl-copy";
       dn = "dotnet";
