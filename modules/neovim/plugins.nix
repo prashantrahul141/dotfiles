@@ -158,7 +158,7 @@
 
       lsp = {
         enable = true;
-        inlayHints = true;
+        inlayHints = false;
         servers = {
           gopls.enable = true;
           golangci_lint_ls.enable = true;

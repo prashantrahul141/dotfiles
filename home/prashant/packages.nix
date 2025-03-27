@@ -65,7 +65,8 @@
     clang-tools
 
     # julia
-    julia-bin
+    julia
+
     # rust
     rustup
 
@@ -75,6 +76,9 @@
 
     vscode
     # zed-editor
+
+    #
+    godot_4
 
     # utils, mostly cli.
     gh

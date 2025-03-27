@@ -6,8 +6,15 @@
 }:
 {
   dconf.settings = {
+    "org/gnome/shell" = {
+      favorite-apps = [
+        "brave.desktop"
+        "kitty.desktop"
+      ];
+    };
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
+      enable-hot-corners = false;
     };
   };
 
