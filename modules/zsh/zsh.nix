@@ -17,11 +17,9 @@
       zd = "z ~/Desktop/";
       zw = "z ~/work/";
       lg = "lazygit";
-      tm = "tmux";
       rm = "trash -v";
       c = "code .";
       copy = "wl-copy";
-      dn = "dotnet";
       find = "fd";
       nd = "nix develop -c zsh";
       nr = "sudo nixos-rebuild switch --flake ~/nixos/hosts#thorfinn";
