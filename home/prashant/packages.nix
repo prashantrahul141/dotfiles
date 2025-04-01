@@ -77,7 +77,7 @@
     vscode
     # zed-editor
 
-    #
+    # game engine
     godot_4
 
     # utils, mostly cli.
@@ -91,6 +91,7 @@
     nix-search-cli
     neofetch # sure why not.
     hyperfine
+    gdbgui
 
     # browser
     brave
