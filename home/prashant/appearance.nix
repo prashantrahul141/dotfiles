@@ -8,6 +8,7 @@
   dconf.settings = {
     "org/gnome/shell" = {
       favorite-apps = [
+        "nsxiv.desktop"
         "brave.desktop"
         "kitty.desktop"
       ];

@@ -6,7 +6,7 @@
       "text/plain" = [ "nvim.desktop" ];
       "application/pdf" = [ "evince.desktop" ];
       "image/*" = [ "nsxiv.desktop" ];
-      "image/jpg" = [ "nsxiv.desktop" ];
+      "image/jpeg" = [ "nsxiv.desktop" ];
       "image/png" = [ "nsxiv.desktop" ];
       "image/webp" = [ "nsxiv.desktop" ];
       "image/gif" = [ "nsxiv.desktop" ];
@@ -20,7 +20,7 @@
       "text/plain" = [ "nvim.desktop" ];
       "application/pdf" = [ "evince.desktop" ];
       "image/*" = [ "nsxiv.desktop" ];
-      "image/jpg" = [ "nsxiv.desktop" ];
+      "image/jpeg" = [ "nsxiv.desktop" ];
       "image/png" = [ "nsxiv.desktop" ];
       "image/webp" = [ "nsxiv.desktop" ];
       "image/gif" = [ "nsxiv.desktop" ];
