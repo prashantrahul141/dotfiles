@@ -18,6 +18,9 @@
       vim.g.floaterm_keymap_toggle = "<c-t>"
       vim.opt.fillchars:append({ eob = " " })
       vim.opt.shell = "zsh"
+
+      vim.keymap.set('n', '<RightMouse>', '<Nop>', { noremap = true })
+      vim.keymap.set('v', '<RightMouse>', '<Nop>', { noremap = true })
     '';
 
     extraConfigLuaPre = ''
