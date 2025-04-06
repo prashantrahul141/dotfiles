@@ -21,6 +21,8 @@
 
       vim.keymap.set('n', '<RightMouse>', '<Nop>', { noremap = true })
       vim.keymap.set('v', '<RightMouse>', '<Nop>', { noremap = true })
+
+      vim.o.shortmess = "atI"
     '';
 
     extraConfigLuaPre = ''
