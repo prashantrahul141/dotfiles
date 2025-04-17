@@ -91,6 +91,7 @@
     neofetch # sure why not.
     hyperfine
     gdbgui
+    imhex
 
     # browser
     brave
@@ -98,6 +99,7 @@
     # additional software i use
     anytype
     dbeaver-bin
+    quassel # irc client
 
     slack
 
