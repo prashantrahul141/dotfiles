@@ -12,7 +12,6 @@
     hyprshot
     flameshot
     grim
-    obs-studio
     pavucontrol
     pamixer
 
