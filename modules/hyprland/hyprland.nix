@@ -22,7 +22,7 @@
     "$terminal" = "kitty";
     "$fileManager" = "kitty yazi";
     "$menu" = "wofi --show drun";
-    "$browser" = "brave";
+    "$browser" = "brave --password-store=basic";
 
     # MANAGED USING UWSM NOW.
     # MOVED TO home/$USER/files.nix
@@ -268,6 +268,7 @@
       "systemctl --user enable --now hyprpaper.service"
       "uwsm app -- xrdb -load ~/.Xresources"
       "uwsm app -- openrgb --mode static --brightness 0 --color ACB5FB"
+      "systemctl --user import-environment DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
       "uwsm app -- dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
       "uwsm app -- xwaylandvideobridge &"
       "systemctl --user enable --now hyprpolkitagent.service"
