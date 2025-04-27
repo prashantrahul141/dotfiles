@@ -240,7 +240,7 @@
           device = "acpi_video0";
           on-scroll-up = "brightnessctl s 1+";
           on-scroll-down = "brightnessctl s 1-";
-          scroll-step = 2;
+          scroll-step = 1;
         };
         tray = {
           icon-size = 15;
