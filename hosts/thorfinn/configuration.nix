@@ -12,7 +12,7 @@ in
     ./boot.nix
     ../../modules/minimal.nix
     inputs.nixos-hardware.nixosModules.asus-fa506ic
-    ../common.nix
+    ../minimal.nix
     ./hardware.nix
     ./network.nix
     ./security.nix

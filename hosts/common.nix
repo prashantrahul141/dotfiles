@@ -1,7 +1,0 @@
-{ ... }:
-{
-  nix.gc = {
-    automatic = true;
-  };
-
-}
