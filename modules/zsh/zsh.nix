@@ -31,20 +31,13 @@
     oh-my-zsh = {
       enable = true;
       plugins = [
-        "vi-mode"
         "git"
-        "bun"
         "copybuffer"
         "docker"
-        "dotnet"
         "extract"
-        "fzf"
         "gh"
-        "gitignore"
         "golang"
         "npm"
-        "pep8"
-        "pip"
         "rust"
         "zoxide"
         "starship"

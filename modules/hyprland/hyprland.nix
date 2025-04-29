@@ -20,7 +20,7 @@
     ];
 
     "$terminal" = "wezterm";
-    "$fileManager" = "wezterm yazi";
+    "$fileManager" = "wezterm start -- yazi";
     "$menu" = "wofi --show drun";
     "$browser" = "brave --password-store=basic";
 
