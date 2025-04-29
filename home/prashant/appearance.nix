@@ -10,7 +10,7 @@
       favorite-apps = [
         "nsxiv.desktop"
         "brave.desktop"
-        "kitty.desktop"
+        "wezterm.desktop"
       ];
     };
     "org/gnome/desktop/interface" = {

@@ -22,7 +22,7 @@
     image_size = 25;
     gtk_dark = true;
     layer = "top";
-    term = "kitty";
+    term = "wezterm";
     hide_scroll = true;
     normal_window = true;
     line_wrap = "word_char";

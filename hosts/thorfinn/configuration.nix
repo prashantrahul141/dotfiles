@@ -32,8 +32,8 @@ in
   environment.sessionVariables = {
     EDITOR = "nvim";
     BROWSER = "brave"; # "firefox"; one day, surely theyll make the android app better.
-    TERMINAL = "kitty";
-    TERM = "kitty";
+    TERMINAL = "wezterm";
+    TERM = "wezterm";
   };
 
   home-manager = {

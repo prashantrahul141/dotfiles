@@ -14,7 +14,7 @@
       "video/jpg" = [ "mpv.desktop" ];
       "video/*" = [ "mpv.desktop" ];
       "inode/directory" = [ "nemo.desktop" ];
-      "application/x-shellscript" = [ "kitty.desktop" ];
+      "application/x-shellscript" = [ "wezterm.desktop" ];
     };
     defaultApplications = {
       "text/plain" = [ "nvim.desktop" ];
@@ -28,7 +28,7 @@
       "video/jpg" = [ "mpv.desktop" ];
       "video/*" = [ "mpv.desktop" ];
       "inode/directory" = [ "nemo.desktop" ];
-      "application/x-shellscript" = [ "kitty.desktop" ];
+      "application/x-shellscript" = [ "wezterm.desktop" ];
     };
   };
 }

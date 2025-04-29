@@ -42,7 +42,6 @@
         "gh"
         "gitignore"
         "golang"
-        "kitty"
         "npm"
         "pep8"
         "pip"

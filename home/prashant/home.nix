@@ -28,7 +28,7 @@
     ../../modules/waybar/waybar.nix
     ../../modules/wofi/wofi.nix
     ../../modules/cliphist/cliphist.nix
-    ../../modules/kitty/kitty.nix
+    # ../../modules/kitty/kitty.nix
     ../../modules/zsh/zsh.nix
     ../../modules/starship/starship.nix
     ../../modules/zoxide/zoxide.nix
@@ -44,6 +44,7 @@
     # ../../modules/ranger/ranger.nix
     # ../../modules/helix/helix.nix
     # ../../modules/zed/zed.nix
+    ../../modules/wezterm/wezterm.nix
   ];
 
   home.sessionVariables = {
@@ -51,8 +52,8 @@
     QT_QPA_PLATFORM = "wayland";
     QT_QPA_PLATFORMTHEME = "qt5ct";
     QT_STYLE_OVERRIDE = "kvantum";
-    TERMINAL = "kitty";
-    TERM = "kitty";
+    TERMINAL = "wezterm";
+    TERM = "wezterm";
     GOPATH = "~/.go";
   };
 

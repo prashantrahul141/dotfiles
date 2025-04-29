@@ -19,8 +19,8 @@
       "~/.config/hypr/workspaces.conf"
     ];
 
-    "$terminal" = "kitty";
-    "$fileManager" = "kitty yazi";
+    "$terminal" = "wezterm";
+    "$fileManager" = "wezterm yazi";
     "$menu" = "wofi --show drun";
     "$browser" = "brave --password-store=basic";
 
