@@ -81,8 +81,8 @@
 
       animation = [
         "windows, 1, 3.6, gentle_spring, popin 60%"
-        "windowsIn, 1, 3.6, gentle_spring, popin 50%"
-        "windowsOut, 1, 3.6, md3_accel, popin 60%"
+        "windowsIn, 1, 3.6, gentle_spring, popin 60%"
+        "windowsOut, 1, 20.0, md3_accel, popin 60%"
         "border, 1, 10, default"
         "fade, 1, 3.6, md3_decel"
         "layers, 1, 2.6, md3_decel, slide"
