@@ -62,16 +62,38 @@
       enabled = "yes";
 
       bezier = [
-        "overshot,0.007, 0.9, 0.05, 1.02"
-        "easeoutexpo,0.16, 1, 0.3, 1"
+        "linear, 0, 0, 1, 1"
+        "md3_standard, 0.2, 0, 0, 1"
+        "md3_decel, 0.05, 0.7, 0.1, 1"
+        "md3_accel, 0.3, 0, 0.8, 0.15"
+        "overshot, 0.05, 0.8, 0.1, 1.02"
+        "crazyshot, 0.1, 1.0, 0.76, 0.92 "
+        "hyprnostretch, 0.05, 0.9, 0.1, 1.0"
+        "menu_decel, 0.1, 1, 0, 1"
+        "menu_accel, 0.38, 0.04, 1, 0.07"
+        "easeInOutCirc, 0.85, 0, 0.15, 1"
+        "easeOutCirc, 0, 0.55, 0.45, 1"
+        "easeOutExpo, 0.16, 1, 0.3, 1"
+        "softAcDecel, 0.26, 0.26, 0.15, 1"
+        "md2, 0.4, 0, 0.2, 1"
+        "gentle_spring, 0.3, 1.1, 0.4, 1"
       ];
 
       animation = [
-        "windows, 1, 7, overshot, popin 50%"
-        "windowsOut, 1, 7, easeoutexpo, popin 50%"
+        "windows, 1, 3.6, gentle_spring, popin 60%"
+        "windowsIn, 1, 3.6, gentle_spring, popin 50%"
+        "windowsOut, 1, 3.6, md3_accel, popin 60%"
         "border, 1, 10, default"
-        "fade, 1, 7, default"
-        "workspaces, 1, 6, overshot"
+        "fade, 1, 3.6, md3_decel"
+        "layers, 1, 2.6, md3_decel, slide"
+        "layersIn, 1, 3.6, menu_decel, slide"
+        "layersOut, 1, 2.2, menu_accel"
+        "fadeLayersIn, 1, 2.6, gentle_spring"
+        "fadeLayersOut, 1, 1.1, menu_accel"
+        "workspaces, 1, 3.1, softAcDecel, slide"
+        "workspaces, 1, 5.6, menu_decel"
+        "specialWorkspace, 1, 3.6, gentle_spring, slidefadevert 15%"
+        "specialWorkspace, 1, 3.6, gentle_spring, slidevert"
       ];
     };
 
@@ -202,6 +224,8 @@
       # wallpaper
       "$mainMod, w, exec, uwsm app -- bash ${builtins.path { path = ../hyprpaper/switch-wallpaper.sh; }}"
 
+      "$mainMod SHIFT, mouse_down, exec, hyprctl -q keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor | awk '/^float.*/ {print $2 * 1.1}')"
+      "$mainMod SHIFT, mouse_up, exec, hyprctl -q keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor | awk '/^float.*/ {print $2 * 0.9}')"
     ];
 
     # Move/resize windows with mainMod + LMB/RMB and dragging
