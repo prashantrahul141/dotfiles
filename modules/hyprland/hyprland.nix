@@ -16,7 +16,6 @@
     # monitor = ", 1920x1080@144, auto, 1";
     source = [
       "~/.config/hypr/monitors.conf"
-      "~/.config/hypr/workspaces.conf"
     ];
 
     "$terminal" = "wezterm";
@@ -57,6 +56,15 @@
         vibrancy = 0.12;
       };
     };
+
+
+    # Multi Monitor setup
+    workspace = [
+      "1,monitor:eDP-1"
+      "2,monitor:eDP-1"
+      "3,monitor:HDMI-A-1"
+      "4,monitor:HDMI-A-1"
+    ];
 
     animations = {
       enabled = "yes";
@@ -307,7 +315,9 @@
     ];
     # #
 
-    "windowrule" = "float, ^.*(iwgtk)$";
+    windowrule = [
+      "float, ^.*(iwgtk)$"
+    ];
 
     debug = {
       disable_scale_checks = true;
