@@ -24,7 +24,7 @@
 
 
       #workspaces button {
-        padding: 5px 12px;
+        padding: 5px 10px;
       	box-shadow: inset 0 -3px transparent;
       	border: none;
       	color: #${colorScheme.palette.base05};
@@ -68,7 +68,7 @@
       #tray,
       #idle_inhibitor,
       #custom-notifications {
-      	padding: 8px 13px;
+        padding: 8px 11px;
         color: #${colorScheme.palette.base06};
         background-color: #${colorScheme.palette.base00};
       }
@@ -188,15 +188,13 @@
         modules-left = [
           "hyprland/workspaces"
           "idle_inhibitor"
-          "cpu"
-          "memory"
           "battery"
+          "backlight"
           "network"
         ];
         modules-center = [ "hyprland/window" ];
         modules-right = [
           "tray"
-          "backlight"
           "custom/notifications"
           "pulseaudio"
           "pulseaudio#microphone"
