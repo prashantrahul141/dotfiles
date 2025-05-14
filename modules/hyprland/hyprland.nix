@@ -57,11 +57,11 @@
       };
     };
 
-
     # Multi Monitor setup
     workspace = [
       "1,monitor:eDP-1"
       "2,monitor:eDP-1"
+      "5,monitor:eDP-1"
       "3,monitor:HDMI-A-1"
       "4,monitor:HDMI-A-1"
     ];
