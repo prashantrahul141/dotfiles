@@ -25,10 +25,12 @@
 
       floaterm = {
         enable = true;
-        height = 0.8;
-        shell = "zsh";
-        title = "Terminal";
-        autoclose = 1;
+        settings = {
+          title = "Terminal";
+          height = 0.8;
+          shell = "zsh";
+          autoclose = 1;
+        };
       };
 
       tmux-navigator = {

@@ -45,6 +45,6 @@
         "colored-man-pages"
       ];
     };
-    initExtra = (builtins.readFile ./.zshrc);
+    initContent = (builtins.readFile ./.zshrc);
   };
 }

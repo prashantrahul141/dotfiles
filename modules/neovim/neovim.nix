@@ -59,7 +59,7 @@
       providers.wl-copy.enable = true;
     };
 
-    diagnostics = {
+    diagnostic.settings = {
       severity_sort = true;
       update_in_insert = false;
       underline = true;

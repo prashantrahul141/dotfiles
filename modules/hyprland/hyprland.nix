@@ -316,7 +316,6 @@
     # #
 
     windowrule = [
-      "float, ^.*(iwgtk)$"
     ];
 
     debug = {

@@ -1,7 +1,7 @@
 { lib, config, ... }:
 {
   # Enable sound with pipewire.
-  hardware.pulseaudio = {
+  services.pulseaudio = {
     enable = false;
 
     # automatically switch audio to the connected bluetooth device when it connects

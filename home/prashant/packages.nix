@@ -63,9 +63,8 @@
     cmake
     ccache
     gdb
-    rocmPackages_5.llvm.clang
+    rocmPackages.llvm.clang-unwrapped
     lld_19
-    clang-tools
 
     # julia
     julia
@@ -117,13 +116,9 @@
     font-awesome
     powerline-fonts
     powerline-symbols
-    (nerdfonts.override {
-      fonts = [
-        "FiraCode"
-        "JetBrainsMono"
-        "NerdFontsSymbolsOnly"
-      ];
-    })
+    nerd-fonts.fira-code
+    nerd-fonts.symbols-only
+    nerd-fonts.jetbrains-mono
   ];
 
 }
