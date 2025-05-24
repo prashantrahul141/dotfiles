@@ -5,7 +5,7 @@
 }:
 {
   wayland.windowManager.hyprland.plugins = [
-    pkgs.hyprlandPlugins.hypr-dynamic-cursors
+    # pkgs.hyprlandPlugins.hypr-dynamic-cursors
   ];
   wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.systemd.enable = false; # only required if uwsm is used.

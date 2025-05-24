@@ -57,10 +57,14 @@
     mssql_jdbc
 
     # c/c++
-    gcc14
+    # gcc14
     gnumake
+    ninja
     cmake
+    ccache
     gdb
+    rocmPackages_5.llvm.clang
+    lld_19
     clang-tools
 
     # julia
@@ -77,7 +81,7 @@
     # zed-editor
 
     # game engine
-    godot_4
+    unityhub
 
     # utils, mostly cli.
     gh
