@@ -45,6 +45,7 @@
     # ../../modules/helix/helix.nix
     # ../../modules/zed/zed.nix
     ../../modules/wezterm/wezterm.nix
+    # ../../modules/espanso/espanso.nix
   ];
 
   home.sessionVariables = {
