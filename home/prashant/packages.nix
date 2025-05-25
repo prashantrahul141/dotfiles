@@ -63,7 +63,7 @@
     cmake
     ccache
     gdb
-    rocmPackages.llvm.clang-unwrapped
+    llvmPackages_20.libcxxClang
     lld_19
 
     # julia
@@ -89,7 +89,7 @@
     yt-dlp
     ffmpeg
     pinta
-    lazydocker
+    # lazydocker
     nix-search-cli
     neofetch # sure why not.
     hyperfine
