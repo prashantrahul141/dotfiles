@@ -95,6 +95,7 @@
     hyperfine
     gdbgui
     imhex
+    dust # https://github.com/bootandy/dust
 
     # browser
     brave

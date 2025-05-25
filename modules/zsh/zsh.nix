@@ -25,6 +25,7 @@
       nr = "sudo nixos-rebuild switch --flake ~/nixos/hosts#thorfinn";
       ncd = "sudo nix-collect-garbage -d";
       ns = "nix-search";
+      du = "dust";
     };
     history.size = 10000;
 

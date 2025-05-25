@@ -5,7 +5,7 @@
 }:
 {
   wayland.windowManager.hyprland.plugins = [
-    # pkgs.hyprlandPlugins.hypr-dynamic-cursors
+    pkgs.hyprlandPlugins.hypr-dynamic-cursors
   ];
   wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.systemd.enable = false; # only required if uwsm is used.
@@ -85,12 +85,13 @@
         "softAcDecel, 0.26, 0.26, 0.15, 1"
         "md2, 0.4, 0, 0.2, 1"
         "gentle_spring, 0.3, 1.1, 0.4, 1"
+        "easeoutexpo,0.16, 1, 0.3, 1"
       ];
 
       animation = [
         "windows, 1, 3.6, gentle_spring, popin 60%"
         "windowsIn, 1, 3.6, gentle_spring, popin 60%"
-        "windowsOut, 1, 20.0, md3_accel, popin 60%"
+        "windowsOut, 1, 7, easeoutexpo, popin 50%"
         "border, 1, 10, default"
         "fade, 1, 3.6, md3_decel"
         "layers, 1, 2.6, md3_decel, slide"
