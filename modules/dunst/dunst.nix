@@ -12,12 +12,12 @@
       font = "FiraCode Nerd Font 11";
       shrink = true;
       word_wrap = "yes";
-      offset = "9x9";
+      offset = "(9, 9)";
       padding = 15;
       horizontal_padding = 15;
-      dmenu = " wofi -d -p dunst";
+      dmenu = "wofi -d -p dunst";
       corner_radius = 10;
-      format = "<b>%s</b>\n%b";
+      format = "<b>%s</b>\\n%b";
       sticky_history = "no";
     };
 

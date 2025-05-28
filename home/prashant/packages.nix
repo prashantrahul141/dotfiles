@@ -113,6 +113,11 @@
     libreoffice-qt6-fresh
     hunspell # spellcheck
 
+    # man pages
+    linux-manual
+    man-pages
+    man-pages-posix
+
     # fonts
     font-awesome
     powerline-fonts
