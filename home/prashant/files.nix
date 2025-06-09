@@ -59,8 +59,6 @@
       recursive = true;
     };
 
-    ".config/mpv/scripts/mpv-cheatsheet.js".source = ../../modules/mpv/mpv-cheatsheet.js;
-
     ".npmrc".text = ''
             audit=false
             fund=false

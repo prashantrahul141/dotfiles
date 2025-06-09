@@ -12,7 +12,10 @@
       sub-scale = "0.5";
     };
 
-    # scripts = [ pkgs.mpv-cheatsheet ];
+    scripts = with pkgs; [
+      mpvScripts.autosub
+      mpvScripts.mpv-cheatsheet
+    ];
 
   };
 }

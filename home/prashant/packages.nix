@@ -46,8 +46,12 @@
     gruvbox-gtk-theme
 
     # global compilers, linters, package managers for different languages.
-    python313
-    pylint
+    (pkgs.python313.withPackages (
+      python-pkgs: with python-pkgs; [
+        pylint
+        subliminal
+      ]
+    ))
 
     # go
     go
