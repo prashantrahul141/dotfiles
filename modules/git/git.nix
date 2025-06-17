@@ -21,6 +21,10 @@
         gpgsign = true;
       };
 
+      gpg = {
+        program = "gpg";
+      };
+
       init = {
         defaultBranch = "main";
       };
