@@ -10,6 +10,9 @@
       credential.helper = "!gh auth git-credential";
 
       core = {
+        compression = 9;
+        whitespace = "error";
+        preloadindex = true;
         excludesfile = builtins.path { path = ./.gitignore_global; };
       };
 
@@ -45,7 +48,34 @@
       merge = {
         conflictStyle = "diff3";
       };
-    };
 
+      diff = {
+        context = 3;
+        renames = "copies";
+        interHunkContext = 10;
+      };
+
+      # shortend urls for git clone.
+      url = {
+        "git@github.com:prashantrahul141/" = {
+          insteadOf = "ghp:";
+        };
+        "git@github.com:" = {
+          insteadOf = "gh:";
+        };
+      };
+
+      status = {
+        branch = true;
+        showStash = true;
+        showUntrackedFiles = true;
+      };
+
+      log = {
+        abbrevCommit = true;
+        graphColors = "blue,yellow,cyan,magenta,green,red";
+        graph = true;
+      };
+    };
   };
 }
