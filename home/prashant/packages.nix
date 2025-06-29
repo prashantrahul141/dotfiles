@@ -56,9 +56,9 @@
     # go
     go
 
-    #java
-    jdk
-    mssql_jdbc
+    # java
+    # jdk
+    # mssql_jdbc
 
     # c/c++
     # gcc14
@@ -71,7 +71,7 @@
     lld_19
 
     # julia
-    julia
+    # julia
 
     # rust
     rustup
@@ -84,7 +84,7 @@
     # zed-editor
 
     # game engine
-    unityhub
+    # unityhub
 
     # utils, mostly cli.
     gh
@@ -107,7 +107,7 @@
     # additional software i use
     anytype
     dbeaver-bin
-    quassel # irc client
+    # quassel # irc client
 
     slack
 
