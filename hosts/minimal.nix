@@ -4,6 +4,9 @@
     automatic = true;
   };
 
-  environment.systemPackages = with pkgs; [ file ];
+  environment.systemPackages = with pkgs; [
+    file
+    procs
+  ];
 
 }

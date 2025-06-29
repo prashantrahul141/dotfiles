@@ -52,9 +52,6 @@
 
   # unlock GPG keyring on login
   services.gnome.gnome-keyring.enable = true;
-  security.pam.services.greetd.enableGnomeKeyring = true;
-  security.pam.services.hyprland.enableGnomeKeyring = true;
-  security.pam.services.hyprland.gnupg.enable = true;
   system.stateVersion = "24.11";
 
 }
