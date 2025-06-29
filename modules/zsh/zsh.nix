@@ -26,6 +26,7 @@
       ncd = "sudo nix-collect-garbage -d";
       ns = "nix-search";
       du = "dust";
+      ps = "procs";
     };
     history.size = 10000;
 
@@ -44,6 +45,8 @@
         "starship"
         "ssh"
         "colored-man-pages"
+        "ssh-agent"
+        "gpg-agent"
       ];
     };
     initContent = (builtins.readFile ./.zshrc);

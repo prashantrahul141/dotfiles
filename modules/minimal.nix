@@ -33,23 +33,11 @@
       wget
       git
       brightnessctl
+      pinentry-gnome3
+      libsecret
     ];
 
   # for mounting usb and other drives
   services.udisks2.enable = true;
-
-  programs = {
-    gnupg = {
-      agent = {
-        enable = true;
-        enableSSHSupport = true;
-        settings = {
-          default-cache-ttl = 3600;
-          max-cache-ttl = 7200;
-        };
-        pinentryPackage = pkgs.pinentry-gnome3;
-      };
-    };
-  };
 
 }
