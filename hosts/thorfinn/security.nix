@@ -8,6 +8,20 @@
     '';
   };
 
+  # use doas
+  security.doas = {
+    enable = true;
+    extraRules = [
+      {
+        keepEnv = true;
+        persist = true;
+      }
+    ];
+  };
+
+  # disable sudo
+  security.sudo.enable = false;
+
   security.pam.services = {
     greetd-password.enableGnomeKeyring = true;
     greetd.enableGnomeKeyring = true;

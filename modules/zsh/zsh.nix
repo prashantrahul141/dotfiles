@@ -22,8 +22,8 @@
       copy = "wl-copy";
       find = "fd";
       nd = "nix develop -c zsh";
-      nr = "sudo nixos-rebuild switch --flake ~/nixos/hosts#thorfinn";
-      ncd = "sudo nix-collect-garbage -d";
+      nr = "doas nixos-rebuild switch --flake ~/nixos/hosts#thorfinn";
+      ncd = "doas nix-collect-garbage -d";
       ns = "nix-search";
       du = "dust";
       ps = "procs";
