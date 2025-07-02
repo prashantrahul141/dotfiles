@@ -8,7 +8,7 @@
   dconf.settings = {
     "org/gnome/shell" = {
       favorite-apps = [
-        "nsxiv.desktop"
+        "swayimg.desktop"
         "brave.desktop"
         "wezterm.desktop"
       ];

@@ -23,7 +23,8 @@
     evince
 
     # image viewer
-    nsxiv
+    swayimg
+    # nsxiv # le suckless
     # loupe # gnome
 
     # screen mirror
