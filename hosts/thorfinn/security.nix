@@ -8,6 +8,10 @@
     '';
   };
 
+  # use sudo-rs instead of sudo
+  security.sudo-rs.enable = true;
+  security.sudo.enable = false;
+
   security.pam.services = {
     greetd-password.enableGnomeKeyring = true;
     greetd.enableGnomeKeyring = true;
