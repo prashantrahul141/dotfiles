@@ -6,11 +6,12 @@
     extensions = [
       "nix"
       "toml"
+      "c"
+      "c++"
       "make"
     ];
 
     userSettings = {
-
       centered_layout = {
         left_padding = 0.2;
         right_padding = 0.2;
@@ -24,7 +25,11 @@
       };
       enable_preview_from_file_finder = true;
       relative_line_numbers = true;
-      assistant = {
+      features = {
+        inline_completion_provider = "none";
+        edit_prediction_provider = "none";
+      };
+      agent = {
         enabled = false;
       };
 
@@ -152,14 +157,12 @@
       load_direnv = "shell_hook";
       theme = {
         mode = "system";
-        light = "Gruvbox";
-        dark = "Gruvbox";
+        light = "Gruvbox Dark Hard";
+        dark = "Gruvbox Dark Hard";
       };
       show_whitespaces = "all";
       ui_font_size = 16;
       buffer_font_size = 16;
-
     };
-
   };
 }
