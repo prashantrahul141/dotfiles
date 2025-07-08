@@ -246,6 +246,7 @@
           spacing = 8;
         };
         network = {
+          max-length = 7;
           format = "󰖩 {essid}";
           format-disconnected = "󰖪 disconnected";
         };
