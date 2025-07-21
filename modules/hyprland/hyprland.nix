@@ -22,6 +22,7 @@
     "$fileManager" = "wezterm start -- yazi";
     "$menu" = "wofi --show drun";
     "$browser" = "brave --password-store=basic";
+    "$volume_control" = "pavucontrol";
 
     # MANAGED USING UWSM NOW.
     # MOVED TO home/$USER/files.nix
@@ -59,11 +60,11 @@
 
     # Multi Monitor setup
     workspace = [
-      "1,monitor:eDP-1"
-      "2,monitor:eDP-1"
-      "5,monitor:eDP-1"
-      "3,monitor:HDMI-A-1"
-      "4,monitor:HDMI-A-1"
+      # "1,monitor:eDP-1"
+      # "2,monitor:eDP-1"
+      # "5,monitor:eDP-1"
+      # "3,monitor:HDMI-A-1"
+      # "4,monitor:HDMI-A-1"
     ];
 
     animations = {
@@ -167,6 +168,7 @@
       "$mainMod, E, exec, uwsm app -- $fileManager"
       "$mainMod, B, exec, uwsm app -- $browser"
       "$mainMod, SPACE, exec, uwsm app -- $menu"
+      "$mainMod, G, exec, uwsm app -- $volume_control"
 
       "$mainMod, Q, killactive,"
       "$mainMod, T, togglefloating,"
