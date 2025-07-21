@@ -130,6 +130,10 @@
     nerd-fonts.fira-code
     nerd-fonts.symbols-only
     nerd-fonts.jetbrains-mono
+    noto-fonts-cjk-sans
+
+    # extra stuff
+    anki-bin
   ];
 
 }

@@ -78,7 +78,7 @@
       export XDG_CURRENT_DESKTOP=Hyprland
       export XDG_SESSION_DESKTOP=Hyprland
       export XCURSOR_THEME=McMojave Cursors
-      export XCURSOR_SIZE=47
+      export XCURSOR_SIZE=35
       export LIBVA_DRIVER_NAME=nvidia
       export __GLX_VENDOR_LIBRARY_NAME=nvidia
       export HYPRSHOT_DIR=/home/prashant/Pictures/Screenshots
