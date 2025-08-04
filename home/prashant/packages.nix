@@ -58,7 +58,7 @@
     go
 
     # java
-    # jdk
+    zulu
     # mssql_jdbc
 
     # c/c++
