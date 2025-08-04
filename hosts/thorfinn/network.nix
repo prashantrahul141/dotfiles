@@ -1,9 +1,12 @@
 {
+  lib,
   pkgs,
   ...
 }:
 {
   services.gvfs.enable = true;
+
+  systemd.services.NetworkManager-wait-online.enable = lib.mkForce false;
 
   hardware.bluetooth = {
     enable = true; # enables support for Bluetooth
