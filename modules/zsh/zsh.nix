@@ -35,7 +35,7 @@
       plugins = [
         "git"
         "copybuffer"
-        # "docker"
+        "docker"
         "extract"
         "gh"
         "golang"
