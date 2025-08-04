@@ -41,29 +41,30 @@
       };
 
       label = [
-        # Day
+        # Day, Date
         {
           #  monitor =
-          text = ''cmd[update:1000] echo -e "$(date +"%A")"'';
-          color = "rgb(${colorScheme.palette.base07})";
-          text_align = "center";
-          font_family = "FiraCode Nerd Font";
-          font_size = 50;
-          rotate = 0;
-          position = "0, 160";
-          halign = "center";
-          valign = "center";
-        }
-
-        {
-          #  monitor =
-          text = ''cmd[update:1000] echo -e "$(date +"%d %B")"'';
+          text = ''cmd[update:1000] echo -e "$(date +"%A, %B %d")"'';
           color = "rgb(${colorScheme.palette.base07})";
           text_align = "center";
           font_family = "FiraCode Nerd Font";
           font_size = 18;
           rotate = 0;
           position = "0, 110";
+          halign = "center";
+          valign = "center";
+        }
+
+        # Time
+        {
+          #  monitor =
+          text = ''cmd[update:1000] echo -e "$(date +"%H:%M")"'';
+          color = "rgb(${colorScheme.palette.base07})";
+          text_align = "center";
+          font_family = "FiraCode Nerd Font";
+          font_size = 70;
+          rotate = 0;
+          position = "0, 170";
           halign = "center";
           valign = "center";
         }
