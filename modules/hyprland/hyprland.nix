@@ -301,6 +301,7 @@
     ];
 
     exec-once = [
+      "uwsm app -- fcitx5"
       "systemctl --user enable --now hyprpaper.service"
       "uwsm app -- xrdb -load ~/.Xresources"
       "uwsm app -- openrgb --device 1 --mode static --brightness 0 --color ACB5FB"
@@ -312,9 +313,9 @@
       "uwsm app -- dunst"
       "uwsm app -- waybar"
       "uwsm app -- wl-paste --watch cliphist store"
-      "uwsm app -- nm-applet --indicator &"
+      "uwsm app -- nm-applet --indicator"
       "uwsm app -- blueman-applet"
-      "uwsm app -- udiskie &"
+      "uwsm app -- udiskie"
     ];
     # #
 
@@ -418,7 +419,7 @@
             limit = 0.0
 
             # time in millseconds the cursor will stay magnified after a shake has ended
-            timeout = 1200
+            timeout = 900
 
             # show cursor behaviour `tilt`, `rotate`, etc. while shaking
             effects = true
