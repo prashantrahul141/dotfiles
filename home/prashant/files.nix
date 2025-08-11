@@ -50,6 +50,12 @@
     # # symlink to the Nix store copy.
     # ".screenrc".source = dotfiles/screenrc;
 
+    ".config/flameshot/flameshot.ini".text = ''
+      [General]
+      drawColor=#ff0000
+      disabledGrimWarning=true
+    '';
+
     ".icons/theme_McMojave" = {
       source = ./static/theme_McMojave;
       recursive = true;
