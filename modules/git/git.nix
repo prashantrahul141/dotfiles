@@ -17,7 +17,7 @@
       };
 
       user = {
-        signingkey = "8770981A6FA28826";
+        signingkey = "6C3E91A8D7F0386D";
       };
 
       commit = {
