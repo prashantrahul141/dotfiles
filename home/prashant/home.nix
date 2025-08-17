@@ -59,6 +59,9 @@
     GOPATH = "~/.go";
   };
 
+  # zsh as default shell
+  home.shell.enableZshIntegration = true;
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
