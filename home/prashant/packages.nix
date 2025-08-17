@@ -68,7 +68,8 @@
     cmake
     ccache
     gdb
-    llvmPackages_20.libcxxClang
+    clang
+    # llvmPackages_20.libcxxClang
     lld_19
 
     # julia
