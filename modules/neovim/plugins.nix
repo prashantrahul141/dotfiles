@@ -12,8 +12,11 @@
               "diff"
               "diagnostics"
             ];
-            lualine_x = [ ];
-            lualine_y = [ ];
+            lualine_x = [ "lsp_status" ];
+            lualine_y = [
+              "searchcount"
+              "selectioncount"
+            ];
             lualine_z = [ "location" ];
           };
         };
@@ -160,7 +163,7 @@
 
       lsp = {
         enable = true;
-        inlayHints = false;
+        inlayHints = true;
         servers = {
           gopls.enable = true;
           golangci_lint_ls.enable = true;
@@ -194,7 +197,7 @@
 
           lspBuf = {
             gd = "definition";
-            gD = "references";
+            gr = "references";
             gt = "type_definition";
             gi = "implementation";
             K = "hover";
