@@ -11,5 +11,3 @@ function f() {
 	fi
 	rm -f -- "$tmp"
 }
-
-eval "$(starship init zsh)"
