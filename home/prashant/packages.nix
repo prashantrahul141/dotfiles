@@ -135,6 +135,10 @@
 
     # extra stuff
     anki-bin
+
+    # gaming
+    wineWowPackages.waylandFull
+    winetricks
   ];
 
 }
