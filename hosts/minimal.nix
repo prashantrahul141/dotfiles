@@ -8,6 +8,7 @@
     file
     procs
     whois
+    busybox
   ];
 
 }

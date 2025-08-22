@@ -9,6 +9,10 @@
   # power management: https://nixos.wiki/wiki/Laptop
   powerManagement.enable = true;
 
+  # enable appimage support and add it to binfmt_misc
+  programs.appimage.enable = true;
+  programs.appimage.binfmt = true;
+
   # fine grained power control: https://nixos.wiki/wiki/Laptop
   services.tlp = {
     enable = true;
