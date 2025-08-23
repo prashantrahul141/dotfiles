@@ -18,7 +18,6 @@
       zw = "z ~/work/";
       lg = "lazygit";
       rm = "trash -v";
-      c = "code .";
       copy = "wl-copy";
       find = "fd";
       nd = "nix develop -c zsh";
