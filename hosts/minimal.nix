@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   nix.gc = {
-    automatic = true;
+    automatic = false;
   };
 
   environment.systemPackages = with pkgs; [
