@@ -26,6 +26,7 @@
       ns = "nix-search";
       du = "dust";
       ps = "procs";
+      lsusb = "cyme";
     };
     history.size = 10000;
 
