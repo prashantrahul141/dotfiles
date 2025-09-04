@@ -4,7 +4,7 @@
   ...
 }:
 let
-  colorScheme = inputs.nix-colors.colorSchemes.gruvbox-material-dark-hard;
+  colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-hard;
 in
 {
 
