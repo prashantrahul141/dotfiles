@@ -36,7 +36,10 @@
     {
       nixosConfigurations = {
         thorfinn = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs system nix-colors; };
+          specialArgs = {
+            inherit inputs system nix-colors;
+            hostname = "thorfinn";
+          };
           modules = [ ./hosts/thorfinn/configuration.nix ];
         };
       };

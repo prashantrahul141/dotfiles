@@ -1,6 +1,7 @@
 {
   lib,
   pkgs,
+  hostname,
   ...
 }:
 {
@@ -20,7 +21,7 @@
 
   services.blueman.enable = true; # for bluetooth applet
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = hostname;
 
   # Enable networking
   networking.networkmanager.enable = true;
