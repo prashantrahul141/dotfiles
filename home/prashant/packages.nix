@@ -136,6 +136,9 @@
     # extra stuff
     anki-bin
 
+    # ebook reader
+    foliate
+
     # gaming
     wineWowPackages.waylandFull
     winetricks
