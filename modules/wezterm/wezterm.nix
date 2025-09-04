@@ -1,13 +1,42 @@
-{ ... }:
+{ colorScheme, ... }:
 {
   programs.wezterm = {
     enable = true;
     enableZshIntegration = true;
     extraConfig = ''
        local config = wezterm.config_builder()
-
        config.font = wezterm.font 'FiraCode Nerd Font'
-       config.color_scheme = 'Gruvbox dark, hard (base16)'
+       -- config.color_scheme = 'Gruvbox dark, hard (base16)'
+       config.colors = {
+         foreground = "#${colorScheme.palette.base05}",
+         background = "#${colorScheme.palette.base00}",
+         cursor_bg = "#${colorScheme.palette.base05}",
+         cursor_border = "#${colorScheme.palette.base05}",
+         cursor_fg = "#${colorScheme.palette.base00}",
+         selection_bg = "#${colorScheme.palette.base02}",
+         selection_fg = "#${colorScheme.palette.base05}",
+
+         ansi = {
+            "#${colorScheme.palette.base00}",
+            "#${colorScheme.palette.base08}",
+            "#${colorScheme.palette.base0B}",
+            "#${colorScheme.palette.base0A}",
+            "#${colorScheme.palette.base0D}",
+            "#${colorScheme.palette.base0E}",
+            "#${colorScheme.palette.base0C}",
+            "#${colorScheme.palette.base05}",
+         };
+        brights = {
+           "#${colorScheme.palette.base03}",
+           "#${colorScheme.palette.base08}",
+           "#${colorScheme.palette.base0B}",
+           "#${colorScheme.palette.base0A}",
+           "#${colorScheme.palette.base0D}",
+           "#${colorScheme.palette.base0E}",
+           "#${colorScheme.palette.base0C}",
+           "#${colorScheme.palette.base07}",
+        };
+       }
        config.enable_tab_bar = false
        config.window_padding = {
          left = 10,
