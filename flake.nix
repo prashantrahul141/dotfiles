@@ -1,5 +1,5 @@
 {
-  description = "Home Manager configuration for all my systems.";
+  description = "Nix configuration using flakes and home manager for all my machines";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
@@ -26,12 +26,6 @@
     }@inputs:
     let
       system = "x86_64-linux";
-      pkgs = import nixpkgs {
-        inherit system;
-        config = {
-          allowUnfree = true;
-        };
-      };
     in
     {
       nixosConfigurations = {
