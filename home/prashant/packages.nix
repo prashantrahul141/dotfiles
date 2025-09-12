@@ -109,10 +109,8 @@
     # additional software i use
     anytype
     dbeaver-bin
-    # quassel # irc client
 
-    slack
-
+    # torrent client
     qbittorrent
 
     # libreoffice stuff
@@ -138,6 +136,11 @@
 
     # ebook reader
     foliate
+
+    # communication
+    signal-desktop
+    # quassel # irc client
+    slack
 
     # gaming
     wineWowPackages.waylandFull
