@@ -1,4 +1,4 @@
-{ colorScheme, ... }:
+{ colorScheme, hostname, ... }:
 {
 
   programs.waybar = {
@@ -46,8 +46,8 @@
           format = "{title}";
           max-length = 45;
           rewrite = {
-            "" = " hyprland";
-            "~" = " hyprland";
+            "" = " ${hostname}";
+            "~" = " ${hostname}";
           };
         };
 
