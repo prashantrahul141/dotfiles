@@ -6,7 +6,7 @@
     shellWrapperName = "y";
 
     settings = {
-      manager = {
+      mgr = {
         show_hidden = false;
         show_symlink = true;
         ratio = [
@@ -24,7 +24,7 @@
     theme = (import ./theme.nix { });
 
     keymap = {
-      manager.prepend_keymap = [
+      mgr.prepend_keymap = [
         {
           on = [
             "g"
