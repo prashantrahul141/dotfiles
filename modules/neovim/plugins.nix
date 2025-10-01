@@ -181,6 +181,16 @@
           bashls.enable = true;
           jsonls.enable = true;
 
+          buf_ls = {
+            enable = true;
+            settings = {
+              formatting = {
+                command = "clang-format";
+                args = [ "--assume-filename=a.proto" ];
+              };
+            };
+          };
+
           # julia --project=~/.julia/environments/nvim-lspconfig -e 'using Pkg; Pkg.add("LanguageServer")'
           julials = {
             enable = true;
