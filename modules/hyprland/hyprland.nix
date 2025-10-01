@@ -157,10 +157,16 @@
 
     # Example per-device config
     # See https://wiki.hyprland.org/Configuring/Keywords/#per-device-input-configs for more
-    device = {
-      name = "razer-razer-deathadder-essential";
-      sensitivity = -0.82;
-    };
+    device = [
+      {
+        name = "razer-razer-deathadder-essential";
+        sensitivity = -0.82;
+      }
+      {
+        name = "razer-razer-deathadder-essential-1";
+        sensitivity = -0.82;
+      }
+    ];
 
     "$mainMod" = "SUPER";
 
