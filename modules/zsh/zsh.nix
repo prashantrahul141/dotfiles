@@ -43,6 +43,7 @@
         "colored-man-pages"
         "ssh-agent"
         "gpg-agent"
+        "direnv"
       ];
     };
     initContent = (builtins.readFile ./.zshrc);
