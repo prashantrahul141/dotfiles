@@ -19,6 +19,7 @@
       corner_radius = 10;
       format = "<b>%s</b>\\n%b";
       sticky_history = "no";
+      monitor = 1;
     };
 
     base16_low = {
