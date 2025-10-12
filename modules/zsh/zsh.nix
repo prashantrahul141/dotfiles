@@ -20,7 +20,7 @@
       rm = "trash -v";
       copy = "wl-copy";
       find = "fd";
-      nd = "nix develop -c zsh";
+      nd = "nix develop path:. -c zsh";
       nr = "sudo nixos-rebuild switch --flake ~/nixos/hosts#thorfinn";
       ncd = "sudo nix-collect-garbage -d";
       ns = "nix-search";
