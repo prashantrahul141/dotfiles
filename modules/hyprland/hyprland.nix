@@ -60,11 +60,11 @@
 
     # Multi Monitor setup
     workspace = [
-      # "1,monitor:eDP-1"
-      # "2,monitor:eDP-1"
-      # "5,monitor:eDP-1"
-      # "3,monitor:HDMI-A-1"
-      # "4,monitor:HDMI-A-1"
+      "1,monitor:eDP-1"
+      "2,monitor:eDP-1"
+      "5,monitor:eDP-1"
+      "3,monitor:HDMI-A-1"
+      "4,monitor:HDMI-A-1"
     ];
 
     animations = {
@@ -295,6 +295,7 @@
       "float, title:Open Files"
       "float, class:xdg-desktop-portal-gtk"
       "float, class:nwg-*"
+      "float, class:qemu"
 
       # Fix some dragging issues with XWayland
       "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
