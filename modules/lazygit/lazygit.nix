@@ -4,6 +4,7 @@
     enable = true;
     settings = {
       git = {
+        overrideGpg = true; # enable renaming commit when using gpg
         commit = {
           signOff = true;
         };
