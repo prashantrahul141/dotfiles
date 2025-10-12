@@ -4,6 +4,7 @@
   programs.zed-editor = {
     enable = true;
     extensions = [
+      "proto"
       "nix"
       "toml"
       "c"
@@ -21,6 +22,7 @@
         disabled_globs = [ "*.*" ];
       };
       tabs = {
+        show_diagnostics = "errors";
         file_icons = true;
       };
       enable_preview_from_file_finder = true;
@@ -44,10 +46,20 @@
         diagnostics = false;
         metrics = false;
       };
+      diagnostics = {
+        inline = {
+          enabled = true;
+          update_debounce_ms = 150;
+          padding = 4;
+          min_column = 0;
+          max_severity = null;
+        };
+      };
 
       metrics = false;
       project_panel = {
         button = true;
+        show_diagnostics = "errors";
         dock = "right";
         git_status = true;
         default_width = 100;
@@ -56,26 +68,6 @@
         folds = true;
         code_actions = true;
         line_numbers = true;
-      };
-
-      context = "Dock";
-      bindings = {
-        "ctrl-w h" = [
-          "workspace::ActivatePaneInDirection"
-          "Left"
-        ];
-        "ctrl-w l" = [
-          "workspace::ActivatePaneInDirection"
-          "Right"
-        ];
-        "ctrl-w k" = [
-          "workspace::ActivatePaneInDirection"
-          "Up"
-        ];
-        "ctrl-w j" = [
-          "workspace::ActivatePaneInDirection"
-          "Down"
-        ];
       };
 
       file_scan_exclusions = [
@@ -87,7 +79,6 @@
         "**/Thumbs.db"
         "**/.classpath"
         "**/.settings"
-        "node_modules"
         "*.class"
       ];
 
@@ -96,8 +87,8 @@
         quick_actions = false;
       };
 
-      ensure_final_newline_on_save = true;
-      formatter = "auto";
+      ensure_final_newline_on_save = false;
+      formatter = "language_server";
       buffer_line_height = "standard";
 
       hour_format = "hour24";
@@ -151,18 +142,37 @@
       };
 
       languages = {
+        languages = {
+          TypeScript = {
+            formatter = "prettier";
+          };
+          JavaScript = {
+            formatter = "prettier";
+          };
+        };
       };
 
       vim_mode = true;
       load_direnv = "shell_hook";
       theme = {
         mode = "system";
-        light = "Gruvbox Dark Hard";
-        dark = "Gruvbox Dark Hard";
+        light = "Ayu Dark";
+        dark = "Ayu Dark";
       };
       show_whitespaces = "all";
       ui_font_size = 16;
       buffer_font_size = 16;
     };
+
+    userKeymaps = [
+      {
+        context = "vim_mode == normal && !menu";
+        bindings = {
+          ctrl-t = "workspace::NewTerminal";
+        };
+      }
+
+    ];
+
   };
 }

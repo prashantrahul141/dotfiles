@@ -43,7 +43,7 @@
     ../../modules/obs-studio/obs-studio.nix
     # ../../modules/ranger/ranger.nix
     # ../../modules/helix/helix.nix
-    # ../../modules/zed/zed.nix
+    ../../modules/zed/zed.nix
     ../../modules/wezterm/wezterm.nix
     # ../../modules/espanso/espanso.nix
     ../../modules/direnv/direnv.nix
