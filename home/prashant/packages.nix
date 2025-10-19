@@ -69,6 +69,7 @@
     ccache
     gdb
     clang
+    bear
     # llvmPackages_20.libcxxClang
     lld_19
 
