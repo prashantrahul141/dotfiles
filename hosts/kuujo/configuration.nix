@@ -10,6 +10,7 @@
     ./hardware.nix
     ../minimal.nix
     ./network.nix
+    ./user.nix
     inputs.home-manager.nixosModules.home-manager
   ];
 
