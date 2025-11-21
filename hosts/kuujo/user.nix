@@ -8,6 +8,8 @@
       isNormalUser = true;
       description = "biskit";
       extraGroups = [
+        "networkmanager"
+        "wheel"
       ];
     };
   };
