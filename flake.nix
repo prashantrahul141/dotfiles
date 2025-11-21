@@ -25,16 +25,33 @@
       ...
     }@inputs:
     let
-      system = "x86_64-linux";
+      conf = import ./conf/default.nix;
     in
     {
       nixosConfigurations = {
         thorfinn = nixpkgs.lib.nixosSystem {
           specialArgs = {
-            inherit inputs system nix-colors;
+            inherit inputs nix-colors;
+            system = "x86_64-linux";
             hostname = "thorfinn";
           };
-          modules = [ ./hosts/thorfinn/configuration.nix ];
+          modules = [
+            { _module.args.conf = conf; }
+            ./hosts/thorfinn/configuration.nix
+          ];
+        };
+
+        kuujo = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs nix-colors;
+            system = "x86_64-linux";
+            hostname = "kuujo";
+          };
+
+          modules = [
+            { _module.args.conf = conf; }
+            ./hosts/kuujo/configuration.nix
+          ];
         };
       };
     };
