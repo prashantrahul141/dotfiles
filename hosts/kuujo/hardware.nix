@@ -1,4 +1,9 @@
-{ modulesPath, ... }:
+{
+  system,
+  lib,
+  modulesPath,
+  ...
+}:
 {
   imports = [ (modulesPath + "/profiles/qemu-guest.nix") ];
   boot.loader.grub = {
@@ -21,5 +26,7 @@
     device = "/dev/vda2";
     fsType = "ext4";
   };
+
+  nixpkgs.hostPlatform = lib.mkDefault system;
 
 }
