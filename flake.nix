@@ -25,7 +25,7 @@
       ...
     }@inputs:
     let
-      conf = import ./conf/default.nix;
+      conf = import ./conf/default.nix { };
     in
     {
       nixosConfigurations = {
