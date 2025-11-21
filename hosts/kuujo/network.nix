@@ -2,6 +2,7 @@
   lib,
   pkgs,
   hostname,
+  conf,
   ...
 }:
 {
