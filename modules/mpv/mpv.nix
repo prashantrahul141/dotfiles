@@ -6,6 +6,7 @@
       save-position-on-quit = "yes";
       keep-open = "yes";
       screenshot-format = "png";
+      screenshot-directory = "~/Pictures/Screenshots/";
       cache-secs = "300";
       volume = "60";
       ytdl-format = "bestvideo[height<=?144]+bestaudio/best";
