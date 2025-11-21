@@ -17,9 +17,6 @@
     [
       trim-generations
       firefox
-      neovim
-      wget
-      git
       brightnessctl
       pinentry-gnome3
       libsecret

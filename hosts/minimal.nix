@@ -5,6 +5,9 @@
   };
 
   environment.systemPackages = with pkgs; [
+    neovim
+    wget
+    git
     file
     procs
     whois
