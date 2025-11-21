@@ -1,0 +1,68 @@
+#!/usr/bin/env sh
+
+set -eu
+# set -x
+set -o pipefail
+
+usage()
+{
+    echo ""
+    echo "Usage: $0 <option: rebuild-switch|collect-garbage> [machine: thorfinn|kuujo] "
+    echo ""
+}
+
+total_args=$#
+
+# validate min args
+validate_min_args()
+{
+    if (( $total_args != $1 )); then
+        echo "Expected $1 argument(s), got $total_args"
+        usage
+        exit 1
+    fi
+}
+
+
+
+
+# rebuild-switch
+rebuild_switch()
+{
+
+    echo "sudo nixos-rebuild switch --flake ./hosts#$1"
+    sudo nixos-rebuild switch --flake ./hosts#"$machine"
+    exit 0
+}
+
+
+option="$1"
+case $option in
+    "rebuild-switch")
+        # validate machine
+        validate_min_args 2
+        machine=$2
+        case $machine in
+            "thorfinn" | "kuujo")
+                rebuild_switch "$machine"
+                ;;
+            *)
+                echo "Invalid machine: $machine"
+                usage
+                exit 1
+        esac
+        ;;
+
+    "collect-garbage")
+        validate_min_args 1
+        echo "sudo nix-collect-garbage -d"
+        sudo nix-collect-garbage -d
+        exit 0
+        ;;
+
+    *)
+        echo "Invalid option: $option"
+        usage
+        exit 1
+        ;;
+esac
