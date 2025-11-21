@@ -14,33 +14,38 @@ usage()
 total_args=$#
 
 # validate min args
-validate_min_args()
+if (( $total_args < 1 )); then
+    echo "Expected atleast 1 argument(s), got $total_args"
+    usage
+    exit 1
+fi
+
+# validate exact args count
+validate_exact_args()
 {
     if (( $total_args != $1 )); then
-        echo "Expected $1 argument(s), got $total_args"
+        echo "Expected exactly $1 argument(s), got $total_args"
         usage
         exit 1
     fi
 }
 
 
-
-
 # rebuild-switch
 rebuild_switch()
 {
-
     echo "sudo nixos-rebuild switch --flake ./hosts#$1"
-    sudo nixos-rebuild switch --flake ./hosts#"$machine"
+    sudo nixos-rebuild switch --flake ./hosts#"$1"
     exit 0
 }
+
 
 
 option="$1"
 case $option in
     "rebuild-switch")
         # validate machine
-        validate_min_args 2
+        validate_exact_args 2
         machine=$2
         case $machine in
             "thorfinn" | "kuujo")
@@ -54,7 +59,7 @@ case $option in
         ;;
 
     "collect-garbage")
-        validate_min_args 1
+        validate_exact_args 1
         echo "sudo nix-collect-garbage -d"
         sudo nix-collect-garbage -d
         exit 0
