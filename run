@@ -30,12 +30,18 @@ validate_exact_args()
     fi
 }
 
+run()
+{
+    printf "Running: \033[32m%s\033[0m" "$1"
+    printf "\n"
+    script -q -c "$1" /dev/null
+}
+
 
 # rebuild-switch
 rebuild_switch()
 {
-    echo "sudo nixos-rebuild switch --flake ./hosts#$1"
-    sudo nixos-rebuild switch --flake ./hosts#"$1"
+    run "sudo nixos-rebuild switch --flake ./hosts#$1"
     exit 0
 }
 
@@ -60,8 +66,7 @@ case $option in
 
     "collect-garbage")
         validate_exact_args 1
-        echo "sudo nix-collect-garbage -d"
-        sudo nix-collect-garbage -d
+        run "sudo nix-collect-garbage -d"
         exit 0
         ;;
 
