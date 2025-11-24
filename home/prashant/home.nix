@@ -47,6 +47,7 @@
     ../../modules/wezterm/wezterm.nix
     # ../../modules/espanso/espanso.nix
     ../../modules/direnv/direnv.nix
+    ../../modules/swayimg/swayimg.nix
   ];
 
   home.sessionVariables = {

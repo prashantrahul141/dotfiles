@@ -23,7 +23,7 @@
     evince
 
     # image viewer
-    swayimg
+    # swayimg # moved to its own module
     # nsxiv # le suckless
     # loupe # gnome
 
