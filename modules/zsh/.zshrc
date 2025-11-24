@@ -11,3 +11,5 @@ function f() {
 	fi
 	rm -f -- "$tmp"
 }
+
+bindkey '^R' history-search-multi-word

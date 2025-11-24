@@ -1,4 +1,9 @@
-{ ... }:
+{ pkgs, ... }:
+let
+  customizations = import ./customizations.nix {
+    inherit (pkgs) stdenv lib;
+  };
+in
 {
   programs.zsh = {
     enable = true;
@@ -20,9 +25,7 @@
       rm = "trash -v";
       copy = "wl-copy";
       find = "fd";
-      nd = "nix develop path:. -c zsh";
-      nr = "sudo nixos-rebuild switch --flake ~/nixos/hosts#thorfinn";
-      ncd = "sudo nix-collect-garbage -d";
+      nd = "nix develop -c zsh";
       ns = "nix-search";
       du = "dust";
       ps = "procs";
@@ -44,8 +47,13 @@
         "ssh-agent"
         "gpg-agent"
         "direnv"
+        "history-search-multi-word"
       ];
+
+      # cutom
+      custom = customizations.outPath;
     };
+
     initContent = (builtins.readFile ./.zshrc);
   };
 }
