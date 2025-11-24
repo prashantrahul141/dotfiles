@@ -36,6 +36,10 @@
         "networkmanager"
         "wheel"
         "docker"
+        # x1
+        "dialout"
+        "plugdev"
+        "input"
       ];
     };
   };

@@ -13,6 +13,17 @@
   programs.appimage.enable = true;
   programs.appimage.binfmt = true;
 
+  services.udev.extraRules = ''
+    SUBSYSTEM=="usb", ATTR{idVendor}=="0483", ATTR{idProduct}=="df11", MODE="0666", GROUP="plugdev"
+    SUBSYSTEM=="input", GROUP="input", MODE="0666"
+    SUBSYSTEM=="usb", ATTRS{idVendor}=="3503", ATTRS{idProduct}=="0103", MODE:="666", GROUP="plugdev"
+    SUBSYSTEM=="usb", ATTR{idVendor}=="303a", ATTR{idProduct}=="1001", MODE="0666"
+    KERNEL=="hidraw*", ATTRS{idVendor}=="3503", ATTRS{idProduct}=="0103", MODE="0666", GROUP="plugdev"
+    SUBSYSTEM=="tty", ATTRS{idVendor}=="3503", ATTRS{idProduct}=="0103", GROUP="dialout", MODE="0666"
+    SUBSYSTEM=="tty", ATTRS{idVendor}=="3503", ATTRS{idProduct}=="0102", GROUP="dialout", MODE="0666"
+    SUBSYSTEM=="tty", ATTRS{idVendor}=="3503", ATTRS{idProduct}=="0101", GROUP="dialout", MODE="0666"
+  '';
+
   # fine grained power control: https://nixos.wiki/wiki/Laptop
   services.tlp = {
     enable = true;
