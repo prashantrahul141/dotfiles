@@ -1,7 +1,25 @@
 { ... }:
 {
+
   programs.nixvim = {
     plugins = {
+      # multi cursor support
+      visual-multi = {
+        enable = true;
+        settings = {
+          mouse_mappings = 0;
+          defaults_mappings = 0;
+          leader = "m";
+          maps = {
+            "Find Under" = "<C-d>";
+            "Find Subword Under" = "<C-d>";
+            # "Select All" = "\\A";
+            # "Start Regex Search" = "\\/";
+            # "Add Cursor Down" = "<";
+          };
+        };
+      };
+
       lualine = {
         enable = true;
         settings = {
@@ -30,7 +48,7 @@
         enable = true;
         settings = {
           title = "Terminal";
-          height = 0.8;
+          height = 0.9;
           shell = "zsh";
           autoclose = 1;
         };
@@ -101,7 +119,10 @@
         };
       };
 
-      nvim-surround.enable = true;
+      # change to visual-surround
+      nvim-surround = {
+        enable = false;
+      };
 
       trim = {
         enable = true;
@@ -134,6 +155,39 @@
 
       which-key = {
         enable = true;
+        settings = {
+          delay = 60;
+          spec = [
+            {
+              __unkeyed = "<C-d>";
+              group = "Multi find under";
+              icon = "||";
+              mode = "n";
+            }
+
+            {
+              __unkeyed = "<C-d>";
+              group = "Multi find subword under";
+              icon = "||";
+              mode = "v";
+            }
+
+            {
+              __unkeyed = "mA";
+              group = "Multi select all";
+              icon = "||";
+              mode = "n";
+            }
+
+            {
+              __unkeyed = "m/";
+              group = "Multi regex search";
+              icon = "||";
+              mode = "n";
+            }
+
+          ];
+        };
       };
 
       lint = {
@@ -165,29 +219,64 @@
         enable = true;
         inlayHints = true;
         servers = {
-          gopls.enable = true;
-          golangci_lint_ls.enable = true;
+          # markdown
+          marksman = {
+            enable = true;
+          };
+
+          # nix
           nil_ls = {
             enable = true;
             settings.formatting.command = [ "nixfmt" ];
           };
-          ruff.enable = true;
+
+          # nil_ls just better
+          # nixd = {
+          #   enable = true;
+          # };
+
+          # python
+          pyright = {
+            enable = true;
+          };
+          ruff = {
+            enable = true;
+          };
+
+          # rust
           rust_analyzer = {
             enable = true;
             installCargo = false;
             installRustc = false;
+            settings = {
+              cargo = {
+                allTargets = false;
+              };
+            };
           };
+
+          # clangd
           clangd.enable = true;
+          cmake = {
+            enable = true;
+          };
+
+          # bash
           bashls.enable = true;
+
+          # json
           jsonls.enable = true;
 
-          buf_ls = {
+          # protobuf
+          protols = {
+            enable = true;
+          };
+
+          # typst
+          tinymist = {
             enable = true;
             settings = {
-              formatting = {
-                command = "clang-format";
-                args = [ "--assume-filename=a.proto" ];
-              };
+              formatterMode = "typstyle";
             };
           };
 
@@ -195,6 +284,35 @@
           julials = {
             enable = true;
             package = null;
+          };
+
+          # toml
+          taplo = {
+            enable = true;
+          };
+
+          # html
+          html = {
+            enable = true;
+          };
+
+          # tailwindcss
+          tailwindcss = {
+            enable = true;
+          };
+
+          # typescipt
+          ts_ls = {
+            enable = true;
+          };
+
+          # go
+          gopls.enable = true;
+          golangci_lint_ls.enable = true;
+
+          # docker
+          dockerls = {
+            enable = true;
           };
         };
 
@@ -224,24 +342,34 @@
           indent.enable = true;
           highlight.enable = true;
           ensure_installed = [
-            "go"
-            "nix"
+            "vim"
+            "regex"
+            "lua"
             "markdown"
             "markdown_inline"
+            "nix"
             "python"
             "rust"
-            "yaml"
-            "toml"
             "c"
             "cpp"
-            "bash"
             "cmake"
-            "dockerfile"
+            "bash"
             "json"
+            "proto"
+            "typst"
+            "julia"
+            "yaml"
+            "toml"
+            "html"
+            "css"
+            "tsx"
+            "go"
+            "dockerfile"
           ];
           auto_install = true;
         };
       };
+
       treesitter-refactor = {
         enable = true;
         highlightDefinitions = {
@@ -354,6 +482,7 @@
         keymap = {
           fileOperations = {
             trash = [ "d" ];
+            cut = [ "x" ];
           };
         };
       };
