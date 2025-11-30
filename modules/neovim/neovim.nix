@@ -7,8 +7,14 @@
   ];
 
   programs.nixvim = {
-    performance.byteCompileLua.enable = true;
-    performance.byteCompileLua.configs = true;
+    enable = true;
+    defaultEditor = true;
+    performance = {
+      byteCompileLua = {
+        enable = false;
+        configs = false;
+      };
+    };
     globals = {
       mapleader = " ";
       maplocalleader = " ";
@@ -51,9 +57,6 @@
       expandtab = true;
       autoindent = true;
     };
-    enable = true;
-    defaultEditor = true;
-
     clipboard = {
       register = "unnamedplus";
       providers.wl-copy.enable = true;
