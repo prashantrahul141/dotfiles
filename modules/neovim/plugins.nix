@@ -372,10 +372,12 @@
 
       treesitter-refactor = {
         enable = true;
-        highlightDefinitions = {
-          enable = true;
-          # Set to false if you have an `updatetime` of ~100.
-          clearOnCursorMove = false;
+        settings = {
+          highlight_definitions = {
+            enable = true;
+            # Set to false if you have an `updatetime` of ~100.
+            clear_on_cursor_move = false;
+          };
         };
       };
 
@@ -455,13 +457,15 @@
       lspkind = {
         enable = true;
 
-        cmp = {
-          enable = true;
-          menu = {
-            nvim_lsp = "[LSP]";
-            nvim_lua = "[api]";
-            path = "[path]";
-            buffer = "[buffer]";
+        settings = {
+          cmp = {
+            enable = true;
+            menu = {
+              nvim_lsp = "[LSP]";
+              nvim_lua = "[api]";
+              path = "[path]";
+              buffer = "[buffer]";
+            };
           };
         };
       };
@@ -472,17 +476,19 @@
 
       chadtree = {
         enable = true;
-        view = {
-          openDirection = "left";
-          width = 30;
-        };
-        options = {
-          showHidden = true;
-        };
-        keymap = {
-          fileOperations = {
-            trash = [ "d" ];
-            cut = [ "x" ];
+        settings = {
+          view = {
+            openDirection = "left";
+            width = 30;
+          };
+          options = {
+            showHidden = true;
+          };
+          keymap = {
+            fileOperations = {
+              trash = [ "d" ];
+              cut = [ "x" ];
+            };
           };
         };
       };
