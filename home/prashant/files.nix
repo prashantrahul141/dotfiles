@@ -56,6 +56,19 @@
       disabledGrimWarning=true
     '';
 
+    ".config/clangd/config.yml".text = ''
+      If:
+        PathMatch: .*\.h
+      CompileFlags:
+        Add: [-xc-header]
+
+      ---
+      If:
+        PathMatch: .*\.c
+      CompileFlags:
+        Add: [-xc]
+    '';
+
     ".icons/theme_McMojave" = {
       source = ./static/theme_McMojave;
       recursive = true;
