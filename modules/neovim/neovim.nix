@@ -11,8 +11,8 @@
     defaultEditor = true;
     performance = {
       byteCompileLua = {
-        enable = false;
-        configs = false;
+        enable = true;
+        configs = true;
       };
     };
     globals = {
