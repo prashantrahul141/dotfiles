@@ -7,7 +7,7 @@ set -o pipefail
 usage()
 {
     echo ""
-    echo "Usage: $0 <option: rebuild-switch|collect-garbage> [machine: thorfinn|kuujo] "
+    echo "Usage: $0 <option: rebuild-switch|rebuild-boot|collect-garbage> [machine: thorfinn|kuujo] "
     echo ""
 }
 
@@ -45,6 +45,12 @@ rebuild_switch()
     exit 0
 }
 
+rebuild_boot()
+{
+    run "sudo nixos-rebuild boot --flake ./hosts#$1"
+    exit 0
+}
+
 
 
 option="$1"
@@ -63,6 +69,22 @@ case $option in
                 exit 1
         esac
         ;;
+
+    "rebuild-boot")
+        # validate machine
+        validate_exact_args 2
+        machine=$2
+        case $machine in
+            "thorfinn" | "kuujo")
+                rebuild_boot "$machine"
+                ;;
+            *)
+                echo "Invalid machine: $machine"
+                usage
+                exit 1
+        esac
+        ;;
+
 
     "collect-garbage")
         validate_exact_args 1
