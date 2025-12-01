@@ -41,7 +41,7 @@
     kdePackages.qt6ct
     libsForQt5.qt5ct
     libsForQt5.qtstyleplugin-kvantum
-    kdePackages.xwaylandvideobridge
+    # kdePackages.xwaylandvideobridge
 
     # gtk
     gruvbox-gtk-theme

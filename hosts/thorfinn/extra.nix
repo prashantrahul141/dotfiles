@@ -6,6 +6,9 @@
   # openrgb
   services.hardware.openrgb.enable = true;
 
+  # udisks2
+  services.udisks2.enable = true;
+
   # power management: https://nixos.wiki/wiki/Laptop
   powerManagement.enable = true;
 

@@ -3,6 +3,7 @@
   environment.systemPackages = with pkgs; [
     steam-run
     cyme
+    udiskie
   ];
 
   # remove packages

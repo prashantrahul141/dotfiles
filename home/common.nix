@@ -4,7 +4,6 @@
 }:
 {
   programs.git.enable = true;
-  services.udiskie.enable = true;
 
   home.packages = with pkgs; [
     p7zip

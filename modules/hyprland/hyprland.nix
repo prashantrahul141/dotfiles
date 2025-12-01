@@ -116,7 +116,9 @@
       pseudotile = true;
       force_split = 2; # always on right
       preserve_split = true; # You probably want this
-      smart_split = true;
+      smart_split = false;
+      precise_mouse_move = true;
+
     };
 
     # See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
@@ -150,10 +152,14 @@
       };
     };
 
-    # https://wiki.hyprland.org/Configuring/Variables/#gestures
+    # https://wiki.hyprland.org/Configuring/Variable/#gestures
     gestures = {
-      workspace_swipe = true;
+      # workspace_swipe_distance = 300;
+      workspace_swipe_touch = true;
     };
+    gesture = [
+      "3, horizontal, workspace"
+    ];
 
     # Example per-device config
     # See https://wiki.hyprland.org/Configuring/Keywords/#per-device-input-configs for more
@@ -298,17 +304,18 @@
       "float, class:qemu"
       "float, class:swayimg"
       "float, title:marked-floating"
+      "float, title:Select what to share"
 
       # Fix some dragging issues with XWayland
       "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
 
       # hide xwaylandvideobridge window
-      "opacity 0.0 override, class:^(xwaylandvideobridge)$"
-      "noanim, class:^(xwaylandvideobridge)$"
-      "noinitialfocus, class:^(xwaylandvideobridge)$"
-      "maxsize 1 1, class:^(xwaylandvideobridge)$"
-      "noblur, class:^(xwaylandvideobridge)$"
-      "nofocus, class:^(xwaylandvideobridge)$"
+      # "opacity 0.0 override, class:^(xwaylandvideobridge)$"
+      # "noanim, class:^(xwaylandvideobridge)$"
+      # "noinitialfocus, class:^(xwaylandvideobridge)$"
+      # "maxsize 1 1, class:^(xwaylandvideobridge)$"
+      # "noblur, class:^(xwaylandvideobridge)$"
+      # "nofocus, class:^(xwaylandvideobridge)$"
     ];
 
     exec-once = [
@@ -318,7 +325,6 @@
       "uwsm app -- openrgb --device 1 --mode static --brightness 0 --color ACB5FB"
       "systemctl --user import-environment DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
       "uwsm app -- dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-      "uwsm app -- xwaylandvideobridge &"
       "systemctl --user enable --now hyprpolkitagent.service"
       "systemctl --user enable --now hypridle.service"
       "uwsm app -- dunst"

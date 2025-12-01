@@ -5,9 +5,11 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # don’t shutdown when power button is short-pressed
-  services.logind.extraConfig = ''
-    HandlePowerKey=ignore
-  '';
+  services.logind.settings = {
+    Login = {
+      HandlePowerKey = "ignore";
+    };
+  };
 
   system.stateVersion = "24.11";
 }

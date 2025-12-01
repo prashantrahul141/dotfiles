@@ -12,7 +12,7 @@
 
   home.stateVersion = "24.11"; # DO NOT CHANGE.
   imports = [
-    inputs.nixvim.homeManagerModules.nixvim
+    inputs.nixvim.homeModules.nixvim
     inputs.nix-colors.homeManagerModules.default
     ../common.nix
     ./files.nix
