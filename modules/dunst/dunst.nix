@@ -20,28 +20,27 @@
       format = "<b>%s</b>\\n%b";
       sticky_history = "no";
       monitor = 1;
+      progress_bar = true;
     };
 
-    base16_low = {
-      msg_urgency = "low";
+    urgency_low = {
       background = "#${colorScheme.palette.base00}";
       foreground = "#${colorScheme.palette.base07}";
-      timeout = 3;
+      timeout = 4000;
     };
 
-    base16_normal = {
-      msg_urgency = "normal";
+    urgency_normal = {
       background = "#${colorScheme.palette.base00}";
       foreground = "#${colorScheme.palette.base07}";
-      timeout = 3;
+      timeout = 4000;
     };
 
-    base16_critical = {
-      msg_urgency = "critical";
+    urgency_critical = {
       background = "#${colorScheme.palette.base00}";
       foreground = "#${colorScheme.palette.base08}";
       frame_color = "#${colorScheme.palette.base08}";
-      timeout = 5;
+      timeout = 6000;
     };
+
   };
 }
