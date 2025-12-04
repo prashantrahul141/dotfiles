@@ -57,6 +57,30 @@
       expandtab = true;
       autoindent = true;
     };
+
+    # custom tab width for js/ts files
+    autoCmd = [
+      {
+        desc = "Sets tab width for js/ts file to 2";
+        event = [ "FileType" ];
+        callback = {
+          __raw = ''
+            function()
+                vim.opt_local.shiftwidth = 2
+                vim.opt_local.tabstop = 2
+                vim.opt_local.softtabstop = 2
+              end'';
+        };
+        pattern = [
+          "javascript"
+          "typescript"
+          "javascriptreact"
+          "typescriptreact"
+        ];
+
+      }
+    ];
+
     clipboard = {
       register = "unnamedplus";
       providers.wl-copy.enable = true;
