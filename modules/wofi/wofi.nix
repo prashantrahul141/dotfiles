@@ -10,6 +10,7 @@
     prompt = "Search";
     filter_rate = 100;
     allow_markup = true;
+    close_on_focus_loss = true;
     dmenu-parse_actions = true;
     no_actions = true;
     halign = "fill";
