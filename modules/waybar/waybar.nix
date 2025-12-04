@@ -169,7 +169,7 @@
         };
 
         "custom/notifications" = {
-          format = "{icon}{}";
+          format = "{icon}{text}";
           rotate = 0;
           format-icons = {
             email-notification = "󱅫 ";
@@ -187,7 +187,7 @@
           };
           return-type = "json";
           exec-if = "which dunstctl";
-          exec = "${builtins.path { path = ./notifications.py; }}";
+          exec = "python ${builtins.path { path = ./notifications.py; }}";
           on-scroll-down = "sleep 0.1 && dunstctl history-pop";
           on-click = "dunstctl set-paused toggle";
           on-click-middle = "dunstctl history-clear";
