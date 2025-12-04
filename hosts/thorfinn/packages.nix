@@ -4,6 +4,10 @@
     steam-run
     cyme
     udiskie
+    firefox # might create separate home manager module someday, todays not the day.
+    brightnessctl
+    pinentry-gnome3
+    libsecret
   ];
 
   # remove packages

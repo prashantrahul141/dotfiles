@@ -11,7 +11,6 @@ in
 
   imports = [
     ./boot.nix
-    ../../modules/minimal.nix
     inputs.nixos-hardware.nixosModules.asus-fa506ic
     ../minimal.nix
     ./hardware.nix
