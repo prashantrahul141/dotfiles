@@ -1,7 +1,19 @@
-{ ... }:
+{ pkgs, ... }:
 {
 
   programs.nixvim = {
+    extraPlugins = [
+      (pkgs.vimUtils.buildVimPlugin {
+        name = "visual-surround.nvim";
+        version = "2025-09-26";
+        src = pkgs.fetchFromGitHub {
+          owner = "NStefan002";
+          repo = "visual-surround.nvim";
+          rev = "1b4426a6d2044606ff85780683b08449c8cf30f4";
+          sha256 = "1ra30lc5bp8bw86xx7qz2mz43b89034hzs6n8g60xnfmh841c9ls";
+        };
+      })
+    ];
     plugins = {
       # multi cursor support
       visual-multi = {
@@ -249,9 +261,6 @@
             installCargo = false;
             installRustc = false;
             settings = {
-              cargo = {
-                allTargets = false;
-              };
             };
           };
 
