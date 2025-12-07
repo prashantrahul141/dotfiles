@@ -59,11 +59,11 @@
 
     # Multi Monitor setup
     workspace = [
-      "1,monitor:eDP-1"
-      "2,monitor:eDP-1"
-      "5,monitor:eDP-1"
-      "3,monitor:HDMI-A-1"
-      "4,monitor:HDMI-A-1"
+      #  "1,monitor:eDP-1"
+      #  "2,monitor:eDP-1"
+      #  "5,monitor:eDP-1"
+      #  "3,monitor:HDMI-A-1"
+      #  "4,monitor:HDMI-A-1"
     ];
 
     animations = {
@@ -320,7 +320,8 @@
       "uwsm app -- fcitx5"
       "systemctl --user enable --now hyprpaper.service"
       "uwsm app -- xrdb -load ~/.Xresources"
-      "uwsm app -- openrgb --device 1 --mode static --brightness 0 --color ACB5FB"
+      # "uwsm app -- openrgb --device 1 --mode static --brightness 0 --color ACB5FB"
+      "uwsm app -- easyeffects --gapplication-service &"
       "systemctl --user import-environment DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
       "uwsm app -- dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
       "systemctl --user enable --now hyprpolkitagent.service"
