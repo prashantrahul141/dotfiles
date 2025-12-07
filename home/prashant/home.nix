@@ -48,6 +48,7 @@
     # ../../modules/espanso/espanso.nix
     ../../modules/direnv/direnv.nix
     ../../modules/swayimg/swayimg.nix
+    ../../modules/easyeffects/easyeffects.nix
   ];
 
   home.sessionVariables = {
