@@ -4,7 +4,7 @@
   time.hardwareClockInLocalTime = true;
 
   # openrgb
-  services.hardware.openrgb.enable = true;
+  # services.hardware.openrgb.enable = true;
 
   # udisks2
   services.udisks2.enable = true;
