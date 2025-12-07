@@ -22,7 +22,6 @@
     "$fileManager" = "wezterm start -- yazi";
     "$menu" = "wofi --show drun";
     "$browser" = "brave --password-store=basic";
-    "$volume_control" = "pavucontrol";
 
     # MANAGED USING UWSM NOW.
     # MOVED TO home/$USER/files.nix
@@ -182,7 +181,6 @@
       "$mainMod, E, exec, uwsm app -- $fileManager"
       "$mainMod, B, exec, uwsm app -- $browser"
       "$mainMod, SPACE, exec, uwsm app -- $menu"
-      "$mainMod, G, exec, uwsm app -- $volume_control"
 
       "$mainMod, Q, killactive,"
       "$mainMod, T, togglefloating,"
