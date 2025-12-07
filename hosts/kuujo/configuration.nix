@@ -14,7 +14,6 @@
     inputs.home-manager.nixosModules.home-manager
   ];
 
-
   # TAKEN DIRECTLY FROM GENERATED configuration.nix
   boot.tmp.cleanOnBoot = true;
   zramSwap.enable = true;
