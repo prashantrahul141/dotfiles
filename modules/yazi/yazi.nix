@@ -86,6 +86,13 @@
           run = "plugin chmod";
           desc = "Chmod on selected files";
         }
+        {
+          on = [
+            "<C-o>"
+          ];
+          run = ''shell --confirm --block 'cat "$@" | wl-copy -t image/png';'';
+          desc = "Copy image to system clipboard";
+        }
       ];
     };
   };
