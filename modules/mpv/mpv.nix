@@ -4,6 +4,7 @@
     enable = true;
     config = {
       save-position-on-quit = "yes";
+      save-watch-history = true;
       keep-open = "yes";
       screenshot-format = "png";
       screenshot-directory = "~/Pictures/Screenshots/";
@@ -16,6 +17,8 @@
     scripts = with pkgs; [
       mpvScripts.autosub
       mpvScripts.mpv-cheatsheet
+      mpvScripts.uosc
+      mpvScripts.thumbfast
     ];
 
   };
