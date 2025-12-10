@@ -228,14 +228,16 @@
       "$mainMod, mouse_down, workspace, e+1"
       "$mainMod, mouse_up, workspace, e-1"
 
-      "$mainMod, PRINT, exec, uwsm app -- hyprshot -m window"
       # Screenshot a monitor
-      ", PRINT, exec, uwsm app -- hyprshot -m output"
+      ", PRINT, exec, uwsm app -- hyprshot -z -m output"
 
-      # Screenshot a region
-      "$mainMod SHIFT, S, exec, uwsm app -- hyprshot -m region"
+      # Screenshot a window
+      "$mainMod, PRINT, exec, uwsm app -- hyprshot -z -m window"
 
-      # Screenshot a region and draw using flameshot
+      # Screenshot a region with hyprshot
+      "$mainMod SHIFT, S, exec, uwsm app -- hyprshot -z -m region"
+
+      # Screenshot a region using flameshot
       "$mainMod SHIFT, PRINT, exec, uwsm app -- flameshot gui -r --path ~/Pictures/Screenshots | wl-copy"
 
       # clipboard
@@ -275,7 +277,6 @@
       ", XF86AudioPrev, exec, playerctl previous"
     ];
 
-    # Screenshot a window
     ##############################
     ### WINDOWS AND WORKSPACES ###
     ##############################
@@ -321,7 +322,6 @@
       "systemctl --user enable --now hyprpaper.service"
       "uwsm app -- xrdb -load ~/.Xresources"
       # "uwsm app -- openrgb --device 1 --mode static --brightness 0 --color ACB5FB"
-      "uwsm app -- easyeffects --gapplication-service &"
       "systemctl --user import-environment DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
       "uwsm app -- dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
       "systemctl --user enable --now hyprpolkitagent.service"
@@ -332,6 +332,7 @@
       "uwsm app -- nm-applet --indicator"
       "uwsm app -- blueman-applet"
       "uwsm app -- udiskie"
+      "sleep 5 && uwsm app -- easyeffects --gapplication-service"
     ];
     # #
 
