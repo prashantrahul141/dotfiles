@@ -50,6 +50,14 @@
     # # symlink to the Nix store copy.
     # ".screenrc".source = dotfiles/screenrc;
 
+    ".config/hypr/xdph.conf".text = ''
+      # screen sharing settings for hyprland
+      screencopy {
+        max_fps = 60
+        allow_token_by_default = true
+      }
+    '';
+
     ".config/flameshot/flameshot.ini".text = ''
       [General]
       drawColor=#ff0000
