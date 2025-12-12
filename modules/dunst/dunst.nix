@@ -20,20 +20,21 @@
         format = "<b>%s</b>\\n%b";
         sticky_history = "no";
         monitor = 1;
+        timeout = 3;
       };
 
       base16_low = {
         msg_urgency = "low";
         background = "#${colorScheme.palette.base00}";
         foreground = "#${colorScheme.palette.base07}";
-        timeout = 3000;
+        timeout = 3;
       };
 
       base16_normal = {
         msg_urgency = "normal";
         background = "#${colorScheme.palette.base00}";
         foreground = "#${colorScheme.palette.base07}";
-        timeout = 3000;
+        timeout = 3;
       };
 
       base16_critical = {
@@ -41,7 +42,7 @@
         background = "#${colorScheme.palette.base00}";
         foreground = "#${colorScheme.palette.base08}";
         frame_color = "#${colorScheme.palette.base08}";
-        timeout = 5000;
+        timeout = 5;
       };
     };
   };
