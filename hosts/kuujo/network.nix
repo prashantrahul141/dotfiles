@@ -20,6 +20,6 @@
   services.openssh.enable = true;
 
   users.users.root.openssh.authorizedKeys.keys = [
-    conf.prashant.sshPublicKey
+    conf.user.prashant.sshPublicKey
   ];
 }
