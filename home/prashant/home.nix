@@ -19,36 +19,36 @@
     ./packages.nix
     ./appearance.nix
     ./others.nix
-    ../../modules/dunst/dunst.nix
-    ../../modules/wlogout/wlogout.nix
-    ../../modules/hyprland/hyprland.nix
-    ../../modules/hyprlock/hyprlock.nix
-    ../../modules/hypridle/hypridle.nix
-    ../../modules/hyprpaper/hyprpaper.nix
-    ../../modules/waybar/waybar.nix
-    ../../modules/wofi/wofi.nix
-    ../../modules/cliphist/cliphist.nix
-    # ../../modules/kitty/kitty.nix
-    ../../modules/zsh/zsh.nix
-    ../../modules/starship/starship.nix
-    ../../modules/zoxide/zoxide.nix
-    ../../modules/eza/eza.nix
-    ../../modules/mpv/mpv.nix
-    ../../modules/git/git.nix
-    ../../modules/lazygit/lazygit.nix
-    ../../modules/neovim/neovim.nix
-    ../../modules/bat/bat.nix
-    ../../modules/btm/btm.nix
-    ../../modules/yazi/yazi.nix
-    ../../modules/obs-studio/obs-studio.nix
-    # ../../modules/ranger/ranger.nix
-    # ../../modules/helix/helix.nix
-    ../../modules/zed/zed.nix
-    ../../modules/wezterm/wezterm.nix
-    # ../../modules/espanso/espanso.nix
-    ../../modules/direnv/direnv.nix
-    ../../modules/swayimg/swayimg.nix
-    ../../modules/easyeffects/easyeffects.nix
+    ../../modules/dunst
+    ../../modules/wlogout
+    ../../modules/hyprland
+    ../../modules/hyprlock
+    ../../modules/hypridle
+    ../../modules/hyprpaper
+    ../../modules/waybar
+    ../../modules/wofi
+    ../../modules/cliphist
+    # ../../modules/kitty
+    ../../modules/zsh
+    ../../modules/starship
+    ../../modules/zoxide
+    ../../modules/eza
+    ../../modules/mpv
+    ../../modules/git
+    ../../modules/lazygit
+    ../../modules/neovim
+    ../../modules/bat
+    ../../modules/btm
+    ../../modules/yazi
+    ../../modules/obs-studio
+    # ../../modules/ranger
+    # ../../modules/helix
+    ../../modules/zed
+    ../../modules/wezterm
+    # ../../modules/espanso
+    ../../modules/direnv
+    ../../modules/swayimg
+    ../../modules/easyeffects
   ];
 
   home.sessionVariables = {
