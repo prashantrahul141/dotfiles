@@ -220,10 +220,6 @@
       "$mainMod SHIFT, 9, movetoworkspace, 9"
       "$mainMod SHIFT, 0, movetoworkspace, 10"
 
-      # Scroll through existing workspaces with super + shift + j/k
-      "$mainMod SHIFT, j, workspace, e+1"
-      "$mainMod SHIFT, k, workspace, e-1"
-
       # Scroll through existing workspaces with mainMod + scroll
       "$mainMod, mouse_down, workspace, e+1"
       "$mainMod, mouse_up, workspace, e-1"
@@ -253,14 +249,37 @@
       "$mainMod SHIFT, mouse_up, exec, hyprctl -q keyword cursor:zoom_factor $(hyprctl getoption cursor:zoom_factor | awk '/^float.*/ {print $2 * 0.9}')"
     ];
 
-    # Move/resize windows with mainMod + LMB/RMB and dragging
+    # bind modifiers from: https://wiki.hypr.land/Configuring/Binds/
+    # l -> locked, will also work when an input inhibitor (e.g. a lockscreen) is active.
+    # r -> release, will trigger on release of a key.
+    # o -> longPress, will trigger on long press of a key.
+    # e -> repeat, will repeat when held.
+    # n -> non-consuming, key/mouse events will be passed to the active window in addition to triggering the dispatcher.
+    # m -> mouse, see https://wiki.hypr.land/Configuring/Binds/#mouse-binds
+    # t -> transparent, cannot be shadowed by other binds.
+    # i -> ignore mods, will ignore modifiers.
+    # s -> separate, will arbitrarily combine keys between each mod/key, see [Keysym combos](#keysym-combos) above.
+    # d -> has description, will allow you to write a description for your bind.
+    # p -> bypasses the app's requests to inhibit keybinds.
+
+    # mouse binds
     "bindm" = [
+      # Move/resize windows with mainMod + LMB/RMB and dragging
       "$mainMod, mouse:272, movewindow"
       "$mainMod, mouse:273, resizewindow"
     ];
 
-    # Laptop multimedia keys for volume and LCD brightness
+    # repeating binds
+    "binde" = [
+      # resize active window with super + shift + h/j/k/l
+      "$mainMod SHIFT, l, resizeactive, 20 0"
+      "$mainMod SHIFT, h, resizeactive, -20 0"
+      "$mainMod SHIFT, k, resizeactive, 0 -20"
+      "$mainMod SHIFT, j, resizeactive, 0 20"
+    ];
+
     "bindel" = [
+      # Laptop multimedia keys for volume and LCD brightness
       ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
       ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
       ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
@@ -269,8 +288,9 @@
       ",XF86MonBrightnessDown, exec, brightnessctl s 5%-"
     ];
 
-    # Requires playerctl
+    # bindl will remain active even when the screen is locked
     "bindl" = [
+      # Requires playerctl
       ", XF86AudioNext, exec, playerctl next"
       ", XF86AudioPause, exec, playerctl play-pause"
       ", XF86AudioPlay, exec, playerctl play-pause"
