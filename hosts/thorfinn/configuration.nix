@@ -2,6 +2,7 @@
   inputs,
   lib,
   hostname,
+  conf,
   ...
 }:
 let
@@ -38,7 +39,14 @@ in
 
   home-manager = {
     useGlobalPkgs = true;
-    extraSpecialArgs = { inherit inputs colorScheme hostname; };
+    extraSpecialArgs = {
+      inherit
+        inputs
+        colorScheme
+        hostname
+        conf
+        ;
+    };
     users = {
       "prashant" = import ../../home/prashant/home.nix;
     };

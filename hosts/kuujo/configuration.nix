@@ -2,6 +2,7 @@
   inputs,
   lib,
   hostname,
+  conf,
   ...
 }:
 {
@@ -26,7 +27,7 @@
 
   home-manager = {
     useGlobalPkgs = true;
-    extraSpecialArgs = { inherit inputs hostname; };
+    extraSpecialArgs = { inherit inputs hostname conf; };
     users = {
       "biskit" = import ../../home/biskit/home.nix;
     };
