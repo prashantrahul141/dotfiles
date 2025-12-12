@@ -48,7 +48,7 @@ in
         ;
     };
     users = {
-      "prashant" = import ../../home/prashant/home.nix;
+      prashant = import ../../home/prashant/home.nix;
     };
   };
 

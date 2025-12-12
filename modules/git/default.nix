@@ -1,4 +1,4 @@
-{ ... }:
+{ conf, config, ... }:
 {
   # programs.git-credential-oauth.enable = true;
   programs.git = {
@@ -6,9 +6,9 @@
 
     settings = {
       user = {
-        name = "prashantrahul141";
-        email = "prashantrahul141@protonmail.com";
-        signingkey = "6C3E91A8D7F0386D";
+        name = conf.user.${config.home.username}.git.user.name;
+        email = conf.user.${config.home.username}.git.user.email;
+        signingkey = conf.user.${config.home.username}.git.user.signingkey;
       };
 
       credential.helper = "!gh auth git-credential";
