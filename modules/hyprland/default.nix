@@ -352,7 +352,7 @@
       "uwsm app -- nm-applet --indicator"
       "uwsm app -- blueman-applet"
       "uwsm app -- udiskie"
-      "sleep 5 && uwsm app -- easyeffects --gapplication-service"
+      # "sleep 5 && uwsm app -- easyeffects --gapplication-service"
     ];
     # #
 
