@@ -41,13 +41,13 @@ run()
 # rebuild-switch
 rebuild_switch()
 {
-    run "sudo nixos-rebuild switch --flake ./hosts#$1"
+    run "sudo nixos-rebuild switch --flake ./hosts#$1 --show-trace -L -v"
     exit 0
 }
 
 rebuild_boot()
 {
-    run "sudo nixos-rebuild boot --flake ./hosts#$1"
+    run "sudo nixos-rebuild boot --flake ./hosts#$1 --show-trace -L -v"
     exit 0
 }
 
@@ -88,7 +88,14 @@ case $option in
 
     "collect-garbage")
         validate_exact_args 1
+        run "nix-collect-garbage -d"
         run "sudo nix-collect-garbage -d"
+        exit 0
+        ;;
+
+    "delete-generations")
+        validate_exact_args 1
+        run "sudo nix profile wipe-history --older-than 7d --profile /nix/var/nix/profiles/system"
         exit 0
         ;;
 
