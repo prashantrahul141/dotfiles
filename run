@@ -41,7 +41,7 @@ run()
 # rebuild-switch
 rebuild_switch()
 {
-    run "sudo nixos-rebuild switch --flake ./hosts#$1 --show-trace -L -v"
+    run "sudo nixos-rebuild switch --flake ./hosts#$1"
     exit 0
 }
 
