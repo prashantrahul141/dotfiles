@@ -1,4 +1,7 @@
 { pkgs, ... }:
+let
+  custom-scripts = pkgs.callPackage ../../modules/custom-scripts { };
+in
 {
   fonts.fontconfig.enable = true;
 
@@ -147,6 +150,9 @@
     # gaming
     wineWowPackages.waylandFull
     winetricks
+
+    # custom
+    custom-scripts
   ];
 
 }

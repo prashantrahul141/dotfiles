@@ -1,0 +1,173 @@
+#!/usr/bin/env python
+
+"""
+Extremely simple command generator for video compression using ffmpeg
+
+usage: compress.py [-h] [-m] [-f number] [-q number] [-d number number]
+                   [-p {thunderbolt,default,None}]
+                   input_file [out_file]
+
+generate ffmpeg command for compressing videos
+
+positional arguments:
+  input_file            File to compress
+  out_file              Override output file, change extension to override
+                        extension
+
+options:
+  -h, --help            show this help message and exit
+  -m, --mute            Whether to mute video
+  -f, --fps number      Custom fps value
+  -q, --quality number  Quality value between [0..100]
+  -d, --dimensions number number
+                        Override dimension eg: 1920 1080
+  -p, --preset {thunderbolt,default,None}
+                        Preset
+"""
+
+import argparse
+from os import path
+
+
+parser = argparse.ArgumentParser(
+    description="generate ffmpeg command for compressing videos",
+)
+parser.add_argument(
+    "-m",
+    "--mute",
+    action="store_true",
+    dest="mute",
+    default=False,
+    help="Whether to mute video",
+)
+parser.add_argument(
+    "-f",
+    "--fps",
+    type=int,
+    dest="fps",
+    metavar="number",
+    default=None,
+    help="Custom fps value",
+)
+parser.add_argument(
+    "-q",
+    "--quality",
+    type=int,
+    dest="quality",
+    metavar="number",
+    default=50,
+    help="Quality value between [0..100]",
+)
+parser.add_argument(
+    "-d",
+    "--dimensions",
+    nargs=2,
+    type=int,
+    metavar="number",
+    dest="dimensions",
+    default=None,
+    help="Override dimension eg: 1920 1080",
+)
+parser.add_argument(
+    "-p",
+    "--preset",
+    choices=["thunderbolt", "default", None],
+    dest="preset",
+    default=None,
+    help="Preset",
+)
+parser.add_argument("input_file", help="File to compress")
+parser.add_argument(
+    "out_file",
+    nargs="?",
+    type=str,
+    default=None,
+    help="Override output file, change extension to override extension",
+)
+
+args = parser.parse_args()
+
+# preset args
+commands = [
+    "ffmpeg",
+    "-i",
+    f'"{args.input_file}"',
+    "-hide_banner",
+    "-progress",
+    "-",
+    "-nostats",
+    "-loglevel",
+    "error",
+]
+
+
+# quality
+MAX_CRF = 36
+MIN_CRF = 24
+DEFAULT_CRF = 28
+compression_quality = (
+    # this gives a value between MIN_CRF and MAX_CRF depending on given quality
+    round(MIN_CRF + ((MAX_CRF - MIN_CRF) - ((MAX_CRF - MIN_CRF) * args.quality / 100)))
+    if 0 < args.quality <= 100
+    # if quality is not given just assume DEFAULT_CRF
+    else DEFAULT_CRF
+)
+
+CODEC = "libx264"
+
+# preset
+if args.preset == "thunderbolt":
+    commands.extend(["-c:v", CODEC, "-crf", f"{compression_quality}"])
+elif args.preset == "default":
+    commands.extend(["-c:v", CODEC, "-crf", f"{compression_quality}"])
+else:
+    commands.extend(
+        [
+            "-pix_fmt",
+            "yuv420p",
+            "-c:v",
+            CODEC,
+            "-b:v",
+            "0",
+            "-movflags",
+            "+faststart",
+            "-preset",
+            "slow",
+            "-qp",
+            "0",
+            "-crf",
+            f"{compression_quality}",
+        ]
+    )
+
+# Dimensions
+PADDING = "pad=ceil(iw/2)*2:ceil(ih/2)*2"
+pad_filter = (
+    PADDING
+    if args.dimensions is None
+    else f"scale=({args.dimensions[0]}):({args.dimensions[1]}),{PADDING}"
+)
+
+
+vf = pad_filter.replace('"', '""')
+commands.extend(["-vf", f'"{vf}"'])
+
+# FPS
+if args.fps is not None:
+    commands.extend(["-r", f'"{args.fps}"'])
+
+# mute ?
+if args.mute:
+    commands.append("-an")
+
+# override out file
+if args.out_file is None:
+    basename = path.basename(args.input_file)
+    commands.append(f'"compressed-{basename}"')
+else:
+    commands.append(f'"{args.out_file}"')
+
+# dont ask for confirmation
+commands.append("-y")
+
+print(" ".join(commands))
