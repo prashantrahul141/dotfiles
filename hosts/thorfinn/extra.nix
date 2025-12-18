@@ -27,6 +27,15 @@
     SUBSYSTEM=="tty", ATTRS{idVendor}=="3503", ATTRS{idProduct}=="0103", MODE="0666", TAG+="uaccess"
     SUBSYSTEM=="tty", ATTRS{idVendor}=="3503", ATTRS{idProduct}=="0102", MODE="0666", TAG+="uaccess"
     SUBSYSTEM=="tty", ATTRS{idVendor}=="3503", ATTRS{idProduct}=="0101", MODE="0666", TAG+="uaccess"
+
+    # STMicroelectronics ST-LINK/V2
+    ATTRS{idVendor}=="0483", ATTRS{idProduct}=="3748", MODE="660", GROUP="plugdev", TAG+="uaccess"
+
+    # STMicroelectronics ST-LINK/V2.1
+    SUBSYSTEM=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="374b", MODE="0666", TAG+="uaccess"
+    SUBSYSTEM=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="3752", MODE="0666", TAG+="uaccess"
+    SUBSYSTEM=="usb", ATTR{idVendor}=="0483", ATTR{idProduct}=="3748", MODE="0666", TAG+="uaccess"
+
   '';
 
   # fine grained power control: https://nixos.wiki/wiki/Laptop
