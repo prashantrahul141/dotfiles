@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    dconf # also needed by easyeffects
+    # dconf # also needed by easyeffects
     steam-run
     cyme
     udiskie

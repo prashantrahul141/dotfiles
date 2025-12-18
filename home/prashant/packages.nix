@@ -55,10 +55,10 @@
     ))
 
     # go
-    go
+    # go
 
     # java
-    zulu
+    # zulu
     # mssql_jdbc
 
     # c/c++
@@ -76,8 +76,9 @@
     # julia
     # julia
 
-    # rust
-    rustup
+    # rustup
+    rustc
+    cargo
 
     # node
     nodejs
@@ -91,8 +92,8 @@
 
     # utils, mostly cli.
     gh
-    bandwhich
-    speedtest-rs
+    # bandwhich
+    # speedtest-rs
     yt-dlp
     ffmpeg
     pinta
@@ -100,7 +101,7 @@
     nix-search-cli
     neofetch # sure why not.
     hyperfine
-    gdbgui
+    # gdbgui
     imhex
     dust # https://github.com/bootandy/dust
 
@@ -109,7 +110,7 @@
 
     # additional software i use
     anytype
-    dbeaver-bin
+    # dbeaver-bin
 
     # torrent client
     qbittorrent
@@ -139,7 +140,7 @@
     foliate
 
     # communication
-    signal-desktop
+    #signal-desktop
     # quassel # irc client
     slack
 
