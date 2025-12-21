@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+set -u
+set -o pipefail
+
+BROADCAST_NAME="phone-cam"
+
+usage() {
+    echo ""
+    echo "Usage: $0 [ip]"
+    echo ""
+    echo "Example: $0 http://67.67.67.67:8080/video"
+}
+
+if (( $# < 1 )); then
+    usage
+    exit 1
+fi
+
+# just to be sure, rmmod v4l2 loopback device before mounting it.
+sudo rmmod v4l2loopback
+
+# now we can cause errors to simply fail
+set -e
+sudo modprobe v4l2loopback video_nr=0 card_label="$BROADCAST_NAME" exclusive_caps=1
+
+# list devices
+devices=$(nix shell nixpkgs#v4l-utils --command v4l2-ctl --list-devices)
+if  echo "$devices" | grep -q "$BROADCAST_NAME"; then
+    echo "$BROADCAST_NAME loopback device loaded"
+else
+    echo "could not load v4l2loopback"
+    exit 1
+fi
+
+# we take out the first device broadcasting as $BROADCAST_NAME
+#                             | match and take +1 lines     | last line  | trim spaces
+device_name=$(echo "$devices" | grep -A 1 "$BROADCAST_NAME" | tail -n +2 | awk '{$1=$1};1' )
+
+echo "loopback device: $device_name"
+
+ffmpeg -i "$1" -vf scale=1280:720 -r 30 -c:v mjpeg -f v4l2 "$device_name"
