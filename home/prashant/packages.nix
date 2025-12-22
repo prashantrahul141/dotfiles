@@ -82,6 +82,7 @@ in
     # rustup
     rustc
     cargo
+    rustfmt
 
     # node
     nodejs
