@@ -49,6 +49,7 @@
     ../../modules/direnv
     ../../modules/swayimg
     # ../../modules/easyeffects
+    ../../modules/fastfetch
   ];
 
   home.sessionVariables = {

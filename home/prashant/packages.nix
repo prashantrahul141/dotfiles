@@ -103,7 +103,6 @@ in
     pinta
     # lazydocker
     nix-search-cli
-    neofetch # sure why not.
     hyperfine
     # gdbgui
     imhex

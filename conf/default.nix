@@ -9,7 +9,11 @@
   # per system level config
   # conf.host.${hostname}.property
   host = {
-    thorfinn = { };
+    thorfinn = {
+      fastfetch = {
+        image = ./assets/thorfinn.jpeg;
+      };
+    };
 
     kuujo = { };
   };
