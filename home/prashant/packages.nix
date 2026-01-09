@@ -101,6 +101,7 @@ in
     yt-dlp
     ffmpeg
     pinta
+    gimp
     # lazydocker
     nix-search-cli
     hyperfine

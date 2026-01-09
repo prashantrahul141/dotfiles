@@ -65,7 +65,7 @@
       # go to definition
       {
         action = ":lua vim.lsp.buf.definition()<CR>";
-        key = "<leader>gd";
+        key = "gd";
         options = {
           silent = true;
           noremap = true;
@@ -73,10 +73,21 @@
         };
       }
 
+      # go to definition in a vertical split
+      {
+        action = ":vsplit | lua vim.lsp.buf.definition()<CR>";
+        key = "<leader>gd";
+        options = {
+          silent = true;
+          noremap = true;
+          desc = "Go to definition with vsplit";
+        };
+      }
+
       # Go to references
       {
         action = ":lua vim.lsp.buf.references()<CR>";
-        key = "<leader>gr";
+        key = "gr";
         options = {
           silent = true;
           noremap = true;
@@ -94,17 +105,6 @@
           desc = "Search grep";
         };
       }
-      # Telescope undo tree
-      {
-        action = ":Telescope undo<CR>";
-        key = "<leader>u";
-        options = {
-          silent = true;
-          noremap = true;
-          desc = "Undo tree";
-        };
-      }
-
       # telscropt diagnostics
       {
         action = ":Telescope diagnostics<CR>";
