@@ -3,7 +3,7 @@
 
   # global config
   global = {
-
+    udev-embedded-probe-rs = builtins.readFile ./assets/69-probe-rs.rules;
   };
 
   # per system level config
@@ -27,7 +27,7 @@
       # git
       git = {
         user = {
-          name = "prashantrahul141";
+          name = "Prashant Rahul";
           email = "prashantrahul141@protonmail.com";
           signingkey = "6C3E91A8D7F0386D";
         };
