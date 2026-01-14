@@ -1,4 +1,4 @@
-{ ... }:
+{ conf, ... }:
 {
   # sets rtc (real time clock) in local timezone, so the time in windows and linux could be same.
   time.hardwareClockInLocalTime = true;
@@ -18,6 +18,7 @@
 
   services.udev.extraRules = ''
     SUBSYSTEM=="input", MODE="0666", TAG+="uaccess"
+    # stm32f4
     SUBSYSTEM=="usb", ATTR{idVendor}=="0483", ATTR{idProduct}=="df11", MODE="0666", TAG+="uaccess"
     SUBSYSTEM=="usb", ATTR{idVendor}=="3503", ATTR{idProduct}=="0103", MODE="0666", TAG+="uaccess"
     SUBSYSTEM=="usb", ATTR{idVendor}=="303a", ATTR{idProduct}=="1001", MODE="0666", TAG+="uaccess"
@@ -36,6 +37,8 @@
     SUBSYSTEM=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="3752", MODE="0666", TAG+="uaccess"
     SUBSYSTEM=="usb", ATTR{idVendor}=="0483", ATTR{idProduct}=="3748", MODE="0666", TAG+="uaccess"
 
+    # probe-rs
+    ${conf.global.udev-embedded-probe-rs}
   '';
 
   # fine grained power control: https://nixos.wiki/wiki/Laptop
