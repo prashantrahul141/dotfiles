@@ -260,6 +260,12 @@
             enable = true;
             installCargo = false;
             installRustc = false;
+            installRustfmt = false;
+
+            # for the love of god please enable this by default.
+            # https://nix-community.github.io/nixvim/plugins/lsp/servers/rust_analyzer/index.html#pluginslspserversrust_analyzerpackagefallback
+            packageFallback = true;
+
             settings = {
             };
           };
@@ -381,10 +387,12 @@
 
       treesitter-refactor = {
         enable = true;
-        highlightDefinitions = {
-          enable = true;
-          # Set to false if you have an `updatetime` of ~100.
-          clearOnCursorMove = false;
+        settings = {
+          highlight_definitions = {
+            enable = true;
+            # Set to false if you have an `updatetime` of ~100.
+            clear_on_cursor_move = false;
+          };
         };
       };
 
@@ -464,13 +472,16 @@
       lspkind = {
         enable = true;
 
-        cmp = {
-          enable = true;
-          menu = {
-            nvim_lsp = "[LSP]";
-            nvim_lua = "[api]";
-            path = "[path]";
-            buffer = "[buffer]";
+        settings = {
+
+          cmp = {
+            enable = true;
+            menu = {
+              nvim_lsp = "[LSP]";
+              nvim_lua = "[api]";
+              path = "[path]";
+              buffer = "[buffer]";
+            };
           };
         };
       };
@@ -481,15 +492,26 @@
 
       chadtree = {
         enable = true;
-        view = {
-          openDirection = "left";
-          width = 30;
-        };
-        options = {
-          showHidden = true;
-        };
-        keymap = {
-          fileOperations = {
+        settings = {
+          xdg = true;
+          view = {
+            open_direction = "left";
+            width = 30;
+          };
+          ignore = {
+            name_exact = [
+              ".DS_Store"
+              ".directory"
+              "thumbs.db"
+              ".git"
+              "__pycache__"
+            ];
+          };
+          options = {
+            show_hidden = true;
+            follow = false;
+          };
+          keymap = {
             trash = [ "d" ];
             cut = [ "x" ];
           };
