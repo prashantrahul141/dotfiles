@@ -25,7 +25,7 @@ in
       rm = "trash -v";
       copy = "wl-copy";
       find = "fd";
-      nd = "nix develop -c zsh";
+      nd = "NIXPKGS_ALLOW_UNFREE=1 NIXPKGS_ALLOW_INSECURE=1 nix develop --impure -c zsh";
       ns = "nix-search";
       du = "dust";
       ps = "procs";
