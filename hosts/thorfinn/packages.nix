@@ -9,6 +9,10 @@
     brightnessctl
     pinentry-gnome3
     libsecret
+
+    # pgp implementation
+    sequoia-sq
+
   ];
 
   # remove packages
