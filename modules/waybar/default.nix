@@ -68,6 +68,15 @@
         };
         battery = {
           format = "󰁹 {}%";
+          states = {
+            warning = 30;
+            critical = 15;
+          };
+          events = {
+            on-discharging-warning = "dunstify -u critical --timeout=5000 'Low Battery'";
+            on-discharging-critical = "dunstify -u critical --timeout=10000 'Very Low Battery'";
+            on-charging-100 = "dunstify -u normal --timeout=1000 'Battery Full!'";
+          };
         };
         cpu = {
           interval = 10;
