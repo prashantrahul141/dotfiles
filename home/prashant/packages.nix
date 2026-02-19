@@ -144,9 +144,9 @@ in
     foliate
 
     # communication
-    #signal-desktop
+    # signal-desktop
     # quassel # irc client
-    slack
+    # slack
 
     # gaming
     wineWowPackages.waylandFull
