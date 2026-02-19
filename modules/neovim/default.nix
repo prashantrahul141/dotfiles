@@ -42,6 +42,9 @@
 
       -- Open all folds by default, zm is not available
       vim.opt.foldlevelstart = 99
+
+      -- Disable logging
+      vim.lsp.set_log_level("off")
     '';
 
     extraConfigLuaPre = ''
