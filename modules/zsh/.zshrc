@@ -13,3 +13,5 @@ function f() {
 }
 
 bindkey '^R' history-search-multi-word
+
+export NIXPKGS_ALLOW_UNFREE=1
