@@ -7,7 +7,7 @@ set -o pipefail
 usage()
 {
     echo ""
-    echo "Usage: $0 <option: rebuild-switch|rebuild-boot|collect-garbage> [machine: thorfinn|kuujo] "
+    echo "Usage: $0 <option: rebuild-switch|rebuild-boot|collect-garbage|delete-generations> [machine: thorfinn|kuujo] "
     echo ""
 }
 
