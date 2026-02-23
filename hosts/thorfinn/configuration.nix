@@ -3,6 +3,7 @@
   lib,
   hostname,
   conf,
+  system,
   ...
 }:
 let
@@ -45,6 +46,7 @@ in
         colorScheme
         hostname
         conf
+        system
         ;
     };
     users = {
