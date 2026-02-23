@@ -1,4 +1,9 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  inputs,
+  system,
+  ...
+}:
 {
 
   programs.nixvim = {
@@ -271,7 +276,10 @@
           };
 
           # clangd
-          clangd.enable = true;
+          clangd = {
+            enable = true;
+            package = inputs.nixpkgs-unstable.legacyPackages.${system}.llvmPackages_22.clang-tools;
+          };
           cmake = {
             enable = true;
           };
