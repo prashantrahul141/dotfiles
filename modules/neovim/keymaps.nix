@@ -316,10 +316,10 @@
           "<C-Down>" = ":resize +2<CR>";
           "<C-Left>" = ":vertical resize +2<CR>";
           "<C-Right>" = ":vertical resize -2<CR>";
-          "j" = ''gj'';
-          "k" = ''gk'';
-          "<Up>" = ''gk'';
-          "<Down>" = ''gj'';
+          "j" = "gj";
+          "k" = "gk";
+          "<Up>" = "gk";
+          "<Down>" = "gj";
           "<leader>tr" = ":FloatermNew yazi<CR>";
           "<leader>tl" = ":FloatermNew lazygit<CR>";
         }

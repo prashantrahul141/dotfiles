@@ -80,16 +80,16 @@ in
     # julia
 
     # rustup
-    rustc
-    cargo
-    rustfmt
+    # rustc
+    # cargo
+    # rustfmt
 
     # node
     nodejs
     pnpm
 
     vscode
-    # zed-editor
+    zed-editor
 
     # game engine
     # unityhub
