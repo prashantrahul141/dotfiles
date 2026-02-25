@@ -1,0 +1,25 @@
+{
+  "exclusionRules": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {}
+  ],
+  "hideUpdateNotifications": true,
+  "keyMappings": "# Insert your preferred key mappings here.\nunmapAll\nmap j scrollDown\nmap k scrollUp\nmap h scrollLeft\nmap l scrollRight\n\nmap G scrollToBottom\nmap gg scrollToTop\n\nmap <tab> nextTab\nmap <S-tab> previousTab\n\nmap f LinkHints.activateMode\nmap s Vomnibar.activate\n\nmap / enterFindMode\nmap p performBackwardsFind\nmap n performFind",
+  "newTabDestination": "browserNewTabPage",
+  "regexFindMode": true,
+  "scrollStepSize": 90,
+  "searchEngines": "w: https://www.wikipedia.org/w/index.php?title=Special:Search&search=%s Wikipedia\ng: https://www.google.com/search?q=%s Google\ny: https://www.youtube.com/results?search_query=%s Youtube\ngm: https://www.google.com/maps?q=%s Google maps\nd: https://duckduckgo.com/?q=%s DuckDuckGo\naz: https://www.amazon.in/s/?field-keywords=%s",
+  "settingsVersion": "2.4.0",
+  "smoothScroll": false
+}
