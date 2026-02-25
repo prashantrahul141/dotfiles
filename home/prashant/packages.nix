@@ -43,7 +43,7 @@ in
     # kde qt stuff
     kdePackages.qt6ct
     libsForQt5.qt5ct
-    libsForQt5.qtstyleplugin-kvantum
+    libsForQt5.qtstyleplugins
     # kdePackages.xwaylandvideobridge
 
     # gtk

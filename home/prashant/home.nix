@@ -56,7 +56,7 @@
     EDITOR = "nvim";
     QT_QPA_PLATFORM = "wayland";
     QT_QPA_PLATFORMTHEME = "qt5ct";
-    QT_STYLE_OVERRIDE = "kvantum";
+    QT_STYLE_OVERRIDE = "qt6ct-style";
     TERMINAL = "wezterm";
     TERM = "wezterm";
     GOPATH = "~/.go";
