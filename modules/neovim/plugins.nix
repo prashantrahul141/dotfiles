@@ -432,6 +432,7 @@
             "*.out"
             "*.tar"
             "*.gz"
+            "compile_commands.json"
           ];
           set_env.COLORTERM = "truecolor";
         };
