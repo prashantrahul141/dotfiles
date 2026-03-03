@@ -1,0 +1,44 @@
+#!/usr/bin/env python
+
+import subprocess
+import itertools
+import argparse
+from os import environ
+from os.path import realpath, exists
+import sys
+
+
+REMOTE = environ.get("REMOTE_FILE_HOST")
+if not REMOTE:
+    print("REMOTE_FILE_HOST not set")
+    sys.exit(-1)
+
+parser = argparse.ArgumentParser(
+    description="Upload files to a remote file host, the remote host is taken from env REMOTE_FILE_HOST",
+)
+parser.add_argument("input", nargs="+", help="File to upload")
+args = parser.parse_args()
+
+
+if not all(exists(realpath(i)) for i in args.input):
+    print("not all file(s) exist")
+    sys.exit(-1)
+
+cmd = (
+    ["curl"]
+    + list(
+        itertools.chain.from_iterable(
+            ["-F", f'file=@"{realpath(path)}"'] for _, path in enumerate(args.input)
+        )
+    )
+    + [REMOTE]
+)
+with subprocess.Popen(
+    cmd,
+    stdout=subprocess.PIPE,
+    stderr=subprocess.STDOUT,
+    text=True,
+) as process:
+    if process.stdout:
+        for line in process.stdout:
+            print(line, end="", flush=True)
