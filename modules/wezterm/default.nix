@@ -6,6 +6,7 @@
     extraConfig = ''
        local config = wezterm.config_builder()
        config.font = wezterm.font 'FiraCode Nerd Font'
+       canonicalize_pasted_newlines = "LineFeed"
        -- config.color_scheme = 'Gruvbox dark, hard (base16)'
        config.colors = {
          foreground = "#${colorScheme.palette.base05}",
