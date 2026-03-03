@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 let
   customizations = import ./customizations.nix {
     inherit (pkgs) stdenv lib;
@@ -54,6 +54,6 @@ in
       custom = customizations.outPath;
     };
 
-    initContent = (builtins.readFile ./.zshrc);
+    initContent = lib.mkAfter (builtins.readFile ./.zshrc);
   };
 }

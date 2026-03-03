@@ -15,3 +15,5 @@ function f() {
 bindkey '^R' history-search-multi-word
 
 export NIXPKGS_ALLOW_UNFREE=1
+
+[[ -f ~/.zsh_custom ]] && source ~/.zsh_custom
