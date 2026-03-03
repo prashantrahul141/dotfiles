@@ -1,9 +1,5 @@
 { ... }:
 {
-  virtualisation.docker = {
-    enable = true;
-    enableOnBoot = false;
-  };
   security.pam.services.hyprlock = {
     name = "hyprlock";
     text = ''

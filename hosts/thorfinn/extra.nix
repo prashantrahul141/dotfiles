@@ -1,5 +1,18 @@
 { conf, ... }:
 {
+
+  # virtualisation
+  virtualisation = {
+    waydroid = {
+      enable = true;
+    };
+
+    docker = {
+      enable = true;
+      enableOnBoot = false;
+    };
+  };
+
   # sets rtc (real time clock) in local timezone, so the time in windows and linux could be same.
   time.hardwareClockInLocalTime = true;
 
