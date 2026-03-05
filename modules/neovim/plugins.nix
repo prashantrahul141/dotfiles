@@ -37,6 +37,16 @@
         };
       };
 
+      # git blame
+      gitblame = {
+        enable = true;
+        settings = {
+          date_format = "%r";
+          delay = 1000;
+          display_virtual_text = true;
+        };
+      };
+
       lualine = {
         enable = true;
         settings = {
