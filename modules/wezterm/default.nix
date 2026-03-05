@@ -82,6 +82,16 @@
            mods = 'CTRL|SHIFT',
            action = wezterm.action.ActivatePaneDirection "Right",
          },
+         {
+           key = 'k',
+           mods = 'SHIFT',
+           action = wezterm.action.ScrollToPrompt(-1),
+         },
+         {
+           key = 'j',
+           mods = 'SHIFT',
+           action = wezterm.action.ScrollToPrompt(1),
+         },
        }
        return config;
     '';
