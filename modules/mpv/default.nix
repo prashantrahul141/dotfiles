@@ -10,7 +10,7 @@
       screenshot-directory = "~/Pictures/Screenshots/";
       cache-secs = "300";
       volume = "60";
-      ytdl-format = "bestvideo[height<=?144]+bestaudio/best";
+      ytdl-format = "bestvideo[height>=?720]+bestaudio/best";
       sub-scale = "0.5";
     };
 
