@@ -30,8 +30,9 @@ in
       du = "dust";
       ps = "procs";
       lsusb = "cyme";
+      nix-locate = "nix run github:nix-community/nix-index-database";
     };
-    history.size = 10000;
+    history.size = 30000;
 
     oh-my-zsh = {
       enable = true;

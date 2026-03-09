@@ -152,6 +152,9 @@ in
     wineWowPackages.waylandFull
     winetricks
 
+    # run software without installing
+    comma
+
     # custom
     custom-scripts
   ];
