@@ -165,11 +165,11 @@
     device = [
       {
         name = "razer-razer-deathadder-essential";
-        sensitivity = -0.82;
+        sensitivity = -1.0;
       }
       {
         name = "razer-razer-deathadder-essential-1";
-        sensitivity = -0.82;
+        sensitivity = -1.0;
       }
     ];
 
