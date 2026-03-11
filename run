@@ -4,17 +4,31 @@ set -eu
 # set -x
 set -o pipefail
 
+PROG=$(basename $0)
+
 usage()
 {
-    echo ""
-    echo "Usage: $0 <option: rebuild-switch|rebuild-boot|collect-garbage|delete-generations|lint|deadnix> [machine: thorfinn|kuujo] "
-    echo ""
+    printf ""
+    printf "Usage: %s <option>\n" "$PROG"
+    printf "options:\n"
+    printf "\t rebuild-switch <machine>      Rebuild and switch\n"
+    printf "\t rebuild-boot <machine>        Rebuild and boot\n"
+    printf "\t collect-garbage               Collect garbage\n"
+    printf "\t delete-generations            Delete generations older than 7 days\n"
+    printf "\t fmt                           Run formatter\n"
+    printf "\t lint                          Run linter\n"
+    printf "\t deadnix                       Run dead code analyzer\n"
+    printf "\n"
+    printf "machines:\n"
+    printf "\t thorfinn                      Personal laptop\n"
+    printf "\t kuujo                         Remote server\n"
+    printf "\n"
 }
 
 total_args=$#
 
 # validate min args
-if (( $total_args < 1 )); then
+if [ $total_args -lt 1 ]; then
     echo "Expected atleast 1 argument(s), got $total_args"
     usage
     exit 1
@@ -23,7 +37,7 @@ fi
 # validate exact args count
 validate_exact_args()
 {
-    if (( $total_args != $1 )); then
+    if [ $total_args -ne "$1" ]; then
         echo "Expected exactly $1 argument(s), got $total_args"
         usage
         exit 1
@@ -94,6 +108,13 @@ case $option in
         run "sudo nix profile wipe-history --older-than 7d --profile /nix/var/nix/profiles/system"
         exit 0
         ;;
+
+    "fmt")
+        validate_exact_args 1
+        run "nix fmt ."
+        exit 0
+        ;;
+
 
     "deadnix")
         validate_exact_args 1
