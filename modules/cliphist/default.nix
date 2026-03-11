@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   services.cliphist.enable = true;
   services.cliphist.extraOptions = [
     "-max-dedupe-search"

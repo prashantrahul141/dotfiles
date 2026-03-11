@@ -1,8 +1,11 @@
-{ ... }:
-{
+_: {
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+  };
 
   # don’t shutdown when power button is short-pressed
   services.logind.settings = {

@@ -21,15 +21,16 @@
 
   services.blueman.enable = true; # for bluetooth applet
 
-  networking.hostName = hostname;
-
   # Enable networking
-  networking.networkmanager.enable = true;
+  networking = {
+    hostName = hostname;
+    networkmanager.enable = true;
 
-  networking.firewall.allowedTCPPorts = [
-    22 # ssh
-    8081 # things i host
-  ];
+    firewall.allowedTCPPorts = [
+      22 # ssh
+      8081 # things i host
+    ];
+  };
 
   programs = {
     gnupg = {

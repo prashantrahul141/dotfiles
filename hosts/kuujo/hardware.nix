@@ -6,25 +6,31 @@
 }:
 {
   imports = [ (modulesPath + "/profiles/qemu-guest.nix") ];
-  boot.loader.grub = {
-    efiSupport = true;
-    efiInstallAsRemovable = true;
-    device = "nodev";
+  boot = {
+    loader.grub = {
+      efiSupport = true;
+      efiInstallAsRemovable = true;
+      device = "nodev";
+    };
+    initrd = {
+      availableKernelModules = [
+        "ata_piix"
+        "uhci_hcd"
+        "xen_blkfront"
+        "vmw_pvscsi"
+      ];
+      kernelModules = [ "nvme" ];
+    };
   };
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/82B3-EB63";
-    fsType = "vfat";
-  };
-  boot.initrd.availableKernelModules = [
-    "ata_piix"
-    "uhci_hcd"
-    "xen_blkfront"
-    "vmw_pvscsi"
-  ];
-  boot.initrd.kernelModules = [ "nvme" ];
-  fileSystems."/" = {
-    device = "/dev/vda2";
-    fsType = "ext4";
+  fileSystems = {
+    "/boot" = {
+      device = "/dev/disk/by-uuid/82B3-EB63";
+      fsType = "vfat";
+    };
+    "/" = {
+      device = "/dev/vda2";
+      fsType = "ext4";
+    };
   };
 
   nixpkgs.hostPlatform = lib.mkDefault system;

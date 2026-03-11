@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
 
   # image viewer : nsxiv desktop entry
   # xdg.desktopEntries.nsxiv = {

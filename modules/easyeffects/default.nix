@@ -1,4 +1,4 @@
-{ ... }:
+_:
 let
   headphones-input = builtins.fromJSON (builtins.readFile ./headphones-input.json);
   headphones-output = builtins.fromJSON (builtins.readFile ./headphones-output.json);

@@ -11,19 +11,23 @@
 {
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
-  boot.initrd.availableKernelModules = [
-    "nvme"
-    "xhci_pci"
-    "usbhid"
-    "usb_storage"
-    "sd_mod"
-  ];
-  boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [
-    "kvm-amd"
-    "v4l2loopback"
-  ];
-  boot.extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
+  boot = {
+    initrd = {
+      availableKernelModules = [
+        "nvme"
+        "xhci_pci"
+        "usbhid"
+        "usb_storage"
+        "sd_mod"
+      ];
+      kernelModules = [ ];
+    };
+    kernelModules = [
+      "kvm-amd"
+      "v4l2loopback"
+    ];
+    extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
+  };
 
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/c13953f9-a26c-4ef3-a53e-525885944b19";

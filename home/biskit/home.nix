@@ -4,18 +4,20 @@
 }:
 {
 
-  home.username = "biskit";
-  home.homeDirectory = "/home/biskit";
+  home = {
+    username = "biskit";
+    homeDirectory = "/home/biskit";
+
+    packages = with pkgs; [
+    ];
+
+    sessionVariables = {
+      TERM = "xterm-256color";
+    };
+  };
 
   imports = [
   ];
-
-  home.packages = with pkgs; [
-  ];
-
-  home.sessionVariables = {
-    TERM = "xterm-256color";
-  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

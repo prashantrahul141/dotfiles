@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
 
   # global config
   global = {

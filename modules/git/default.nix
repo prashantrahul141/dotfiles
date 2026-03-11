@@ -6,9 +6,7 @@
 
     settings = {
       user = {
-        name = conf.user.${config.home.username}.git.user.name;
-        email = conf.user.${config.home.username}.git.user.email;
-        signingkey = conf.user.${config.home.username}.git.user.signingkey;
+        inherit (conf.user.${config.home.username}.git.user) name email signingkey;
       };
 
       credential.helper = "!gh auth git-credential";

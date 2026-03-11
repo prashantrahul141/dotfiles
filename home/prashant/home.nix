@@ -4,10 +4,6 @@
 }:
 {
 
-  home.username = "prashant";
-  home.homeDirectory = "/home/prashant";
-
-  home.stateVersion = "24.11"; # DO NOT CHANGE.
   imports = [
     inputs.nixvim.homeModules.nixvim
     inputs.nix-colors.homeManagerModules.default
@@ -49,18 +45,23 @@
     ../../modules/fastfetch
   ];
 
-  home.sessionVariables = {
-    EDITOR = "nvim";
-    QT_QPA_PLATFORM = "wayland";
-    QT_QPA_PLATFORMTHEME = "qt5ct";
-    QT_STYLE_OVERRIDE = "qt6ct-style";
-    TERMINAL = "wezterm";
-    TERM = "wezterm";
-    GOPATH = "~/.go";
-  };
+  home = {
+    username = "prashant";
+    homeDirectory = "/home/prashant";
+    stateVersion = "24.11"; # DO NOT CHANGE.
+    sessionVariables = {
+      EDITOR = "nvim";
+      QT_QPA_PLATFORM = "wayland";
+      QT_QPA_PLATFORMTHEME = "qt5ct";
+      QT_STYLE_OVERRIDE = "qt6ct-style";
+      TERMINAL = "wezterm";
+      TERM = "wezterm";
+      GOPATH = "~/.go";
+    };
 
-  # zsh as default shell
-  home.shell.enableZshIntegration = true;
+    # zsh as default shell
+    shell.enableZshIntegration = true;
+  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

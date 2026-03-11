@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   services.hyprpaper =
     let
       wallpaperPath = ./active.png;

@@ -1,7 +1,4 @@
-{
-  ...
-}:
-{
+_: {
 
   users = {
     users.biskit = {
