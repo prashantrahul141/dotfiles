@@ -7,7 +7,7 @@ set -o pipefail
 usage()
 {
     echo ""
-    echo "Usage: $0 <option: rebuild-switch|rebuild-boot|collect-garbage|delete-generations|deadnix> [machine: thorfinn|kuujo] "
+    echo "Usage: $0 <option: rebuild-switch|rebuild-boot|collect-garbage|delete-generations|lint|deadnix> [machine: thorfinn|kuujo] "
     echo ""
 }
 
@@ -97,7 +97,13 @@ case $option in
 
     "deadnix")
         validate_exact_args 1
-        run "NO_COLOR=1 nix run github:astro/deadnix . | less"
+        run "NO_COLOR=1 nix run nixpkgs#deadnix -- . | less"
+        exit 0
+        ;;
+
+    "lint")
+        validate_exact_args 1
+        run "nix run nixpkgs#statix -- check"
         exit 0
         ;;
 
