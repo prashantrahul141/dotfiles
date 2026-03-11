@@ -7,7 +7,7 @@ set -o pipefail
 usage()
 {
     echo ""
-    echo "Usage: $0 <option: rebuild-switch|rebuild-boot|collect-garbage|delete-generations> [machine: thorfinn|kuujo] "
+    echo "Usage: $0 <option: rebuild-switch|rebuild-boot|collect-garbage|delete-generations|deadnix> [machine: thorfinn|kuujo] "
     echo ""
 }
 
@@ -37,7 +37,6 @@ run()
     script -q -c "$1" /dev/null
 }
 
-
 # rebuild-switch
 rebuild_switch()
 {
@@ -50,8 +49,6 @@ rebuild_boot()
     run "sudo nixos-rebuild boot --flake ./hosts#$1 --show-trace -L -v"
     exit 0
 }
-
-
 
 option="$1"
 case $option in
@@ -85,7 +82,6 @@ case $option in
         esac
         ;;
 
-
     "collect-garbage")
         validate_exact_args 1
         run "nix-collect-garbage -d"
@@ -96,6 +92,12 @@ case $option in
     "delete-generations")
         validate_exact_args 1
         run "sudo nix profile wipe-history --older-than 7d --profile /nix/var/nix/profiles/system"
+        exit 0
+        ;;
+
+    "deadnix")
+        validate_exact_args 1
+        run "NO_COLOR=1 nix run github:astro/deadnix . | less"
         exit 0
         ;;
 
