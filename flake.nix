@@ -18,12 +18,8 @@
 
   outputs =
     {
-      self,
       nixpkgs,
-      nixpkgs-unstable,
       nix-colors,
-      home-manager,
-      nixvim,
       ...
     }@inputs:
     let
