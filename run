@@ -98,6 +98,7 @@ case $option in
 
     "collect-garbage")
         validate_exact_args 1
+        run "nix-store --gc"
         run "nix-collect-garbage -d"
         run "sudo nix-collect-garbage -d"
         exit 0
