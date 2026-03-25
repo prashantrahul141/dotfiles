@@ -4,8 +4,23 @@
     enable = true;
     settings = {
       logo = {
-        type = "sixel";
-        source = conf.host.${hostname}.fastfetch.image;
+        type = "data-raw";
+        source = "       _
+       \`*-.
+        )  _`-.
+       .  : `. .
+       : _   '  \
+       ; *` _.   `*-._
+       `-.-'          `-.
+         ;       `       `.
+         :.       .        \
+         . \  .   :   .-'   .
+         '  `+.;  ;  '      :
+         :  '  |    ;       ;-.
+         ; '   : :`-:     _.`* ;
+[bug] .*' /  .*' ; .*`- +'  `*'
+      `*-*   `*-*  `*-*'
+";
       };
 
       display = {
