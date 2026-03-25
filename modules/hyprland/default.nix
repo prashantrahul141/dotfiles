@@ -18,8 +18,8 @@
         "~/.config/hypr/monitors.conf"
       ];
 
-      "$terminal" = "wezterm";
-      "$fileManager" = "wezterm start -- yazi";
+      "$terminal" = "foot";
+      "$fileManager" = "foot yazi";
       "$menu" = "wofi --show drun";
       "$browser" = "brave --password-store=basic";
 
@@ -338,6 +338,8 @@
       ];
 
       exec-once = [
+        # if foot terminal is used, start the server
+        "uwsm app -- foot --server"
         "uwsm app -- fcitx5"
         "systemctl --user enable --now hyprpaper.service"
         "uwsm app -- xrdb -load ~/.Xresources"

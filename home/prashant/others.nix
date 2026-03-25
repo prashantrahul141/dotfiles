@@ -13,7 +13,7 @@ _: {
       "video/jpg" = [ "mpv.desktop" ];
       "video/*" = [ "mpv.desktop" ];
       "inode/directory" = [ "nemo.desktop" ];
-      "application/x-shellscript" = [ "wezterm.desktop" ];
+      "application/x-shellscript" = [ "foot.desktop" ];
     };
     defaultApplications = {
       "text/plain" = [ "nvim.desktop" ];
@@ -27,7 +27,7 @@ _: {
       "video/jpg" = [ "mpv.desktop" ];
       "video/*" = [ "mpv.desktop" ];
       "inode/directory" = [ "nemo.desktop" ];
-      "application/x-shellscript" = [ "wezterm.desktop" ];
+      "application/x-shellscript" = [ "foot.desktop" ];
     };
   };
 }

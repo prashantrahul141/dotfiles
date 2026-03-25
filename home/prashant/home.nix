@@ -37,7 +37,8 @@
     # ../../modules/ranger
     # ../../modules/helix
     ../../modules/zed
-    ../../modules/wezterm
+    # ../../modules/wezterm
+    ../../modules/foot
     # ../../modules/espanso
     ../../modules/direnv
     ../../modules/swayimg
@@ -54,8 +55,8 @@
       QT_QPA_PLATFORM = "wayland";
       QT_QPA_PLATFORMTHEME = "qt5ct";
       QT_STYLE_OVERRIDE = "qt6ct-style";
-      TERMINAL = "wezterm";
-      TERM = "wezterm";
+      TERMINAL = "xterm-256color";
+      TERM = "xterm-256color";
       GOPATH = "~/.go";
     };
 
