@@ -509,8 +509,12 @@
         enable = true;
       };
 
-      chadtree = {
+      nvim-tree = {
         enable = true;
+      };
+
+      chadtree = {
+        enable = false;
         settings = {
           xdg = true;
           view = {

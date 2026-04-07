@@ -53,7 +53,7 @@
         };
       }
       {
-        action = "<cmd>CHADopen<CR>";
+        action = "<cmd>NvimTreeToggle<CR>";
         key = "<C-n>";
         options = {
           silent = true;
