@@ -44,6 +44,7 @@
     ../../modules/swayimg
     # ../../modules/easyeffects
     ../../modules/fastfetch
+    ../../modules/halloy # irc client
   ];
 
   home = {

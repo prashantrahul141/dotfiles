@@ -145,7 +145,6 @@ in
 
     # communication
     # signal-desktop
-    # quassel # irc client
     # slack
 
     # gaming
