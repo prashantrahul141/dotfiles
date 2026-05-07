@@ -153,7 +153,10 @@ in
     winetricks
 
     # run software without installing
-    comma
+    # comma
+
+    # email client
+    aerc
 
     # custom
     custom-scripts
