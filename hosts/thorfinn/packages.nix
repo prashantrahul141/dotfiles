@@ -4,6 +4,7 @@
     # dconf # also needed by easyeffects
     steam-run
     cyme
+    fcp
     udiskie
     firefox # might create separate home manager module someday, todays not the day.
     brightnessctl

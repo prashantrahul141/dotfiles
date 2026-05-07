@@ -12,9 +12,17 @@ _: {
       fastfetch = {
         image = ./assets/thorfinn.jpeg;
       };
+
+      zsh = {
+        fcp-enabled = true;
+      };
     };
 
-    kuujo = { };
+    kuujo = {
+      zsh = {
+        fcp-enabled = false;
+      };
+    };
   };
 
   # per user level config

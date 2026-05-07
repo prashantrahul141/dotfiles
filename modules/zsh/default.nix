@@ -1,4 +1,10 @@
-{ lib, pkgs, ... }:
+{
+  hostname,
+  lib,
+  pkgs,
+  conf,
+  ...
+}:
 let
   customizations = import ./customizations.nix {
     inherit (pkgs) stdenv lib;
@@ -31,6 +37,8 @@ in
       ps = "procs";
       lsusb = "cyme";
       nix-locate = "nix run github:nix-community/nix-index-database";
+      cp = if conf.host.${hostname}.zsh.fcp-enabled then "fcp" else "cp";
+
     };
     history.size = 30000;
 
