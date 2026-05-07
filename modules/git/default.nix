@@ -69,6 +69,14 @@
         showUntrackedFiles = true;
       };
 
+      sendemail = {
+        annotate = "yes";
+      };
+
+      format = {
+        signOff = "yes";
+      };
+
       log = {
         abbrevCommit = true;
         graphColors = "blue,yellow,cyan,magenta,green,red";
