@@ -1,5 +1,4 @@
-{ conf, hostname, ... }:
-{
+_: {
   programs.fastfetch = {
     enable = true;
     settings = {
