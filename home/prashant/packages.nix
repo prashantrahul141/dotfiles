@@ -157,6 +157,9 @@ in
     # email client
     aerc
 
+    # better man pages
+    tldr
+
     # custom
     custom-scripts
   ];
