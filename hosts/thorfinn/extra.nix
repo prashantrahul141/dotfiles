@@ -4,7 +4,7 @@
   # virtualisation
   virtualisation = {
     waydroid = {
-      enable = true;
+      enable = false;
     };
 
     docker = {
@@ -57,17 +57,17 @@
         TLP_DEFAULT_MODE = "BAL";
         TLP_PERSISTENT_DEFAULT = 0;
 
-        CPU_SCALING_GOVERNOR_ON_AC = "performance";
+        CPU_SCALING_GOVERNOR_ON_AC = "balanced";
         CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
 
-        CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
-        CPU_ENERGY_PERF_POLICY_ON_BAT = "default";
+        CPU_ENERGY_PERF_POLICY_ON_AC = "balanced";
+        CPU_ENERGY_PERF_POLICY_ON_BAT = "balanced";
 
         # START_CHARGE_THRESH_BAT0 = 40; # 40 and below it starts to charge
         STOP_CHARGE_THRESH_BAT0 = 80; # 80 and above it stops charging
 
         # https://linrunner.de/tlp/support/optimizing.html#improve-performance-on-ac-power
-        PLATFORM_PROFILE_ON_AC = "performance";
+        PLATFORM_PROFILE_ON_AC = "balanced";
         PLATFORM_PROFILE_ON_BAT = "balanced";
       };
     };
@@ -81,5 +81,10 @@
   programs.appimage = {
     enable = true;
     binfmt = true;
+  };
+
+  # kde connect
+  programs.kdeconnect = {
+    enable = false;
   };
 }
