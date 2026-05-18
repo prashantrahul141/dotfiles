@@ -12,6 +12,7 @@
     ./packages.nix
     ./appearance.nix
     ./others.nix
+    ./sound.nix
     ../../modules/dunst
     ../../modules/wlogout
     ../../modules/hyprland
