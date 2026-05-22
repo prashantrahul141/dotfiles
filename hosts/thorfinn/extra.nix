@@ -16,6 +16,15 @@
   # sets rtc (real time clock) in local timezone, so the time in windows and linux could be same.
   time.hardwareClockInLocalTime = true;
 
+  # disable cpu boost on start
+  systemd.services.disable-turbo = {
+    description = "Disable CPU Turbo Boost";
+    script = ''
+      echo 0 | tee /sys/devices/system/cpu/cpufreq/boost
+    '';
+    wantedBy = [ "multi-user.target" ];
+  };
+
   services = {
     # openrgb
     hardware.openrgb.enable = true;
