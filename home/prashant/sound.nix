@@ -1,7 +1,7 @@
 _: {
   # mpd
   services.mpd = {
-    enable = true;
+    enable = false;
     musicDirectory = "~/Music/";
     network = {
       listenAddress = "10.10.0.2";

@@ -2,6 +2,7 @@
   lib,
   pkgs,
   hostname,
+  conf,
   ...
 }:
 {
@@ -26,10 +27,34 @@
     hostName = hostname;
     networkmanager.enable = true;
 
-    firewall.allowedTCPPorts = [
-      22 # ssh
-      8081 # things i host
-    ];
+    firewall = {
+      allowedTCPPorts = [
+        22 # ssh
+        8081 # things i host
+        # 6601 # mpd over the network stream
+      ];
+
+      allowedUDPPorts = [
+        # 51820 # wireguard
+      ];
+    };
+  };
+
+  # wireguard
+  networking.wireguard = {
+    enable = false;
+    interfaces.wg0 = {
+      ips = [ "10.10.0.2/24" ];
+      privateKeyFile = "/etc/wireguard/privatekey"; # this needs to be created using wg (wireguard-tools)
+      peers = [
+        {
+          publicKey = conf.host.kuujo.wireguard.public_key;
+          allowedIPs = [ "10.10.0.1/32" ];
+          endpoint = "${conf.host.kuujo.wireguard.public_key}:51820";
+          persistentKeepalive = 25;
+        }
+      ];
+    };
   };
 
   programs = {

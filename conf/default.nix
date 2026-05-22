@@ -22,6 +22,10 @@ _: {
       zsh = {
         fcp-enabled = false;
       };
+      wireguard = {
+        public_key = "616xhKtfjCM4P2VQPjCNHvQZSyujWKWlCW5CDVm9Iw8=";
+        public_ip = "NOT-SET";
+      };
     };
   };
 
