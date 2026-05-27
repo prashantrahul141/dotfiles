@@ -158,7 +158,7 @@ in
     aerc
 
     # better man pages
-    tldr
+    tlrc
 
     # custom
     custom-scripts
