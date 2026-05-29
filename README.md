@@ -2,7 +2,7 @@
 
 NixOS configuration files using Flakes and Home Manager.
 
-![ILOVEGRUVBOX](./ss.avif)
+![catto](./ss.jpg)
 
 For my own reference:
 ```sh
