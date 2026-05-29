@@ -1,6 +1,10 @@
-{ ... }:
+{ colorScheme, ... }:
+let
+  colorschemeSetup = import ./colorscheme.nix {
+    inherit colorScheme;
+  };
+in
 {
-
   imports = [
     ./keymaps.nix
     ./plugins.nix
@@ -49,7 +53,9 @@
 
       -- Disable logging
       vim.lsp.set_log_level("off")
-    '';
+
+    ''
+    + colorschemeSetup;
 
     extraConfigLuaPre = ''
       vim.go.laststatus=3
@@ -135,15 +141,6 @@
       update_in_insert = false;
       underline = true;
       virtual_text = true;
-    };
-
-    colorschemes = {
-      gruvbox = {
-        enable = true;
-        settings = {
-          transparent_mode = true;
-        };
-      };
     };
   };
 }

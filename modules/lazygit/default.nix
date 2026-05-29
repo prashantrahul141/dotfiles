@@ -8,8 +8,10 @@ _: {
           signOff = true;
         };
         pagers = [
-          { pager = "delta --syntax-theme \"gruvbox-dark\" --dark --paging=never"; }
-          { externalDiffCommand = "delta -syntax-theme \"gruvbox-dark\" --dark"; }
+          # THEME CHANGE
+          { pager = "delta --syntax-theme \"Catppuccin Mocha\" --dark --paging=never"; }
+          # THEME CHANGE
+          { externalDiffCommand = "delta -syntax-theme \"Catppuccin Mocha\" --dark"; }
         ];
       };
       nerdFontsVersion = "2";

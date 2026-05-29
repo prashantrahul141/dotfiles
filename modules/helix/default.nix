@@ -3,7 +3,8 @@
   programs.helix = {
     enable = true;
     settings = {
-      theme = "gruvbox_dark_hard";
+      # THEME CHANGE
+      theme = "catppuccin_mocha";
       editor = {
         cursor-shape = {
           normal = "block";

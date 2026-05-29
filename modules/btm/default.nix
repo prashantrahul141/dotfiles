@@ -7,7 +7,7 @@ _: {
       };
 
       styles = {
-        theme = "gruvbox";
+        theme = "default";
       };
     };
   };

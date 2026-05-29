@@ -221,7 +221,7 @@
         background: #${colorScheme.palette.base00};
         color: #${colorScheme.palette.base07};
         border: 15px solid #${colorScheme.palette.base00};
-        border-radius: 4px;
+        border-radius: 0px;
       }
 
       tooltip label {
@@ -233,27 +233,29 @@
         padding: 5px 10px;
       	box-shadow: inset 0 -3px transparent;
       	border: none;
-      	color: #${colorScheme.palette.base05};
+        color: #${colorScheme.palette.base05};
         background-color: #${colorScheme.palette.base00};
+        border-bottom: 2px solid #${colorScheme.palette.base02};
+        transition: background-color 120ms ease, color 120ms ease, border-color 120ms ease;
         border-radius: 0px 0px 0px 0px;
       }
 
       #workspaces button:first-child {
-         border-radius: 6px 0 0 6px;
+         border-radius: 0px 0 0 0px;
       }
 
       #workspaces button:hover {
       	box-shadow: inherit;
-      	text-shadow: inherit;
-      	color: #${colorScheme.palette.base07};
-      	background: #${colorScheme.palette.base02};
-      	background-color: #${colorScheme.palette.base02};
+        text-shadow: inherit;
+        color: #${colorScheme.palette.base07};
+        background-color: #${colorScheme.palette.base02};
+        border-bottom: 2px solid #${colorScheme.palette.base0D};
       }
 
       #workspaces button.active {
-      	color: #${colorScheme.palette.base00};
-      	background: #${colorScheme.palette.base02};
-      	background-color: #${colorScheme.palette.base0B};
+        color: #${colorScheme.palette.base00};
+        background-color: #${colorScheme.palette.base0B};
+        border-bottom: 2px solid #${colorScheme.palette.base0A};
       }
 
       #workspaces button.urgent {
@@ -262,6 +264,8 @@
         animation-timing-function: linear;
         animation-iteration-count: infinite;
         animation-direction: alternate;
+        background-color: #${colorScheme.palette.base08};
+        color: #${colorScheme.palette.base00};
       }
 
       #clock,
@@ -277,26 +281,29 @@
         padding: 8px 11px;
         color: #${colorScheme.palette.base06};
         background-color: #${colorScheme.palette.base00};
+        border-bottom: 2px solid #${colorScheme.palette.base02};
       }
 
       #clock.time {
-        border-radius: 0 6px 6px 0;
+        border-radius: 0 0px 0px 0;
       }
 
       #tray {
-         border-radius: 6px 0 0 6px;
+         border-radius: 0px 0 0 0px;
       }
 
       #window{
       	padding: 4px 14px;
-        color: #${colorScheme.palette.base06};
+        color: #${colorScheme.palette.base07};
         background-color: #${colorScheme.palette.base00};
-      	border-radius: 6px;
+        border: 1px solid #${colorScheme.palette.base02};
+        border-bottom: 2px solid #${colorScheme.palette.base0D};
+      	border-radius: 0px;
       }
 
       window#waybar {
         color: #${colorScheme.palette.base06};
-        border-radius: 2px;
+        border-radius: 0px;
         background-color: rgba(0,0,0,0);
       }
 
@@ -305,12 +312,14 @@
       }
 
       #battery {
-      	color: #${colorScheme.palette.base06};
+        color: #${colorScheme.palette.base0B};
+        border-bottom: 2px solid #${colorScheme.palette.base0B};
       }
 
       #battery.charging,
       #battery.plugged {
-      	color: #${colorScheme.palette.base0B};
+        color: #${colorScheme.palette.base0B};
+        background-color: #${colorScheme.palette.base01};
       }
 
       @keyframes blink {
@@ -321,13 +330,14 @@
       }
 
       #battery.critical:not(.charging) {
-      	background-color: #${colorScheme.palette.base02};
-      	color: #${colorScheme.palette.base08};
-      	animation-name: blink;
-      	animation-duration: 0.5s;
-      	animation-timing-function: linear;
-      	animation-iteration-count: infinite;
-      	animation-direction: alternate;
+          background-color: #${colorScheme.palette.base01};
+          color: #${colorScheme.palette.base08};
+          border-bottom: 2px solid #${colorScheme.palette.base08};
+          animation-name: blink;
+          animation-duration: 0.5s;
+          animation-timing-function: linear;
+          animation-iteration-count: infinite;
+          animation-direction: alternate;
       }
 
       label:focus {
@@ -336,44 +346,88 @@
 
       #backlight {
         color: #${colorScheme.palette.base0D};
+        border-bottom: 2px solid #${colorScheme.palette.base0D};
       }
 
       #memory {
-      	color: #${colorScheme.palette.base0B};
+        color: #${colorScheme.palette.base0C};
+        border-bottom: 2px solid #${colorScheme.palette.base0C};
       }
 
       #cpu {
-      	color: #${colorScheme.palette.base09};
+        color: #${colorScheme.palette.base09};
+        border-bottom: 2px solid #${colorScheme.palette.base09};
       }
 
       #network {
-      	color: #${colorScheme.palette.base08};
-        border-radius: 0 6px 6px 0;
+        color: #${colorScheme.palette.base08};
+        border-bottom: 2px solid #${colorScheme.palette.base08};
+        border-radius: 0 0px 0px 0;
       }
 
       #network.disconnected {
-      	color: #${colorScheme.palette.base08};
-      	background-color: #${colorScheme.palette.base01};
+        color: #${colorScheme.palette.base08};
+        background-color: #${colorScheme.palette.base01};
+        border-bottom: 2px solid #${colorScheme.palette.base08};
       }
 
       #pulseaudio {
-      	color: #${colorScheme.palette.base09};
+        color: #${colorScheme.palette.base0E};
+        border-bottom: 2px solid #${colorScheme.palette.base0E};
       }
 
       #pulseaudio.muted {
-      	color: #${colorScheme.palette.base08};
-      	background-color: #${colorScheme.palette.base01};
+        color: #${colorScheme.palette.base03};
+        background-color: #${colorScheme.palette.base01};
+        border-bottom: 2px solid #${colorScheme.palette.base03};
       }
 
-      #tray {
+      #idle_inhibitor {
+        color: #${colorScheme.palette.base0A};
+        border-bottom: 2px solid #${colorScheme.palette.base0A};
       }
 
-      #tray>.needs-attention {
-      	background-color: #${colorScheme.palette.base07};
-      	color: #${colorScheme.palette.base01};
+      #idle_inhibitor.activated {
+        background-color: #${colorScheme.palette.base01};
       }
 
       #custom-notifications {
+        color: #${colorScheme.palette.base0D};
+        border-bottom: 2px solid #${colorScheme.palette.base0D};
+      }
+
+      #tray {
+        border-bottom: 2px solid #${colorScheme.palette.base03};
+      }
+
+      #tray > .needs-attention {
+        background-color: #${colorScheme.palette.base08};
+        color: #${colorScheme.palette.base00};
+        border-radius: 0px;
+      }
+
+      /* clocks */
+      #clock.date {
+        color: #${colorScheme.palette.base0A};
+        border-bottom: 2px solid #${colorScheme.palette.base0A};
+      }
+
+      #clock.time {
+        color: #${colorScheme.palette.base0D};
+        border-bottom: 2px solid #${colorScheme.palette.base0D};
+        border-radius: 0 0px 0px 0;
+      }
+
+      /* tooltip */
+      tooltip {
+        background: #${colorScheme.palette.base00};
+        color: #${colorScheme.palette.base07};
+        border: 1px solid #${colorScheme.palette.base00};
+        border-radius: 0px;
+      }
+
+      tooltip label {
+        color: #${colorScheme.palette.base05};
       }
 
     '';

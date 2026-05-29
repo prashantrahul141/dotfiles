@@ -3,6 +3,9 @@
   pkgs,
   ...
 }:
+let
+  c = colorScheme.palette;
+in
 {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -33,8 +36,8 @@
         gaps_in = 4;
         gaps_out = 10;
         border_size = 2;
-        "col.active_border" = "rgb(${colorScheme.palette.base04})";
-        # "col.inactive_border" = "rgb(${colorScheme.palette.base01})";
+        "col.active_border" = "rgb(${c.base0D})";
+        "col.inactive_border" = "rgb(${c.base00})";
         resize_on_border = true;
         hover_icon_on_border = true;
         extend_border_grab_area = true;
@@ -45,7 +48,7 @@
 
       # https://wiki.hyprland.org/Configuring/Variables/#decoration
       decoration = {
-        rounding = 7;
+        rounding = 0;
         active_opacity = 0.97;
         inactive_opacity = 0.93;
 
@@ -59,11 +62,11 @@
 
       # Multi Monitor setup
       workspace = [
-        #  "1,monitor:eDP-1"
-        #  "2,monitor:eDP-1"
-        #  "5,monitor:eDP-1"
-        #  "3,monitor:HDMI-A-1"
-        #  "4,monitor:HDMI-A-1"
+        "1,monitor:eDP-1"
+        "2,monitor:eDP-1"
+        "5,monitor:eDP-1"
+        "3,monitor:HDMI-A-1"
+        "4,monitor:HDMI-A-1"
       ];
 
       animations = {
@@ -127,7 +130,7 @@
 
       # https://wiki.hyprland.org/Configuring/Variables/#misc
       misc = {
-        "col.splash" = "0x${colorScheme.palette.base03}";
+        "col.splash" = "0x${c.base03}";
         focus_on_activate = true;
 
         force_default_wallpaper = 0; # Set to 0 or 1 to disable the anime mascot wallpapers

@@ -30,8 +30,11 @@
         nix-colors-lib.gtkThemeFromScheme { scheme = colorScheme; };
     };
     iconTheme = {
-      name = "Gruvbox-Plus-Dark";
-      package = pkgs.gruvbox-plus-icons;
+      # THEME CHANGE
+      # name = "Gruvbox-Plus-Dark";
+      # package = pkgs.gruvbox-plus-icons;
+      name = "Tela-blue-dark";
+      package = pkgs.tela-icon-theme;
     };
     cursorTheme = {
       name = "McMojave-cursors";

@@ -3,7 +3,8 @@
   programs.bat = {
     enable = true;
     config = {
-      theme = "gruvbox-dark";
+      # THEME CHANGE
+      theme = "Catppuccin Mocha";
     };
     extraPackages = with pkgs.bat-extras; [
       batdiff

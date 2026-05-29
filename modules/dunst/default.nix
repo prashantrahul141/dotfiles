@@ -1,4 +1,8 @@
 { colorScheme, ... }:
+let
+  c = colorScheme.palette;
+in
+
 {
   services.dunst = {
     enable = true;
@@ -7,8 +11,8 @@
         mouse_left_click = "do_action";
         mouse_right_click = "context";
         mouse_middle_click = "close_current";
-        frame_color = "#${colorScheme.palette.base03}";
-        separator_color = "#${colorScheme.palette.base03}";
+        frame_color = "#${c.base03}";
+        separator_color = "#${c.base03}";
         font = "FiraCode Nerd Font 11";
         shrink = true;
         word_wrap = "yes";
@@ -25,23 +29,23 @@
 
       base16_low = {
         msg_urgency = "low";
-        background = "#${colorScheme.palette.base00}";
-        foreground = "#${colorScheme.palette.base07}";
+        background = "#${c.base00}";
+        foreground = "#${c.base07}";
         timeout = 3;
       };
 
       base16_normal = {
         msg_urgency = "normal";
-        background = "#${colorScheme.palette.base00}";
-        foreground = "#${colorScheme.palette.base07}";
+        background = "#${c.base00}";
+        foreground = "#${c.base07}";
         timeout = 3;
       };
 
       base16_critical = {
         msg_urgency = "critical";
-        background = "#${colorScheme.palette.base00}";
-        foreground = "#${colorScheme.palette.base08}";
-        frame_color = "#${colorScheme.palette.base08}";
+        background = "#${c.base00}";
+        foreground = "#${c.base08}";
+        frame_color = "#${c.base08}";
         timeout = 5;
       };
     };

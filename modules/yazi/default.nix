@@ -1,4 +1,5 @@
-_: {
+{ colorScheme, ... }:
+{
   programs.yazi = {
     enable = true;
     enableZshIntegration = true;
@@ -20,7 +21,7 @@ _: {
       };
     };
 
-    theme = import ./theme.nix { };
+    theme = import ./theme.nix { inherit colorScheme; };
 
     keymap = {
       mgr.prepend_keymap = [

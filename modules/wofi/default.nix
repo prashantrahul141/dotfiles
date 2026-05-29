@@ -20,7 +20,7 @@
       orientation = "vertical";
       insensitive = true;
       allow_images = true;
-      icon-theme = "Gruvbox-Plus-Dark";
+      icon-theme = "cat-mocha-teal";
       image_size = 25;
       gtk_dark = true;
       layer = "top";

@@ -46,9 +46,6 @@ in
     libsForQt5.qtstyleplugins
     # kdePackages.xwaylandvideobridge
 
-    # gtk
-    gruvbox-gtk-theme
-
     # global compilers, linters, package managers for different languages.
     (pkgs.python313.withPackages (
       python-pkgs: with python-pkgs; [

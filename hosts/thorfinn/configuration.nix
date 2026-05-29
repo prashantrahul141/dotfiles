@@ -7,7 +7,8 @@
   ...
 }:
 let
-  colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-hard;
+  # search for: THEME CHANGE
+  colorScheme = inputs.nix-colors.colorSchemes.catppuccin-mocha;
 in
 {
 
