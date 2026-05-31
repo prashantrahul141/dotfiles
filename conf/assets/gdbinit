@@ -1,0 +1,105 @@
+# General
+set pagination on
+set confirm off
+set verbose off
+set history save on
+
+# Better disassembly
+set disassembly-flavor intel
+set print asm-demangle on
+set disassemble-next-line on
+
+# Pretty printing
+set print pretty on
+set print object on
+set print static-members on
+set print vtbl on
+
+# Show thread events
+set print thread-events off
+
+# Follow child after fork
+set follow-fork-mode child
+set detach-on-fork off
+
+# TUI
+set tui border-kind ascii
+set tui active-border-mode reverse
+set tui border-mode normal
+
+# Start in TUI if terminal supports it
+tui enable
+
+# Layout:
+# src + asm
+layout split
+
+# Registers window
+layout regs
+
+focus cmd
+
+# Useful display
+display/i $pc
+
+# Handy aliases
+define rr
+    run
+end
+
+define c
+    continue
+end
+
+define si
+    stepi
+end
+
+define ni
+    nexti
+end
+
+define btf
+    bt full
+end
+
+define regs
+    info registers
+end
+
+# Better hexdump
+define x64
+    x/64gx $arg0
+end
+
+define x32
+    x/32wx $arg0
+end
+
+define x16
+    x/16bx $arg0
+end
+
+document x64
+Dump 64 quadwords
+end
+
+# Stack view
+define stack
+    x/32gx $rsp
+end
+
+# Context command
+define ctx
+    printf "\n==== REGS ====\\n"
+    info registers
+    printf "\n==== DISASM ====\n"
+    x/10i $pc
+    printf "\n==== STACK ====\n"
+    x/16gx $rsp
+end
+
+# Key bindings
+define hook-stop
+    refresh
+end
