@@ -1,5 +1,4 @@
 { pkgs, lib, ... }:
-
 {
   programs.zed-editor = {
     enable = true;
@@ -18,17 +17,12 @@
         right_padding = 0.2;
       };
       format_on_save = "on";
-      copilot = {
-        disabled_globs = [ "*.*" ];
-      };
       tabs = {
         show_diagnostics = "errors";
         file_icons = true;
       };
-      enable_preview_from_file_finder = true;
-      relative_line_numbers = true;
+      relative_line_numbers = "enabled";
       features = {
-        inline_completion_provider = "none";
         edit_prediction_provider = "none";
       };
       agent = {
@@ -40,8 +34,6 @@
         npm_path = lib.getExe' pkgs.nodejs "npm";
       };
 
-      completion_documentation_secondary_query_debounce = 150;
-      show_copilot_suggestion = false;
       telemetry = {
         diagnostics = false;
         metrics = false;
@@ -56,7 +48,6 @@
         };
       };
 
-      metrics = false;
       project_panel = {
         button = true;
         show_diagnostics = "errors";
@@ -66,7 +57,6 @@
       };
       gutter = {
         folds = true;
-        code_actions = true;
         line_numbers = true;
       };
 
@@ -91,7 +81,6 @@
       formatter = "language_server";
       buffer_line_height = "standard";
 
-      hour_format = "hour24";
       auto_update = false;
       terminal = {
         alternate_scroll = "off";
@@ -110,7 +99,7 @@
           };
         };
         env = {
-          TERM = "wezterm";
+          TERM = "xterm-256color";
         };
         font_family = "FiraCode Nerd Font";
         font_features = null;
@@ -121,34 +110,22 @@
         shell = {
           program = "zsh";
         };
-        toolbar = {
-          title = true;
-        };
         working_directory = "current_project_directory";
       };
 
       lsp = {
         rust-analyzer = {
-          binary = {
-            #                        path = lib.getExe pkgs.rust-analyzer;
-            path_lookup = true;
-          };
         };
         nix = {
-          binary = {
-            path_lookup = true;
-          };
         };
       };
 
       languages = {
-        languages = {
-          TypeScript = {
-            formatter = "prettier";
-          };
-          JavaScript = {
-            formatter = "prettier";
-          };
+        TypeScript = {
+          formatter = "prettier";
+        };
+        JavaScript = {
+          formatter = "prettier";
         };
       };
 

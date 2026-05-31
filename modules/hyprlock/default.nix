@@ -1,4 +1,4 @@
-{ colorScheme, ... }:
+{ colorScheme, config, ... }:
 {
   programs.hyprlock = {
     enable = true;
@@ -16,7 +16,7 @@
 
       background = [
         {
-          path = "${builtins.path { path = ../hyprpaper/active.png; }}";
+          path = "/home/${config.home.username}/Pictures/Wallpapers/curr/active";
           blur_passes = 2;
           blur_size = 10;
           noise = 7.5e-2;
