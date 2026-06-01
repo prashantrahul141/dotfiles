@@ -375,6 +375,7 @@
           indent.enable = true;
           highlight.enable = true;
           ensure_installed = [
+            "asm"
             "vim"
             "regex"
             "lua"
