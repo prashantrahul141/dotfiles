@@ -38,8 +38,8 @@
     # ../../modules/ranger
     # ../../modules/helix
     ../../modules/zed
-    # ../../modules/wezterm
-    ../../modules/foot
+    ../../modules/wezterm
+    # ../../modules/foot
     # ../../modules/espanso
     ../../modules/direnv
     ../../modules/swayimg

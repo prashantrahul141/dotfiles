@@ -10,7 +10,8 @@
       favorite-apps = [
         "swayimg.desktop"
         "brave.desktop"
-        "foot.desktop"
+        # "foot.desktop"
+        "wezterm.desktop"
       ];
     };
     "org/gnome/desktop/interface" = {
