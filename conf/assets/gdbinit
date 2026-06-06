@@ -2,7 +2,6 @@
 set pagination on
 set confirm off
 set verbose off
-set history save on
 
 # Better disassembly
 set disassembly-flavor intel
