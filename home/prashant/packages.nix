@@ -7,7 +7,6 @@ in
 
   home.packages = with pkgs; [
     wl-clipboard
-    hyprpolkitagent
     networkmanagerapplet
     vesktop
     wireplumber
@@ -145,7 +144,7 @@ in
     # slack
 
     # gaming
-    wineWowPackages.waylandFull
+    wineWow64Packages.waylandFull
     winetricks
 
     # run software without installing

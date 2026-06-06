@@ -16,7 +16,7 @@
 
     scripts = with pkgs; [
       mpvScripts.autosub
-      mpvScripts.mpv-cheatsheet
+      mpvScripts.mpv-cheatsheet-ng
       mpvScripts.uosc
       mpvScripts.thumbfast
     ];

@@ -1,17 +1,12 @@
 {
   inputs,
-  lib,
   hostname,
   conf,
   system,
+  pkgs,
   ...
 }:
-let
-  # search for: THEME CHANGE
-  colorScheme = inputs.nix-colors.colorSchemes.catppuccin-mocha;
-in
 {
-
   imports = [
     ./boot.nix
     inputs.nixos-hardware.nixosModules.asus-fa506ic
@@ -25,12 +20,47 @@ in
     ./user.nix
     ./extra.nix
     inputs.home-manager.nixosModules.home-manager
+    inputs.stylix.nixosModules.stylix
   ];
 
-  # the linux console.
-  console.colors = lib.mapAttrsToList (_: value: value) colorScheme.palette;
+  # enable stylix
+  stylix = {
+    enable = true;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+    autoEnable = true;
+    polarity = "dark";
+    cursor = {
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Ice";
+      size = 16;
+    };
+    icons = {
+      enable = true;
+      package = pkgs.tela-icon-theme;
+      dark = "Tela-blue-dark:";
+    };
+    fonts = {
+      serif = {
+        package = pkgs.dejavu_fonts;
+        name = "DejaVu Serif";
+      };
 
-  nixpkgs.config.allowUnfree = true;
+      sansSerif = {
+        package = pkgs.dejavu_fonts;
+        name = "DejaVu Sans";
+      };
+
+      monospace = {
+        package = pkgs.nerd-fonts.caskaydia-cove;
+        name = "CaskaydiaCove";
+      };
+
+      emoji = {
+        package = pkgs.noto-fonts-color-emoji;
+        name = "Noto Color Emoji";
+      };
+    };
+  };
 
   environment.sessionVariables = {
     EDITOR = "nvim";
@@ -44,7 +74,6 @@ in
     extraSpecialArgs = {
       inherit
         inputs
-        colorScheme
         hostname
         conf
         system

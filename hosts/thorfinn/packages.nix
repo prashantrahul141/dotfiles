@@ -11,6 +11,8 @@
     pinentry-gnome3
     libsecret
 
+    hyprpolkitagent
+
     # pgp implementation
     sequoia-sq
 

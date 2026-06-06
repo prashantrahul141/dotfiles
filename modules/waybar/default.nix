@@ -1,4 +1,7 @@
-{ colorScheme, hostname, ... }:
+{ hostname, config, ... }:
+let
+  cs = config.lib.stylix.colors;
+in
 {
 
   programs.waybar = {
@@ -92,9 +95,8 @@
         };
         backlight = {
           format = "󰖨 {}";
-          device = "acpi_video0";
-          on-scroll-up = "brightnessctl s 1+";
-          on-scroll-down = "brightnessctl s 1-";
+          on-scroll-up = "brightnessctl s 1%+";
+          on-scroll-down = "brightnessctl s 1%-";
           scroll-step = 1;
         };
         tray = {
@@ -108,7 +110,7 @@
           format-disconnected = "󰖪 disconnected";
         };
         "clock#date" = {
-          format = "<span color='#${colorScheme.palette.base05}'>󰃭 </span>{:%a, %d %b}";
+          format = "<span color='#${cs.base05}'>󰃭 </span>{:%a, %d %b}";
           tooltip-format = "<tt>{calendar}</tt>";
 
           calendar = {
@@ -117,9 +119,9 @@
             on-click-right = "mode";
 
             format = {
-              months = "<span color='#${colorScheme.palette.base05}'><b>{}</b></span>";
-              weekdays = "<span color='#${colorScheme.palette.base03}'>{}</span>";
-              today = "<span color='#${colorScheme.palette.base08}'><b><u>{}</u></b></span>";
+              months = "<span color='#${cs.base05}'><b>{}</b></span>";
+              weekdays = "<span color='#${cs.base03}'>{}</span>";
+              today = "<span color='#${cs.base08}'><b><u>{}</u></b></span>";
             };
           };
 
@@ -133,7 +135,7 @@
         };
 
         "clock#time" = {
-          format = "<span color='#${colorScheme.palette.base07}'>󱑂 </span>{:%R}";
+          format = "<span color='#${cs.base07}'>󱑂 </span>{:%R}";
           tooltip = false;
           min-length = 8;
           max-length = 12;
@@ -218,14 +220,14 @@
       }
 
       tooltip {
-        background: #${colorScheme.palette.base00};
-        color: #${colorScheme.palette.base07};
-        border: 15px solid #${colorScheme.palette.base00};
+        background: #${cs.base00};
+        color: #${cs.base07};
+        border: 15px solid #${cs.base00};
         border-radius: 0px;
       }
 
       tooltip label {
-        color: #${colorScheme.palette.base04};
+        color: #${cs.base04};
       }
 
 
@@ -233,9 +235,9 @@
         padding: 5px 10px;
       	box-shadow: inset 0 -3px transparent;
       	border: none;
-        color: #${colorScheme.palette.base05};
-        background-color: #${colorScheme.palette.base00};
-        border-bottom: 2px solid #${colorScheme.palette.base02};
+        color: #${cs.base05};
+        background-color: #${cs.base00};
+        border-bottom: 2px solid #${cs.base02};
         transition: background-color 120ms ease, color 120ms ease, border-color 120ms ease;
         border-radius: 0px 0px 0px 0px;
       }
@@ -247,15 +249,15 @@
       #workspaces button:hover {
       	box-shadow: inherit;
         text-shadow: inherit;
-        color: #${colorScheme.palette.base07};
-        background-color: #${colorScheme.palette.base02};
-        border-bottom: 2px solid #${colorScheme.palette.base0D};
+        color: #${cs.base07};
+        background-color: #${cs.base02};
+        border-bottom: 2px solid #${cs.base0D};
       }
 
       #workspaces button.active {
-        color: #${colorScheme.palette.base00};
-        background-color: #${colorScheme.palette.base0B};
-        border-bottom: 2px solid #${colorScheme.palette.base0A};
+        color: #${cs.base00};
+        background-color: #${cs.base0B};
+        border-bottom: 2px solid #${cs.base0A};
       }
 
       #workspaces button.urgent {
@@ -264,8 +266,8 @@
         animation-timing-function: linear;
         animation-iteration-count: infinite;
         animation-direction: alternate;
-        background-color: #${colorScheme.palette.base08};
-        color: #${colorScheme.palette.base00};
+        background-color: #${cs.base08};
+        color: #${cs.base00};
       }
 
       #clock,
@@ -279,9 +281,9 @@
       #idle_inhibitor,
       #custom-notifications {
         padding: 8px 11px;
-        color: #${colorScheme.palette.base06};
-        background-color: #${colorScheme.palette.base00};
-        border-bottom: 2px solid #${colorScheme.palette.base02};
+        color: #${cs.base06};
+        background-color: #${cs.base00};
+        border-bottom: 2px solid #${cs.base02};
       }
 
       #clock.time {
@@ -294,15 +296,15 @@
 
       #window{
       	padding: 4px 14px;
-        color: #${colorScheme.palette.base07};
-        background-color: #${colorScheme.palette.base00};
-        border: 1px solid #${colorScheme.palette.base02};
-        border-bottom: 2px solid #${colorScheme.palette.base0D};
+        color: #${cs.base07};
+        background-color: #${cs.base00};
+        border: 1px solid #${cs.base02};
+        border-bottom: 2px solid #${cs.base0D};
       	border-radius: 0px;
       }
 
       window#waybar {
-        color: #${colorScheme.palette.base06};
+        color: #${cs.base06};
         border-radius: 0px;
         background-color: rgba(0,0,0,0);
       }
@@ -312,27 +314,27 @@
       }
 
       #battery {
-        color: #${colorScheme.palette.base0B};
-        border-bottom: 2px solid #${colorScheme.palette.base0B};
+        color: #${cs.base0B};
+        border-bottom: 2px solid #${cs.base0B};
       }
 
       #battery.charging,
       #battery.plugged {
-        color: #${colorScheme.palette.base0B};
-        background-color: #${colorScheme.palette.base01};
+        color: #${cs.base0B};
+        background-color: #${cs.base01};
       }
 
       @keyframes blink {
       	to {
-      		color: #${colorScheme.palette.base01};
-      		background-color: #${colorScheme.palette.base08};
+      		color: #${cs.base01};
+      		background-color: #${cs.base08};
       	}
       }
 
       #battery.critical:not(.charging) {
-          background-color: #${colorScheme.palette.base01};
-          color: #${colorScheme.palette.base08};
-          border-bottom: 2px solid #${colorScheme.palette.base08};
+          background-color: #${cs.base01};
+          color: #${cs.base08};
+          border-bottom: 2px solid #${cs.base08};
           animation-name: blink;
           animation-duration: 0.5s;
           animation-timing-function: linear;
@@ -345,89 +347,89 @@
       }
 
       #backlight {
-        color: #${colorScheme.palette.base0D};
-        border-bottom: 2px solid #${colorScheme.palette.base0D};
+        color: #${cs.base0D};
+        border-bottom: 2px solid #${cs.base0D};
       }
 
       #memory {
-        color: #${colorScheme.palette.base0C};
-        border-bottom: 2px solid #${colorScheme.palette.base0C};
+        color: #${cs.base0C};
+        border-bottom: 2px solid #${cs.base0C};
       }
 
       #cpu {
-        color: #${colorScheme.palette.base09};
-        border-bottom: 2px solid #${colorScheme.palette.base09};
+        color: #${cs.base09};
+        border-bottom: 2px solid #${cs.base09};
       }
 
       #network {
-        color: #${colorScheme.palette.base08};
-        border-bottom: 2px solid #${colorScheme.palette.base08};
+        color: #${cs.base08};
+        border-bottom: 2px solid #${cs.base08};
         border-radius: 0 0px 0px 0;
       }
 
       #network.disconnected {
-        color: #${colorScheme.palette.base08};
-        background-color: #${colorScheme.palette.base01};
-        border-bottom: 2px solid #${colorScheme.palette.base08};
+        color: #${cs.base08};
+        background-color: #${cs.base01};
+        border-bottom: 2px solid #${cs.base08};
       }
 
       #pulseaudio {
-        color: #${colorScheme.palette.base0E};
-        border-bottom: 2px solid #${colorScheme.palette.base0E};
+        color: #${cs.base0E};
+        border-bottom: 2px solid #${cs.base0E};
       }
 
       #pulseaudio.muted {
-        color: #${colorScheme.palette.base03};
-        background-color: #${colorScheme.palette.base01};
-        border-bottom: 2px solid #${colorScheme.palette.base03};
+        color: #${cs.base03};
+        background-color: #${cs.base01};
+        border-bottom: 2px solid #${cs.base03};
       }
 
       #idle_inhibitor {
-        color: #${colorScheme.palette.base0A};
-        border-bottom: 2px solid #${colorScheme.palette.base0A};
+        color: #${cs.base0A};
+        border-bottom: 2px solid #${cs.base0A};
       }
 
       #idle_inhibitor.activated {
-        background-color: #${colorScheme.palette.base01};
+        background-color: #${cs.base01};
       }
 
       #custom-notifications {
-        color: #${colorScheme.palette.base0D};
-        border-bottom: 2px solid #${colorScheme.palette.base0D};
+        color: #${cs.base0D};
+        border-bottom: 2px solid #${cs.base0D};
       }
 
       #tray {
-        border-bottom: 2px solid #${colorScheme.palette.base03};
+        border-bottom: 2px solid #${cs.base03};
       }
 
       #tray > .needs-attention {
-        background-color: #${colorScheme.palette.base08};
-        color: #${colorScheme.palette.base00};
+        background-color: #${cs.base08};
+        color: #${cs.base00};
         border-radius: 0px;
       }
 
       /* clocks */
       #clock.date {
-        color: #${colorScheme.palette.base0A};
-        border-bottom: 2px solid #${colorScheme.palette.base0A};
+        color: #${cs.base0A};
+        border-bottom: 2px solid #${cs.base0A};
       }
 
       #clock.time {
-        color: #${colorScheme.palette.base0D};
-        border-bottom: 2px solid #${colorScheme.palette.base0D};
+        color: #${cs.base0D};
+        border-bottom: 2px solid #${cs.base0D};
         border-radius: 0 0px 0px 0;
       }
 
       /* tooltip */
       tooltip {
-        background: #${colorScheme.palette.base00};
-        color: #${colorScheme.palette.base07};
-        border: 1px solid #${colorScheme.palette.base00};
+        background: #${cs.base00};
+        color: #${cs.base07};
+        border: 1px solid #${cs.base00};
         border-radius: 0px;
       }
 
       tooltip label {
-        color: #${colorScheme.palette.base05};
+        color: #${cs.base05};
       }
 
     '';

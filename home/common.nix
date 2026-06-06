@@ -9,7 +9,7 @@
     p7zip
     fzf
     unzip
-    nixfmt-rfc-style
+    nixfmt
     ripgrep
     gping
     fd

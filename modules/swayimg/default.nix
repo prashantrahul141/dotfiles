@@ -1,4 +1,7 @@
-{ colorScheme, ... }:
+{ config, ... }:
+let
+  c = config.lib.stylix.colors;
+in
 {
   programs.swayimg = {
     enable = true;
@@ -12,7 +15,7 @@
 
       viewer = {
         # Window background color (auto/extend/mirror/RGBA)
-        window = "#${colorScheme.palette.base00}";
+        window = "#${c.base00}";
 
         # Default image scale (optimal/width/height/fit/fill/real/keep)
         scale = "optimal";

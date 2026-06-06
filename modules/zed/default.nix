@@ -101,9 +101,6 @@
         env = {
           TERM = "xterm-256color";
         };
-        font_family = "FiraCode Nerd Font";
-        font_features = null;
-        font_size = null;
         line_height = "comfortable";
         option_as_meta = false;
         button = false;
@@ -131,14 +128,7 @@
 
       vim_mode = true;
       load_direnv = "shell_hook";
-      theme = {
-        mode = "system";
-        light = "Ayu Dark";
-        dark = "Ayu Dark";
-      };
       show_whitespaces = "all";
-      ui_font_size = 16;
-      buffer_font_size = 16;
     };
 
     userKeymaps = [

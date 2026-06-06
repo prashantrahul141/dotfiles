@@ -1,4 +1,4 @@
-{ colorScheme, config, ... }:
+{ config, lib, ... }:
 {
   programs.hyprlock = {
     enable = true;
@@ -14,7 +14,7 @@
         pam.enabled = true;
       };
 
-      background = [
+      background = lib.mkForce [
         {
           path = "/home/${config.home.username}/Pictures/Wallpapers/curr/active";
           blur_passes = 2;
@@ -29,11 +29,6 @@
         fail_text = "$FAIL";
         fade_on_empty = true;
         outline_thickness = 1;
-        inner_color = "rgba(1, 1, 1, 0.01)";
-        outer_color = "rgba(1, 1, 1, 0.1)";
-        check_color = "rgba(10, 10, 10, 0.1)";
-        fail_color = "rgb(${colorScheme.palette.base09})";
-        font_color = "rgba(255, 255, 255, 0.85)";
         rounding = 2;
         position = "0, -20";
         halign = "center";
@@ -45,10 +40,7 @@
         {
           #  monitor =
           text = ''cmd[update:1000] echo -e "$(date +"%A, %B %d")"'';
-          color = "rgb(${colorScheme.palette.base07})";
           text_align = "center";
-          font_family = "FiraCode Nerd Font";
-          font_size = 18;
           rotate = 0;
           position = "0, 110";
           halign = "center";
@@ -59,10 +51,7 @@
         {
           #  monitor =
           text = ''cmd[update:1000] echo -e "$(date +"%H:%M")"'';
-          color = "rgb(${colorScheme.palette.base07})";
           text_align = "center";
-          font_family = "FiraCode Nerd Font";
-          font_size = 70;
           rotate = 0;
           position = "0, 170";
           halign = "center";

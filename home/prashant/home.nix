@@ -1,12 +1,29 @@
 {
   inputs,
+  lib,
   ...
 }:
 {
 
+  # user level stylix configuration
+  lib.config.stylix = {
+    autoEnable = true;
+    targets = {
+      gtk = {
+        extraCss = ''
+          * {
+              border-radius: 0px !important;
+          }
+          window, window.background, decoration, .titlebar {
+              border-radius: 0px !important;
+          }
+        '';
+      };
+    };
+  };
+
   imports = [
     inputs.nixvim.homeModules.nixvim
-    inputs.nix-colors.homeManagerModules.default
     ../common.nix
     ./files.nix
     ./packages.nix
@@ -54,10 +71,8 @@
     stateVersion = "24.11"; # DO NOT CHANGE.
     sessionVariables = {
       EDITOR = "nvim";
-      QT_QPA_PLATFORM = "wayland";
-      QT_QPA_PLATFORMTHEME = "qt5ct";
-      QT_STYLE_OVERRIDE = "qt6ct-style";
-      TERMINAL = "xterm-256color";
+      QT_QPA_PLATFORM = "wayland;xcb";
+      TERMINAL = "wezterm";
       TERM = "xterm-256color";
       GOPATH = "~/.go";
     };

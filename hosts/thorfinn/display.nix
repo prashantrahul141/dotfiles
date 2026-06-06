@@ -24,7 +24,7 @@
       enable = true;
       settings = {
         default_session = {
-          command = "${pkgs.tuigreet}/bin/tuigreet --asterisks --remember --time";
+          command = "${pkgs.tuigreet}/bin/tuigreet --asterisks --remember --remember-session --time --user-menu";
           user = "greeter";
         };
       };

@@ -18,7 +18,7 @@ SET_WALL_TO_INDEX=$(($((CURRENT_INDEX + 1)) % TOTAL_WALLS))
 COUNT=0
 for file in "$WALLPAPER_DIR"/*; do
     if [[ "$COUNT" == "$SET_WALL_TO_INDEX" ]]; then
-        hyprctl hyprpaper reload ", $file"
+        hyprctl hyprpaper wallpaper ", $file"
         break
     fi
 

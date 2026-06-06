@@ -1,4 +1,4 @@
-{ colorScheme, ... }:
+{ ... }:
 {
   programs.yazi = {
     enable = true;
@@ -20,8 +20,6 @@
         max_height = 1000;
       };
     };
-
-    theme = import ./theme.nix { inherit colorScheme; };
 
     keymap = {
       mgr.prepend_keymap = [

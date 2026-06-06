@@ -1,4 +1,7 @@
-{ colorScheme, ... }:
+{ config, ... }:
+let
+  cs = config.lib.stylix.colors;
+in
 {
   programs.wlogout = {
     enable = true;
@@ -65,17 +68,17 @@
             font-family: FiraCode Nerd Font;
             color: #fff;
             font-size: 12pt;
-            background-color: #${colorScheme.palette.base00};
+            background-color: #${cs.base00};
         }
 
         button:hover {
-            background-color: #${colorScheme.palette.base07};
-            color: #${colorScheme.palette.base00};
+            background-color: #${cs.base07};
+            color: #${cs.base00};
         }
 
         button:focus {
-            background-color: #${colorScheme.palette.base07};
-            color: #${colorScheme.palette.base00};
+            background-color: #${cs.base07};
+            color: #${cs.base00};
         }
 
         button {
@@ -85,11 +88,11 @@
             border-style: solid;
             border-radius: 4px;
             border-width: 2px;
-            border-color: #${colorScheme.palette.base07};
-            background-color: #${colorScheme.palette.base00};
+            border-color: #${cs.base07};
+            background-color: #${cs.base00};
             margin: 10px;
             text-shadow: none;
-            color: #${colorScheme.palette.base07};
+            color: #${cs.base07};
             transition:
                 box-shadow 0.3s ease-in-out,
                 background-color 0.3s ease-in-out,

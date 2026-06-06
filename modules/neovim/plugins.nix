@@ -1,7 +1,6 @@
 {
   pkgs,
-  inputs,
-  system,
+  config,
   ...
 }:
 {
@@ -288,7 +287,7 @@
           # clangd
           clangd = {
             enable = true;
-            package = inputs.nixpkgs-unstable.legacyPackages.${system}.llvmPackages_22.clang-tools;
+            package = pkgs.llvmPackages_22.clang-tools;
           };
           cmake = {
             enable = true;
@@ -370,53 +369,41 @@
       treesitter = {
         enable = true;
         nixvimInjections = true;
-        folding = false;
+        folding = {
+          enable = false;
+        };
+
+        grammarPackages = with config.programs.nixvim.plugins.treesitter.package.builtGrammars; [
+          asm
+          vim
+          regex
+          lua
+          markdown
+          markdown_inline
+          nix
+          python
+          rust
+          c
+          cpp
+          cmake
+          bash
+          json
+          proto
+          typst
+          julia
+          yaml
+          toml
+          html
+          css
+          tsx
+          go
+          dockerfile
+        ];
         settings = {
           indent.enable = true;
           highlight.enable = true;
-          ensure_installed = [
-            "asm"
-            "vim"
-            "regex"
-            "lua"
-            "markdown"
-            "markdown_inline"
-            "nix"
-            "python"
-            "rust"
-            "c"
-            "cpp"
-            "cmake"
-            "bash"
-            "json"
-            "proto"
-            "typst"
-            "julia"
-            "yaml"
-            "toml"
-            "html"
-            "css"
-            "tsx"
-            "go"
-            "dockerfile"
-          ];
-          auto_install = true;
         };
       };
-
-      treesitter-refactor = {
-        enable = true;
-        settings = {
-          highlight_definitions = {
-            enable = true;
-            # Set to false if you have an `updatetime` of ~100.
-            clear_on_cursor_move = false;
-          };
-        };
-      };
-
-      # treesitter for home manager, kinda
-      hmts.enable = true;
 
       telescope = {
         enable = true;

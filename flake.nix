@@ -2,16 +2,17 @@
   description = "Nix configuration using flakes and home manager for all my machines";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixvim = {
-      url = "github:nix-community/nixvim/nixos-25.11";
+      url = "github:nix-community/nixvim/nixos-26.05";
+    };
+    stylix = {
+      url = "github:nix-community/stylix/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-colors.url = "github:misterio77/nix-colors";
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.11";
+      url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -19,7 +20,6 @@
   outputs =
     {
       nixpkgs,
-      nix-colors,
       ...
     }@inputs:
     let
@@ -29,25 +29,32 @@
       nixosConfigurations = {
         thorfinn = nixpkgs.lib.nixosSystem {
           specialArgs = {
-            inherit inputs nix-colors;
+            inherit inputs;
             system = "x86_64-linux";
             hostname = "thorfinn";
           };
           modules = [
-            { _module.args.conf = conf; }
+            {
+              nixpkgs.config.allowUnfree = true;
+            }
+            {
+              _module.args.conf = conf;
+            }
             ./hosts/thorfinn/configuration.nix
           ];
         };
 
         kuujo = nixpkgs.lib.nixosSystem {
           specialArgs = {
-            inherit inputs nix-colors;
+            inherit inputs;
             system = "x86_64-linux";
             hostname = "kuujo";
           };
 
           modules = [
-            { _module.args.conf = conf; }
+            {
+              _module.args.conf = conf;
+            }
             ./hosts/kuujo/configuration.nix
           ];
         };
