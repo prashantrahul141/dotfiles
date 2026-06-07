@@ -373,32 +373,34 @@
           enable = false;
         };
 
-        grammarPackages = with config.programs.nixvim.plugins.treesitter.package.builtGrammars; [
-          asm
-          vim
-          regex
-          lua
-          markdown
-          markdown_inline
-          nix
-          python
-          rust
-          c
-          cpp
-          cmake
-          bash
-          json
-          proto
-          typst
-          julia
-          yaml
-          toml
-          html
-          css
-          tsx
-          go
-          dockerfile
-        ];
+        # commenting this out installs all grammers
+        # grammarPackages = with config.programs.nixvim.plugins.treesitter.package.builtGrammars; [
+        #   asm
+        #   vim
+        #   regex
+        #   lua
+        #   markdown
+        #   markdown_inline
+        #   nix
+        #   python
+        #   rust
+        #   c
+        #   cpp
+        #   cmake
+        #   bash
+        #   json
+        #   proto
+        #   typst
+        #   julia
+        #   yaml
+        #   makefile
+        #   toml
+        #   html
+        #   css
+        #   tsx
+        #   go
+        #   dockerfile
+        # ];
         settings = {
           indent.enable = true;
           highlight.enable = true;
