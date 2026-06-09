@@ -7,6 +7,7 @@
        local config = wezterm.config_builder()
        config.font = wezterm.font 'FiraCode Nerd Font'
        canonicalize_pasted_newlines = "LineFeed"
+       config.warn_about_missing_glyphs = false
        config.enable_tab_bar = false
        config.window_padding = {
          left = 10,

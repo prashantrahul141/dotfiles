@@ -448,15 +448,24 @@
         settings = {
           sources = [
             { name = "nvim_lsp"; }
+            { name = "nvim_lsp_document_symbol"; }
+            { name = "nvim_lsp_signature_help"; }
             { name = "path"; }
+            { name = "omni"; }
+            { name = "treesitter"; }
             { name = "buffer"; }
             {
               name = "buffer";
               # Words from other open buffers can also be suggested.
               option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
             }
+            { name = "dictionary"; }
 
           ];
+
+          experimental = {
+            ghost_text = true;
+          };
 
           mapping = {
             "<C-d>" = "cmp.mapping.scroll_docs(-4)";
@@ -469,14 +478,6 @@
           };
         };
       };
-
-      cmp-omni.enable = true;
-      cmp-buffer.enable = true;
-      cmp-treesitter.enable = true;
-      cmp-nvim-lsp.enable = true;
-      cmp-nvim-lsp-document-symbol.enable = true;
-      cmp-nvim-lsp-signature-help.enable = true;
-      cmp-dictionary.enable = true;
 
       lspkind = {
         enable = true;
@@ -496,6 +497,10 @@
       };
 
       autoclose = {
+        enable = true;
+      };
+
+      auto-session = {
         enable = true;
       };
 

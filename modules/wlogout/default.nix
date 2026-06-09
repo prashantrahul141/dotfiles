@@ -8,7 +8,7 @@ in
     layout = [
       {
         "label" = "lock";
-        "action" = "hyprlock --immediate";
+        "action" = "hyprlock --grace 3";
         "text" = "  Lock (L)  ";
         "keybind" = "l";
       }
