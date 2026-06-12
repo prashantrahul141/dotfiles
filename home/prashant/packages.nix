@@ -109,7 +109,8 @@ in
     brave
 
     # additional software i use
-    anytype
+    # anytype # my god the android app bro
+    joplin-desktop
     # dbeaver-bin
 
     # torrent client
