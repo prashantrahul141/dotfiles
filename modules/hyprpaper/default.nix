@@ -6,7 +6,7 @@
       wallpaper = {
         monitor = "";
         fit_mode = "cover";
-        path = "/home/${config.home.username}/Pictures/Wallpapers/curr/active";
+        path = "/home/${config.home.username}/Pictures/Wallpapers/active";
       };
       splash = false;
     };

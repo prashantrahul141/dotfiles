@@ -1,16 +1,21 @@
 #!/usr/bin/env bash
 
+set -e
+
 WALLPAPER_DIR="$HOME/Pictures/Wallpapers/curr"
-CURRENT_WALL=$(hyprctl hyprpaper listloaded)
+ACTIVE="$HOME/Pictures/Wallpapers/active"
 
 # find index of current file, also count of all files.
-CURRENT_INDEX=0
+CURR_WALL=$(readlink -f  "$ACTIVE")
+
+# count total walls, get current one's id
 TOTAL_WALLS=0
+CURRENT_INDEX=0
 for file in "$WALLPAPER_DIR"/*; do
-    ((TOTAL_WALLS+=1))
-    if [[ "$file" == "$CURRENT_WALL" ]]; then
+    if [[ "$file" == "$CURR_WALL" ]]; then
         CURRENT_INDEX=$TOTAL_WALLS
     fi
+    ((TOTAL_WALLS+=1))
 done
 
 # select next wallpaper and set
@@ -18,9 +23,10 @@ SET_WALL_TO_INDEX=$(($((CURRENT_INDEX + 1)) % TOTAL_WALLS))
 COUNT=0
 for file in "$WALLPAPER_DIR"/*; do
     if [[ "$COUNT" == "$SET_WALL_TO_INDEX" ]]; then
-        hyprctl hyprpaper wallpaper ", $file"
+        rm -f "$ACTIVE"
+        ln -s "$file" "$ACTIVE"
+        hyprctl hyprpaper wallpaper ",$ACTIVE"
         break
     fi
-
     ((COUNT+=1))
 done
