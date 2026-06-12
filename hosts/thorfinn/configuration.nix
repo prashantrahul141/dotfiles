@@ -7,6 +7,11 @@
   ...
 }:
 {
+
+  nix.registry.nixpkgs.flake = inputs.nixpkgs;
+  nix.nixPath = [
+    "nixpkgs=${inputs.nixpkgs}"
+  ];
   imports = [
     ./boot.nix
     inputs.nixos-hardware.nixosModules.asus-fa506ic
