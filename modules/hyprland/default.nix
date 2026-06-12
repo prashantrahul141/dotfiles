@@ -478,10 +478,6 @@ in
         (bind "SUPER + SHIFT + 9" (dsp.moveToWorkspace "9"))
         (bind "SUPER + SHIFT + 0" (dsp.moveToWorkspace "10"))
 
-        # Scroll through existing workspaces with mainMod + scroll
-        (bind "SUPER + mouse_down" (dsp.focusWorkspace "e+1"))
-        (bind "SUPER + mouse_up" (dsp.focusWorkspace "e-1"))
-
         # Screenshot a monitor
         (bind "PRINT" (dsp.exec "uwsm app -- hyprshot -z -m output"))
 
@@ -641,6 +637,20 @@ in
     extraConfig = ''
       require("monitors")
       require("workspaces")
+
+      --# Zoom
+      local function zoomfunction(value)
+          local zoomvalue = hl.get_config("cursor:zoom_factor")
+          if (zoomvalue + value) > 3.0 then
+              hl.config({ cursor = { zoom_factor = 3.0 } })
+          elseif (zoomvalue + value) < 1.0 then
+              hl.config({ cursor = { zoom_factor = 1.0 } })
+          else
+              hl.config({ cursor = { zoom_factor = zoomvalue + value } })
+          end
+      end
+      hl.bind("SUPER + mouse_up", function() zoomfunction(-0.6) end, { description = "Screen: Zoom out" })
+      hl.bind("SUPER + mouse_down", function() zoomfunction(0.6) end, { description = "Screen: Zoom in" })
     '';
   };
 }
