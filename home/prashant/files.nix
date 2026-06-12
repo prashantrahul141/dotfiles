@@ -87,7 +87,6 @@ _: {
       export XDG_SESSION_TYPE=wayland
       export XDG_CURRENT_DESKTOP=Hyprland
       export XDG_SESSION_DESKTOP=Hyprland
-      export LIBVA_DRIVER_NAME=nvidia
       export __GLX_VENDOR_LIBRARY_NAME=nvidia
       export HYPRSHOT_DIR=/home/prashant/Pictures/Screenshots
     '';
@@ -95,9 +94,8 @@ _: {
     # tell hyprland order of gpus to use.
     # card0 - nvidia dedicated
     # card1 - amd integrated
-    ".config/uwsm/env-hyprland".text = ''
-      export AQ_DRM_DEVICES="/dev/dri/card1:/dev/dri/card0"
-    '';
+    # export AQ_DRM_DEVICES="/dev/dri/card1:/dev/dri/card0"
+    ".config/uwsm/env-hyprland".text = "";
 
     ".config/vesktop/themes/customgruv.dark.css".text =
       builtins.readFile ../../conf/assets/customgruv.dark.css;
