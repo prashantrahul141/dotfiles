@@ -289,6 +289,7 @@
                   "<C-c>" = "Back and forth between the two most recent files";
                   "<C-x>" = "Close the current window";
                   "<C-s>" = "Save the current file";
+                  "<C-S-s>" = "Save without formatting";
                   "<C-h>" = "Navigate to the left window";
                   "<C-l>" = "Navigate to the right window";
                   "<C-Up>" = "Resize the current window upwards";
@@ -310,6 +311,7 @@
           "<C-c>" = ":b#<CR>";
           "<C-x>" = ":close<CR>";
           "<C-s>" = ":w<CR>";
+          "<C-S-s>" = ":noa w<CR>";
           "<C-h>" = "<C-w>h";
           "<C-l>" = "<C-w>l";
           "<C-Up>" = ":resize -2<CR>";

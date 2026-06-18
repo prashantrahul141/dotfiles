@@ -1,6 +1,5 @@
 {
   pkgs,
-  config,
   ...
 }:
 {
@@ -29,6 +28,8 @@
           maps = {
             "Find Under" = "<C-d>";
             "Find Subword Under" = "<C-d>";
+            "Add Cursor Down" = "<C-j>";
+            "Add Cursor Up" = "<C-k>";
             # "Select All" = "\\A";
             # "Start Regex Search" = "\\/";
             # "Add Cursor Down" = "<";
