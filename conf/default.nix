@@ -9,6 +9,12 @@ _: {
   # conf.host.${hostname}.property
   host = {
     thorfinn = {
+      users = {
+        prashant = {
+          username = "prashant";
+        };
+      };
+
       fastfetch = {
         image = ./assets/thorfinn.jpeg;
       };
@@ -31,6 +37,7 @@ _: {
 
   # per user level config
   # conf.user.${username}.property
+  # username = config.home.username
   user = {
     prashant = {
       sshPublicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILywmF3cQGvxFYf/15WuZK0nY/3tmRa8O7MEM6BZJDOR prashant@root";

@@ -1,0 +1,15 @@
+keys:
+  # public key using:
+  #   nix shell nixpkgs#age
+  #   age-keygen -y $HOME/.config/sops/age/keys.txt
+  - &hosts:
+    - &thorfinn age1404u42ardtsqxftlff55cye4ew3wplyqnuw5ug5ttwycxk8tvpgqan8yef
+  - &users:
+    - &prashant age1nsuwvns2k2yzpfjlxzflhjtk72d2x94fz0s0tqk2j77p40d9eacqna4af4
+
+creation_rules:
+  - path_regex: secrets/thorfinn.yaml$
+    key_groups:
+      - age:
+          - *prashant
+          - *thorfinn

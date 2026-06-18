@@ -22,6 +22,8 @@
 
   services.blueman.enable = true; # for bluetooth applet
 
+  services.openssh.enable = true; # only enabling this so that nixos manages ssh keys for the machine
+
   # Enable networking
   networking = {
     hostName = hostname;
@@ -30,7 +32,6 @@
 
     firewall = {
       allowedTCPPorts = [
-        22 # ssh
         8081 # things i host
         # 6601 # mpd over the network stream
       ];
@@ -57,6 +58,7 @@
       };
     };
   };
+
   programs = {
     gnupg = {
       agent = {

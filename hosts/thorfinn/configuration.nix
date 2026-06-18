@@ -26,6 +26,8 @@
     ./extra.nix
     inputs.home-manager.nixosModules.home-manager
     inputs.stylix.nixosModules.stylix
+    inputs.sops-nix.nixosModules.sops
+    ./secrets.nix
   ];
 
   # enable stylix
@@ -37,7 +39,7 @@
     cursor = {
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Ice";
-      size = 16;
+      size = 18;
     };
     icons = {
       enable = true;

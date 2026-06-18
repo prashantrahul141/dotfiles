@@ -1,4 +1,10 @@
-{ conf, ... }:
+{
+  conf,
+  pkgs,
+  config,
+  hostname,
+  ...
+}:
 {
 
   # virtualisation

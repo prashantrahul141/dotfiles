@@ -16,6 +16,8 @@
     # pgp implementation
     sequoia-sq
 
+    # secrets
+    sops
   ];
 
   # remove packages
