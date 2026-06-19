@@ -446,7 +446,8 @@ in
         (bind "SUPER + RETURN" (dsp.exec "wezterm"))
         (bind "SUPER + E" (dsp.exec "wezterm yazi"))
 
-        (bind "SUPER + B" (dsp.exec "brave --password-store=gnome-libsecret"))
+        # (bind "SUPER + B" (dsp.exec "brave --password-store=gnome-libsecret"))
+        (bind "SUPER + B" (dsp.exec "firefox"))
 
         (bind "SUPER + SPACE" (dsp.exec "wofi --show drun"))
 

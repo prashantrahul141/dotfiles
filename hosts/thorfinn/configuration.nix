@@ -71,7 +71,7 @@
 
   environment.sessionVariables = {
     EDITOR = "nvim";
-    BROWSER = "brave"; # "firefox"; one day, surely theyll make the android app better.
+    BROWSER = "firefox"; # "firefox"; one day, surely theyll make the android app better.
     TERMINAL = "xterm-256color";
     TERM = "xterm-256color";
   };

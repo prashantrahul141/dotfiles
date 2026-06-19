@@ -8,6 +8,7 @@
   lib.config.stylix = {
     autoEnable = true;
     targets = {
+      firefox.enable = true;
       gtk = {
         extraCss = ''
           * {

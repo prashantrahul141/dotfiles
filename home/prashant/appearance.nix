@@ -8,7 +8,7 @@
     "org/gnome/shell" = {
       favorite-apps = [
         "swayimg.desktop"
-        "brave.desktop"
+        "firefox.desktop"
         # "foot.desktop"
         "wezterm.desktop"
       ];
