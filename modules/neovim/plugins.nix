@@ -28,8 +28,8 @@
           maps = {
             "Find Under" = "<C-d>";
             "Find Subword Under" = "<C-d>";
-            "Add Cursor Down" = "<C-j>";
-            "Add Cursor Up" = "<C-k>";
+            "Add Cursor Down" = "<C-S-j>";
+            "Add Cursor Up" = "<C-S-k>";
             # "Select All" = "\\A";
             # "Start Regex Search" = "\\/";
             # "Add Cursor Down" = "<";

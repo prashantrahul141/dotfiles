@@ -87,6 +87,8 @@ in
     vscode
     zed-editor
 
+    qemu
+
     # game engine
     # unityhub
 

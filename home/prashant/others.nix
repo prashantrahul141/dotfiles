@@ -3,7 +3,7 @@ _: {
     enable = true;
     associations.added = {
       "text/plain" = [ "nvim.desktop" ];
-      "application/pdf" = [ "evince.desktop" ];
+      "application/pdf" = [ "org.gnome.Evince.desktop" ];
       "image/*" = [ "swayimg.desktop" ];
       "image/jpeg" = [ "swayimg.desktop" ];
       "image/png" = [ "swayimg.desktop" ];
@@ -17,7 +17,7 @@ _: {
     };
     defaultApplications = {
       "text/plain" = [ "nvim.desktop" ];
-      "application/pdf" = [ "evince.desktop" ];
+      "application/pdf" = [ "org.gnome.Evince.desktop" ];
       "image/*" = [ "swayimg.desktop" ];
       "image/jpeg" = [ "swayimg.desktop" ];
       "image/png" = [ "swayimg.desktop" ];
@@ -28,6 +28,8 @@ _: {
       "video/*" = [ "mpv.desktop" ];
       "inode/directory" = [ "nemo.desktop" ];
       "application/x-shellscript" = [ "wezterm.desktop" ];
+      "x-scheme-handler/http" = "firefox.desktop";
+      "x-scheme-handler/https" = "firefox.desktop";
     };
   };
 }
