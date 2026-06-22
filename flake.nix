@@ -28,12 +28,31 @@
   outputs =
     {
       nixpkgs,
+      home-manager,
       ...
     }@inputs:
     let
       conf = import ./conf/default.nix { };
     in
     {
+      homeConfigurations."kaworu" = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs {
+          system = "x86_64-linux";
+          config.allowUnfree = true;
+        };
+
+        extraSpecialArgs = {
+          inherit inputs conf;
+          hostname = "kaworu";
+          system = "x86_64-linux";
+        };
+
+        modules = [
+          inputs.stylix.homeModules.stylix
+          ./home/mori/home.nix
+        ];
+      };
+
       nixosConfigurations = {
         thorfinn = nixpkgs.lib.nixosSystem {
           specialArgs = {
