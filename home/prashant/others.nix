@@ -1,6 +1,6 @@
 _: {
   xdg.mimeApps = {
-    enable = true;
+    enable = false;
     associations.added = {
       "text/plain" = [ "nvim.desktop" ];
       "application/pdf" = [ "org.gnome.Evince.desktop" ];

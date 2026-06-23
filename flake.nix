@@ -23,22 +23,28 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixgl = {
+      url = "github:nix-community/nixGL";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
     {
       nixpkgs,
       home-manager,
+      nixgl,
       ...
     }@inputs:
     let
       conf = import ./conf/default.nix { };
     in
     {
-      homeConfigurations."kaworu" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."prashant" = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {
           system = "x86_64-linux";
           config.allowUnfree = true;
+          overlays = [ nixgl.overlay ];
         };
 
         extraSpecialArgs = {
@@ -49,7 +55,7 @@
 
         modules = [
           inputs.stylix.homeModules.stylix
-          ./home/mori/home.nix
+          ./home/prashant/home.nix
         ];
       };
 

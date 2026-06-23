@@ -10,8 +10,8 @@ _: {
   host = {
     thorfinn = {
       users = {
-        prashant = {
-          username = "prashant";
+        mori = {
+          username = "mori";
         };
       };
 
@@ -23,6 +23,19 @@ _: {
         fcp-enabled = true;
       };
     };
+
+    kaworu = {
+      users = {
+        prashant = {
+          username = "prashant";
+        };
+      };
+
+      zsh = {
+        fcp-enabled = true;
+      };
+    };
+
 
     kuujo = {
       zsh = {
@@ -50,6 +63,9 @@ _: {
           signingkey = "6C3E91A8D7F0386D"; # gpg --list-secret-keys --keyid-format=long
         };
       };
+    };
+
+    mori = {
     };
 
     biskit = {

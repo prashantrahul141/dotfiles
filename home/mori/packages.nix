@@ -35,6 +35,16 @@ in
     # amazing calculator
     qalculate-gtk
 
+    # output display configuration app
+    nwg-displays
+    nwg-look # gnome settings
+
+    # kde qt stuff
+    kdePackages.qt6ct
+    libsForQt5.qt5ct
+    libsForQt5.qtstyleplugins
+    # kdePackages.xwaylandvideobridge
+
     # global compilers, linters, package managers for different languages.
     (pkgs.python313.withPackages (
       python-pkgs: with python-pkgs; [
@@ -71,8 +81,8 @@ in
     # rustfmt
 
     # node
-    # nodejs
-    # pnpm
+    nodejs
+    pnpm
 
     vscode
     zed-editor
@@ -83,13 +93,15 @@ in
     # unityhub
 
     # utils, mostly cli.
-    # gh
+    gh
     # bandwhich
     # speedtest-rs
     yt-dlp
     ffmpeg
     pinta
     gimp
+    # lazydocker
+    nix-search-cli
     hyperfine
     # gdbgui
     imhex
@@ -125,7 +137,7 @@ in
     noto-fonts-cjk-sans
 
     # extra stuff
-    # anki-bin
+    anki-bin
 
     # ebook reader
     foliate
@@ -135,8 +147,8 @@ in
     # slack
 
     # gaming
-    # wineWow64Packages.waylandFull
-    # winetricks
+    wineWow64Packages.waylandFull
+    winetricks
 
     # run software without installing
     # comma

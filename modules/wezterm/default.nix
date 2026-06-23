@@ -1,7 +1,13 @@
-{ ... }:
+{
+  lib,
+  pkgs,
+  config,
+  ...
+}:
 {
   programs.wezterm = {
     enable = true;
+    package = lib.mkForce (config.lib.nixGL.wrap pkgs.wezterm);
     enableZshIntegration = true;
     extraConfig = ''
        local config = wezterm.config_builder()

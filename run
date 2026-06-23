@@ -11,8 +11,9 @@ usage()
     printf ""
     printf "Usage: %s <option>\n" "$PROG"
     printf "options:\n"
-    printf "\t rebuild-switch <machine>      Rebuild and switch\n"
-    printf "\t rebuild-boot <machine>        Rebuild and boot\n"
+    printf "\t home-switch <machine>         Rebuild and switch user profile\n"
+    printf "\t rebuild-switch <machine>      Rebuild and switch machine\n"
+    printf "\t rebuild-boot <machine>        Rebuild and boot machine\n"
     printf "\t collect-garbage               Collect garbage\n"
     printf "\t delete-generations            Delete generations older than 7 days\n"
     printf "\t fmt                           Run formatter\n"
@@ -51,6 +52,16 @@ run()
     script -q -c "$1" /dev/null
 }
 
+# switch-switch
+    # first you will need nix run
+home_switch()
+{
+    run "rm -f /home/$1/.gtkrc-2.0"
+    run "rm -f /home/$1/.config/fontconfig/conf.d/10-hm-fonts.conf"
+    run "home-manager switch --flake .#$1 --impure"
+    exit 0
+}
+
 # rebuild-switch
 rebuild_switch()
 {
@@ -66,6 +77,22 @@ rebuild_boot()
 
 option="$1"
 case $option in
+    "home-switch")
+        # validate user
+        validate_exact_args 2
+        user=$2
+        case $user in
+            "prashant")
+                home_switch "$user"
+                ;;
+            *)
+                echo "Invalid user: $user"
+                usage
+                exit 1
+        esac
+        ;;
+
+
     "rebuild-switch")
         # validate machine
         validate_exact_args 2

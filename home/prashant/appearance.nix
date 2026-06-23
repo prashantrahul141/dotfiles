@@ -1,16 +1,20 @@
 {
   pkgs,
-  inputs,
   ...
 }:
 {
+  # enable stylix
+  stylix = {
+    enable = false;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+    polarity = "dark";
+  };
+
   dconf.settings = {
     "org/gnome/shell" = {
       favorite-apps = [
-        "swayimg.desktop"
         "firefox.desktop"
-        # "foot.desktop"
-        "wezterm.desktop"
+        "alacritty.desktop"
       ];
     };
     "org/gnome/desktop/interface" = {

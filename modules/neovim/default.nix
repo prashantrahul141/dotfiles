@@ -11,6 +11,7 @@
       nixpkgs.config.allowUnfree = true;
       enable = true;
       defaultEditor = true;
+      colorscheme = "catppuccin";
       performance = {
         byteCompileLua = {
           enable = true;

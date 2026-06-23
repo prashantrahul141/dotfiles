@@ -3,12 +3,12 @@
   ...
 }:
 {
+
   # user level stylix configuration
   lib.config.stylix = {
     autoEnable = true;
     targets = {
       firefox.enable = true;
-      kde.enable = true;
       gtk = {
         extraCss = ''
           * {
@@ -29,6 +29,14 @@
     ./packages.nix
     ./appearance.nix
     ./others.nix
+    ./sound.nix
+    ../../modules/dunst
+    ../../modules/wlogout
+    ../../modules/hyprland
+    ../../modules/hyprlock
+    ../../modules/hypridle
+    ../../modules/hyprpaper
+    ../../modules/waybar
     ../../modules/wofi
     ../../modules/cliphist
     # ../../modules/kitty

@@ -6,23 +6,14 @@ in
   fonts.fontconfig.enable = true;
 
   home.packages = with pkgs; [
-    wl-clipboard
-    networkmanagerapplet
     vesktop
-    wireplumber
-    slurp
-    hyprshot
-    flameshot
-    grim
-    pavucontrol
-    pamixer
 
     # file management
-    nemo
-    trash-cli
+    # nemo
+    # trash-cli
 
     # document viewer
-    evince
+    # evince
 
     # image viewer
     # swayimg # moved to its own module
@@ -30,29 +21,12 @@ in
     # loupe # gnome
 
     # screen mirror
-    wl-mirror
+    # wl-mirror
 
     # amazing calculator
     qalculate-gtk
 
-    # output display configuration app
-    nwg-displays
-    nwg-look # gnome settings
-
-    # kde qt stuff
-    kdePackages.qt6ct
-    libsForQt5.qt5ct
-    libsForQt5.qtstyleplugins
-    # kdePackages.xwaylandvideobridge
-
     # global compilers, linters, package managers for different languages.
-    (pkgs.python313.withPackages (
-      python-pkgs: with python-pkgs; [
-        pylint
-        subliminal
-      ]
-    ))
-
     # go
     # go
 
@@ -65,12 +39,6 @@ in
     gnumake
     ninja
     cmake
-    ccache
-    gdb
-    clang
-    bear
-    # llvmPackages_20.libcxxClang
-    lld_19
 
     # julia
     # julia
@@ -81,8 +49,8 @@ in
     # rustfmt
 
     # node
-    nodejs
-    pnpm
+    # nodejs
+    # pnpm
 
     vscode
     zed-editor
@@ -93,22 +61,19 @@ in
     # unityhub
 
     # utils, mostly cli.
-    gh
+    # gh
     # bandwhich
     # speedtest-rs
     yt-dlp
-    ffmpeg
-    pinta
+    # pinta
     gimp
-    # lazydocker
-    nix-search-cli
     hyperfine
     # gdbgui
     imhex
     dust # https://github.com/bootandy/dust
 
     # browser
-    brave
+    # brave
 
     # additional software i use
     # anytype # my god the android app bro
@@ -119,8 +84,8 @@ in
     qbittorrent
 
     # libreoffice stuff
-    libreoffice-qt6-fresh
-    hunspell # spellcheck
+    # libreoffice-qt6-fresh
+    # hunspell # spellcheck
 
     # man pages
     linux-manual
@@ -137,18 +102,18 @@ in
     noto-fonts-cjk-sans
 
     # extra stuff
-    anki-bin
+    # anki-bin
 
     # ebook reader
-    foliate
+    # foliate
 
     # communication
     # signal-desktop
     # slack
 
     # gaming
-    wineWow64Packages.waylandFull
-    winetricks
+    # wineWow64Packages.waylandFull
+    # winetricks
 
     # run software without installing
     # comma
