@@ -6,8 +6,6 @@ in
   fonts.fontconfig.enable = true;
 
   home.packages = with pkgs; [
-    vesktop
-
     # file management
     # nemo
     # trash-cli
@@ -33,6 +31,8 @@ in
     # java
     # zulu
     # mssql_jdbc
+
+    bear
 
     # c/c++
     # gcc14
@@ -123,6 +123,9 @@ in
 
     # better man pages
     tlrc
+
+    # better lsusb
+    cyme
 
     # custom
     custom-scripts
