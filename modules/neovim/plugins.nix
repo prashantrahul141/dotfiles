@@ -246,6 +246,18 @@
         enable = true;
         inlayHints = true;
         servers = {
+          # spellcheck
+          harper_ls = {
+            enable = true;
+            filetypes = [
+              "eml"
+              "email"
+              "mail"
+              "markdown"
+              "txt"
+            ];
+          };
+
           # markdown
           marksman = {
             enable = true;
