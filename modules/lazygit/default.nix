@@ -3,6 +3,9 @@ _: {
     enable = true;
     settings = {
       git = {
+        log = {
+          order = "default";
+        };
         overrideGpg = true; # enable renaming commit when using gpg
         commit = {
           signOff = true;
