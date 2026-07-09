@@ -49,7 +49,7 @@ run()
 {
     printf "Running: \033[32m%s\033[0m" "$1"
     printf "\n"
-    script -q -c "$1" /dev/null
+    eval "$1"
 }
 
 # switch-switch
