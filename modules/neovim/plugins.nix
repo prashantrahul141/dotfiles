@@ -67,6 +67,16 @@
         };
       };
 
+      # discord rpc
+      cord = {
+        enable = true;
+        settings = {
+          editor = {
+            tooltip = "The Only True Text Editor";
+          };
+        };
+      };
+
       nvim-lightbulb = {
         enable = true;
       };
