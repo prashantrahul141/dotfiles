@@ -529,6 +529,12 @@
 
       nvim-tree = {
         enable = true;
+        settings = {
+          update_focused_file = {
+            enable = true;
+          };
+        };
+
       };
 
       chadtree = {
