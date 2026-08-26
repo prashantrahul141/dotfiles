@@ -35,7 +35,7 @@
     ../../modules/btm
     ../../modules/yazi
     ../../modules/zed
-    ../../modules/alacritty
+    ../../modules/wezterm
     ../../modules/direnv
     ../../modules/fastfetch
     ../../modules/halloy # irc client
@@ -51,7 +51,7 @@
       EDITOR = "nvim";
       TERMINAL = "alacritty";
       TERM = "xterm-256color";
-      GOPATH = "~/.go";
+      GOPATH = "/home/prashant/.go";
     };
 
     # zsh as default shell

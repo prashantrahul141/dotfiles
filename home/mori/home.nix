@@ -74,7 +74,7 @@
       QT_QPA_PLATFORM = "wayland;xcb";
       TERMINAL = "wezterm";
       TERM = "xterm-256color";
-      GOPATH = "~/.go";
+      GOPATH = "/home/prashant/.go";
     };
 
     # zsh as default shell
