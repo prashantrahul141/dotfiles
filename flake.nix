@@ -35,6 +35,10 @@
       url = "github:prashantrahul141/dumahhfiles";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    bumahhfiles = {
+      url = "github:prashantrahul141/bumahhfiles";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
