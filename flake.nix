@@ -27,6 +27,10 @@
       url = "github:nix-community/nixGL";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -78,6 +82,7 @@
         };
 
         kuujo = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
           specialArgs = {
             inherit inputs;
             system = "x86_64-linux";
@@ -85,6 +90,7 @@
           };
 
           modules = [
+            inputs.disko.nixosModules.disko
             {
               _module.args.conf = conf;
             }
