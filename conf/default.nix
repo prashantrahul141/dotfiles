@@ -37,6 +37,10 @@ _: {
     };
 
     kuujo = {
+      domain = {
+        name = "prashantrahul";
+        tld = "com";
+      };
       zsh = {
         fcp-enabled = false;
       };

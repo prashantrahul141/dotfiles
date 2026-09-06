@@ -14,6 +14,8 @@
     ./network.nix
     ./user.nix
     ./extra.nix
+    ../../services/dumahhfiles.nix
+    ./services.nix
     inputs.home-manager.nixosModules.home-manager
   ];
 
