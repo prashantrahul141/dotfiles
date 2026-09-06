@@ -78,11 +78,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1788690681,
-        "narHash": "sha256-qiy5n0VOiDmk2A/fZxbBd96IQXI144Toh6w5ai2Dj7Y=",
+        "lastModified": 1788722567,
+        "narHash": "sha256-Y/zYqRHH1bP2zqUyVJmP5wKFnAJi/xyp2NJAqYfMoX0=",
         "owner": "prashantrahul141",
         "repo": "bumahhfiles",
-        "rev": "d648b81d845691c7286ba57e75f86e86d08edfe4",
+        "rev": "5e8ebe6c0b930cf30750f0aa94257769f44744ae",
         "type": "github"
       },
       "original": {
@@ -151,11 +151,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1788684999,
-        "narHash": "sha256-brMfWpcA7m1Yvxo5l5cLaUXZIYfC5uo6YcaNGIjgGq0=",
+        "lastModified": 1788722542,
+        "narHash": "sha256-OY5ZZ5MMjbgOGTAaA7aQNuMBmbaJKnz37MKIgLZdK/s=",
         "owner": "prashantrahul141",
         "repo": "dumahhfiles",
-        "rev": "b6f06d16caa11da84949c6f1938a46cce317ac4b",
+        "rev": "da17e47aebda03f4ce522184b71c78dba3ffcef0",
         "type": "github"
       },
       "original": {
