@@ -17,6 +17,19 @@ in
 
     secrets."tinyproxy_user" = { };
     secrets."tinyproxy_password" = { };
+
+    templates."tinyproxy.conf" = {
+      owner = "tinyproxy";
+      group = "tinyproxy";
+      mode = "0440";
+      restartUnits = [ "tinyproxy.service" ];
+      content = ''
+        Port  3002
+        Listen 0.0.0.0
+        Timeout 600
+        BasicAuth ${ph.tinyproxy_user} ${ph.tinyproxy_password}
+      '';
+    };
   };
 
 }
