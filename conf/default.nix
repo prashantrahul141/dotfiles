@@ -36,7 +36,6 @@ _: {
       };
     };
 
-
     kuujo = {
       zsh = {
         fcp-enabled = false;

@@ -1,9 +1,9 @@
 {
+  conf,
   pkgs,
   ...
 }:
 {
-
   home = {
     username = "biskit";
     homeDirectory = "/home/biskit";

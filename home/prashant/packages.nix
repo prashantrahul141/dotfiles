@@ -52,7 +52,7 @@ in
     # nodejs
     # pnpm
 
-    vscode
+    # vscode
     zed-editor
 
     qemu
