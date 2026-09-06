@@ -53,6 +53,34 @@
         -- Disable logging
         vim.lsp.log.set_level("off")
 
+        -- disable cord in certain directories
+        vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+          callback = function(args)
+            local filepath = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(args.buf), ":p")
+            local disabled_dirs = {
+              "~/work",
+              "~/Proj/test/",
+            }
+
+
+            local should_disable = false
+
+            for _, dir in ipairs(disabled_dirs) do
+              local full_dir = vim.fn.expand(dir) .. "/"
+              if vim.startswith(filepath, full_dir) then
+                should_disable = true
+                break
+              end
+            end
+
+            if should_disable then
+              vim.cmd("Cord disable")
+            else
+              vim.cmd("Cord enable")
+            end
+
+          end,
+        })
       '';
 
       extraConfigLuaPre = ''

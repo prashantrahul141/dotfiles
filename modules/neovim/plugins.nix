@@ -68,11 +68,37 @@
       };
 
       # discord rpc
+      # ignore folders doesnt seem to work bro/
       cord = {
         enable = true;
         settings = {
           editor = {
             tooltip = "The Only True Text Editor";
+          };
+
+          extensions = {
+            # none of this works, see default.nix:
+            visibility = {
+              # override = true;
+              # precedence = "blacklist";
+              # resolve_symlinks = true;
+              # rules = {
+              #   blacklist = [
+              #     "work"
+              #     "/work"
+              #     "work/"
+              #     "/work/"
+              #     {
+              #       type = "glob";
+              #       value = "**work**";
+              #     }
+              #     {
+              #       type = "glob";
+              #       value = "**/work/**";
+              #     }
+              #   ];
+              # };
+            };
           };
         };
       };
@@ -276,7 +302,13 @@
           # nix
           nil_ls = {
             enable = true;
-            settings.formatting.command = [ "nixfmt" ];
+            settings = {
+              flake = {
+                autoArchive = false;
+                autoEvalInputs = false;
+              };
+              formatting.command = [ "nixfmt" ];
+            };
           };
 
           # nil_ls just better
