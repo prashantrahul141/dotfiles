@@ -6,6 +6,21 @@
   ...
 }:
 {
+
+  services.caddy = {
+    enable = true;
+
+    virtualHosts = {
+      "d.${conf.host.kuujo.domain.name}.${conf.host.kuujo.domain.tld}".extraConfig = ''
+        reverse_proxy 127.0.0.1:3000
+      '';
+
+      "f.${conf.host.kuujo.domain.name}.${conf.host.kuujo.domain.tld}".extraConfig = ''
+        reverse_proxy 127.0.0.1:3001
+      '';
+    };
+  };
+
   services.dumahhfiles = {
     enable = true;
 
@@ -13,7 +28,7 @@
     internalPort = 3000;
 
     externalProtocol = "https";
-    externalHost = "f.${conf.host.kuujo.domain.name}.${conf.host.kuujo.domain.tld}";
+    externalHost = "d.${conf.host.kuujo.domain.name}.${conf.host.kuujo.domain.tld}";
 
     password = null;
     cookiesFilepath = null;
