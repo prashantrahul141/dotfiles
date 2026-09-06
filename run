@@ -11,6 +11,7 @@ usage()
     printf ""
     printf "Usage: %s <option>\n" "$PROG"
     printf "options:\n"
+    printf "\t sops                          Edit sops file\n"
     printf "\t home-switch <machine>         Rebuild and switch user profile\n"
     printf "\t rebuild-switch <machine>      Rebuild and switch machine\n"
     printf "\t rebuild-boot <machine>        Rebuild and boot machine\n"
@@ -77,6 +78,10 @@ rebuild_boot()
 
 option="$1"
 case $option in
+    "sops")
+        validate_exact_args 1
+        nix run nixpkgs#sops -- ./secrets/secrets.yaml
+        ;;
     "home-switch")
         # validate user
         validate_exact_args 2
