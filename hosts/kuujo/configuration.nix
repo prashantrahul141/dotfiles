@@ -9,17 +9,22 @@
 
   imports = [
     ./hardware.nix
+    ./disk-config.nix
     ../minimal.nix
     ./network.nix
     ./user.nix
+    ./extra.nix
     inputs.home-manager.nixosModules.home-manager
   ];
 
-  # TAKEN DIRECTLY FROM GENERATED configuration.nix
-  boot.tmp.cleanOnBoot = true;
-  zramSwap.enable = true;
-
   nixpkgs.config.allowUnfree = true;
+
+  boot.loader.grub = {
+    # no need to set devices, disko will add all devices that have a EF02 partition to the list already
+    # devices = [ ];
+    efiSupport = true;
+    efiInstallAsRemovable = true;
+  };
 
   environment.sessionVariables = {
     TERM = "xterm-256color";

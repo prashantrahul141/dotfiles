@@ -4,18 +4,30 @@
   ...
 }:
 {
-
   networking = {
     networkmanager.enable = true;
     hostName = hostname;
     domain = "";
-    firewall.allowedTCPPorts = [
-      22 # ssh
-    ];
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [
+        22 # ssh
+        80
+        443
+      ];
+    };
 
   };
 
-  services.openssh.enable = true;
+  services.fail2ban.enable = true;
+
+  services.openssh = {
+    enable = true;
+    settings = {
+      PermitRootLogin = "yes";
+      PasswordAuthentication = false;
+    };
+  };
 
   users.users.root.openssh.authorizedKeys.keys = [
     conf.user.prashant.sshPublicKey

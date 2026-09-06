@@ -1,4 +1,4 @@
-_: {
+{ conf, ... }: {
 
   users = {
     users.biskit = {
@@ -6,8 +6,11 @@ _: {
       description = "biskit";
       extraGroups = [
         "networkmanager"
-        "wheel"
       ];
+      openssh.authorizedKeys.keys = [
+        conf.user.prashant.sshPublicKey
+      ];
+
     };
   };
 
