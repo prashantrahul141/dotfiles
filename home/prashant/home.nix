@@ -35,7 +35,7 @@
     ../../modules/btm
     ../../modules/yazi
     ../../modules/zed
-    ../../modules/wezterm
+    ../../modules/alacritty
     ../../modules/direnv
     ../../modules/fastfetch
     ../../modules/halloy # irc client
