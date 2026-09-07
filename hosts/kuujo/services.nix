@@ -5,18 +5,25 @@
   pkgs,
   ...
 }:
+let
+  domain = "${conf.host.kuujo.domain.name}.${conf.host.kuujo.domain.tld}";
+in
 {
 
   services.caddy = {
     enable = true;
 
     virtualHosts = {
-      "d.${conf.host.kuujo.domain.name}.${conf.host.kuujo.domain.tld}".extraConfig = ''
+      "d.${domain}".extraConfig = ''
         reverse_proxy 127.0.0.1:3000
       '';
 
-      "f.${conf.host.kuujo.domain.name}.${conf.host.kuujo.domain.tld}".extraConfig = ''
+      "f.${domain}".extraConfig = ''
         reverse_proxy 127.0.0.1:3001
+      '';
+
+      "mail.${domain}".extraConfig = ''
+        respond "OK" 200
       '';
     };
   };
@@ -28,7 +35,7 @@
     internalPort = 3000;
 
     externalProtocol = "https";
-    externalHost = "d.${conf.host.kuujo.domain.name}.${conf.host.kuujo.domain.tld}";
+    externalHost = "d.${domain}";
 
     password = null;
     cookiesFilepath = null;
@@ -41,7 +48,7 @@
     internalPort = 3001;
 
     externalProtocol = "https";
-    externalHost = "f.${conf.host.kuujo.domain.name}.${conf.host.kuujo.domain.tld}";
+    externalHost = "f.${domain}";
 
   };
 

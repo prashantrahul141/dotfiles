@@ -39,6 +39,10 @@
       url = "github:prashantrahul141/bumahhfiles";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    mailserver = {
+      url = "gitlab:simple-nixos-mailserver/nixos-mailserver/nixos-26.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =

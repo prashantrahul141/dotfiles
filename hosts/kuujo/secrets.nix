@@ -30,6 +30,23 @@ in
         BasicAuth ${ph.tinyproxy_user} ${ph.tinyproxy_password}
       '';
     };
+
+    secrets."mailserver_passwd_me" = {
+      owner = "root";
+      group = "root";
+      mode = "0440";
+      restartUnits = [ "dovecot.service" ];
+    };
+
+    secrets."smtp_relay_user" = { };
+    secrets."smtp_relay_password" = { };
+    templates."postfix-sasl" = {
+      owner = "postfix";
+      group = "postfix";
+      mode = "0600";
+      restartUnits = [ "postfix.service" ];
+      content = "[smtp-relay.brevo.com]:587 ${ph.smtp_relay_user}:${ph.smtp_relay_password}";
+    };
   };
 
 }

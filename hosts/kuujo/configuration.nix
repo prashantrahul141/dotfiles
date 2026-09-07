@@ -17,9 +17,11 @@
     ../../services/dumahhfiles.nix
     ../../services/bumahhfiles.nix
     ./services.nix
-    ./secrets.nix
-    inputs.home-manager.nixosModules.home-manager
     inputs.sops-nix.nixosModules.sops
+    ./secrets.nix
+    inputs.mailserver.nixosModules.mailserver
+    ./mailserver.nix
+    inputs.home-manager.nixosModules.home-manager
   ];
 
   nixpkgs.config.allowUnfree = true;

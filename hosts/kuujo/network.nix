@@ -4,6 +4,9 @@
   ...
 }:
 {
+
+  security.acme.acceptTerms = true;
+
   networking = {
     networkmanager.enable = true;
     hostName = hostname;
