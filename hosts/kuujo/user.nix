@@ -6,6 +6,7 @@
       description = "biskit";
       extraGroups = [
         "networkmanager"
+        "wheel"
       ];
       openssh.authorizedKeys.keys = [
         conf.user.prashant.sshPublicKey
