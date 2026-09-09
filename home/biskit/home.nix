@@ -1,4 +1,5 @@
 {
+  inputs,
   conf,
   pkgs,
   ...
@@ -17,6 +18,11 @@
   };
 
   imports = [
+    inputs.nixvim.homeModules.nixvim
+    ../../modules/zsh
+    ../../modules/neovim
+    ../../modules/fastfetch
+    ../../modules/btm
   ];
 
   # Let Home Manager install and manage itself.
