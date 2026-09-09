@@ -25,6 +25,10 @@ in
       "mail.${domain}".extraConfig = ''
         respond "OK" 200
       '';
+
+      "dash.${domain}".extraConfig = ''
+        reverse_proxy 127.0.0.1:3004
+      '';
     };
   };
 
@@ -60,6 +64,65 @@ in
     serviceConfig.ExecStart = lib.mkForce "${lib.getExe pkgs.tinyproxy} -d -c ${
       config.sops.templates."tinyproxy.conf".path
     }";
+  };
+
+  services.prometheus = {
+    enable = true;
+    globalConfig = {
+      scrape_interval = "30s";
+    };
+
+    scrapeConfigs = [
+      {
+        job_name = "node";
+        static_configs = [
+          {
+            targets = [ "127.0.0.1:3003" ];
+          }
+        ];
+      }
+    ];
+
+    exporters = {
+      node = {
+        enable = true;
+        port = 3003;
+        enabledCollectors = [
+          "systemd"
+        ];
+      };
+    };
+  };
+
+  services.grafana = {
+    enable = true;
+    settings = {
+      server = {
+        http_addr = "127.0.0.1";
+        http_port = 3004;
+        enforce_domain = true;
+        enable_gzip = true;
+        domain = "dash.${domain}";
+      };
+
+      # we really dont have anything private so its fine
+      security.secret_key = "SW2YcwTIb9zpOOhoPsMm";
+      analytics.reporting_enabled = false;
+    };
+
+    provision = {
+      enable = true;
+
+      datasources.settings.datasources = [
+        {
+          name = "Prometheus";
+          type = "prometheus";
+          url = "http://${config.services.prometheus.listenAddress}:${toString config.services.prometheus.port}";
+          isDefault = true;
+          editable = false;
+        }
+      ];
+    };
   };
 
 }
