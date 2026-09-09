@@ -15,8 +15,10 @@ in
       generateKey = true;
     };
 
-    secrets."tinyproxy_user" = { };
-    secrets."tinyproxy_password" = { };
+    # tinyproxy ---------------------
+
+    secrets."tinyproxy/user" = { };
+    secrets."tinyproxy/password" = { };
 
     templates."tinyproxy.conf" = {
       owner = "tinyproxy";
@@ -27,25 +29,27 @@ in
         Port  3002
         Listen 0.0.0.0
         Timeout 600
-        BasicAuth ${ph.tinyproxy_user} ${ph.tinyproxy_password}
+        BasicAuth ${ph."tinyproxy/user"} ${ph."tinyproxy/password"}
       '';
     };
 
-    secrets."mailserver_passwd_me" = {
+    # mailserver ---------------------
+
+    secrets."mailserver/user_password/me" = {
       owner = "root";
       group = "root";
       mode = "0440";
       restartUnits = [ "dovecot.service" ];
     };
 
-    secrets."smtp_relay_user" = { };
-    secrets."smtp_relay_password" = { };
+    secrets."smtp_relay/user" = { };
+    secrets."smtp_relay/password" = { };
     templates."postfix-sasl" = {
       owner = "postfix";
       group = "postfix";
       mode = "0600";
       restartUnits = [ "postfix.service" ];
-      content = "[smtp-relay.brevo.com]:587 ${ph.smtp_relay_user}:${ph.smtp_relay_password}";
+      content = "[smtp-relay.brevo.com]:587 ${ph."smtp_relay/user"}:${ph."smtp_relay/password"}";
     };
   };
 

@@ -31,7 +31,7 @@ in
     # nix-shell -p mkpasswd --run 'mkpasswd -s'
     accounts = {
       "me@${domain}" = {
-        hashedPasswordFile = config.sops.secrets.mailserver_passwd_me.path;
+        hashedPasswordFile = config.sops.secrets."mailserver/user_password/me".path;
 
         # additional addresses delivered to this mailbox
         aliases = [
