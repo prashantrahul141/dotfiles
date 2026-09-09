@@ -28,6 +28,26 @@ in
     x509.certificateFile = "/var/lib/mailserver-tls/fullchain.pem";
     x509.privateKeyFile = "/var/lib/mailserver-tls/key.pem";
 
+    # inboxes?
+    mailboxes = {
+      Trash = {
+        auto = "subscribe";
+        special_use = "\\Trash";
+      };
+      Junk = {
+        auto = "subscribe";
+        special_use = "\\Junk";
+      };
+      Drafts = {
+        auto = "subscribe";
+        special_use = "\\Drafts";
+      };
+      Sent = {
+        auto = "subscribe";
+        special_use = "\\Sent";
+      };
+    };
+
     # nix-shell -p mkpasswd --run 'mkpasswd -s'
     accounts = {
       "me@${domain}" = {
