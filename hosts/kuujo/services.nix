@@ -38,7 +38,7 @@ in
     externalHost = "d.${domain}";
 
     password = null;
-    cookiesFilepath = null;
+    cookiesFilepath = "/etc/mine-tmpfiles/cookies.txt";
   };
 
   services.bumahhfiles = {
@@ -49,7 +49,6 @@ in
 
     externalProtocol = "https";
     externalHost = "f.${domain}";
-
   };
 
   services.tinyproxy = {
