@@ -21,6 +21,8 @@
     ./secrets.nix
     inputs.mailserver.nixosModules.mailserver
     ./mailserver.nix
+    ./packages.nix
+    ./backup.nix
     inputs.home-manager.nixosModules.home-manager
   ];
 

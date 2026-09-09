@@ -51,6 +51,41 @@ in
       restartUnits = [ "postfix.service" ];
       content = "[smtp-relay.brevo.com]:587 ${ph."smtp_relay/user"}:${ph."smtp_relay/password"}";
     };
+
+    # backup ---------------------
+
+    secrets."restic/password" = { };
+    secrets."rclone/r2/account_id" = { };
+    secrets."rclone/r2/s3_api" = { };
+    secrets."rclone/r2/access_key" = { };
+    secrets."rclone/r2/secret_access_key" = { };
+
+    secrets."rclone/filen/email" = { };
+    secrets."rclone/filen/password" = { };
+    secrets."rclone/filen/api_key" = { };
+
+    templates."restic_password_file.txt".content = "${ph."restic/password"}";
+    templates."rclone.conf" = {
+      owner = "root";
+      group = "root";
+      mode = "0400";
+
+      content = ''
+        [r2]
+        type = s3
+        provider = Cloudflare
+        endpoint = ${ph."rclone/r2/s3_api"}
+        access_key_id = ${ph."rclone/r2/access_key"}
+        secret_access_key = ${ph."rclone/r2/secret_access_key"}
+        no_check_bucket = true
+
+        [filen]
+        type = filen
+        email = ${ph."rclone/filen/email"}
+        password = ${ph."rclone/filen/password"}
+        api_key = ${ph."rclone/filen/api_key"}
+      '';
+    };
   };
 
 }
