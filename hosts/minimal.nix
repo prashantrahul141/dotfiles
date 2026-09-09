@@ -1,7 +1,8 @@
 { pkgs, ... }:
 {
   nix.gc = {
-    automatic = false;
+    automatic = true;
+    dates = [ "weekly" ];
   };
 
   nix.settings.experimental-features = [
