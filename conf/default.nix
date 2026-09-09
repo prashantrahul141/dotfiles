@@ -62,7 +62,7 @@ _: {
       git = {
         user = {
           name = "Prashant Rahul";
-          email = "prashantrahul141@protonmail.com";
+          email = "me@prashantrahul.com";
           signingkey = "6C3E91A8D7F0386D"; # gpg --list-secret-keys --keyid-format=long
         };
       };
