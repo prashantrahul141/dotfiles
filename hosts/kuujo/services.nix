@@ -112,7 +112,6 @@ in
 
     provision = {
       enable = true;
-
       datasources.settings.datasources = [
         {
           name = "Prometheus";
@@ -125,4 +124,9 @@ in
     };
   };
 
+  services.bentopdf = {
+    enable = true;
+    domain = "pdf.${domain}";
+    caddy.enable = true;
+  };
 }
