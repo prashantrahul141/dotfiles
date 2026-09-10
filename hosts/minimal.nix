@@ -1,8 +1,14 @@
 { pkgs, ... }:
 {
-  nix.gc = {
-    automatic = true;
-    dates = [ "weekly" ];
+  nix = {
+    gc = {
+      automatic = true;
+      dates = [ "weekly" ];
+    };
+    optimise = {
+      automatic = true;
+      dates = [ "weekly" ];
+    };
   };
 
   nix.settings.experimental-features = [
