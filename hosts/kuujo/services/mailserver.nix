@@ -9,6 +9,12 @@ let
   caddyCertDir = "/var/lib/caddy/.local/share/caddy/certificates/acme-v02.api.letsencrypt.org-directory/mail.${domain}";
 in
 {
+  services.caddy.virtualHosts = {
+    "mail.${domain}".extraConfig = ''
+      respond "OK" 200
+    '';
+  };
+
   users.groups.mailtls = { };
   users.users.postfix.extraGroups = [ "mailtls" ];
   users.users.dovecot2.extraGroups = [ "mailtls" ];

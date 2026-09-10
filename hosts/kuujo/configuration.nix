@@ -16,11 +16,10 @@
     ./extra.nix
     ../../services/dumahhfiles.nix
     ../../services/bumahhfiles.nix
-    ./services.nix
+    inputs.mailserver.nixosModules.mailserver
+    ./services
     inputs.sops-nix.nixosModules.sops
     ./secrets.nix
-    inputs.mailserver.nixosModules.mailserver
-    ./mailserver.nix
     ./packages.nix
     ./backup.nix
     inputs.home-manager.nixosModules.home-manager
