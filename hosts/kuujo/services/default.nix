@@ -10,5 +10,6 @@
     ./prometheus.nix # 3003
     ./grafana.nix # 3004
     ./bentopdf.nix # static, no ports used
+    ./convertx.nix # 3005
   ];
 }

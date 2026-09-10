@@ -35,5 +35,8 @@
     secrets."rclone/filen/email" = { };
     secrets."rclone/filen/password" = { };
     secrets."rclone/filen/api_key" = { };
+
+    # convertx
+    secrets."convertx/jwt_token" = { };
   };
 }

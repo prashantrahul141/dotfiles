@@ -16,6 +16,7 @@
     ./extra.nix
     ../../services/dumahhfiles.nix
     ../../services/bumahhfiles.nix
+    ../../services/convertx.nix
     inputs.mailserver.nixosModules.mailserver
     ./services
     inputs.sops-nix.nixosModules.sops
