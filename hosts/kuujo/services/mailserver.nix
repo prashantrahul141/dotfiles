@@ -7,8 +7,17 @@
 let
   domain = "${conf.host.kuujo.domain.name}.${conf.host.kuujo.domain.tld}";
   caddyCertDir = "/var/lib/caddy/.local/share/caddy/certificates/acme-v02.api.letsencrypt.org-directory/mail.${domain}";
+  ph = config.sops.placeholder;
 in
 {
+  sops.templates."postfix-sasl" = {
+    owner = "postfix";
+    group = "postfix";
+    mode = "0600";
+    restartUnits = [ "postfix.service" ];
+    content = "[smtp-relay.brevo.com]:587 ${ph."smtp_relay/user"}:${ph."smtp_relay/password"}";
+  };
+
   services.caddy.virtualHosts = {
     "mail.${domain}".extraConfig = ''
       respond "OK" 200
