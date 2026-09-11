@@ -3,6 +3,9 @@
   conf,
   ...
 }:
+let
+  domain = "${conf.host.kuujo.domain.name}.${conf.host.kuujo.domain.tld}";
+in
 {
 
   security.acme.acceptTerms = true;
@@ -10,17 +13,15 @@
   networking = {
     networkmanager.enable = true;
     hostName = hostname;
-    domain = "";
+    inherit domain;
     firewall = {
       enable = true;
       allowedTCPPorts = [
         22 # ssh
         80 # http/https
         443
-        3002 # tinyproxy
       ];
     };
-
   };
 
   services.fail2ban.enable = true;

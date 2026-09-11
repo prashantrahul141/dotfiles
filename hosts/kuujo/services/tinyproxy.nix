@@ -22,6 +22,8 @@ in
     '';
   };
 
+  networking.firewall.allowedTCPPorts = [ port ];
+
   services.tinyproxy = {
     enable = true;
   };
