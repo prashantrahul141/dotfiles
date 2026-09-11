@@ -11,8 +11,6 @@
       openssh.authorizedKeys.keys = [
         conf.user.prashant.sshPublicKey
       ];
-
     };
   };
-
 }

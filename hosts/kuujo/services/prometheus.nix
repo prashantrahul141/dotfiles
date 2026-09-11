@@ -1,5 +1,6 @@
 { lib, ... }:
 let
+  listen = "127.0.0.1";
   port = 3003;
 in
 {
@@ -14,7 +15,7 @@ in
         job_name = "node";
         static_configs = [
           {
-            targets = [ "127.0.0.1:${lib.toString port}" ];
+            targets = [ "${listen}:${lib.toString port}" ];
           }
         ];
       }

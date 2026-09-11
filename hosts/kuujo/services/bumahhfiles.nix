@@ -1,18 +1,18 @@
 { lib, conf, ... }:
 let
   domain = "${conf.host.kuujo.domain.name}.${conf.host.kuujo.domain.tld}";
-  port = 3001;
+  internalHost = "127.0.0.1";
+  internalPort = 3001;
 in
 {
   services.caddy.virtualHosts."f.${domain}".extraConfig = ''
-    reverse_proxy 127.0.0.1:${lib.toString port}
+    reverse_proxy ${internalHost}:${lib.toString internalPort}
   '';
 
   services.bumahhfiles = {
     enable = true;
 
-    internalHost = "127.0.0.1";
-    internalPort = port;
+    inherit internalHost internalPort;
 
     externalProtocol = "https";
     externalHost = "f.${domain}";

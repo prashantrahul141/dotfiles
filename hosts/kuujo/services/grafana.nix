@@ -6,20 +6,20 @@
 }:
 let
   domain = "${conf.host.kuujo.domain.name}.${conf.host.kuujo.domain.tld}";
-  port = 3004;
+  http_addr = "127.0.0.1";
+  http_port = 3004;
 in
 {
 
   services.caddy.virtualHosts."dash.${domain}".extraConfig = ''
-    reverse_proxy 127.0.0.1:${lib.toString port}
+    reverse_proxy ${http_addr}:${lib.toString http_port}
   '';
 
   services.grafana = {
     enable = true;
     settings = {
       server = {
-        http_addr = "127.0.0.1";
-        http_port = port;
+        inherit http_addr http_port;
         enforce_domain = true;
         enable_gzip = true;
         domain = "dash.${domain}";

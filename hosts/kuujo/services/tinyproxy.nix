@@ -5,6 +5,8 @@
   ...
 }:
 let
+
+  listen = "0.0.0.0";
   port = 3002;
   ph = config.sops.placeholder;
 in
@@ -16,7 +18,7 @@ in
     restartUnits = [ "tinyproxy.service" ];
     content = ''
       Port  ${lib.toString port}
-      Listen 0.0.0.0
+      Listen ${listen}
       Timeout 600
       BasicAuth ${ph."tinyproxy/user"} ${ph."tinyproxy/password"}
     '';
