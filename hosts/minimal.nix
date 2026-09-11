@@ -18,7 +18,7 @@
 
   environment.systemPackages = with pkgs; [
     neovim
-    wget
+    aria2
     git
     file
     procs
