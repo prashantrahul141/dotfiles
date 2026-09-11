@@ -10,6 +10,7 @@
       ];
       openssh.authorizedKeys.keys = [
         conf.user.prashant.sshPublicKey
+        conf.user.termux.sshPublicKey
       ];
     };
   };
