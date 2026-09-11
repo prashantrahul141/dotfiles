@@ -14,14 +14,18 @@ let
   package = inputs.nixpkgs-unstable.legacyPackages.${system}.convertx;
 in
 {
-  sops.templates."convertx_jwt_token" = {
-    owner = "convertx";
-    group = "convertx";
-    mode = "0440";
-    restartUnits = [ "convertx.service" ];
-    content = ''
-      JWT_SECRET=${ph."convertx/jwt_token"}
-    '';
+  sops = {
+    secrets."convertx/jwt_token" = { };
+
+    templates."convertx_jwt_token" = {
+      owner = "convertx";
+      group = "convertx";
+      mode = "0440";
+      restartUnits = [ "convertx.service" ];
+      content = ''
+        JWT_SECRET=${ph."convertx/jwt_token"}
+      '';
+    };
   };
 
   services.caddy.virtualHosts."convert.${domain}".extraConfig = ''

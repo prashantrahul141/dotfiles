@@ -11,17 +11,22 @@ let
   ph = config.sops.placeholder;
 in
 {
-  sops.templates."tinyproxy.conf" = {
-    owner = "tinyproxy";
-    group = "tinyproxy";
-    mode = "0440";
-    restartUnits = [ "tinyproxy.service" ];
-    content = ''
-      Port  ${lib.toString port}
-      Listen ${listen}
-      Timeout 600
-      BasicAuth ${ph."tinyproxy/user"} ${ph."tinyproxy/password"}
-    '';
+  sops = {
+    secrets."tinyproxy/user" = { };
+    secrets."tinyproxy/password" = { };
+
+    templates."tinyproxy.conf" = {
+      owner = "tinyproxy";
+      group = "tinyproxy";
+      mode = "0440";
+      restartUnits = [ "tinyproxy.service" ];
+      content = ''
+        Port  ${lib.toString port}
+        Listen ${listen}
+        Timeout 600
+        BasicAuth ${ph."tinyproxy/user"} ${ph."tinyproxy/password"}
+      '';
+    };
   };
 
   networking.firewall.allowedTCPPorts = [ port ];

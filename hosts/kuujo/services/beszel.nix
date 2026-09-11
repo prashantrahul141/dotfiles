@@ -11,16 +11,21 @@ let
   ph = config.sops.placeholder;
 in
 {
-  sops.templates."beszel.env" = {
-    owner = "beszel-agent";
-    group = "beszel-agent";
-    mode = "0440";
-    restartUnits = [ "beszel-agent.service" ];
-    content = ''
-      HUB_URL=http://${host}:${lib.toString port}
-      KEY=${ph."beszel/key"}
-      TOKEN=${ph."beszel/token"}
-    '';
+  sops = {
+    secrets."beszel/key" = { };
+    secrets."beszel/token" = { };
+
+    templates."beszel.env" = {
+      owner = "beszel-agent";
+      group = "beszel-agent";
+      mode = "0440";
+      restartUnits = [ "beszel-agent.service" ];
+      content = ''
+        HUB_URL=http://${host}:${lib.toString port}
+        KEY=${ph."beszel/key"}
+        TOKEN=${ph."beszel/token"}
+      '';
+    };
   };
 
   services.caddy.virtualHosts."status.${domain}".extraConfig = ''
