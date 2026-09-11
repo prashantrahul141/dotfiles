@@ -38,5 +38,9 @@
 
     # convertx
     secrets."convertx/jwt_token" = { };
+
+    # beszel
+    secrets."beszel/key" = { };
+    secrets."beszel/token" = { };
   };
 }
