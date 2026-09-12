@@ -1,8 +1,15 @@
-{ conf, lib, ... }:
+{
+  inputs,
+  conf,
+  lib,
+  system,
+  ...
+}:
 let
   domain = "${conf.host.kuujo.domain.name}.${conf.host.kuujo.domain.tld}";
   internalHost = "127.0.0.1";
   internalPort = 3000;
+  ytdlpPath = "${inputs.nixpkgs-unstable.legacyPackages.${system}.yt-dlp}/bin/yt-dlp";
 in
 {
   services.caddy.virtualHosts."d.${domain}".extraConfig = ''
@@ -12,7 +19,7 @@ in
   services.dumahhfiles = {
     enable = true;
 
-    inherit internalHost internalPort;
+    inherit internalHost internalPort ytdlpPath;
 
     externalProtocol = "https";
     externalHost = "d.${domain}";
