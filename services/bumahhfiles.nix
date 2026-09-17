@@ -118,6 +118,14 @@ in
   };
 
   config = lib.mkIf cfg.enable {
+    users.users.bumahhfiles = {
+      isSystemUser = true;
+      group = "bumahhfiles";
+      home = cfg.rootDir;
+    };
+
+    users.groups.bumahhfiles = { };
+
     systemd.services.bumahhfiles = {
       description = "bumahhfiles";
 
@@ -133,8 +141,8 @@ in
         Restart = "on-failure";
         RestartSec = "5s";
 
-        User = "biskit";
-        Group = "users";
+        User = "bumahhfiles";
+        Group = "bumahhfiles";
         StateDirectory = "bumahhfiles";
         StateDirectoryMode = "0750";
         NoNewPrivileges = true;

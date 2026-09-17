@@ -128,6 +128,14 @@ in
   };
 
   config = lib.mkIf cfg.enable {
+    users.users.dumahhfiles = {
+      isSystemUser = true;
+      group = "dumahhfiles";
+      home = cfg.rootDir;
+    };
+
+    users.groups.dumahhfiles = { };
+
     systemd.services.dumahhfiles = {
       description = "dumahhfiles";
 
@@ -143,8 +151,8 @@ in
         Restart = "on-failure";
         RestartSec = "5s";
 
-        User = "biskit";
-        Group = "users";
+        User = "dumahhfiles";
+        Group = "dumahhfiles";
         StateDirectory = "dumahhfiles";
         StateDirectoryMode = "0750";
         NoNewPrivileges = true;
