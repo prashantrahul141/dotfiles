@@ -167,11 +167,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1788722542,
-        "narHash": "sha256-OY5ZZ5MMjbgOGTAaA7aQNuMBmbaJKnz37MKIgLZdK/s=",
+        "lastModified": 1789902962,
+        "narHash": "sha256-7AU4KFvtfHjWb3NHdS3HK1+2l38HfVtCLLBGeKCL+E0=",
         "owner": "prashantrahul141",
         "repo": "dumahhfiles",
-        "rev": "da17e47aebda03f4ce522184b71c78dba3ffcef0",
+        "rev": "b1ae4f8554c3ce879a3366a7e68a2ac08a46cd5f",
         "type": "github"
       },
       "original": {
@@ -537,11 +537,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1788881743,
-        "narHash": "sha256-2V9GZGvPfrNzxFozhI9dcqV+c3QdA8YZrvAAzqEB+dI=",
+        "lastModified": 1789785513,
+        "narHash": "sha256-B44WL6h0XoLjJ41bUPJk0X5SDinLCII//6EcBLXKiJ0=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "d6524aaca2ff07876657ae2b323f24be4874944b",
+        "rev": "20b1ddd1aa5ace70c9468305030aa4f9ef79671b",
         "type": "github"
       },
       "original": {
