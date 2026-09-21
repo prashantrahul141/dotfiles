@@ -77,7 +77,7 @@ in
 
     # additional software i use
     # anytype # my god the android app bro
-    joplin-desktop
+    # joplin-desktop
     # dbeaver-bin
 
     # torrent client
