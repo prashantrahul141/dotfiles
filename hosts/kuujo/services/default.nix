@@ -13,5 +13,6 @@
     ./convertx.nix # 3005
     ./owncast.nix # 3006, 1935
     ./beszel.nix # 3007
+    ./webdav.nix # 3008
   ];
 }

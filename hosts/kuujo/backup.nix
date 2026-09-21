@@ -5,7 +5,10 @@
 let
   templates = config.sops.templates;
   ph = config.sops.placeholder;
-  paths = [ "/var/vmail" ];
+  paths = [
+    "/var/vmail"
+    "/var/webdav/joplin"
+  ];
   passwordFile = templates."restic_password_file.txt".path;
   rcloneConfigFile = templates."rclone.conf".path;
   pruneOpts = [
