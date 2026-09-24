@@ -20,6 +20,7 @@ usage()
     printf "\t fmt                           Run formatter\n"
     printf "\t lint                          Run linter\n"
     printf "\t deadnix                       Run dead code analyzer\n"
+    printf "\t refetch                       git fetch && git reset --hard origin/main\n"
     printf "\n"
     printf "machines:\n"
     printf "\t thorfinn                      Personal laptop\n"
@@ -158,6 +159,12 @@ case $option in
     "lint")
         validate_exact_args 1
         run "nix run nixpkgs#statix -- check"
+        exit 0
+        ;;
+
+    "refetch")
+        validate_exact_args 1
+        run "git fetch && git reset --hard origin/main"
         exit 0
         ;;
 
