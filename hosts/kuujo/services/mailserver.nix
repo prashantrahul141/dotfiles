@@ -26,7 +26,7 @@ in
       group = "postfix";
       mode = "0600";
       restartUnits = [ "postfix.service" ];
-      content = "[smtp-relay.brevo.com]:587 ${ph."smtp_relay/user"}:${ph."smtp_relay/password"}";
+      content = "[mail.smtp2go.com]:587 ${ph."smtp_relay/user"}:${ph."smtp_relay/password"}";
     };
   };
 
@@ -46,7 +46,7 @@ in
     fqdn = "mail.${domain}";
     domains = [ domain ];
 
-    # disabling this because brevo does this
+    # disabling this because smtp2go signs dkim
     dkim = {
       enable = false;
     };
@@ -89,7 +89,7 @@ in
   };
 
   services.postfix.settings.main = {
-    relayhost = [ "[smtp-relay.brevo.com]:587" ];
+    relayhost = [ "[mail.smtp2go.com]:587" ];
     smtp_sasl_auth_enable = true;
     smtp_sasl_password_maps = "texthash:${config.sops.templates."postfix-sasl".path}";
     smtp_tls_security_level = lib.mkForce "encrypt";
