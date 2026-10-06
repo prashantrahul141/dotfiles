@@ -21,6 +21,13 @@ in
     secrets."smtp_relay/user" = { };
     secrets."smtp_relay/password" = { };
 
+    secrets."dkim/mail.key" = {
+      owner = "rspamd";
+      group = "rspamd";
+      mode = "0400";
+      restartUnits = [ "rspamd.service" ];
+    };
+
     templates."postfix-sasl" = {
       owner = "postfix";
       group = "postfix";
@@ -46,9 +53,11 @@ in
     fqdn = "mail.${domain}";
     domains = [ domain ];
 
-    # disabling this because smtp2go signs dkim
+    # OLD: disabling this because smtp2go signs dkim
+    # NEW: enabling this we now have both local and relay dkim
     dkim = {
-      enable = false;
+      enable = true;
+      domains."${domain}".selectors."mail".keyFile = config.sops.secrets."dkim/mail.key".path;
     };
 
     # from caddy
