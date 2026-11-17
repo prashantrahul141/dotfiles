@@ -10,11 +10,14 @@ _: {
         commit = {
           signOff = true;
         };
-        pagers = [
+        diffRenderers = [
           # THEME CHANGE
-          { pager = "delta --syntax-theme \"Catppuccin Mocha\" --dark --paging=never"; }
+          { command = "delta --syntax-theme \"Catppuccin Mocha\" --dark --paging=never"; }
           # THEME CHANGE
-          { externalDiffCommand = "delta -syntax-theme \"Catppuccin Mocha\" --dark"; }
+          {
+            command = "delta -syntax-theme \"Catppuccin Mocha\" --dark";
+            type = "extDiff";
+          }
         ];
       };
       nerdFontsVersion = "2";
