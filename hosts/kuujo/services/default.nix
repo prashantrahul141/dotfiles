@@ -11,7 +11,7 @@
     # ./grafana.nix # 3004
     ./bentopdf.nix # static, no ports used
     ./convertx.nix # 3005
-    ./owncast.nix # 3006, 1935
+    # ./owncast.nix # 3006, 1935
     ./beszel.nix # 3007
     ./webdav.nix # 3008
   ];
