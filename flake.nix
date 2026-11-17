@@ -34,11 +34,9 @@
     };
     dumahhfiles = {
       url = "github:prashantrahul141/dumahhfiles";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     bumahhfiles = {
       url = "github:prashantrahul141/bumahhfiles";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     mailserver = {
       url = "gitlab:simple-nixos-mailserver/nixos-mailserver/nixos-26.05";
